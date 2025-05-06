@@ -2,8 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    /* p{
-        @apply text-body;
-    } */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title font-bold;
+  }
+  h1 {
+    @apply text-h1-mobile;
+  }
+  h2 {
+    @apply text-h2-mobile;
+  }
+  h3 {
+    @apply text-h3-mobile;
+  }
+
+  h4 {
+    @apply text-h4-mobile;
+  }
+
+  h5 {
+    @apply text-h5-mobile;
+  }
+  h6 {
+    @apply text-h6-mobile;
+  }
+  p {
+    @apply text-body-md;
+  }
+}
+
+@screen md {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title font-bold;
+  }
+
+  h1 {
+    @apply text-h1-tablet;
+  }
+  h2 {
+    @apply text-h2-tablet;
+  }
+  h3 {
+    @apply text-h3-tablet;
+  }
+  h4 {
+    @apply text-h4-tablet;
+  }
+  h5 {
+    @apply text-h5-tablet;
+  }
+  h6 {
+    @apply text-h6-tablet;
+  }
+  p {
+    @apply text-body-md-tablet;
+  }
+}
+
+@screen lg {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title font-bold;
+  }
+  h1 {
+    @apply text-h1-desktop;
+  }
+  h2 {
+    @apply text-h2-desktop;
+  }
+
+  h3 {
+    @apply text-h3-desktop;
+  }
+
+  h4 {
+    @apply text-h4-desktop;
+  }
+
+  h5 {
+    @apply text-h5-desktop;
+  }
+  h6 {
+    @apply text-h6-desktop;
+  }
+  p {
+    @apply text-body-md-desktop;
+  }
 }
