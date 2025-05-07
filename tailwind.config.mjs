@@ -19,7 +19,7 @@ export default {
           900: "#3F3F22",
           950: "#1E1E10",
         },
-        secondary_black: {
+        secondary_bl: {
           50: "#E9E9E7",
           100: "#D3D3CF",
           200: "#A7A7A0",
@@ -32,7 +32,7 @@ export default {
           900: "#050505",
           950: "#030302",
         },
-        secondary_beige: {
+        secondary_be: {
           50: "#FDFDFC",
           100: "#FCFBF8",
           200: "#F8F6F1",
@@ -45,7 +45,7 @@ export default {
           900: "#3D341F",
           950: "#1F1A0F",
         },
-        accent_yellow: {
+        accent_yel: {
           50: "#FFFBF0",
           100: "#FFF7E0",
           200: "#FFEFC2",
@@ -58,7 +58,7 @@ export default {
           900: "#473400",
           950: "#241A00",
         },
-        accent_green: {
+        accent_gr: {
           50: "#EDFCF3",
           100: "#DCF9E8",
           200: "#BDF4D3",
@@ -71,7 +71,7 @@ export default {
           900: "#09351A",
           950: "#041A0D",
         },
-        neutral_darkbrown: {
+        neutral_db: {
           50: "#F1F0EE",
           100: "#E4E2DD",
           200: "#C8C5BB",
@@ -84,7 +84,7 @@ export default {
           900: "#171512",
           950: "#0B0B09",
         },
-        neutral_darkgreen: {
+        neutral_dg: {
           50: "#F4FAF7",
           100: "#EAF5EF",
           200: "#D5ECDE",
