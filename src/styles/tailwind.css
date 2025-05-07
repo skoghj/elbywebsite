@@ -9,7 +9,7 @@
   h4,
   h5,
   h6 {
-    @apply font-title font-bold;
+    @apply font-title font-bold text-sec_bl-950;
   }
   h1 {
     @apply text-h1-mobile;
@@ -32,7 +32,7 @@
     @apply text-h6-mobile;
   }
   p {
-    @apply text-body-md;
+    @apply text-body-md text-sec_bl-950;
   }
 }
 
@@ -43,7 +43,7 @@
   h4,
   h5,
   h6 {
-    @apply font-title font-bold;
+    @apply font-title font-bold text-sec_bl-950;
   }
 
   h1 {
@@ -65,7 +65,7 @@
     @apply text-h6-tablet;
   }
   p {
-    @apply text-body-md-tablet;
+    @apply text-body-md-tablet text-sec_bl-950;
   }
 }
 
@@ -76,7 +76,7 @@
   h4,
   h5,
   h6 {
-    @apply font-title font-bold;
+    @apply font-title font-bold text-sec_bl-950;
   }
   h1 {
     @apply text-h1-desktop;
@@ -100,6 +100,6 @@
     @apply text-h6-desktop;
   }
   p {
-    @apply text-body-md-desktop;
+    @apply text-body-md-desktop text-sec_bl-950;
   }
 }
