@@ -4,67 +4,96 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Titel">
-  <div><h1 class="neutral-gr-500 bg-accent_yellow-500">Design system!</h1>
-  <h2>du kan se tekst</h2></div>
-  <h3>du kan se tekst</h3></div>
-  <Accordion />
 
+      <div>
+        <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
 
-
-  <div class="relative w-full overflow-hidden neutral-gr-500">
-    <svg id="svg-mask" class="absolute top-0 left-0 w-full h-full">
-      <defs>
-        <clipPath id="clip">
-          <circle cx="20%" cy="20%" r="0" class="circle-mask"></circle>
-        </clipPath>
-      </defs>
-    </svg>
-    <div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out" style="clip-path: url(#clip)">
-      <div class="relative bg-gradient-to-r from-[#16312B] to-[#0C1C19]">
-        <div class="flex pt-ml py-lg px-[5%] text-accent-500 justify-between items-center max-h-[80vh] relative">
-          <!-- Text Section (Heading, Image, and Paragraph) -->
-          <div class="lg:max-w-3xl px-md z-10">
-            <h3 class="pb-sm lg:pb-md xl:text-h2-desktop">Øl med <span class="text-accent-800">perfektion</span><br />i hver eneste tår...</h3>
-            <p class="max-w-md text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Hos MaltClub forener vi passionen for øl med historik og eksklusiv kvalitet. Hver måned kuraterer vi en unik ølpakke, fyldt med udsøgte bryg og fængende fortællinger fra bryghuse med et særligt præg.</p>
-          </div>
-
-          <!-- Background Circle -->
-          <div class="bg-accent-800 rounded-full absolute top-[90%] right-[-10%] transform -translate-y-1/2 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] xl:w-[900px] xl:h-[900px] z-1"></div>
-
-          <!-- Image -->
-          <img src="../img/Beers.webp" alt="Billed af ølflasker liggende med forskellige vinkler" class="relative z-10 object-contain max-w-[44%] hidden sm:block" />
-        </div>
-      </div>
-
-    
-
-      <div class="flex flex-col pt-ml py-lg px-ml sm:p-xl lg:p-2xl bg-primary-500">
-        <div class="flex items-center space-x-2 text-accent-500">
-          <!-- SVG Icon -->
-          <div class="lg:pl-20">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
-              <path d="M5 12l14 0"></path>
-            </svg>
-          </div>
-          <!-- Text -->
-          <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-accent-500 lg:pb-l">Vi er her for at hjælpe</p>
-        </div>
-        <h3 class="text-accent-500 lg:pb-xl lg:pl-20">Ofte stillede spørgsmål</h3>
-
-        <div>
-          <Accordion question="Hvordan bestiller jeg et Maltclub abonnement?" answer="Du bestiller et MaltClub abonnement lige" href="/Ølpakker" target=""> <strong><u>her</u></strong></Accordion>
+        <div class="flex flex-col lg:flex-row lg:gap-8">
+          <!-- Om installation -->
+          <div class="flex-1">
+            <h3>Om installation</h3>
         
-          <Accordion question="Hvor lang tid binder jeg mig?" answer="Vi har ingenbinding hos MaltClub, og du kan til enhver tid opsige dit abonnement. Vær dog opmærksom på at dit abonnement skal opsiges senest den 20. i måneden for at være gældende fra den efterfølgende måned." />
-
-          <Accordion question="Hvor meget koster et Maltclub abonnemet?" answer="Et MaltClub abonnement med levering hver måned koster fra 275 kr. pr. md. inkl. fragt. Du kan få 20% i rabat på den første måned ved tilmelding til vores nyhedsbrev." />
-
-          <Accordion question="Hvordan kan jeg betale på Maltclub?" answer="På MaltClub.dk kan du betale med Dankort, Visakort og Masterkort, når du opretter et abonnement. Betaling med debet-eller kreditkort er gebyrfrit (dog kan der forekomme gebyr på betaling med firmakort)." />
-
-          <Accordion question="Hvordan opsiger jeg mit abonnement?" answer="Ønsker du at opsige dit abonnement bedes du kontakte os på info.maltclub@gmail.com eller via vores kontaktformular" href="/Ølpakker" target=""> <strong><u> her.</u></strong> Du modtager herefter en skriftlig bekræftelse på din opsigelse.
+            <Accordion question="Skal man have tilladelse til at installere Elby?">
+              Det kommer an på, hvilken type vej din bygning ligger ud til. <br /><br />
+              <strong>Privat vej:</strong> Nej, du behøver ikke søge tilladelse. <br /><br />
+              <strong>Offentlig vej eller privat fællesvej:</strong> Ja, det kræver en tilladelse fra kommunen at installere Elbys fortovsskinne på offentlig vej eller privat fællesvej. <br /><br />
+              Uanset hvilken vej din bygning ligger ud til, så står vi klar til at rådgive dig.
+              <div class="text-acc_yel-700">
+                <u><a href="/#kontakt">Kontakt os og hør om dine muligheder</a></u>
+              </div>
+            </Accordion>
+        
+            <Accordion question="Hvilke krav er der til min bygning?">
+              <div>Elbys design er særligt velegnet til etageejendomme i byerne, dvs:</div>
+              <ul class="list-disc pl-6 mt-2">
+                <li>
+                  Lejlighedsbygning, kontor eller villa med <span>gadeparkering ved siden af</span>
+                </li>
+                <li>
+                  Et smalt fortov eller intet fortov mellem bygning <span>og parkering (max 2–3 københavnerfliser)</span>
+                </li>
+                <li>Ingen cykelsti mellem bygning og parkering</li>
+                <li>
+                  En kælder eller opgang hvor vi kan trække <span>ledninger fra ladestik til relæ.</span>
+                </li>
+              </ul><br />
+              <div class="mt-4">
+                Matcher din bygning ikke ovenstående?<br />
+                <u class="text-acc_yel-700">
+                  <a href="/#kontakt">Kontakt os for at høre, hvordan vi kan lave en tilpasset løsning til netop jer.</a>
+                </u>
+              </div>
+            </Accordion>
+        
+            <Accordion question="Hvor lang tid tager en installation?" answer="Selve arbejdet tager kun 2-3 timer. Men først er der ">
+              <br />
+              nogle trin, der skal på plads, såsom:
+              <ul class="list-disc pl-6 mt-2">
+                <li>
+                  Tilladelse fra kommunen til ændring af fortovet <span>gadeparkering ved siden af</span>
+                </li>
+                <li>
+                  Dialog med elselskabet om hvilken <span>strømforsyning, der allerede findes.</span>
+                </li>
+              </ul>
+              <br />
+              Efter selve installationen skal en aut. elinstallatør slutte laderen til og sætte ny elmåler op mv.
+            </Accordion>
+        
+            <Accordion question="Hvordan kan jeg ændre på parkeringspladsen ud for laderen?" answer="Nej, vi ændrer ikke på den nærmeste parkeringplads eller gældende parkeringsregler." />
+          </div>
+        
+          <!-- Pris -->
+          <div class="flex-1">
+            <h3>Pris</h3>
+        
+            <Accordion question="Hvad koster det at få Elby?" answer="Elby udbydes både til boligforeninger (ejer-, andel- og almene boligforeninger) samt til ejendomsselskaber og andet erhverv. Se prisen for Elby på de respektive sider."></Accordion>
+        
+            <Accordion question="Hvad koster det at lade med Elby?" answer="Ladeprisen er i øjeblikket en fast pris på 2,99 kr/kWh." />
+        
+            <Accordion question="Kan det virkelig passe, at Elby er gratis for boligforeninger?" answer="Ja, den er god nok. Elbys forretningsmodel er skruet sådan sammen, at vi lægger ud for installationen af laderne. Vores indtjening kommer således ikke fra installation af løsningen, men fra den fee, vi lægger oven på strømprisen, når laderen bruges. Og den fee deler vi endda med dig og din forening." />
+        
+            <Accordion question="Skal man skifte elselskab for at få Elby?" answer="Nej, Elby sætter en bimåler op i din bygning, så ladestrømmen adskilles fra resten af bygningen. Du kan derfor fortsætte med det elselskab du har." />
+          </div>
+        
+          <!-- Sikkerhed og praktik -->
+          <div class="flex-1">
+            <h3>Sikkerhed og praktik</h3>
+        
+            <Accordion question="Hvor meget lader Elby med?" answer="Op til 11 kW tilpasset til bygningen. Vi tager højde for bygningens eget behov og at strømforsyningen varierer fra bygning til bygning."></Accordion>
+        
+            <Accordion question="Er der strøm nok i min bygning?" answer="Sandsynligvis, hvis altså du taler om en etagebygning. De er nemlig typisk udstyret med en overkapacitet, der sjældent bliver brugt. Især om natten, når beboerne sover, og om dagen, når de er på arbejde, er der ekstra kapacitet til fx at lade elbiler." />
+        
+            <Accordion question="Hvordan undgår I at trække for meget strøm fra min bygning?" answer="Elby er udstyret med en såkalt ‘load-balancer’, der sikrer at vi aldrig trækker mere strøm end der er kapacitet til. Lejlighederne og deres beboere har naturligvis førsteprioritet." />
+        
+            <Accordion question="Er det sikkert at gå ovenpå Elbys skinne?" answer="Vores skinne (Elby Sleeve) er langt smallere end f.eks. regnvandsskinner, som også går på tværs af fortovet. F.eks. kan det næsten ikke mærkes, når man går i en flad sko eller triller en barnevogn henover skinnen. Hvis du går i stiletter, skal du dog være opmærksom." />
+        
+            <Accordion question="Hvordan holdes Elbys skinne ren?" answer="Skinnen er let at rense. I sommerhalvåret renses den let med en smal kost. Om vinteren, hvis der er sne eller frost, hældes en spand varm vand udover." />
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        
+ 
+    
 </MainLayout>
 
 <script></script>
