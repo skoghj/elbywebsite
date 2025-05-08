@@ -1,0 +1,15 @@
+---
+const { image, name, title, category, description } = Astro.props;
+---
+
+<article class="bg-primary-50 rounded-xl border border-acc_yel-600 py-m px-m shadow-md max-w-sm mx-auto">
+  <img src={image} alt={name} class="rounded-sm mx-auto mb-4 w-52 h-52 object-cover" />
+
+  <h2 class=" text-sec_bl-950 ">{name}</h2>
+  <div class="w-10xl h-1 bg-acc_yel-600 mb-3"></div>
+
+  <p class=" text-sec_bl-950 mb-1">{title}</p>
+  <p class="text-sec_bl-950 font-semibold mb-4">{category}</p>
+
+  <p class="text-sec_bl-950 text-sm">{description}</p>
+</article>
