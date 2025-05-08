@@ -1,0 +1,8 @@
+---
+
+---
+
+<div x-data="{ selected: 'bolig' }" class="flex space-x-2 bg-primary-50 p-1 rounded-full shadow-inner w-fit">
+  <button @click="$dispatch('toggle-change', 'bolig'); selected = 'bolig'" :class="selected === 'bolig' ? 'bg-acc_yel-500 text-sec_bl-950' : 'bg-primary-50 text-neu_db-500'" class="px-6 py-2 rounded-full font-semibold transition"> Boligforeninger </button>
+  <button @click="$dispatch('toggle-change', 'ejendom'); selected = 'ejendom'" :class="selected === 'ejendom' ? 'bg-acc_gr-500 text-sec_bl-950 ' : 'bg-primary-50 text-neu_db-500'" class="px-6 py-2 rounded-full font-semibold transition"> Ejendomsselskaber </button>
+</div>

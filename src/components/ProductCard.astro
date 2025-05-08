@@ -1,14 +1,25 @@
 ---
-const { title, subtitle, image, features = [], price, buttonText, buttonLink = "#" } = Astro.props;
+const {
+  title,
+  subtitle,
+  image,
+  buildingIcon,
+  features = [],
+  price,
+  buttonText,
+  buttonLink = "#",
+  headerColor = "bg-acc_yel-500", // Default gul
+  linkVariant = "primary", // Default primary variant
+} = Astro.props;
+
 import Link from "../components/Link.astro";
 ---
 
 <article class="rounded-md w-full max-w-md mx-auto overflow-hidden bg-primary-50 shadow-md">
   <!-- Header -->
-  <div class="bg-acc_yel-500 p-6 flex items-center gap-6">
+  <div class={`${headerColor} p-6 flex items-center gap-6`}>
     <div class="aspect-square w-20 bg-primary-50 rounded-full flex items-center justify-center">
-      <!-- Tiltøje icon -->
-      <img src="/boligforening-building.svg" alt="boligforening card ikon" />
+      <img src={buildingIcon} alt="card ikon" />
     </div>
     <div>
       <p class="text-body-lg font-bold">{title}</p>
@@ -25,7 +36,7 @@ import Link from "../components/Link.astro";
       features.map((feature) => (
         <div class="flex items-center gap-3 text-sec_bl-950 text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">
           <span class="w-12 h-10" set:html={feature.icon} />
-          <p>{feature.text}</p>
+          <p set:html={feature.text} />
         </div>
       ))
     }
@@ -37,6 +48,6 @@ import Link from "../components/Link.astro";
     </div>
 
     <!-- Link -->
-    <Link href="#" variant="primary" size="full">{buttonText}</Link>
+    <Link href={buttonLink} variant={linkVariant} size="full">{buttonText}</Link>
   </div>
 </article>

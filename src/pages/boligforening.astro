@@ -3,12 +3,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
+import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
 ---
 
 <MainLayout title="væglader">
-  <section class="relative bg-[url('/HeroTilBolig.webp')] bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center">
+  <section x-data="{ selected: 'bolig' }" @toggle-change.window="selected = $event.detail" class="relative bg-[url('/HeroTilBolig.webp')] bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/40"></div>
 
@@ -19,29 +19,55 @@ import Card from "../components/ProductCard.astro";
         <h1 class="text-primary-50">Elby ladeløsning til boligforeninger</h1>
         <p class="text-body-lg text-primary-50">Hos Elby har vi løsninger, der passer til forskellige behov. <br /> Er du en boligforening eller et ejendomsselskab?</p>
 
-        <!-- Toggle style buttons (NO function, only design) -->
-        <div class="inline-flex mt-s bg-primary-50 p-1 rounded-full shadow-inner">
-          <button class="px-6 py-2 rounded-full font-semibold bg-acc_yel-500 text-sec_bl-950"> Boligforeninger </button>
-          <button class="px-6 py-2 rounded-full font-semibold text-sec_bl-950 hover:bg-neutral-100"> Ejendomsselskaber </button>
+        <!-- Toggle buttons -->
+        <div class="mt-s">
+          <Toggle />
         </div>
       </div>
 
       <!-- Right Side (Card) -->
-      <div class="w-full lg:w-5/12 lg:ml-auto">
-        <Card
-          title="Elby til boligforeningen"
-          subtitle="EJER / ANDEL / ALMEN"
-          image="/opladning2.webp"
-          price="2,99 kr/kWh"
-          buttonText="Bestil Elby til din boligforening"
-          buttonLink="#"
-          features={[
-            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: "Installation 0 kr." },
-            { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: "Abonnement 0 kr." },
-            { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: "Overskudsdeling op til 50 %" },
-          ]}
-        />
-      </div>
+      <template x-if="selected === 'bolig'">
+        <div class="w-full lg:w-5/12 lg:ml-auto">
+          <Card
+            headerColor="bg-acc_yel-500"
+            title="Elby til boligforeningen"
+            buildingIcon="/boligforening-building.svg"
+            subtitle="EJER / ANDEL / ALMEN"
+            image="/opladning2.webp"
+            price="2,99 kr/kWh"
+            linkVariant="primary"
+            buttonText="Bestil Elby til din boligforening"
+            buttonLink="#"
+            features={[
+              { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">0 kr.</span>' },
+              { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: 'Abonnement <span class="font-bold text-lg">0 kr.</span>' },
+              { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: 'Overskudsdeling <span class="font-bold text-lg">op til 50%</span>' },
+            ]}
+          />
+        </div>
+      </template>
+
+      <template x-if="selected === 'ejendom'">
+        <div class="w-full lg:w-5/12 lg:ml-auto">
+          <Card
+            headerColor="bg-acc_gr-500"
+            title="Elby til ejendomsselskaber"
+            buildingIcon="/ejendom-building.svg"
+            subtitle="Erhverv / Lejeboliger"
+            image="/opladning3.webp"
+            price="2,99 kr/kWh"
+            linkVariant="tertiary"
+            buttonText="Bestil Elby til din ejendom"
+            buttonLink="#"
+            features={[
+              { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">30,000 kr.</span>' },
+
+              { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: 'Abonnement <span class="font-bold text-lg">0 kr.</span>' },
+              { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: 'Overskudsdeling <span class="font-bold text-lg">op til 60%</span>' },
+            ]}
+          />
+        </div>
+      </template>
     </div>
   </section>
 </MainLayout>
