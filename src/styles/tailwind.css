@@ -32,7 +32,7 @@
     @apply text-h6-mobile;
   }
   p {
-    @apply text-body-md text-sec_bl-950;
+    @apply font-body text-body-sm text-sec_bl-950;
   }
 }
 
@@ -65,7 +65,7 @@
     @apply text-h6-tablet;
   }
   p {
-    @apply text-body-md-tablet text-sec_bl-950;
+    @apply font-body text-body-sm-tablet text-sec_bl-950;
   }
 }
 
@@ -100,6 +100,6 @@
     @apply text-h6-desktop;
   }
   p {
-    @apply text-body-md-desktop text-sec_bl-950;
+    @apply font-body text-body-sm-desktop text-sec_bl-950;
   }
 }

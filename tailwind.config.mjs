@@ -137,7 +137,7 @@ export default {
 
         "body-sm": ["0.875rem", { lineHeight: "1.3125rem" }], // 14px, line-height: 21px
         "body-md": ["1rem", { lineHeight: "1.5rem" }], // 16px, line-height: 24px
-        "body-lg": ["1.25rem", { lineHeight: "1.875rem" }], // 20px, line-height: 30px
+        "body-lg": ["1.5rem", { lineHeight: "2.25rem" }], // 24px, line-height: 36px
 
         /*Tablet*/
         "h1-tablet": ["3rem", { lineHeight: "3.875rem" }], // 48px, line-height: 62px
@@ -149,7 +149,7 @@ export default {
 
         "body-sm-tablet": ["0.875rem", { lineHeight: "1.3125rem" }], // 14px, line-height: 21px
         "body-md-tablet": ["1rem", { lineHeight: "1.5rem" }], // 16px, line-height: 24px
-        "body-lg-tablet": ["1.25rem", { lineHeight: "1.875rem" }], // 20px, line-height: 30px
+        "body-lg-tablet": ["1.5rem", { lineHeight: "2.25rem" }], // 24px, line-height: 36px
 
         /* Desktop, Perfect Fourth */
         "h1-desktop": ["4.375rem", { lineHeight: "5rem" }], // 70px, line-height: 96px
@@ -161,7 +161,7 @@ export default {
 
         "body-sm-desktop": ["1rem", { lineHeight: "1.5rem" }], // 16px, line-height: 24px
         "body-md-desktop": ["1.125rem", { lineHeight: "1.6875rem" }], // 18px, line-height: 27px
-        "body-lg-desktop": ["1.5rem", { lineHeight: "2.25rem" }], // 24px, line-height: 36px
+        "body-lg-desktop": ["1.75rem", { lineHeight: "2.25rem" }], // 28px, line-height: 36px
       },
       fontWeight: {
         light: "300",

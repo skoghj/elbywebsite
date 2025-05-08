@@ -1,18 +1,17 @@
 ---
 const { variant = "primary", size = "medium" } = Astro.props;
 
-const buttonStyling = "";
+const buttonStyling = "inline-flex items-center justify-center gap-2 rounded-full px-[40px] py-[16px] font-knap font-semibold text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop transition focus-visible:ring-2 focus-visible:ring-sec_bl-100";
 
 const variantClasses = {
-  primary: "",
-  secondary: "",
+  primary: "bg-acc_yel-500 text-sec_bl-950 hover:bg-acc_yel-600",
+  secondary: "bg-transparent border border-sec_bl-950 inline-block text-sec_bl-950 hover:bg-neu_dg-300 hover:border-0",
+  tertiary: "bg-acc_gr-500 text-sec_bl-950 hover:bg-acc_gr-700 hover:text-primary-50",
 };
 
 const sizeClasses = {
-  large: "",
-  medium: "",
-  small: "",
-  xsmall: "",
+  full: "w-full mx-auto items-center justify-center",
+  standard: "w-auto",
 };
 ---
 

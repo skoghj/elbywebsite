@@ -1,21 +1,22 @@
 ---
-// Henter parametrene fra Astro.props
-const { href = "#", target = "_self", variant = "textlink", size = "standard" } = Astro.props;
+const { href = "#", target = "_blank", variant = "primary", size = "standard" } = Astro.props;
 
-const linkStyling = "";
+const linkStyling = "inline-flex items-center gap-2 font-knap font-semibold transition focus-visible:ring-2 focus-visible:ring-sec_bl-100 text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop";
 
 const variantClasses = {
-  textlink: "",
-  primary: "",
-  secondary: "",
+  textlink: "text-acc_gr-700 hover:text-neu_dg-800",
+  primary: "bg-acc_yel-500 text-sec_bl-950 hover:bg-acc_yel-600 rounded-full px-[40px] py-[16px]",
+  secondary: "bg-transparent border border-sec_bl-950 text-sec_bl-950 hover:bg-neu_dg-300 hover:border-0 rounded-full px-[40px] py-[16px]",
+  secondaryHero: "bg-transparent border border-primary-50 text-primary-50 hover:bg-primary-50 hover:text-sec_bl-950 rounded-full px-[40px] py-[16px]",
+  tertiary: "bg-acc_gr-500 text-sec_bl-950 hover:bg-acc_gr-700 hover:text-primary-50 rounded-full px-[72px] py-[8px]",
 };
 
 const sizeClasses = {
-  standard: "text-base",
-  large: "",
-  medium: "",
-  small: "",
+  full: "w-full mx-auto items-center justify-center",
+  standard: "w-auto",
 };
 ---
 
-<a href={href} target={target} class:list={[linkStyling, variantClasses[variant], sizeClasses[size]]}><slot /></a>
+<a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]}`}>
+  <slot />
+</a>
