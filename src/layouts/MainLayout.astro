@@ -21,8 +21,9 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
     <meta name="generator" content={Astro.generator} />
-    <title>{Astro.props.title}</title>
+    <title>{title}</title>
   </head>
+
   <body class="bg-primary-500">
     <header>
       <Header />
