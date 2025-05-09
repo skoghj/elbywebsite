@@ -6,6 +6,7 @@ const {
   buildingIcon,
   features = [],
   price,
+  pricetitle,
   buttonText,
   buttonLink = "#",
   headerColor = "bg-acc_yel-500", // Default gul
@@ -43,7 +44,7 @@ import Link from "../components/Link.astro";
 
     <!-- Price -->
     <div class="pt-6">
-      <p>Ladepris for brugerne</p>
+      <p>{pricetitle}</p>
       <p class="text-body-lg font-bold py-2 md:text-body-lg-tablet lg:text-body-lg-desktop">{price}</p>
     </div>
 

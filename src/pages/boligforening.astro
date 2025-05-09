@@ -5,6 +5,12 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
+import Dropdown from "../components/Dropdown.astro";
+const myOptions = [
+  { value: "installation og ansøgning", label: "Med installation og ansøgning" },
+  { value: "installation", label: "Med installation" },
+  { value: "uden installation", label: "Uden installation" },
+];
 ---
 
 <MainLayout title="Elby-oplader">
@@ -34,7 +40,8 @@ import Card from "../components/ProductCard.astro";
             buildingIcon="/boligforening-building.svg"
             subtitle="EJER / ANDEL / ALMEN"
             image="/opladning2.webp"
-            price="2,99 kr/kWh"
+            pricetitle="Ladepris for brugerne"
+            price="2,99 kr./kWh"
             linkVariant="primary"
             buttonText="Bestil Elby til din boligforening"
             buttonLink="#"
@@ -53,7 +60,7 @@ import Card from "../components/ProductCard.astro";
             headerColor="bg-acc_gr-500"
             title="Elby til ejendomsselskaber"
             buildingIcon="/ejendom-building.svg"
-            subtitle="Erhverv / Lejeboliger"
+            subtitle="ERHVERV / LEJEBOLIGER"
             image="/opladning3.webp"
             price="2,99 kr/kWh"
             linkVariant="tertiary"
@@ -71,8 +78,6 @@ import Card from "../components/ProductCard.astro";
     </div>
   </section>
   <section>
-    <Button variant="secondary" size="standard">Bestil Elby til din boligforening</Button>
-    <Button variant="primary" size="full">Bestil Elby til din boligforening</Button>
-    <Button variant="secondaryHero" size="full">Bestil Elby til din boligforening</Button>
+    <Dropdown options={myOptions} placeholder="Vælg skinne til dit behov..." />
   </section>
 </MainLayout>
