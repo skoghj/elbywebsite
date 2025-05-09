@@ -1,13 +1,13 @@
 ---
 const { img, title, source, name, role } = Astro.props;
 ---
-<div class="flex flex-col justify-between p-6 rounded-xl bg-white shadow-md min-w-[250px] max-w-sm h-full">
-    <img src={img} alt={name} class="rounded-sm mx-auto mb-4 w-52 h-52 object-cover" />
-    <p class="text-lg italic mb-4">"{title}"</p>
+<div class="flex flex-col justify-between p-xxs rounded-xl bg-primary-50 shadow-md min-w-[400px] max-w-md h-full">
+   
+    <p class="text-4xl italic mb-xxs p-md">"{title}"</p>
   <div class="mt-auto">
     {source && <p class="font-bold text-sm">{source}</p>}
     {(name || role) && (
-      <p class="text-sm text-gray-500 mt-1">
+      <p class="text-sm text- mt-1">
         {name}{role && `, ${role}`}
       </p>
     )}
