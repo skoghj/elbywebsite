@@ -13,9 +13,9 @@ import Card from "../components/ProductCard.astro";
     <div class="absolute inset-0 bg-black/40"></div>
 
     <!-- Content Wrapper -->
-    <div class="relative container mx-auto flex flex-col md:px-20 lg:flex-row items-center justify-between gap-12">
+    <div class="relative container mx-auto flex flex-col px-4 md:px-20 lg:flex-row items-center justify-between gap-12">
       <!-- Left Side (Title + Text + Toggle Buttons) -->
-      <div class="w-full lg:w-7/12 max-w-4xl">
+      <div class="w-full lg:w-7/12 max-w-3xl break-words">
         <h1 class="text-primary-50">Elby ladeløsning til boligforeninger</h1>
         <p class="text-body-lg text-primary-50">Hos Elby har vi løsninger, der passer til forskellige behov. <br /> Er du en boligforening eller et ejendomsselskab?</p>
 
@@ -57,7 +57,7 @@ import Card from "../components/ProductCard.astro";
             image="/opladning3.webp"
             price="2,99 kr/kWh"
             linkVariant="tertiary"
-            buttonText="Bestil Elby til din ejendom"
+            buttonText="Bestil Elby til din ejendomsselskaber"
             buttonLink="#"
             features={[
               { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">30,000 kr.</span>' },
@@ -69,5 +69,10 @@ import Card from "../components/ProductCard.astro";
         </div>
       </template>
     </div>
+  </section>
+  <section>
+    <Button variant="secondary" size="standard">Bestil Elby til din boligforening</Button>
+    <Button variant="primary" size="full">Bestil Elby til din boligforening</Button>
+    <Button variant="secondaryHero" size="full">Bestil Elby til din boligforening</Button>
   </section>
 </MainLayout>
