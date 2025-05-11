@@ -1,0 +1,17 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import MultiForm from "../components/Multiform.astro";
+---
+
+<MainLayout title="Få Elby i din bygning">
+  <!-- Venstre billede -->
+  <div class="w-full lg:w-1/2">
+    <img src="/images/charger.jpg" alt="Elby oplader" class="w-full h-full object-cover" />
+  </div>
+
+  <!-- Højre formular-side -->
+  <div>
+    <MultiForm />
+  </div>
+</MainLayout>

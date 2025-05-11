@@ -1,0 +1,185 @@
+---
+import Button from "./Button.astro";
+---
+
+<div x-data="multiStepForm()" class="flex flex-col lg:flex-row overflow-hidden w-full">
+  <!-- Right formular -->
+  <div class="w-full lg:w-1/2 p-m">
+    <h2 class="font-title font-bold text-sec_bl-950 mb-xs">Få Elby i din opgang</h2>
+    <p class="text-body-md text-sec_bl-950 mb-l">
+      Vi har behov for lidt mere information, end hvad du er vant til,<br />
+      men det tager kun 2 minutter!
+    </p>
+
+    <!-- PROCESBAR -->
+    <div class="relative mb-l">
+      <div class="absolute inset-x-0 top-0 flex justify-between">
+        <template x-for="(_, i) in labels" :key="i">
+          <div class="w-4 h-4 rounded-full z-10" :class="step > i ? 'bg-acc_yel-500' : 'bg-neu_db-300'"></div>
+        </template>
+      </div>
+      <div class="absolute inset-x-0 top-2 h-0.5 bg-neu_db-300 rounded-full"></div>
+      <div class="absolute inset-x-0 top-2 h-0.5 bg-acc_yel-500 rounded-full" :style="`width: ${(step-1)/(labels.length-1)*100}%`"></div>
+      <div class="pt-6 flex justify-between text-body-sm text-sec_bl-950">
+        <template x-for="lbl in labels" :key="lbl">
+          <div x-text="lbl"></div>
+        </template>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form @submit.prevent="next()" class="space-y-m">
+      <!-- STEP 1: Om dig + rolle -->
+      <div x-show="step === 1" x-cloak class="space-y-m">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-m">
+          <div>
+            <label class="block mb-1 font-semibold">Fornavn <span class="text-acc_yel-700">*</span></label>
+            <input type="text" x-model="form.firstName" placeholder="Mads" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.firstName ? 'border-red-500' : ''" />
+            <p x-show="errors.firstName" class="mt-1 text-xs text-red-500" x-text="errors.firstName"></p>
+          </div>
+          <div>
+            <label class="block mb-1 font-semibold">Efternavn <span class="text-acc_yel-700">*</span></label>
+            <input type="text" x-model="form.lastName" placeholder="Hansen" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.lastName ? 'border-red-500' : ''" />
+            <p x-show="errors.lastName" class="mt-1 text-xs text-red-500" x-text="errors.lastName"></p>
+          </div>
+          <div>
+            <label class="block mb-1 font-semibold">E-mail <span class="text-acc_yel-700">*</span></label>
+            <input type="email" x-model="form.email" placeholder="mads.hansen@gmail.com" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.email ? 'border-red-500' : ''" />
+            <p x-show="errors.email" class="mt-1 text-xs text-red-500" x-text="errors.email"></p>
+          </div>
+          <div>
+            <label class="block mb-1 font-semibold">Telefon (valgfri)</label>
+            <input type="tel" x-model="form.phone" placeholder="+45 12 34 56 78" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.phone ? 'border-red-500' : ''" />
+            <p x-show="errors.phone" class="mt-1 text-xs text-red-500" x-text="errors.phone"></p>
+          </div>
+        </div>
+        <div>
+          <label class="block mb-2 font-semibold">Din rolle i bygningen? <span class="text-acc_yel-700">*</span></label>
+          <template x-for="role in roles" :key="role">
+            <label class="flex items-center space-x-xs mb-2">
+              <div class="relative w-5 h-5 cursor-pointer">
+                <input type="radio" :value="role" x-model="form.role" class="peer absolute inset-0 w-full h-full opacity-0" />
+                <span class="absolute inset-0 border-2 border-neu_db-300 rounded-full"></span>
+                <span class="absolute inset-1 rounded-full bg-acc_yel-700 scale-0 peer-checked:scale-100 transition-transform duration-150"></span>
+              </div>
+              <span x-text="role"></span>
+            </label>
+          </template>
+          <p x-show="errors.role" class="mt-1 text-xs text-red-500" x-text="errors.role"></p>
+        </div>
+      </div>
+
+      <!-- STEP 2: Om bygningen -->
+      <div x-show="step === 2" x-cloak class="space-y-m">
+        <div>
+          <label class="block mb-1 font-semibold">Bygningens adresse <span class="text-acc_yel-600">*</span></label>
+          <input type="text" x-model="form.address" placeholder="Nørrebrogade 45, 2. th., 2200 København N" class="w-full p-xs rounded-xs border neu_db-300 shadow-sm" :class="errors.address ? 'border-red-500' : ''" />
+          <p x-show="errors.address" class="mt-1 text-xs text-red-500" x-text="errors.address"></p>
+        </div>
+        <div>
+          <label class="block mb-2 font-semibold">Bygningstype <span class="text-acc_yel-700">*</span></label>
+          <template x-for="type in bygningstype" :key="type">
+            <label class="flex items-center space-x-xs mb-2">
+              <div class="relative w-5 h-5 cursor-pointer">
+                <input type="radio" :value="type" x-model="form.type" class="peer absolute inset-0 w-full h-full opacity-0" />
+                <span class="absolute inset-0 border-2 border-neu_db-300 rounded-full"></span>
+                <span class="absolute inset-1 rounded-full bg-acc_yel-700 scale-0 peer-checked:scale-100 transition-transform duration-150"></span>
+              </div>
+              <span x-text="type"></span>
+            </label>
+          </template>
+          <p x-show="errors.type" class="mt-1 text-xs text-red-500" x-text="errors.type"></p>
+        </div>
+      </div>
+
+      <!-- STEP 3: Indsend -->
+      <div x-show="step === 3" x-cloak class="mt-l p-l border-4 rounded-lg border-acc_yel-700 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 mb-2 mx-auto text-acc_yel-700">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c..."></path>
+        </svg>
+        <h2 class="font-title text-2xl mb-xxs">Tak for din henvendelse</h2>
+        <p class="text-body-md">Din besked er modtaget, og vi vender tilbage hurtigst muligt.</p>
+      </div>
+
+      <!-- ▶ Buttons -->
+      <div class="flex space-x-s mt-l">
+        <!-- 1. Nulstil (Step 1) -->
+        <Button variant="secondary" size="standard" type="button" x-show="step === 1" @click="reset()"> Nulstil </Button>
+
+        <!-- 2. Tilbage (Step 2) -->
+        <Button variant="secondary" size="standard" type="button" x-show="step === 2" @click="back()"> Tilbage </Button>
+
+        <!-- 3. Næste (Step 1 & 2) -->
+        <Button variant="primary" size="standard" type="submit" x-show="step < 3"> Næste </Button>
+
+        <!-- 4. Gå til forside (Step 3) -->
+        <Button variant="primary" size="standard" type="button" x-show="step === 3" @click="goHome()"> Gå til forside </Button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script is:inline>
+  window.multiStepForm = function () {
+    return {
+      step: 1,
+      labels: ["Om dig", "Om bygningen", "Indsend"],
+      roles: ["Beboer i bygningen", "Bestyrelsesmedlem i bygningen", "Ejer af bygningen", "Administrator af bygningen", "Andet/ønsker ikke at oplyse"],
+      bygningstype: ["Ejerforening", "Andelsforening", "Almen bolig", "Lejebolig", "Erhvervslejemål", "Andet/ved ikke"],
+      form: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        role: "",
+        address: "",
+        type: "",
+      },
+      errors: {},
+
+      next() {
+        this.clearErrors();
+        if (this.step === 1) {
+          if (!this.form.firstName) this.errors.firstName = "Fornavn er påkrævet.";
+          if (!this.form.lastName) this.errors.lastName = "Efternavn er påkrævet.";
+          if (!this.form.email) this.errors.email = "E-mail er påkrævet.";
+          else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) this.errors.email = "Ugyldigt e-mail-format.";
+          if (this.form.phone && !/^[\d+\s\-]+$/.test(this.form.phone)) this.errors.phone = "Ugyldigt telefonnummer.";
+          if (!this.form.role) this.errors.role = "Vælg venligst en rolle.";
+        } else if (this.step === 2) {
+          if (!this.form.address) this.errors.address = "Adresse er påkrævet.";
+          if (!this.form.type) this.errors.type = "Vælg venligst bygningstype.";
+        }
+        if (Object.keys(this.errors).length === 0) {
+          this.step++;
+        }
+      },
+
+      back() {
+        if (this.step > 1) this.step--;
+      },
+
+      reset() {
+        this.step = 1;
+        this.form = {
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          role: "",
+          address: "",
+          type: "",
+        };
+        this.clearErrors();
+      },
+
+      goHome() {
+        window.location.href = "/";
+      },
+
+      clearErrors() {
+        this.errors = {};
+      },
+    };
+  };
+</script>
