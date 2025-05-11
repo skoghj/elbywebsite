@@ -24,7 +24,7 @@ import Link from "../components/Link.astro";
     </div>
     <div>
       <p class="text-body-lg font-bold">{title}</p>
-      <p class="font-semibold text-neu_db-700">{subtitle}</p>
+      <p class="font-semibold text-neu_db-700" set:html={subtitle} />
     </div>
   </div>
 
