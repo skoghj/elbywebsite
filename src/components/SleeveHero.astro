@@ -1,45 +1,39 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
 import Dropdown from "../components/Dropdown.astro";
+
 const myOptions = [
-  { value: "installation og ansøgning", label: "Med installation og ansøgning" },
-  { value: "installation", label: "Med installation" },
-  { value: "uden installation", label: "Uden installation" },
+  { value: "m/installation og ansøgning", label: "Med installation og ansøgning" },
+  { value: "m/installation", label: "Med installation" },
+  { value: "u/installation", label: "Uden installation" },
 ];
 ---
 
-<section x-data="{ selected: 'installation' }" @toggle-change.window="selected = $event.detail" class="relative bg-[url('/HeroTilFortovskinne.webp')] bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center">
-  <!-- Overlay -->
+<section x-data="{ selected: 'm/installation og ansøgning' }" @dropdown-change.window="selected = $event.detail" class="relative bg-[url('/HeroTilFortovskinne.webp')] bg-cover bg-center
+           min-h-[600px] md:min-h-[700px] lg:min-h-[800px]
+           flex items-center justify-center">
   <div class="absolute inset-0 bg-black/40"></div>
-
-  <!-- Content Wrapper -->
-  <div class="relative container mx-auto flex flex-col px-4 md:px-20 lg:flex-row items-center justify-between gap-12">
-    <!-- Left Side (Title + Text + vælgmuligheder) -->
+  <div class="relative container mx-auto flex flex-col px-4 md:px-20
+                lg:flex-row items-center justify-between gap-12">
+    <!-- Left: title og Dropdown -->
     <div class="w-full lg:w-7/12 lg:max-w-2xl break-words">
       <div class="pl-24">
         <h1 class="text-primary-50">ELBY <br /> FORTOVSKINNE</h1>
         <p class="text-body-lg text-primary-50">Er fortovet i vejen for din drøm om at køre elbil? Elby har løst problemet med en fortovsskinne i et kompakt og funktionelt design.</p>
       </div>
-
-      <!-- Dropdown vælgmuligheder -->
       <div class="mt-s pl-24">
         <Dropdown options={myOptions} placeholder="Vælg skinne til dit behov..." />
       </div>
     </div>
 
-    <!-- Right Side (Card) -->
-    <template x-if="selected === 'installation'">
-      <div class="w-full lg:w-5/12 lg:ml-auto">
+    <!--Right:Card -->
+    <div class="w-full lg:w-5/12 lg:ml-auto">
+      <template x-if="selected === 'm/installation og ansøgning'">
         <Card
           headerColor="bg-acc_yel-500"
           title="Fortorvsskinne"
           buildingIcon="/sleevA.svg"
-          subtitle="EJER / ANDEL / ALMEN"
+          subtitle="m / installation og ansøgning"
           image="/SleevCard.webp"
           pricetitle="Pris inkl. moms"
           price="3,299 kr-"
@@ -47,55 +41,52 @@ const myOptions = [
           buttonText="Bestil Elby fortorvskinne"
           buttonLink="#"
           features={[
-            { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="Fortovskinne icon" />', text: " 2m fortovskinne inkl. lim" },
-            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation icon" />', text: "1-2 dages Installation" },
-            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="ansøgning icon" />', text: "Ansøgning til kommunen" },
+            { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
+            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />', text: "1-2 dages Installation" },
+            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="icon" />', text: "Ansøgning til kommunen" },
           ]}
         />
-      </div>
-    </template>
+      </template>
 
-    <template x-if="selected === 'ejendom'">
-      <div class="w-full lg:w-5/12 lg:ml-auto">
+      <template x-if="selected === 'm/installation'">
         <Card
-          headerColor="bg-acc_gr-500"
-          title="Elby til ejendomsselskaber"
-          buildingIcon="/ejendom-building.svg"
-          subtitle="ERHVERV / LEJEBOLIGER"
-          image="/opladning3.webp"
-          price="2,99 kr/kWh"
-          linkVariant="tertiary"
-          buttonText="Bestil Elby til din ejendomsselskaber"
+          headerColor="bg-acc_yel-500"
+          title="Fortorvsskinne"
+          buildingIcon="/sleevB.svg"
+          subtitle="m / installation"
+          image="/SleevCardB.webp"
+          pricetitle="Pris inkl. moms"
+          price="2,799 kr-"
+          linkVariant="primary"
+          buttonText="Bestil Elby fortovskinne"
           buttonLink="#"
           features={[
-            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">30,000 kr.</span>' },
-
-            { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: 'Abonnement <span class="font-bold text-lg">0 kr.</span>' },
-            { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: 'Overskudsdeling <span class="font-bold text-lg">op til 60%</span>' },
+            { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
+            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />', text: "1-2 dages Installation" },
+            { icon: "", text: "" },
           ]}
         />
-      </div>
-    </template>
-    <template x-if="selected === 'ejendom'">
-      <div class="w-full lg:w-5/12 lg:ml-auto">
+      </template>
+
+      <template x-if="selected === 'u/installation'">
         <Card
-          headerColor="bg-acc_gr-500"
-          title="Elby til ejendomsselskaber"
-          buildingIcon="/ejendom-building.svg"
-          subtitle="ERHVERV / LEJEBOLIGER"
-          image="/opladning3.webp"
-          price="2,99 kr/kWh"
-          linkVariant="tertiary"
-          buttonText="Bestil Elby til din ejendomsselskaber"
+          headerColor="bg-acc_yel-500"
+          title="Fortorvsskinne"
+          buildingIcon="/sleevC.svg"
+          subtitle="u / installation"
+          image="/SleevCardC.webp"
+          pricetitle="Pris inkl. moms"
+          price="999 kr-"
+          linkVariant="primary"
+          buttonText="Bestil Elby fortorvskinne"
           buttonLink="#"
           features={[
-            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">30,000 kr.</span>' },
-
-            { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: 'Abonnement <span class="font-bold text-lg">0 kr.</span>' },
-            { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: 'Overskudsdeling <span class="font-bold text-lg">op til 60%</span>' },
+            { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
+            { icon: '<img src="/Montagevejledning.svg" class="w-12 h-12" alt="icon" />', text: "Montagevejledning" },
+            { icon: '<img src="/fragtIcon.svg" class="w-12 h-12" alt="icon" />', text: "Fri fragt" },
           ]}
         />
-      </div>
-    </template>
+      </template>
+    </div>
   </div>
 </section>

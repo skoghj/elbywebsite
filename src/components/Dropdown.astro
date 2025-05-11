@@ -1,33 +1,39 @@
 ---
-const { placeholder = [], options = [] } = Astro.props;
+const { placeholder = "", options = [] } = Astro.props;
 ---
 
-<div x-data="{
-    open: false,
-    selected: '',
-    options: [],
-    placeholder: [],
-    init() {
-      this.options = JSON.parse(this.$el.dataset.options);
-      this.placeholder = this.$el.dataset.placeholder;
+<div
+  x-data={`
+    {
+      open: false,
+      selected: '',
+      options: ${JSON.stringify(options)},
+      placeholder: '${placeholder}',
+      select(opt) {
+        this.selected = opt.label;
+        this.open = false;
+        window.dispatchEvent(
+          new CustomEvent('dropdown-change', { detail: opt.value })
+        );
+      }
     }
-  }" x-init="init()" data-options={JSON.stringify(options)} data-placeholder={placeholder} class="relative min-w-72">
-  <!-- Dropdown-knap -->
+  `}
+  class="relative min-w-72"
+>
+  <!-- Button -->
   <button type="button" @click="open = !open" class="w-full flex justify-between items-center p-xs pr-10 border shadow-sm rounded-xs text-body-sm bg-primary-50 text-sec_bl-950">
     <span :class="selected ? 'text-sec_bl-950 font-semibold' : 'text-sec_bl-300'" x-text="selected || placeholder"></span>
-
-    <!-- Pil -->
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 transition-transform duration-200" :class="{ 'rotate-180': open }">
       <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
     </svg>
   </button>
 
-  <!-- Dropdown-liste -->
-  <ul x-show="open" @click.outside="open = false" class="absolute z-10 mt-1 w-full bg-primary-50 border rounded-xs shadow-md space-y-xxs">
-    <template x-for="option in options" :key="option.value">
+  <!-- Option list -->
+  <ul x-show="open" x-cloak @click.outside="open = false" class="absolute z-10 mt-1 w-full bg-primary-50 border rounded-xs shadow-md space-y-xxs">
+    <template x-for="opt in options" :key="opt.value">
       <li>
-        <button type="button" class="w-full text-left p-xs hover:bg-acc_yel-500 text-sec_bl-950 text-body-sm font-body" @click="selected = option.label; open = false">
-          <span x-text="option.label"></span>
+        <button type="button" class="w-full text-left p-xs hover:bg-acc_yel-500 text-sec_bl-950 text-body-sm font-body" @click="select(opt)">
+          <span x-text="opt.label"></span>
         </button>
       </li>
     </template>
