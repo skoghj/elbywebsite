@@ -5,12 +5,7 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
-import Dropdown from "../components/Dropdown.astro";
-const myOptions = [
-  { value: "installation og ansøgning", label: "Med installation og ansøgning" },
-  { value: "installation", label: "Med installation" },
-  { value: "uden installation", label: "Uden installation" },
-];
+import Uspsection from "../components/Uspsection.astro";
 ---
 
 <MainLayout title="Elby-oplader">
@@ -76,5 +71,10 @@ const myOptions = [
         </div>
       </template>
     </div>
+  </section>
+
+  <!-- USP sektion -->
+  <section class="container mx-auto py-s px-xs lg:py-m lg:px-m">
+    <template x-if="selected === 'bolig'"> </template>
   </section>
 </MainLayout>

@@ -1,5 +1,5 @@
 ---
-const { href = "#", target = "_blank", variant = "primary", size = "standard" } = Astro.props;
+const { href = "#", target = "_blank", variant = "primary", size = "standard", icon = "/loginIcon.svg" } = Astro.props;
 
 const linkStyling = "inline-flex items-center gap-2 font-knap font-semibold transition focus-visible:ring-2 focus-visible:ring-sec_bl-100 text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop";
 
@@ -17,6 +17,6 @@ const sizeClasses = {
 };
 ---
 
-<a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]}`}>
+<a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]} ${icon[icon]}`}>
   <slot />
 </a>
