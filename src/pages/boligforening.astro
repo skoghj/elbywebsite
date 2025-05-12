@@ -5,12 +5,8 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
-import Dropdown from "../components/Dropdown.astro";
-const myOptions = [
-  { value: "installation og ansøgning", label: "Med installation og ansøgning" },
-  { value: "installation", label: "Med installation" },
-  { value: "uden installation", label: "Uden installation" },
-];
+import Uspsection from "../components/Uspsection.astro";
+import Splitcontent from "../components/Splitcontent.astro";
 ---
 
 <MainLayout title="Elby-oplader">
@@ -76,5 +72,30 @@ const myOptions = [
         </div>
       </template>
     </div>
+  </section>
+
+  <!-- under sektion -->
+  <section>
+    <section class="bg-sec_be-500">
+      <Uspsection header="Fordele ved at vælge Elby" text1="1. Gratis lader og fri installation" text2="2. Nemt at komme i gang – vi klarer det hele" text3="3. Overskudsdeling op til 50%" img1="/gratislader.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
+    </section>
+    <section>
+      <Splitcontent
+        img="/boligforening.webp"
+        header="Din opgang er det nye ladefællesskab"
+        ,
+        text1="Med Elby lades bilerne, dér hvor beboerne bor, og byen får flere ladepunkter. Elby er baseret på andelstanken, og Elby-ladepunkter på offentlig vej kan bruges af alle byens borgere. Derfor får du som bygningsejer del i overskuddet, når jeres ladepunkter bruges. Vi kalder det ladefællesskab, og vi glæder os til at få jer med!"
+        ,
+        text2="Få Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen."
+        ,
+        alt="Din opgang er det nye ladefællesskab sektions tekst"
+        ,
+        buttonText="Læs mere om Elbys vision"
+        ,
+        buttonlink="#"
+        ,
+        linkVariant="secondary"
+      />
+    </section>
   </section>
 </MainLayout>

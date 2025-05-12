@@ -153,9 +153,9 @@ export default {
 
         /* Desktop, Perfect Fourth */
         "h1-desktop": ["4.375rem", { lineHeight: "5rem" }], // 70px, line-height: 96px
-        "h2-desktop": ["2.5rem", { lineHeight: "5rem" }], // 40px, line-height: 96px
-        "h3-desktop": ["2rem", { lineHeight: "4rem" }], // 32px, line-height: 80px
-        "h4-desktop": ["1.5rem", { lineHeight: "3rem" }], // 24px, line-height: 48px
+        "h2-desktop": ["2.5rem", { lineHeight: "3.25rem" }], // 40px, line-height: 52pxpx
+        "h3-desktop": ["2rem", { lineHeight: "3rem" }], // 32px, line-height: 48px
+        "h4-desktop": ["1.5rem", { lineHeight: "2.75rem" }], // 24px, line-height: 44px
         "h5-desktop": ["1.25rem", { lineHeight: "2.375rem" }], // 20px, line-height: 38px
         "h6-desktop": ["1.125rem", { lineHeight: "1.875rem" }], // 18px, line-height: 30px
 
