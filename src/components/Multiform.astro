@@ -29,7 +29,7 @@ import Button from "./Button.astro";
 
     <!-- FORM -->
     <form @submit.prevent="next()" class="space-y-m">
-      <!-- STEP 1: Om dig + rolle -->
+      <!-- STEP 1 -->
       <div x-show="step === 1" x-cloak class="space-y-m">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-m">
           <div>
@@ -67,9 +67,14 @@ import Button from "./Button.astro";
           </template>
           <p x-show="errors.role" class="mt-1 text-xs text-red-500" x-text="errors.role"></p>
         </div>
+
+        <!-- STEP 1 button -->
+        <div class="flex justify-start mt-l">
+          <Button variant="primary" size="standard" type="submit">Næste</Button>
+        </div>
       </div>
 
-      <!-- STEP 2: Om bygningen -->
+      <!-- STEP 2 -->
       <div x-show="step === 2" x-cloak class="space-y-m">
         <div>
           <label class="block mb-1 font-semibold">Bygningens adresse <span class="text-acc_yel-600">*</span></label>
@@ -90,30 +95,27 @@ import Button from "./Button.astro";
           </template>
           <p x-show="errors.type" class="mt-1 text-xs text-red-500" x-text="errors.type"></p>
         </div>
+
+        <!-- STEP 2 buttons -->
+        <div class="flex gap-m mt-l">
+          <Button variant="secondary" size="standard" type="button" @click="back()">Tilbage</Button>
+          <Button variant="primary" size="standard" type="submit">Næste</Button>
+        </div>
       </div>
 
-      <!-- STEP 3: Indsend -->
+      <!-- STEP 3 -->
       <div x-show="step === 3" x-cloak class="mt-l p-l border-4 rounded-lg border-acc_yel-700 text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 mb-2 mx-auto text-acc_yel-700">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c..."></path>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 mx-auto text-acc_yel-700 pb-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"></path>
         </svg>
+
         <h2 class="font-title text-2xl mb-xxs">Tak for din henvendelse</h2>
         <p class="text-body-md">Din besked er modtaget, og vi vender tilbage hurtigst muligt.</p>
-      </div>
 
-      <!-- ▶ Buttons -->
-      <div class="flex space-x-s mt-l">
-        <!-- 1. Nulstil (Step 1) -->
-        <Button variant="secondary" size="standard" type="button" x-show="step === 1" @click="reset()"> Nulstil </Button>
-
-        <!-- 2. Tilbage (Step 2) -->
-        <Button variant="secondary" size="standard" type="button" x-show="step === 2" @click="back()"> Tilbage </Button>
-
-        <!-- 3. Næste (Step 1 & 2) -->
-        <Button variant="primary" size="standard" type="submit" x-show="step < 3"> Næste </Button>
-
-        <!-- 4. Gå til forside (Step 3) -->
-        <Button variant="primary" size="standard" type="button" x-show="step === 3" @click="goHome()"> Gå til forside </Button>
+        <!-- STEP 3 button -->
+        <div class="flex justify-center mt-md">
+          <Button variant="primary" size="standard" type="button" @click="goHome()">Gå til forside</Button>
+        </div>
       </div>
     </form>
   </div>
@@ -156,21 +158,10 @@ import Button from "./Button.astro";
       },
 
       back() {
-        if (this.step > 1) this.step--;
-      },
-
-      reset() {
-        this.step = 1;
-        this.form = {
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          role: "",
-          address: "",
-          type: "",
-        };
-        this.clearErrors();
+        if (this.step > 1) {
+          this.step--;
+          console.log("Går tilbage til step:", this.step);
+        }
       },
 
       goHome() {
