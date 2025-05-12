@@ -1,6 +1,6 @@
 ---
 import Accordion from "../components/Accordion.astro";
-import Card from '../components/InfoCard.astro';
+import InfoCard from '../components/InfoCard.astro';
 import MainLayout from "../layouts/MainLayout.astro";
 import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 ---
@@ -8,80 +8,149 @@ import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 <MainLayout title="Titel">
 <TestimonialsSlider
 />
+<h2 class="text-center pb-8">Mød teamet bag Elby</h2>
+<div class="stack-area flex w-full h-[400vh] relative">
+  <!-- Cards -->
+  <div class="bg-slate-800 sticky top-0 h-screen flex-1 flex items-center justify-center relative overflow-hidden">
+    <div class="relative bg-slate-400">
+      <!-- Card 1 -->
+      <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
+        <InfoCard
+          image="./michael_elby.webp"
+          name="Michael"
+          title="CEO"
+          category="Tech & Startup"
+          description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+        />
+      </div>
+      <!-- Card 2 -->
+      <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
+        <InfoCard
+        image="./lars_elby.webp"
+        name="Lars"
+        title="CINO"
+        category="Built Environment & Regulations"
+        description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne."
+      />
+      </div>
+      <!-- Card 3 -->
+      <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
+        <InfoCard
+          image="./jacob_elby.webp"
+          name="Jacob"
+          title="COO"
+          category="Operations & Busines Development"
+          description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+        />
+      </div>
+      <!-- Card 4 -->
+      <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
+        <InfoCard
+          image="./kristian_elby.webp"
+          name="Kristian"
+          title="CCO"
+          category="Commercial & Sales"
+          description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet Volvoen ud med en brugt ID Buzz og bøfferne med planter for at efterlade en bedre verden til sine tre børn."
+        />
+      </div>
+      <!-- Card 5 -->
+      <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
+        <InfoCard
+        image="./mads_elby.webp"
+        name="Mads"
+        title="CPO"
+        category="Product & Experience"
+        description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'."
+      />
+      </div>
+      <!-- Card 6 -->
+      <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
+        <InfoCard
+          image="./marco_elby.webp"
+          name="Marco"
+          title="CMO"
+          category="Marketing"
+          description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt."
+        />
+      </div>
+    </div>
+  </div>
+</div>
 
-  <Card
-  image="./anmeld1.webp"
-/>
-<Card
-    image="./michael_elby.webp"
-    name="Michael"
-    title="CEO"
-    category="Tech & Startup"
-    description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
-/>
-  
+<!-- <section class="pt-1" id="horisontalscroll">
+  <h2 class="text-center pb-8">Mød teamet bag Elby</h2>
 
-<Card
-    image="./lars_elby.webp"
-    name="Lars"
-    title="CINO"
-    category="Built Environment & Regulations"
-    description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne."
-/>
+  <div class="overflow-clip">
+   <section id="horisontalscrollsection" class="h-[500vh]">
+    <ul id="horisontalliste" class="list-none pl-0 flex sticky top-[10vh]">
+      <li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+        <InfoCard
+          image="./michael_elby.webp"
+          name="Michael"
+          title="CEO"
+          category="Tech & Startup"
+          description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+        />
+      </li>
+      <li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+        <InfoCard
+          image="./lars_elby.webp"
+          name="Lars"
+          title="CINO"
+          category="Built Environment & Regulations"
+          description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne."
+        />
+      </li> 
+      <li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+        <InfoCard
+          image="./jacob_elby.webp"
+          name="Jacob"
+          title="COO"
+          category="Operations & Busines Development"
+          description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+        />
+      </li>
+      <li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+        <InfoCard
+          image="./kristian_elby.webp"
+          name="Kristian"
+          title="CCO"
+          category="Commercial & Sales"
+          description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet Volvoen ud med en brugt ID Buzz og bøfferne med planter for at efterlade en bedre verden til sine tre børn."
+        />
+      </li>
+      <li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+        <InfoCard
+        image="./mads_elby.webp"
+        name="Mads"
+        title="CPO"
+        category="Product & Experience"
+        description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'."
+      />
+      </li>
+      <li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+        <InfoCard
+          image="./marco_elby.webp"
+          name="Marco"
+          title="CMO"
+          category="Marketing"
+          description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt."
+        />
+      </li>
+    </ul>
+   </section>
+  </div>
+</section> -->
+<!-------------- scroll section slut -------------->
 
-<Card
-  image="./jacob_elby.webp"
-  name="Jacob"
-  title="COO"
-  category="Operations & Busines Development"
-  description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
-/>
+<!-------------- FAQ accordion -------------->
+  <section class="pt-8xl">
+     <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
 
-<Card
-    image="./kristian_elby.webp"
-    name="Kristian"
-    title="CCO"
-    category="Commercial & Sales"
-    description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet Volvoen ud med en brugt ID Buzz og bøfferne med planter for at efterlade en bedre verden til sine tre børn."
-/>
-
-<Card
-  image="./mads_elby.webp"
-  name="Mads"
-  title="CPO"
-  category="Product & Experience"
-  description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'."
-/>
-
-<Card
-  image="./marco_elby.webp"
-  name="Marco"
-  title="CMO"
-  category="Marketing"
-  description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt."
-/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-      <div>
-        <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
-
-        <div class="flex flex-col lg:flex-row lg:gap-8">
+    <div class="flex flex-col lg:flex-row lg:gap-8">
           <!-- Om installation -->
-          <div class="flex-1">
-            <h3>Om installation</h3>
+          <div class="flex-1 pb-m">
+            <h3 class="pl-xs">Om installation</h3>
         
             <Accordion question="Skal man have tilladelse til at installere Elby?">
               Det kommer an på, hvilken type vej din bygning ligger ud til. <br /><br />
@@ -134,8 +203,8 @@ import TestimonialsSlider from "../components/TestimonialsSlider.astro";
           </div>
         
           <!-- Pris -->
-          <div class="flex-1">
-            <h3>Pris</h3>
+          <div class="flex-1 pb-m">
+            <h3 class="pl-xs">Pris</h3>
         
             <Accordion question="Hvad koster det at få Elby?" answer="Elby udbydes både til boligforeninger (ejer-, andel- og almene boligforeninger) samt til ejendomsselskaber og andet erhverv. Se prisen for Elby på de respektive sider."></Accordion>
         
@@ -147,8 +216,8 @@ import TestimonialsSlider from "../components/TestimonialsSlider.astro";
           </div>
         
           <!-- Sikkerhed og praktik -->
-          <div class="flex-1">
-            <h3>Sikkerhed og praktik</h3>
+          <div class="flex-1 pb-m">
+            <h3 class="pl-xs">Sikkerhed og praktik</h3>
         
             <Accordion question="Hvor meget lader Elby med?" answer="Op til 11 kW tilpasset til bygningen. Vi tager højde for bygningens eget behov og at strømforsyningen varierer fra bygning til bygning."></Accordion>
         
@@ -160,10 +229,225 @@ import TestimonialsSlider from "../components/TestimonialsSlider.astro";
         
             <Accordion question="Hvordan holdes Elbys skinne ren?" answer="Skinnen er let at rense. I sommerhalvåret renses den let med en smal kost. Om vinteren, hvis der er sne eller frost, hældes en spand varm vand udover." />
           </div>
-        </div>
-        
- 
-    
-</MainLayout>
+  </section>
+<!-------------- FAQ accordion slut -------------->
 
-<script></script>
+</MainLayout>
+<style>
+  .card {
+  position: absolute;
+  top: 5%;  /* Kortene er tættere på toppen af skærmen */
+  left: 10vw;  /* Kortene er tættere på venstre kant */
+  transform: translate(-50%, -50%);  /* Brug transform til at centrere kortet */
+}
+
+</style>
+
+<script>
+  const cards = document.querySelectorAll(".card");
+const stackArea = document.querySelector(".stack-area");
+
+function isStackAreaInView() {
+  const rect = stackArea.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+function updateCardTransforms() {
+  const inView = isStackAreaInView();
+  const distance = window.innerHeight * 0.5;
+  const stackHeight = cards.length;
+  const stackCenter = Math.floor(stackHeight / 2);
+
+  cards.forEach((card, index) => {
+    const offset = index - stackCenter;
+    const scrollPosition = Math.abs(stackArea.getBoundingClientRect().top);
+
+    // Justering af xOffset og yOffset for at ændre placeringen tættere på venstre og højere op
+    const xOffset = offset * 40;  // Justerer for at få kortene tættere på venstre kant
+    const yOffset = Math.min(Math.max(scrollPosition - (index * 80), 0), 250);  // Justerer for at få kortene tættere på toppen
+
+    let rotation = 0;
+
+    if (card.classList.contains("entering")) {
+      card.style.transform = `translate(calc(50% + ${xOffset}px), calc(30% - ${yOffset}px)) rotate(${rotation}deg) scale(1)`;
+      card.style.opacity = inView ? "1" : "0";
+      card.style.zIndex = stackHeight - index;
+    } else if (card.classList.contains("exiting")) {
+      card.style.transform = `translate(calc(-150% + ${xOffset}px), calc(-100% + ${yOffset}px)) rotate(${rotation - 15}deg) scale(0.9)`;
+      card.style.opacity = "1";
+      card.style.zIndex = stackHeight - index - 1;
+    } else {
+      card.style.transform = `translate(calc(150% + ${xOffset}px), calc(0% + ${yOffset}px)) rotate(${rotation + 15}deg) scale(0.9)`;
+      card.style.opacity = "0";
+      card.style.zIndex = 0;
+    }
+
+    card.style.transition = "transform 0.7s ease, opacity 0.5s ease";
+    card.style.position = "absolute";
+    card.style.top = "0%";
+    card.style.left = "0%";
+    card.style.transformOrigin = "bottom center";
+  });
+}
+
+// Scroll event
+window.addEventListener("scroll", () => {
+  const topVal = stackArea.getBoundingClientRect().top;
+  let index = Math.floor(-1 * (topVal / (window.innerHeight * 0.5) + 1));
+
+  cards.forEach((card, i) => {
+    card.classList.remove("entering", "exiting");
+
+    if (i === index) {
+      card.classList.add("entering");
+    } else if (i < index) {
+      card.classList.add("exiting");
+    }
+  });
+
+  updateCardTransforms();
+});
+
+</script>
+
+
+
+
+
+
+
+<!-- <script>
+  const cards = document.querySelectorAll(".card");
+  const stackArea = document.querySelector(".stack-area");
+
+  function isStackAreaInView() {
+    const rect = stackArea.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight &&
+      rect.bottom > 0
+    );
+  }
+
+  function updateCardTransforms() {
+    const inView = isStackAreaInView();
+
+    cards.forEach((card, index) => {
+      if (card.classList.contains("entering")) {
+        // Aktive kort – centreret
+        card.style.transform = `translate(-50%, -50%)`;
+        card.style.opacity = "1"; // Altid synlig
+        card.style.zIndex = cards.length; // Højeste z-index
+      } else if (card.classList.contains("exiting")) {
+        // Tidligere kort – flyttet til venstre
+        card.style.transform = "translate(-150%, -50%)";
+        card.style.opacity = "1"; // Også synlig
+        card.style.zIndex = cards.length - index - 1;
+      } else {
+        // Kommende kort – venter til højre
+        card.style.transform = "translate(150%, -50%)";
+        card.style.opacity = "1"; // Også synlig
+        card.style.zIndex = 0;
+      }
+
+      // Fælles styling
+      card.style.transition = "transform 0.7s ease, opacity 0.5s ease";
+      card.style.position = "absolute";
+      card.style.top = "50%";
+      card.style.left = "50%";
+      card.style.transformOrigin = "center center";
+    });
+  }
+
+  // Første visning
+  updateCardTransforms();
+
+  window.addEventListener("scroll", () => {
+    const distance = window.innerHeight * 0.5;
+    const topVal = stackArea.getBoundingClientRect().top;
+    let index = Math.floor(-1 * (topVal / distance + 1));
+
+    cards.forEach((card, i) => {
+      card.classList.remove("entering", "exiting");
+      if (i === index) {
+        card.classList.add("entering");
+      } else if (i < index) {
+        card.classList.add("exiting");
+      }
+    });
+
+    updateCardTransforms();
+  });
+</script> -->
+
+
+<!-- 
+<script>
+  const cards = document.querySelectorAll(".card");
+  const stackArea = document.querySelector(".stack-area");
+
+  function updateCardTransforms() {
+    cards.forEach((card, index) => {
+      if (card.classList.contains("entering")) {
+        // Aktivt kort i midten
+        card.style.transform = `translate(-50%, -50%)`;
+        card.style.opacity = "1";
+        card.style.zIndex = cards.length - index;
+      } else if (card.classList.contains("exiting")) {
+        // Kort flyver ud til venstre
+        card.style.transform = "translate(-150%, -50%)";
+        card.style.opacity = "0";
+      } else {
+        // Kort venter til højre (før det vises)
+        card.style.transform = "translate(150%, -50%)";
+        card.style.opacity = "0";
+      }
+
+      card.style.transition = "transform 0.7s ease, opacity 0.5s ease";
+      card.style.position = "absolute";
+      card.style.top = "50%";
+      card.style.left = "50%";
+      card.style.transformOrigin = "center center";
+    });
+  }
+
+  // Initial visning
+  updateCardTransforms();
+
+  window.addEventListener("scroll", () => {
+    const distance = window.innerHeight * 0.5;
+    const topVal = stackArea.getBoundingClientRect().top;
+    let index = Math.floor(-1 * (topVal / distance + 1));
+
+    cards.forEach((card, i) => {
+      card.classList.remove("entering", "exiting");
+      if (i === index) {
+        card.classList.add("entering");
+      } else if (i < index) {
+        card.classList.add("exiting");
+      }
+    });
+
+    updateCardTransforms();
+  });
+</script>
+ -->
+
+
+<!-- <script>
+  /* js til scroller */
+  window.addEventListener("scroll", () => {
+    const section = document.getElementById("horisontalscrollsection");
+    const list = document.getElementById("horisontalliste");
+
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const scrollY = window.scrollY;
+
+    if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+      const progress = (scrollY - sectionTop) / sectionHeight;
+      const translateX = progress * 500; // 500vw - 100vw = 400vw scroll (6 elementer)
+      list.style.transform = `translateX(-${translateX}vw)`;
+    }
+  });
+</script> -->
+
