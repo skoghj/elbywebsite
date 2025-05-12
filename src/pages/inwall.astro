@@ -1,0 +1,32 @@
+---
+import Accordion from "../components/Accordion.astro";
+import InfoCard from '../components/InfoCard.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import TestimonialsSlider from "../components/TestimonialsSlider.astro";
+import Splitcontent from "../components/Splitcontent.astro";
+import SplitcontentRight from "../components/SplitcontentRight.astro";
+import Prefooter from "../components/Prefooter.astro";
+---
+
+<MainLayout title="Titel">
+    <a href="/">forside</a>
+    <a href="../sleeve">Elby sleeve</a>
+    <a href="/boligforening">boligforening</a>
+    <a href="../ladestander">Elby ladestander</a>
+    <a href="../inwall">Sådan virker Elby</a>
+    <a href="../omelby">Om elby</a>
+    <a href="../bestil">bestil</a>
+
+  <section class="relative bg-[url('/HeroTilInwall.webp')] bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center pl-[56px] lg:pl-[256px]">
+           <h1 class="text-primary-50">Sådan lader du med Elby</h1>
+           <p class="text-body-lg text-primary-50">Hos Elby har vi løsninger, der passer til forskellige behov. <br /> Er du en boligforening eller et ejendomsselskab?</p>
+  </section>
+
+  <div class="bg-sec_be-500">
+    <Prefooter header="Vil du have ELBY i din bygning?" , buttonText="Få Elby nu" , buttonlink="#" , linkVariant="primary" />
+  </div>
+
+<!-- Grafik Section prefooter -->
+<div class="bg-sec_be-500">
+    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+    </div>

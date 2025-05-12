@@ -14,10 +14,11 @@ import Prefooter from "../components/Prefooter.astro";
 
 <MainLayout title="Elby-oplader">
   <a href="/">forside</a>
-  <a href="/boligforening">boligforening</a>
-  <a href="../omelby">Om elby</a>
   <a href="../sleeve">Elby sleeve</a>
+  <a href="/boligforening">boligforening</a>
   <a href="../ladestander">Elby ladestander</a>
+  <a href="../inwall">Sådan virker Elby</a>
+  <a href="../omelby">Om elby</a>
   <a href="../bestil">bestil</a>
   
   <section x-data="{ selected: 'bolig' }" @toggle-change.window="selected = $event.detail">
@@ -74,7 +75,6 @@ import Prefooter from "../components/Prefooter.astro";
               buttonLink="#"
               features={[
                 { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">30,000 kr.</span>' },
-
                 { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: 'Abonnement <span class="font-bold text-lg">0 kr.</span>' },
                 { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: 'Overskudsdeling <span class="font-bold text-lg">op til 60%</span>' },
               ]}
@@ -172,4 +172,8 @@ import Prefooter from "../components/Prefooter.astro";
       </div>
     </section>
   </section>
+   <!-- Grafik Section prefooter -->
+   <div class="bg-sec_be-500">
+    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+    </div>
 </MainLayout>
