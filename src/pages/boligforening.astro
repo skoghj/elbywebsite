@@ -13,6 +13,13 @@ import Prefooter from "../components/Prefooter.astro";
 ---
 
 <MainLayout title="Elby-oplader">
+  <a href="/">forside</a>
+  <a href="/boligforening">boligforening</a>
+  <a href="../omelby">Om elby</a>
+  <a href="../sleeve">Elby sleeve</a>
+  <a href="../ladestander">Elby ladestander</a>
+  <a href="../bestil">bestil</a>
+  
   <section x-data="{ selected: 'bolig' }" @toggle-change.window="selected = $event.detail">
     <div class="relative bg-[url('/HeroTilBolig.webp')] bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center">
       <!-- Overlay -->
