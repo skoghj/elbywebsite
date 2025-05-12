@@ -1,19 +1,26 @@
 ---
-import Button from "./Button.astro"
+import Link from "./Link.astro";
 
-const {header, 
-  buttonText,
-  buttonlink="#",
-  linkVariant="primary"
-} = Astro.props
-
+const { header, text, buttonText, linkText, buttonlink = "#", buttonlink2 = "#", linkVariant = "primary", linkVariant2 = "textlink", icon } = Astro.props;
 ---
+
 <section class="py-xl">
+  <h2 class="text-center pb-sm" set:html={header} />
 
-<h2 class="text-center pb-sm">{header}</h2>
+  {text && <p class="text-center mb-s" set:html={text} />}
 
-<div class="flex justify-center">
-<Button href={buttonlink} variant={linkVariant} size="standard">{buttonText}</Button>
-</div>
-
+  <div class="flex justify-center">
+    <Link href={buttonlink} variant={linkVariant} size="standard">
+      {buttonText}
+    </Link>
+  </div>
+  <div class="pt-4">
+    {
+      linkText && (
+        <Link href={buttonlink2} variant={linkVariant2} size="full" icon={icon}>
+          {linkText}
+        </Link>
+      )
+    }
+  </div>
 </section>

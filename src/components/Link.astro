@@ -1,5 +1,5 @@
 ---
-const { href = "#", target = "_blank", variant = "primary", size = "standard", icon = "/loginIcon.svg" } = Astro.props;
+const { href = "#", target = "_blank", variant = "primary", size = "standard", icon, iconPosition = "right" } = Astro.props;
 
 const linkStyling = "inline-flex items-center gap-2 font-knap font-semibold transition focus-visible:ring-2 focus-visible:ring-sec_bl-100 text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop";
 
@@ -17,6 +17,7 @@ const sizeClasses = {
 };
 ---
 
-<a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]} ${icon[icon]}`}>
+<a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]}`}>
   <slot />
+  {icon && iconPosition === "right" && <img src={icon} alt="" class="w-4 h-4" />}<!-- Render kun hvis ikonet er til stede -->
 </a>
