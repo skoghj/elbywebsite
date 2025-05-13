@@ -1,2 +1,188 @@
 ---
+
+import Link from "./Link.astro"
 ---
+<div class="relative">
+    <!-- Mobile Navigation -->
+    <div class="flex md:hidden items-center justify-between px-sm py-sm bg-gradient-to-r">
+        <!-- Burger Menu Icon -->
+        <button id="burger-menu" class="flex items-center">
+            <!-- Burger Menu Icon (visible when open is false) -->
+            <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 text-black">
+                <path d="M3 12h18m-18-6h18m-18 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        
+            <!-- Close (X) Icon (visible when open is true) -->
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 text-black hidden">
+                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="/"><img src="../abonnement.svg" alt="Logo" class="h-10 mx-auto"></a>
+
+        <!-- CTA -->
+       <Link>
+    </div>
+
+    <!-- Overlay and Dropdown Menu -->
+    <div id="dropdown-overlay" class="absolute inset-x-0 top-[80px] bg-black bg-opacity-50 z-40 hidden">
+        <!-- Dropdown Menu -->
+        <div class="absolute inset-x-0 top-0 bg-primary-500 shadow-lg z-50 px-md py-md">
+            <!-- Close Button -->
+            <ul class="text-accent-500 text-body-lg-tablet font-semibold space-y-sm">
+              
+                <li id="beer-packages" class="relative">
+            
+                  <a href="/Ølpakker" class="flex items-center justify-between w-full">
+                      Ladeløsninger
+                      <!-- Arrow Button -->
+                      <button id="arrow-toggle" class="flex items-center justify-center px-sm">
+                          <svg 
+                              id="arrow-icon" 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              viewBox="0 0 24 24" 
+                              class="h-4 w-4 transform transition-transform origin-center"
+                          >
+                              <path 
+                                  d="M7 10l5 5 5-5H7z" 
+                                  stroke="currentColor" 
+                                  stroke-width="2" 
+                                  stroke-linecap="round" 
+                                  stroke-linejoin="round"
+                              />
+                          </svg>
+                      </button>
+                  </a>
+                  <!-- Accordion Content -->
+                  <ul 
+                      id="beer-dropdown" 
+                      class="font-regular text-body-md space-y-xxxs px-xs hidden"
+                  >
+                      <li class="py-xxxs">
+                          <a href="/boligforening" class="block">Elby til Boligforeninger</a>
+                      </li>
+                      <li class="py-xxxs">
+                          <a href="/boligforening" class="block">Elby til Ejendomsselskaber</a>
+                      </li>
+                      <li class="py-xxxs">
+                          <a href="/sleeve" class="block">Elby Fortovsskinne</a>
+                      </li>
+                       <li class=py-xxxs">
+                          <a href="/ladestander" class="block">Elby Ladestander</a>
+                      </li>
+                  </ul>
+              </li>
+        
+                <li class="hover:bg-primary-300 py-2">
+                    <a href="/" class="block">Sådan virker Elby</a>
+                </li>
+                <li class="hover:bg-primary-300 py-2">
+                    <a href="/omelby" class="block">Om Elby</a>
+                </li>
+                <li class="hover:bg-primary-300 py-2">
+                    <a href="/" class="block">Kontakt</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center py-xs px-md">
+
+        <div>
+          <a href="/">
+            <img src="./boligforening-building.svg" alt="Logo" class="h-16 w-auto">
+          </a>
+        </div>
+       
+        <nav class="flex-1">
+          <ul class="flex justify-center ml-lg md:space-x-md lg:space-x-xl text-accent-500 font-regular">
+            <!-- Ladeløsninger medd Hover Dropdown -->
+            <li class="relative group">
+              <a href="/boligforening" class="flex items-center text-body-sm lg:text-body-sm-desktop">Ladeløsninger
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[24px] w-[24px] ml-xs transition-transform transform group-hover:rotate-180">
+                  <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
+                </svg>
+              </a>
+              <!-- Dropdown Menu -->
+              <div class="absolute left-0 mt-xs w-64 bg-primary-500 text-accent-500 shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
+                <ul class="bg-accent-400">
+                  <li class="hover:bg-accent-600 px-xs py-xs">
+                    <a href="/boligforening" class="block font-body">
+                      <div class="flex flex-col">
+                        <p class="text-neutral-900 text-body-sm">Elby til Boligforeninger</p>
+                    </a>
+                  </li>
+                  <li class=" hover:bg-accent-600 px-xs py-xs">
+                    <a href="/boligforening" class="block font-body">
+                      <div class="flex flex-col">
+                        <p class="text-neutral-900 text-body-sm">Elby til Ejendomsselskaber</p>
+                    </a>
+                  </li>
+                   <li class="hover:bg-accent-600 px-xs py-xs">
+                    <a href="/sleeve" class="block font-body">
+                      <div class="flex flex-col">
+                        <p class="text-neutral-900 text-body-sm">Elby Fortovsskinne</p>
+                    </a>
+                  </li>
+                   <li class="hover:bg-accent-600 px-xs py-xs">
+                    <a href="/ladestander" class="block font-body">
+                      <div class="flex flex-col">
+                        <p class="text-neutral-900 text-body-sm">Elby Ladestander</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+           
+            <li>
+              <a href="/singleview" class="text-body-sm lg:text-body-sm-desktop">Sådan virker Elby</a>
+            </li>
+            <li>
+              <a href="/OmOs" class="text-body-sm lg:text-body-sm-desktop">Om Elby</a>
+            </li>
+              <li>
+              <a href="/OmOs" class="text-body-sm lg:text-body-sm-desktop">Kontakt</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div>
+           <Link 
+           icon=>
+        </div>
+       </div>
+        
+      
+     
+     
+
+<script>
+    // Mobile Menu Toggle (Burger Menu)
+    const burgerMenuBtn = document.getElementById('burger-menu');
+const burgerIcon = document.getElementById('burger-icon');
+const closeIcon = document.getElementById('close-icon');
+const dropdownOverlay = document.getElementById('dropdown-overlay');
+const beerDropdown = document.getElementById('beer-dropdown');
+const arrowIcon = document.getElementById('arrow-icon');
+const arrowToggle = document.getElementById('arrow-toggle');
+
+// Toggle Burger Menu and Dropdown
+burgerMenuBtn.addEventListener('click', () => {
+    // Toggle mobile menu visibility
+    dropdownOverlay.classList.toggle('hidden');
+    // Toggle burger/close icon
+    burgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
+
+// Toggle Accordion Dropdown (Arrow Button Only)
+arrowToggle.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent link navigation
+    beerDropdown.classList.toggle('hidden'); // Show/hide dropdown content
+    arrowIcon.classList.toggle('rotate-180'); // Rotate the arrow icon
+});
+</script>
