@@ -1,6 +1,6 @@
 ---
 import Link from "./Link.astro";
-const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVariant = "primary" } = Astro.props;
+const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVariant = "primary", imgBg = "bg-acc_yel-500" } = Astro.props;
 ---
 
 <section class="flex flex-col md:flex-row w-full mh">
@@ -9,7 +9,6 @@ const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVarian
       <h2 class="mb-4" set:html={header} />
       <p class="mb-4" set:html={text1} />
       <p class="mb-6" set:html={text2} />
-
       {
         buttonText && (
           <Link href={buttonlink} variant={linkVariant} size="full">
@@ -19,7 +18,7 @@ const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVarian
       }
     </div>
   </div>
-  <div class="w-full p-md md:basis-[50%] flex items-center justify-center">
+  <div class={`w-full p-xl md:basis-[50%] flex items-center justify-center ${imgBg}`}>
     <img src={img} alt={alt} class="max-w-full h-auto object-contain" />
   </div>
 </section>
