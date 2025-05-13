@@ -6,13 +6,9 @@ const {header, text1, text2, text3, alt1, alt2, alt3, img1, img2, img3,
   buttonlink="#",
   linkVariant="primary"
 } = Astro.props
-
-
 ---
 
-
 <section class="py-xl">
-
 <h2 class="text-center pb-sm">{header}</h2>
 
 <div class="flex flex-col sm:flex-row pb-sm">
@@ -38,5 +34,4 @@ alt={alt3}
 <div class="flex justify-center">
 <Button href={buttonlink} variant={linkVariant} size="standard">{buttonText}</Button>
 </div>
-
 </section>

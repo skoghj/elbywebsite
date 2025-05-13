@@ -4,8 +4,74 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import LadestanderHero from "../components/LadestanderHero.astro";
+import Uspsection from "../components/Uspsection.astro";
+import Infografik from "../components/Splitcontent.astro";
+import Splitcontent from "../components/Splitcontent.astro";
+import SplitcontentRight from "../components/SplitcontentRight.astro";
+import Prefooter from "../components/Prefooter.astro";
 ---
 
 <MainLayout title="Elby-ladestander">
+  <a href="/">forside</a>
+  <a href="../sleeve">Elby sleeve</a>
+  <a href="/boligforening">boligforening</a>
+  <a href="../ladestander">Elby ladestander</a>
+  <a href="../inwall">Sådan virker Elby</a>
+  <a href="../omelby">Om elby</a>
+  <a href="../bestil">bestil</a>
   <LadestanderHero />
+
+  <section class="bg-sec_be-500">
+    <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, stål eller beton" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/installation.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
+  </section>
+
+  <section>
+    <Splitcontent
+      img="/elbyskilt.webp"
+      header="Elby – Ladestander med respekt for byen"
+      ,
+      text1="I Elby tror vi på, at grøn omstilling kun virker, hvis den også giver mening for mennesker. Derfor designer vi ladeinfrastruktur, der ikke bare er effektiv – men også folkelig, smuk og nænsom for byen."
+      ,
+      text2="Vores ladestandere falder i ét med omgivelserne og bliver en naturlig del af gadebilledet. De er skabt til at patinere, ikke forstyrre – og med løsninger, der både kan være næsten usynlige eller æstetisk integrerede, tager vi hensyn til både fortov, fællesskab og fremtid."
+      ,
+      text3="Vi skaber grøn infrastruktur, som både byen og dens beboere kan være stolte af."
+      ,
+      alt="Elby ladestander installeret i indreby ved Thorvalsens museum"
+      ,
+      buttonText="Bestil Elby ladestander"
+      ,
+      buttonlink="#"
+      ,
+      linkVariant="primary"
+    />
+
+    <section class="bg-sec_be-500">
+      <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, stål eller beton" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/installation.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
+    </section>
+
+    <SplitcontentRight
+      img="/ladestander4.webp"
+      header="Elby ladestander til Erhverv"
+      ,
+      text1="Uanset om I er en boligforening, offentlig virksomhed eller anden form for erhverv finder vi den rigtige ladeløsning til jer."
+      ,
+      text2="Vi tilpasser løsningen efter jeres behov – og vi hjælper gerne hele vejen fra installation til ladeboksen er klar til brug."
+      ,
+      alt="Nærbilled af Elby ladestander med ladekabel"
+      ,
+      buttonText="Bliv ringet op og hør mere"
+      ,
+      buttonlink="#"
+      ,
+      linkVariant="primary"
+    />
+  </section>
+
+  <div class="bg-sec_be-500">
+    <Prefooter header="SKAF DIG EN ELBY LADESTANDER!" , buttonText="Elby ladestander, ja tak!" , buttonlink="#" , linkVariant="primary" />
+  </div>
+<!-- Grafik Section prefooter -->
+<div class="bg-sec_be-500">
+<img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+</div>
 </MainLayout>

@@ -4,15 +4,30 @@ import InfoCard from '../components/InfoCard.astro';
 import MainLayout from "../layouts/MainLayout.astro";
 import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 import Splitcontent from "../components/Splitcontent.astro";
+import SplitcontentRight from "../components/SplitcontentRight.astro";
+import Prefooter from "../components/Prefooter.astro";
 ---
 
 <MainLayout title="Titel">
-<TestimonialsSlider/>
+  <a href="/">forside</a>
+  <a href="../sleeve">Elby sleeve</a>
+  <a href="/boligforening">boligforening</a>
+  <a href="../ladestander">Elby ladestander</a>
+  <a href="../inwall">Sådan virker Elby</a>
+  <a href="../omelby">Om elby</a>
+  <a href="../bestil">bestil</a>
+
+  <section class="relative bg-[url('/HeroTilOmos.webp')] bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center pl-[56px] lg:pl-[256px]">
+           <h1 class="text-primary-50">Om ELBY</h1>
+           
+  </section>
+<!-- <TestimonialsSlider/> -->
+
 
 <h2 class="text-center pb-8">Mød teamet bag Elby</h2>
 <div class="stack-area flex w-full h-[400vh] relative">
   <!-- Cards -->
-  <div class="bg-slate-800 sticky top-0 h-screen flex-1 flex items-center justify-center relative overflow-hidden">
+  <div class="sticky top-0 h-screen flex-1 flex items-center justify-center relative overflow-hidden">
     <div class="relative bg-slate-400">
       <!-- Card 1 -->
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
@@ -79,42 +94,39 @@ import Splitcontent from "../components/Splitcontent.astro";
 </div>
 <!-------------- scroll section slut -------------->
 
-
 <section>
-  <Splitcontent
-    img="/boligforening.webp"
-    header="Der er flere veje mod den grønne omstilling"
+  <SplitcontentRight
+    img="/kvinder_baggagerum.webp"
+    header="Når byen og borgerne lader op i fællesskab"
     ,
-    text1="Forestil dig, at bilerne kunne være en ressource for byen. Først og fremmest skulle det være let og billigt, at lade dem op, så ingen tøvede med at skifte deres benzin- eller dieselbil ud. Selvfølgelig skal der også være rigeligt med grøn strøm og ladere, så ingen frygtede at gå i stå. Så blev der mindre støj i byen, og vi fik renere luft med færre partikler, både for nuværende og fremtidige generationer."
+    text1="Forestil dig, at virksomheder og borgere arbejdede sammen for et bedre klima, et renere miljø, bedre luftkvalitet, mindre støj og en bedre fremtid for vores børn. At vi var partnere i den grønne omstilling. At vi sammen gjorde byerne grønne og elektrificerede persontransporten."
     ,
-    text2="Få Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen."
-    ,
-    alt="Din opgang er det nye ladefællesskab sektions tekst"
-    ,
-    buttonText="Læs mere om Elbys vision"
-    ,
-    buttonlink="#"
-    ,
-    linkVariant="secondary"
+    alt="To veninder der sidder sammen i baggagerummet i en bil."
   />
 </section>
 
 <section>
   <Splitcontent
-    img="/boligforening.webp"
-    header="Der er flere veje mod den grønne omstilling"
+    img="/mobil_infografik.png"
+    header="Elby, der giver overskud til både dig og byen"
     ,
-    text1="Forestil dig, at bilerne kunne være en ressource for byen. Først og fremmest skulle det være let og billigt at lade dem op, så ingen tøvede med at skifte deres benzin- eller dieselbil ud." 
+    text1="Elbiler kan være en fordel for både bygningsejere og byen. Når de lader op med strøm fra ejendommen, skaber det en ekstra indtægt – godt for økonomien. Og hvis laderne samtidig hjælper med at finde ledige parkeringspladser, kan vi reducere trafikken i byen med op til 15 %."
     ,
-    text2="Selvfølgelig skulle der også være rigeligt med grøn strøm og ladere, så ingen frygtede at gå i stå. Så ville der være mindre støj i byen, og vi ville få renere luft med færre partikler – både for nuværende og fremtidige generationer."/>
-    
-  </section>
+    text2="På sigt kan elbiler også aflaste elnettet. De kan sende strøm tilbage, når der er brug for det, og lade op igen, når strømmen er billig. Så bliver bilerne et fælles batteri for byen – og hjælper os alle videre i den grønne omstilling."
+    ,
+    alt="Mobile dummy med overskud grafik."
+  />
+</section>
+
+<div class="bg-sec_be-500">
+  <Prefooter header="Vil du høre mere om ELby og visionen bag?" , buttonText="Kontakt os og hør mere" , buttonlink="#" , linkVariant="primary" />
+</div>
 
 <!-------------- FAQ accordion -------------->
   <section class="pt-8xl">
      <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
 
-    <div class="flex flex-col lg:flex-row lg:gap-8">
+    <div class="flex flex-col lg:flex-row lg:gap-8 p-md">
           <!-- Om installation -->
           <div class="flex-1 pb-m">
             <h3 class="pl-xs">Om installation</h3>
@@ -198,6 +210,13 @@ import Splitcontent from "../components/Splitcontent.astro";
           </div>
   </section>
 <!-------------- FAQ accordion slut -------------->
+
+
+
+<!-- Grafik Section prefooter -->
+<div class="bg-primary-500">
+  <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+  </div>
 
 </MainLayout>
 

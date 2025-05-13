@@ -6,8 +6,130 @@ import { Image } from "astro:assets";
 import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
 import SleeveHero from "../components/SleeveHero.astro";
+import Uspsection from "../components/Uspsection.astro";
+import Infografik from "../components/Splitcontent.astro";
+import Splitcontent from "../components/Splitcontent.astro";
+import SplitcontentRight from "../components/SplitcontentRight.astro";
 ---
 
 <MainLayout title="Elby-sleeve">
+
+  <a href="/">forside</a>
+  <a href="../sleeve">Elby sleeve</a>
+  <a href="/boligforening">boligforening</a>
+  <a href="../ladestander">Elby ladestander</a>
+  <a href="../inwall">Sådan virker Elby</a>
+  <a href="../omelby">Om elby</a>
+  <a href="../bestil">bestil</a>
+
   <SleeveHero />
+
+  <section class="bg-sec_be-500">
+    <Uspsection header="Så nemt kommer du i gang med Elby" text1="1. Få et uforpligtende løsningsforslag" text2="2. Vi klarer tilladelser og installation" text3="3. Oplad med dine naboer og venner" img1="/installation.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
+  </section>
+
+  <section>
+    <Splitcontent
+      img="/opladning2.webp"
+      header="Skabt til byen"
+      ,
+      text1="Elbys skinne er testet med cykler, rulleskøjter, løbehjul, kørestole, små børn, hunde, sko og høje hæle."
+      ,
+      text2="Skinnen er så lille at når skinnen er tom, kan man dårligt mærke den, når man går eller kører over den. Det eneste der kan gå i skinnen er stilethæle. Bredden på skinnens synlige rille er nemlig blot omtrent den samme som afstanden mellem almindelige brosten på gaden."
+      ,
+      text3="Når ladekablet ligger i skinnen, føles den som en naturlig del af fortovet."
+      ,
+      alt="Elby væglader i murstensvæg"
+      ,
+      buttonText="Læs mere om Elbys vision"
+      ,
+      buttonlink="#"
+      ,
+      linkVariant="secondary"
+    />
+
+    <div class="bg-sec_be-500">
+      <Infografik
+        img="/infografikBolig.svg"
+        header="Jo mere du lader, jo mere får du tilbage."
+        ,
+        text1="<strong>Baseret på andelstanken</strong> </br> Elby Partner tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip. Vi sørger for alt det praktiske, samt udlægget for den fulde installation. Når omkostningen er tjent hjem, deler vi op til halvdelen af overskuddet med jer. Uanset hvor meget – eller lidt – der lades i din bygning, skal foreningen aldrig have penge op af lommen.  "
+        ,
+        text2="<strong>Ingen administration</strong> </br> Få Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen."
+        ,
+        alt="boligforening infografik"
+        ,
+        buttonText="Få Elby på generalforsamlingen"
+        ,
+        buttonlink="https://www.elby.dk/guides-artikler/generalforsamling-med-elby"
+        ,
+        linkVariant="secondary"
+      />
+    </div>
+
+    <SplitcontentRight
+      img="/by.webp"
+      header="Elby ladestander til Erhverv"
+      ,
+      text1="Uanset om I er en boligforening, offentlig virksomhed eller anden form for erhverv finder vi den rigtige ladeløsning til jer."
+      ,
+      text2="Vi tilpasser løsningen efter jeres behov – og vi hjælper gerne hele vejen fra installation til ladeboksen er klar til brug."
+      ,
+      alt="Nærbilled af Elby ladestander med ladekabel"
+      ,
+      buttonText="Bliv ringet op og hør mere"
+      ,
+      buttonlink="#"
+      ,
+      linkVariant="primary"
+    />
+  </section>
+
+  <section class="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto p-xxs py-xs gap-8xl">
+    <!-- Tekstdel -->
+    <div class="w-full md:w-1/2">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Kommuner der tillader fortovsskinner</h2>
+      <h2 class="text-center pb-8">Mød teamet bag Elby</h2>
+      <p class="mb-6 text-gray-700">Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.</p>
+
+      <div class="mb-6 relative">
+        <input type="text" placeholder="Find din kommune..." class="w-full border border-gray-300 rounded-full py-3 px-5 pr-10 focus:outline-none focus:ring-2 focus:ring-green-500" />
+        <span class="absolute right-4 top-3 text-gray-500">&#9660;</span>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="font-bold text-lg mb-2">Få flere kommuner skrevet på</h3>
+        <p class="mb-2 text-gray-700">
+          Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig selv og dine naboer til gode, at der er styr på ladekablet.
+        </p>
+        <p class="text-gray-700">
+          Kontaktinformationen finder du typisk på kommunens hjemmeside.
+        </p>
+        <a href="#" class="text-green-600 font-semibold mt-2 inline-block hover:underline">
+          Download materiale til myndighedsansøgning →
+        </a>
+      </div>
+
+      <div class="bg-yellow-100 p-6 rounded-lg">
+        <h4 class="font-bold text-lg mb-2">Har du brug hjælp?</h4>
+        <p class="mb-4 text-gray-700">
+          Vi har stor erfaring med dialogen med kommunerne, og vi hjælper dig gerne med ansøgningen.
+        </p>
+        <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-full">
+          Kontakt os
+        </button>
+      </div>
+    </div>
+
+    <!-- Kortdel (skjult på mobil) -->
+    <div class="w-full md:w-1/2 hidden md:block">
+      <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto" />
+    </div>
+
+  </section>
+
+  <!-- Grafik Section prefooter -->
+  <div class="bg-primary-500">
+    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+    </div>
 </MainLayout>

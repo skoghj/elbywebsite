@@ -1,6 +1,6 @@
 ---
 import Link from "./Link.astro";
-const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVariant = "primary" } = Astro.props;
+const { img, header, text1, text2, text3, alt, buttonText, buttonlink = "#", linkVariant = "primary" } = Astro.props;
 ---
 
 <section class="flex flex-col md:flex-row w-full mh">
@@ -13,6 +13,7 @@ const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVarian
       <h2 class="mb-4">{header}</h2>
       <p class="mb-4">{text1}</p>
       <p class="mb-6">{text2}</p>
+      <p class="mb-6">{text3}</p>
 
       {
         buttonText && (
