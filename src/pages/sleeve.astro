@@ -10,6 +10,29 @@ import Uspsection from "../components/Uspsection.astro";
 import Infografik from "../components/Splitcontent.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
+import Dropdown from "../components/Dropdown.astro";
+
+const myOptions = [
+  { value: "m/installation og ansøgning", label: "Med installation og ansøgning" },
+  { value: "m/installation", label: "Med installation" },
+  { value: "u/installation", label: "Uden installation" },
+  ];
+
+  const kommune = [
+  { value: "Københavns Kommune", label: "Københavns Kommune" },
+  { value: "Frederiksberg Kommune", label: "Odense Kommune" },
+  { value: "Odense Kommune", label: "Odense Kommune" },
+  { value: "Frederikshavn Kommune", label: "Frederikshavn Kommune" },
+  { value: "Gentofte Kommune", label: "Gentofte Kommune" },
+  { value: "Gladsaxe Kommune", label: "Gladsaxe Kommune" },
+  { value: "Helsingør Kommune", label: "Helsingør Kommune" },
+  { value: "Rudersdal Kommune", label: "Rudersdal Kommune" },
+  { value: "Silkeborg Kommune", label: "Silkeborg Kommune" },
+  { value: "Herning Kommune", label: "Herning Kommune" },
+  { value: "Holbæk Kommune", label: "Holbæk Kommune" },
+  { value: "Taarnby Kommune", label: "Taarnby Kommune" },
+];
+ 
 ---
 
 <MainLayout title="Elby-sleeve">
@@ -67,57 +90,38 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
       />
     </div>
 
-    <SplitcontentRight
-      img="/by.webp"
-      header="Elby ladestander til Erhverv"
-      ,
-      text1="Uanset om I er en boligforening, offentlig virksomhed eller anden form for erhverv finder vi den rigtige ladeløsning til jer."
-      ,
-      text2="Vi tilpasser løsningen efter jeres behov – og vi hjælper gerne hele vejen fra installation til ladeboksen er klar til brug."
-      ,
-      alt="Nærbilled af Elby ladestander med ladekabel"
-      ,
-      buttonText="Bliv ringet op og hør mere"
-      ,
-      buttonlink="#"
-      ,
-      linkVariant="primary"
-    />
-  </section>
-
-  <section class="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto p-xxs py-xs gap-8xl">
+  <section class="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto p-4xl lg:p-xxs lg:py-8xl gap-8xl">
     <!-- Tekstdel -->
     <div class="w-full md:w-1/2">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">Kommuner der tillader fortovsskinner</h2>
-      <h2 class="text-center pb-8">Mød teamet bag Elby</h2>
-      <p class="mb-6 text-gray-700">Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.</p>
+      <h2 class="text-2xl md:text-3xl mb-xxxs">Kommuner der tillader fortovsskinner</h2>
+      <p class="mb-6">Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.</p>
 
       <div class="mb-6 relative">
-        <input type="text" placeholder="Find din kommune..." class="w-full border border-gray-300 rounded-full py-3 px-5 pr-10 focus:outline-none focus:ring-2 focus:ring-green-500" />
-        <span class="absolute right-4 top-3 text-gray-500">&#9660;</span>
+        <Dropdown options={kommune} placeholder="Find din kommune..." />
       </div>
 
-      <div class="mb-6">
-        <h3 class="font-bold text-lg mb-2">Få flere kommuner skrevet på</h3>
-        <p class="mb-2 text-gray-700">
+      <div class="mb-m">
+        <h4 class="pb-xxs">Få flere kommuner skrevet på</h4>
+        <p class="">
           Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig selv og dine naboer til gode, at der er styr på ladekablet.
         </p>
-        <p class="text-gray-700">
+        <p class="">
           Kontaktinformationen finder du typisk på kommunens hjemmeside.
         </p>
-        <a href="#" class="text-green-600 font-semibold mt-2 inline-block hover:underline">
+        <a href="#" class="text-acc_gr-700 mt-2 inline-block hover:underline">
           Download materiale til myndighedsansøgning →
         </a>
       </div>
 
-      <div class="bg-yellow-100 p-6 rounded-lg">
-        <h4 class="font-bold text-lg mb-2">Har du brug hjælp?</h4>
-        <p class="mb-4 text-gray-700">
-          Vi har stor erfaring med dialogen med kommunerne, og vi hjælper dig gerne med ansøgningen.
-        </p>
-        <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-full">
-          Kontakt os
-        </button>
+      <div class="mb-m">
+        <h4 class="pb-xxs">Har du brug for hjælp?</h4>
+        <p class="">
+          Vi har stor erfaring med dialogen med kommunerne, og vi hjælper dig gerne med ansøgningen.</p>
+      </div>
+    
+      <div>
+       <!-- Link -->
+      <Link href="#" variant="primary" size="standard">Kontakt os</Link>
       </div>
     </div>
 
@@ -125,8 +129,8 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
     <div class="w-full md:w-1/2 hidden md:block">
       <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto" />
     </div>
-
   </section>
+
 
   <!-- Grafik Section prefooter -->
   <div class="bg-primary-500">
