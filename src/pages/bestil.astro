@@ -4,11 +4,6 @@ import MultiForm from "../components/Multiform.astro";
 ---
 
 <MainLayout title="Få Elby i din bygning">
-  <div class="w-full grid grid-cols-1 md:grid-cols-2">
-    <!-- Venstre billede -->
-    <div class="w-full h-full">
-      <img src="/bestil.webp" alt="Elby oplader" class="w-full h-full object-cover" />
-    </div>
   <a href="/">forside</a>
   <a href="../sleeve">Elby sleeve</a>
   <a href="/boligforening">boligforening</a>
@@ -16,14 +11,14 @@ import MultiForm from "../components/Multiform.astro";
   <a href="../inwall">Sådan virker Elby</a>
   <a href="../omelby">Om elby</a>
   <a href="../bestil">bestil</a>
-  
-  <!-- Venstre billede -->
-  <div class="w-full lg:w-1/2">
-    <img src="/images/charger.jpg" alt="Elby oplader" class="w-full h-full object-cover" />
-  </div>
+  <div class="grid grid-cols-1 md:grid-cols-5 w-full min-h-screen">
+    <!-- Venstre billede -->
+    <div class="w-full h-full col-span-2">
+      <img src="/bestil.webp" alt="Elby oplader" class="w-full h-full object-cover" />
+    </div>
 
     <!-- Højre formular-side -->
-    <div class="w-full h-full flex flex-col items-center justify-center">
+    <div class="w-full h-full flex flex-col items-center justify-center col-span-3">
       <MultiForm />
     </div>
   </div>
