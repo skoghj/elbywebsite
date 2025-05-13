@@ -1,8 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
 import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
 import Uspsection from "../components/Uspsection.astro";
@@ -18,9 +15,9 @@ import Prefooter from "../components/Prefooter.astro";
       <!-- Overlay -->
       <div class="absolute inset-0 bg-black/40"></div>
       <!-- Content Wrapper -->
-      <div class="relative container mx-auto flex flex-col px-4 md:px-20 lg:flex-row items-center justify-between gap-12">
+      <div class="relative container mx-auto flex flex-col p-10 md:px-20 lg:flex-row items-center justify-between gap-12">
         <!-- Left Side (Title + Text + Toggle Buttons) -->
-        <div class="w-full lg:w-7/12 max-w-3xl break-words">
+        <div class="w-full max-w-md lg:max-w-3xl break-words">
           <h1 class="text-primary-50">Elby ladeløsning til boligforeninger</h1>
           <p class="text-body-lg text-primary-50">Hos Elby har vi løsninger, der passer til forskellige behov. <br /> Er du en boligforening eller et ejendomsselskab?</p>
 
