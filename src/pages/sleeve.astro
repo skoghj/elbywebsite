@@ -1,13 +1,9 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import Toggle from "../components/Toggle.astro";
 import Card from "../components/ProductCard.astro";
 import SleeveHero from "../components/SleeveHero.astro";
 import Uspsection from "../components/Uspsection.astro";
-import Infografik from "../components/Splitcontent.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Dropdown from "../components/Dropdown.astro";
@@ -20,7 +16,7 @@ const myOptions = [
 
   const kommune = [
   { value: "Københavns Kommune", label: "Københavns Kommune" },
-  { value: "Frederiksberg Kommune", label: "Odense Kommune" },
+  { value: "Frederiksberg Kommune", label: "Frederiksberg Kommune" },
   { value: "Odense Kommune", label: "Odense Kommune" },
   { value: "Frederikshavn Kommune", label: "Frederikshavn Kommune" },
   { value: "Gentofte Kommune", label: "Gentofte Kommune" },
@@ -47,13 +43,13 @@ const myOptions = [
 
   <SleeveHero />
 
-  <section class="bg-sec_be-500">
+  <section class="bg-primary-500">
     <Uspsection header="Så nemt kommer du i gang med Elby" text1="1. Få et uforpligtende løsningsforslag" text2="2. Vi klarer tilladelser og installation" text3="3. Oplad med dine naboer og venner" img1="/installation.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
   </section>
 
-  <section>
+  <section class="bg-sec_be-500">
     <Splitcontent
-      img="/opladning2.webp"
+      img="/fortovskinne2.webp"
       header="Skabt til byen"
       ,
       text1="Elbys skinne er testet med cykler, rulleskøjter, løbehjul, kørestole, små børn, hunde, sko og høje hæle."
@@ -70,96 +66,98 @@ const myOptions = [
       ,
       linkVariant="secondary"
     />
-
-    <div class="bg-sec_be-500">
-      <Infografik
-        img="/infografikBolig.svg"
-        header="Jo mere du lader, jo mere får du tilbage."
-        ,
-        text1="<strong>Baseret på andelstanken</strong> </br> Elby Partner tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip. Vi sørger for alt det praktiske, samt udlægget for den fulde installation. Når omkostningen er tjent hjem, deler vi op til halvdelen af overskuddet med jer. Uanset hvor meget – eller lidt – der lades i din bygning, skal foreningen aldrig have penge op af lommen.  "
-        ,
-        text2="<strong>Ingen administration</strong> </br> Få Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen."
-        ,
-        alt="boligforening infografik"
-        ,
-        buttonText="Få Elby på generalforsamlingen"
-        ,
-        buttonlink="https://www.elby.dk/guides-artikler/generalforsamling-med-elby"
-        ,
-        linkVariant="secondary"
-      />
-    </div>
+  </section>
+  <section class="bg-primary-500">
+   <SplitcontentRight
+      img="/ladestander4.webp"
+      header="HUSK AT TILFØJE NOGET RELEVANT HER PLUS BILLED"
+      ,
+      text1="OG HER"
+      ,
+      text2="OG HER"
+      ,
+      alt="SKRIV RELEVANT TEKST HER"
+      ,
+      buttonText="HVAD SKAL DER STÅ HER"
+      ,
+      buttonlink="#"
+      ,
+      linkVariant="primary"
+    />
   </section>
 
-<section>
-  <template x-if="selected === 'm/installation og ansøgning'">
-    <Card
-      headerColor="bg-acc_yel-500"
-      title="Fortorvsskinne"
-      buildingIcon="/sleevA.svg"
-      subtitle="m / installation og ansøgning"
-      image="/SleevCard.webp"
-      pricetitle="Pris inkl. moms"
-      price="3.299 kr"
-      linkVariant="primary"
-      buttonText="Bestil Elby fortorvskinne"
-      buttonLink="#"
-      features={[
-        { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
-        { icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />', text: "1-2 dages Installation" },
-        { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="icon" />', text: "Ansøgning til kommunen" },
-      ]}
-    />
-  </template>
+  <div class="bg-sec_be-500">
+  <section class="items-start justify-between max-w-7xl mx-auto p-4xl lg:p-xxs lg:py-8xl gap-8xl">
+    <h3 class="mb-xxxs pb-xxs">Den rigtige løsning for borgere, byer og kommuner.</h3>
+      <p class="mb-6">Vælg mellem følgende:</p>
 
-  <template x-if="selected === 'm/installation'">
-    <Card
-      headerColor="bg-acc_yel-500"
-      title="Fortorvsskinne"
-      buildingIcon="/sleevB.svg"
-      subtitle="m / installation"
-      image="/SleevCardB.webp"
-      pricetitle="Pris inkl. moms"
-      price="2.799 kr"
-      linkVariant="primary"
-      buttonText="Bestil Elby fortovskinne"
-      buttonLink="#"
-      features={[
-        { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
-        { icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />', text: "1-2 dages Installation" },
-        { icon: "", text: "" },
-      ]}
-    />
-  </template>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Fortovsskinne"
+          buildingIcon="/sleevA.svg"
+          subtitle="m / installation og ansøgning"
+          image="/SleevCard.webp"
+          pricetitle="Pris inkl. moms"
+          price="3.299 kr"
+          linkVariant="primary"
+          buttonText="Bestil Elby fortorvskinne"
+          buttonLink="#"
+          features={[
+            { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
+            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />', text: "1-2 dages Installation" },
+            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="icon" />', text: "Ansøgning til kommunen" },
+          ]}
+        />
 
-  <template x-if="selected === 'u/installation'">
-    <Card
-      headerColor="bg-acc_yel-500"
-      title="Fortorvsskinne"
-      buildingIcon="/sleevC.svg"
-      subtitle="u / installation"
-      image="/SleevCardC.webp"
-      pricetitle="Pris inkl. moms"
-      price="999 kr"
-      linkVariant="primary"
-      buttonText="Bestil Elby fortorvskinne"
-      buttonLink="#"
-      features={[
-        { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
-        { icon: '<img src="/Montagevejledning.svg" class="w-12 h-12" alt="icon" />', text: "Montagevejledning" },
-        { icon: '<img src="/fragtIcon.svg" class="w-12 h-12" alt="icon" />', text: "Fri fragt" },
-      ]}
-    />
-  </template>
-</section>
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Fortovsskinne"
+          buildingIcon="/sleevB.svg"
+          subtitle="m / installation"
+          image="/SleevCardB.webp"
+          pricetitle="Pris inkl. moms"
+          price="2.799 kr"
+          linkVariant="primary"
+          buttonText="Bestil Elby fortorvskinne"
+          buttonLink="#"
+          features={[
+            { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
+            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />', text: "1-2 dages Installation" },
+            { icon: '<img src="/fragtIcon.svg" class="w-12 h-12" alt="icon" />', text: "Fri fragt" },
+          ]}
+        />
+    
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Fortovsskinne"
+          buildingIcon="/sleevC.svg"
+          subtitle="u / installation"
+          image="/SleevCardC.webp"
+          pricetitle="Pris inkl. moms"
+          price="999 kr"
+          linkVariant="primary"
+          buttonText="Bestil Elby fortorvskinne"
+          buttonLink="#"
+          features={[
+            { icon: '<img src="/SleevIcon.svg" class="w-12 h-12" alt="icon" />', text: "2m fortovsskinne inkl. lim" },
+            { icon: '<img src="/Montagevejledning.svg" class="w-12 h-12" alt="icon" />', text: "Montagevejledning" },
+            { icon: '<img src="/fragtIcon.svg" class="w-12 h-12" alt="icon" />', text: "Fri fragt" },
+          ]}
+        />
+    </div>
+  </section>
+</div>
 
-  <section class="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto p-4xl lg:p-xxs lg:py-8xl gap-8xl">
+  <div class="bg-primary-500">
+  <section class="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto p-4xl lg:p-xxs lg:py-8xl gap-8xl ">
     <!-- Tekstdel -->
     <div class="w-full md:w-1/2">
-      <h2 class="text-2xl md:text-3xl mb-xxxs">Kommuner der tillader fortovsskinner</h2>
+      <h3 class="mb-xxxs pb-xxs">Kommuner der tillader fortovsskinner</h3>
       <p class="mb-6">Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.</p>
 
-      <div class="mb-6 relative">
+      <div class="mb-m relative">
         <Dropdown options={kommune} placeholder="Find din kommune..." />
       </div>
 
@@ -184,7 +182,7 @@ const myOptions = [
     
       <div>
        <!-- Link -->
-      <Link href="#" variant="primary" size="standard">Kontakt os</Link>
+      <Link href="#" variant="primary" size="full">Kontakt os</Link>
       </div>
     </div>
 
@@ -193,10 +191,10 @@ const myOptions = [
       <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto" />
     </div>
   </section>
-
+ </div>
 
   <!-- Grafik Section prefooter -->
   <div class="bg-primary-500">
-    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full" />
     </div>
 </MainLayout>

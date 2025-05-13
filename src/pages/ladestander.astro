@@ -1,14 +1,18 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
+import Card from "../components/ProductCard.astro";
 import LadestanderHero from "../components/LadestanderHero.astro";
 import Uspsection from "../components/Uspsection.astro";
-import Infografik from "../components/Splitcontent.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Prefooter from "../components/Prefooter.astro";
+
+const materiale = [
+  { value: "Ladestander i træ", label: "Elby Ladestander i træ" },
+  { value: "Ladestander i beton", label: "Elby Ladestander i beton" },
+  { value: "Ladestander i stål", label: "Elby Ladestander i stål" },
+];
+
 ---
 
 <MainLayout title="Elby-ladestander">
@@ -19,13 +23,14 @@ import Prefooter from "../components/Prefooter.astro";
   <a href="../inwall">Sådan virker Elby</a>
   <a href="../omelby">Om elby</a>
   <a href="../bestil">bestil</a>
+
   <LadestanderHero />
 
-  <section class="bg-sec_be-500">
+  <section class="bg-primary-500">
     <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, stål eller beton" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/installation.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
   </section>
 
-  <section>
+  <section class="bg-sec_be-500">
     <Splitcontent
       img="/elbyskilt.webp"
       header="Elby – Ladestander med respekt for byen"
@@ -45,10 +50,11 @@ import Prefooter from "../components/Prefooter.astro";
       linkVariant="primary"
     />
 
-    <section class="bg-sec_be-500">
+    <section class="bg-primary-500">
       <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, stål eller beton" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/installation.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
     </section>
 
+    <section class="bg-sec_be-500">
     <SplitcontentRight
       img="/ladestander4.webp"
       header="Elby ladestander til Erhverv"
@@ -68,10 +74,76 @@ import Prefooter from "../components/Prefooter.astro";
   </section>
 
   <div class="bg-sec_be-500">
+    <section class="items-start justify-between max-w-7xl mx-auto p-4xl lg:p-xxs lg:py-8xl gap-8xl">
+      <h3 class="mb-xxxs pb-xxs">Den rigtige løsning for dig og din bopæl.</h3>
+        <p class="mb-6">Vælg mellem følgende:</p>
+  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <Card
+        headerColor="bg-acc_yel-500"
+        title="Ladestander i træ"
+        buildingIcon="/ladestander_T.svg"
+        subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+        image="/ladestander4.webp"
+        pricetitle="Pris inkl. moms"
+        price="39.999 kr"
+        linkVariant="primary"
+        buttonText="Bestil ladestander i træ"
+        buttonLink="#"
+        features={[
+          { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
+          { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
+          { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
+        ]}
+      />
+    </template>
+
+      <Card
+        headerColor="bg-acc_yel-500"
+        title="Ladestander i beton"
+        buildingIcon="/sleevB.svg"
+        subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+        image="/ladestander_beton.webp"
+        pricetitle="Pris inkl. moms"
+        price="43.999 kr."
+        linkVariant="primary"
+        buttonText="Bestil ladestander i beton"
+        buttonLink="#"
+        features={[
+          { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
+          { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
+          { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
+        ]}
+      />
+    </template>
+    
+      <Card
+        headerColor="bg-acc_yel-500"
+        title="Ladestander i stål"
+        buildingIcon="/ladestander_S.svg"
+        subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+        image="/ladestander_staal.webp"
+        pricetitle="Pris inkl. moms"
+        price="49.999 kr."
+        linkVariant="primary"
+        buttonText="Bestil ladestander i stål"
+        buttonLink="#"
+        features={[
+          { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
+          { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
+          { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
+        ]}
+      />
+      </div>
+    </section>
+  </div>
+
+  <div class="bg-primary-500 lg:py-l">
     <Prefooter header="SKAF DIG EN ELBY LADESTANDER!" , buttonText="Elby ladestander, ja tak!" , buttonlink="#" , linkVariant="primary" />
   </div>
 <!-- Grafik Section prefooter -->
-<div class="bg-sec_be-500">
+<div class="bg-primary-500">
 <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
 </div>
 </MainLayout>
