@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
+import Prefooter from "../components/Prefooter.astro";
 ---
 
 <MainLayout title="Titel">
@@ -20,13 +21,13 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
            <h1 class="text-primary-50">Om ELBY</h1>
            
   </section>
-<TestimonialsSlider/>
+<!-- <TestimonialsSlider/> -->
 
 
 <h2 class="text-center pb-8">Mød teamet bag Elby</h2>
 <div class="stack-area flex w-full h-[400vh] relative">
   <!-- Cards -->
-  <div class="bg-slate-800 sticky top-0 h-screen flex-1 flex items-center justify-center relative overflow-hidden">
+  <div class="sticky top-0 h-screen flex-1 flex items-center justify-center relative overflow-hidden">
     <div class="relative bg-slate-400">
       <!-- Card 1 -->
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
@@ -95,7 +96,7 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
 
 <section>
   <SplitcontentRight
-    img="/boligforening.webp"
+    img="/kvinder_baggagerum.webp"
     header="Når byen og borgerne lader op i fællesskab"
     ,
     text1="Forestil dig, at virksomheder og borgere arbejdede sammen for et bedre klima, et renere miljø, bedre luftkvalitet, mindre støj og en bedre fremtid for vores børn. At vi var partnere i den grønne omstilling. At vi sammen gjorde byerne grønne og elektrificerede persontransporten."
@@ -106,21 +107,8 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
 
 <section>
   <Splitcontent
-    img="/boligforening.webp"
-    header="Der er flere veje mod den grønne omstilling"
-    ,
-    text1="Forestil dig, at bilerne kunne være en ressource for byen. Først og fremmest skulle det være let og billigt at lade dem op, så ingen tøvede med at skifte deres benzin- eller dieselbil ud." 
-    ,
-    text2="Selvfølgelig skulle der også være rigeligt med grøn strøm og ladere, så ingen frygtede at gå i stå. Så ville der være mindre støj i byen, og vi ville få renere luft med færre partikler – både for nuværende og fremtidige generationer."
-    ,
-    alt="Kort over KBH med ladepunkter"
-  />
-</section>
-
-<section>
-  <SplitcontentRight
-    img="/boligforening.webp"
-    header="Elby – der giver overskud til både dig og byen"
+    img="/mobil_infografik.png"
+    header="Elby, der giver overskud til både dig og byen"
     ,
     text1="Elbiler kan være en fordel for både bygningsejere og byen. Når de lader op med strøm fra ejendommen, skaber det en ekstra indtægt – godt for økonomien. Og hvis laderne samtidig hjælper med at finde ledige parkeringspladser, kan vi reducere trafikken i byen med op til 15 %."
     ,
@@ -129,6 +117,10 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
     alt="Mobile dummy med overskud grafik."
   />
 </section>
+
+<div class="bg-sec_be-500">
+  <Prefooter header="Vil du høre mere om ELby og visionen bag?" , buttonText="Kontakt os og hør mere" , buttonlink="#" , linkVariant="primary" />
+</div>
 
 <!-------------- FAQ accordion -------------->
   <section class="pt-8xl">
@@ -218,6 +210,13 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
           </div>
   </section>
 <!-------------- FAQ accordion slut -------------->
+
+
+
+<!-- Grafik Section prefooter -->
+<div class="bg-primary-500">
+  <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+  </div>
 
 </MainLayout>
 

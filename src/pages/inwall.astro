@@ -5,6 +5,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
+import Uspsection from "../components/Uspsection.astro";
 import Prefooter from "../components/Prefooter.astro";
 ---
 
@@ -22,11 +23,76 @@ import Prefooter from "../components/Prefooter.astro";
            <p class="text-body-lg text-primary-50">Hos Elby har vi løsninger, der passer til forskellige behov. <br /> Er du en boligforening eller et ejendomsselskab?</p>
   </section>
 
-  <div class="bg-sec_be-500">
-    <Prefooter header="Vil du have ELBY i din bygning?" , buttonText="Få Elby nu" , buttonlink="#" , linkVariant="primary" />
-  </div>
+  <section>
+    <Splitcontent
+     img="/kort_prikker.png"
+     header="Hav af ladere"
+     ,
+     text1="Med Elbys app i lommen behøver du ikke længere gætte dig frem til, hvor du kan lade din elbil. Du får et hurtigt overblik over hele vores netværk af ladepunkter – også dem fra vores samarbejdspartnere." 
+     ,
+     text2="Du kan se, om standerne er ledige, hvor de står, og hvad det koster at lade. Det hele samlet ét sted, så du slipper for besværet og hurtigt kommer videre."
+     ,
+     text3="Skal du bruge en lader et bestemt sted? Søg på byen, vejen eller måske en seværdighed – så finder appen det for dig. Du kan endda gemme dine foretrukne ladepunkter med et stjernemarkering, så du altid har dem lige ved hånden. Appen er lavet til virkeligheden – der hvor opladning skal være lige så naturlig og ukompliceret som at finde vej hjem."
+     ,
+     alt="Kort over KBH med ladepunkter"
+   />
+ </section>
 
+ <TestimonialsSlider/>
+
+  <Uspsection 
+  header="Så nemt kommer du i gang med Elby"
+  text1="1. Få et uforpligende løsningsforslag"
+  text2="2. Vi klarer tilladelser og installation"
+  text3="3. Oplad med dine naboer og venner"
+  img1="../by.webp"
+  img2="../by.webp"
+  img3="../by.webp"
+  alt1=""
+  alt2=""
+  alt3=""
+  buttonText="Bestil Elby til din boligforening"
+  buttonlink=""
+  linkVariant="primary"
+  />
+
+  <section id="support" class="w-full flex flex-col justify-center items-center pt-20 pb-32 px-4">
+    <h2 class="text-center">Kontakt</h2>
+    <p class="">Vi glæder os til at høre fra dig!</p>
+    <article class="flex flex-col md:flex-row items-end gap-s md:gap-m">
+        <div class="flex flex-col justify-center items-center">
+            <div class="pb-xxs flex justify-center">
+                <img src="/" alt="" class="w-16 md:w-20">
+            </div>
+            <a href="/" target="_blank">
+                <button class="bg-none text-sm text-balticsea hover:text-greenwhite font-fragment-mono border border-balticsea hover:border-deepaqua rounded-full py-2 px-6 hover:bg-deepaqua transition">
+                    <p>??</p>
+                </button>
+            </a>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+            <div class="pb-6 flex justify-center">
+                <img src="/mail.svg" alt="" class="w-20 md:w-20">
+            </div>
+            <a href="" target="_blank">
+                <button class="bg-none text-sm text-balticsea hover:text-greenwhite font-fragment-mono border border-balticsea hover:border-deepaqua rounded-full py-2 px-6 hover:bg-deepaqua transition">
+                    <p>??</p>
+                </button>
+            </a>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+            <div class="pb-6 flex justify-center">
+                <img src="/cellphone.svg" alt="" class="w-16 md:w-20">
+            </div>
+            <a href="tel:+4523649713" target="_blank">
+                <button class="bg-none text-sm text-balticsea hover:text-greenwhite font-fragment-mono border border-balticsea hover:border-deepaqua rounded-full py-2 px-6 hover:bg-deepaqua transition">
+                    <p>??</p>
+                </button>
+            </a>
+        </div>
+    </article>
+</section>
 <!-- Grafik Section prefooter -->
-<div class="bg-sec_be-500">
+<div class="bg-primary-500">
     <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
     </div>
