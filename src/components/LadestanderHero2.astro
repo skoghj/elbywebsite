@@ -13,7 +13,7 @@ const materiale = [
 <section x-data="{ selected: 'Ladestander i træ' }" @dropdown-change.window="selected = $event.detail" class="relative bg-[url('/Ladestander_hero.webp')] bg-cover bg-center
            min-h-[600px] md:min-h-[700px] lg:min-h-[800px]
            flex items-center justify-center">
-  <div class="absolute inset-0 bg-black/40"></div>
+ 
   <div class="relative container mx-auto flex flex-col-reverse lg:flex-row px-4 md:px-20 items-center justify-between gap-12">
 
     <!-- Venstre kolonne -->
@@ -37,7 +37,6 @@ const materiale = [
             </ul>
             <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
             <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
-            <Link href="../bestil" variant="primary" size="standard">Bestil Elby til din boligforening</Link>
           </div>
         </template>
 
@@ -50,7 +49,6 @@ const materiale = [
             </ul>
             <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
             <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
-            <Link href="../bestil" variant="primary" size="standard">Bestil Elby til din boligforening</Link>
           </div>
         </template>
 
@@ -63,21 +61,23 @@ const materiale = [
             </ul>
             <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
             <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
-            <Link href="../bestil" variant="primary" size="standard">Bestil Elby til din boligforening</Link>
           </div>
         </template>
       </div>
     </div>
 
     <!-- Højre kolonne: Video -->
-    <div class="w-full bg-black">
-      <div class="w-full h-full aspect-video">
-        <video class="w-full h-full object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
-          <source src="/video/elby-demo.mp4" type="video/mp4" />
-          Din browser understøtter ikke video.
-        </video>
+    <div class="order-1 lg:order-2 w-full lg:w-5/12">
+      <div class="w-full h-full">
+        <div class="w-full h-full aspect-video">
+          <video class="w-full h-full object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
+            <source src="/video/elby-demo.mp4" type="video/mp4" />
+            Din browser understøtter ikke video.
+          </video>
+        </div>
       </div>
-    </div>
-
+    </div>  
   </div>
+  <Link variant="primary"></Link>
 </section>
+
