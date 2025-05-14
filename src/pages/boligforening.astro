@@ -63,7 +63,11 @@ import Link from "../components/Link.astro";
         </template>
       </div>
       <div class="lg:w-1/2">
-        <img src="HeroTilBolig.webp" alt="Elby oplader" class="w-full h-full object-cover" />
+        <!-- bolig image -->
+        <img x-show="selected === 'bolig'" src="HeroTilBolig.webp" alt="Elby oplader bolig" class="w-full h-full object-cover" />
+
+        <!-- ejendom image -->
+        <img x-show="selected === 'ejendom'" src="HeroTilEjendom.webp" alt="Elby oplader ejendom" class="w-full h-full object-cover" />
       </div>
     </section>
 
