@@ -1,19 +1,12 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/ProductCard.astro";
-import Link from "../components/Link.astro";
 import Uspsection from "../components/Uspsection.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Prefooter from "../components/Prefooter.astro";
-import Dropdown from "../components/Dropdown.astro";
 import LadestanderHero2 from "../components/LadestanderHero2.astro";
 
-const materiale = [
-  { value: "Ladestander i træ", label: "Elby Ladestander i træ" },
-  { value: "Ladestander i beton", label: "Elby Ladestander i beton" },
-  { value: "Ladestander i stål", label: "Elby Ladestander i stål" },
-];
 
 ---
 
@@ -28,8 +21,7 @@ const materiale = [
 
   <LadestanderHero2/>
 
-  <section class="bg-primary-500">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-xxs items-start px-xl py-md">
+
       <!-- Video -->
       <div class="order-1 lg:order-2">
         <video
@@ -44,40 +36,6 @@ const materiale = [
         </video>
       </div>
   
-      <!-- Text content -->
-      <div class="order-2 lg:order-1 flex flex-col gap-xxs">
-        <div>
-          <h1 class="">Elby Fortovsskinne</h1>
-          <p class="mt-xxxs text-neutral-700">
-            Hos Elby har vi løsninger, der passer til forskellige behov. Elby Partner
-            tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip.
-          </p>
-        </div>
-  
-        <!-- Dropdown -->
-        <div class="mb-m relative">
-          <Dropdown options={materiale} placeholder="Vælg din type stander" />
-        </div>
-  
-        <!-- Inkl. punkter -->
-        <ul class="space-y-1">
-          <li>✔ 2 m fortovsskinne inkl. lim</li>
-          <li>✔ Installation</li>
-          <li>✔ Ansøgning til kommunen</li>
-        </ul>
-  
-        <!-- Pris -->
-        <div class="text-lg">
-          Pris inkl. moms: <span class="">3299 kr.</span>
-        </div>
-  
-        <!-- Link -->
-        <div>
-          <Link href="#" variant="primary" size="full">Kontakt os</Link>
-        </div>
-      </div>
-    </div>
-  </section>
   
   <section class="bg-primary-500">
     <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, beton eller stål" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/elby_ladestander2.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />

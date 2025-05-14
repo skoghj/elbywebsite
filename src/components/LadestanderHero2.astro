@@ -1,10 +1,9 @@
 ---
 // src/pages/index.astro
-import MainLayout from "../layouts/MainLayout.astro";
-import Card from "../components/ProductCard.astro";
 import Dropdown from "../components/Dropdown.astro";
+import Link from "../components/Dropdown.astro";
 
-const myOptions = [
+const materiale = [
   { value: "Ladestander i træ", label: "Elby Ladestander i træ" },
   { value: "Ladestander i beton", label: "Elby Ladestander i beton" },
   { value: "Ladestander i stål", label: "Elby Ladestander i stål" },
@@ -15,80 +14,70 @@ const myOptions = [
            min-h-[600px] md:min-h-[700px] lg:min-h-[800px]
            flex items-center justify-center">
   <div class="absolute inset-0 bg-black/40"></div>
-  <div class="relative container mx-auto flex flex-col px-4 md:px-20
-                lg:flex-row items-center justify-between gap-12">
-    <!-- Left:title og Dropdown -->
+  <div class="relative container mx-auto flex flex-col-reverse lg:flex-row px-4 md:px-20 items-center justify-between gap-12">
+
+    <!-- Venstre kolonne -->
     <div class="w-full lg:w-7/12 lg:max-w-2xl break-words">
       <div class="pl-24">
         <h1 class="text-primary-50">Elby Ladestander</h1>
         <p class="text-body-lg text-primary-50">Med Elby Ladestander får du en helt ny måde at tænke ladestander på.</p>
       </div>
       <div class="mt-s pl-24">
-        <Dropdown options={myOptions} placeholder="Vælg materiale..." />
+        <Dropdown options={materiale} placeholder="Vælg materiale..." />
+      </div>
+
+      <!-- "Cards" under tekst -->
+      <div class="mt-8 pl-24 space-y-s">
+        <template x-if="selected === 'Ladestander i træ'">
+          <div class="mb-xs">
+            <ul>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 120 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 50%</p></li>
+            </ul>
+            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
+            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
+            <Link href="../bestil" variant="primary" size="standard">Bestil Elby til din boligforening</Link>
+          </div>
+        </template>
+
+        <template x-if="selected === 'Ladestander i beton'">
+          <div class="mb-xs">
+            <ul>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 320 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 50%</p></li>
+            </ul>
+            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
+            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
+            <Link href="../bestil" variant="primary" size="standard">Bestil Elby til din boligforening</Link>
+          </div>
+        </template>
+
+        <template x-if="selected === 'Ladestander i stål'">
+          <div class="mb-xs">
+            <ul>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 052424 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 50%</p></li>
+            </ul>
+            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
+            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
+            <Link href="../bestil" variant="primary" size="standard">Bestil Elby til din boligforening</Link>
+          </div>
+        </template>
       </div>
     </div>
 
-    <!-- Right:Card -->
-    <div class="w-full lg:w-5/12 lg:ml-auto space-y-s">
-      <template x-if="selected === 'Ladestander i træ'">
-        <Card
-          headerColor="bg-acc_yel-500"
-          title="Ladestander i træ"
-          buildingIcon="/ladestander_T.svg"
-          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
-          image="/ladestander4.webp"
-          pricetitle="Pris inkl. moms"
-          price="39.999 kr"
-          linkVariant="primary"
-          buttonText="Bestil træ-versionen"
-          buttonLink="#"
-          features={[
-            { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
-            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
-            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
-          ]}
-        />
-      </template>
-
-      <template x-if="selected === 'Ladestander i beton'">
-        <Card
-          headerColor="bg-acc_yel-500"
-          title="Ladestander i beton"
-          buildingIcon="/sleevB.svg"
-          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
-          image="/ladestander_beton.webp"
-          pricetitle="Pris inkl. moms"
-          price="43,999 kr."
-          linkVariant="primary"
-          buttonText="Bestil beton-versionen"
-          buttonLink="#"
-          features={[
-            { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
-            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
-            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
-          ]}
-        />
-      </template>
-
-      <template x-if="selected === 'Ladestander i stål'">
-        <Card
-          headerColor="bg-acc_yel-500"
-          title="Ladestander i stål"
-          buildingIcon="/ladestander_S.svg"
-          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
-          image="/ladestander_staal.webp"
-          pricetitle="Pris inkl. moms"
-          price="49,999 kr."
-          linkVariant="primary"
-          buttonText="Bestil stål-versionen"
-          buttonLink="#"
-          features={[
-            { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
-            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
-            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
-          ]}
-        />
-      </template>
+    <!-- Højre kolonne: Video -->
+    <div class="w-full bg-black">
+      <div class="w-full h-full aspect-video">
+        <video class="w-full h-full object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
+          <source src="/video/elby-demo.mp4" type="video/mp4" />
+          Din browser understøtter ikke video.
+        </video>
+      </div>
     </div>
+
   </div>
 </section>

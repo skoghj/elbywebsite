@@ -38,44 +38,13 @@ import Prefooter from "../components/Prefooter.astro";
         <!-- Right Side (Card) -->
         <template x-if="selected === 'bolig'">
           <div class="w-full lg:w-5/12 lg:ml-auto">
-            <Card
-              headerColor="bg-acc_yel-500"
-              title="Elby til boligforeninger"
-              buildingIcon="/boligforening-building.svg"
-              subtitle="EJER / ANDEL / ALMEN"
-              image="/opladning2.webp"
-              pricetitle="Ladepris for brugerne"
-              price="2,99 kr./kWh"
-              linkVariant="primary"
-              buttonText="Bestil Elby til din boligforening"
-              buttonLink="#"
-              features={[
-                { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">0 kr.</span>' },
-                { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: 'Abonnement <span class="font-bold text-lg">0 kr.</span>' },
-                { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: 'Overskudsdeling <span class="font-bold text-lg">op til 50%</span>' },
-              ]}
-            />
+            
           </div>
         </template>
 
         <template x-if="selected === 'ejendom'">
           <div class="w-full lg:w-5/12 lg:ml-auto">
-            <Card
-              headerColor="bg-acc_gr-500"
-              title="Elby til ejendomsselskaber"
-              buildingIcon="/ejendom-building.svg"
-              subtitle="ERHVERV / LEJEBOLIGER"
-              image="/opladning3.webp"
-              price="2,99 kr/kWh"
-              linkVariant="tertiary"
-              buttonText="Bestil Elby til din ejendomsselskaber"
-              buttonLink="#"
-              features={[
-                { icon: '<img src="/installation.svg" class="w-12 h-12" alt="installation icon" />', text: 'Installation <span class="font-bold text-lg">30,000 kr.</span>' },
-                { icon: '<img src="/abonnement.svg" class="w-12 h-12" alt="abonnement icon" />', text: 'Abonnement <span class="font-bold text-lg">0 kr.</span>' },
-                { icon: '<img src="/overskueligIcon.svg" class="w-12 h-12" alt="overskudlig icon" />', text: 'Overskudsdeling <span class="font-bold text-lg">op til 60%</span>' },
-              ]}
-            />
+            
           </div>
         </template>
       </div>
