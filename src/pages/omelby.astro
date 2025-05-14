@@ -105,22 +105,18 @@ import Prefooter from "../components/Prefooter.astro";
   />
 </section>
 
-<section>
+<section class="bg-sec_be-500">
   <Splitcontent
     img="/mobil_infografik.png"
     header="Elby, der giver overskud til både dig og byen"
     ,
-    text1="Elbiler kan være en fordel for både bygningsejere og byen. Når de lader op med strøm fra ejendommen, skaber det en ekstra indtægt – godt for økonomien. Og hvis laderne samtidig hjælper med at finde ledige parkeringspladser, kan vi reducere trafikken i byen med op til 15 %."
+    text1="find på noget andet"
     ,
-    text2="På sigt kan elbiler også aflaste elnettet. De kan sende strøm tilbage, når der er brug for det, og lade op igen, når strømmen er billig. Så bliver bilerne et fælles batteri for byen – og hjælper os alle videre i den grønne omstilling."
+    text2="find på noget andet"
     ,
     alt="Mobile dummy med overskud grafik."
   />
 </section>
-
-<div class="bg-sec_be-500">
-  <Prefooter header="Vil du høre mere om ELby og visionen bag?" , buttonText="Kontakt os og hør mere" , buttonlink="#" , linkVariant="primary" />
-</div>
 
 <!-------------- FAQ accordion -------------->
   <section class="pt-8xl">
@@ -211,10 +207,12 @@ import Prefooter from "../components/Prefooter.astro";
   </section>
 <!-------------- FAQ accordion slut -------------->
 
-
+<div class="bg-sec_be-500 lg:py-l">
+  <Prefooter header="Vil du høre mere om ELby og visionen bag?" , buttonText="Kontakt os og hør mere" , buttonlink="#" , linkVariant="primary" />
+</div>
 
 <!-- Grafik Section prefooter -->
-<div class="bg-primary-500">
+<div class="bg-sec_be-500">
   <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 

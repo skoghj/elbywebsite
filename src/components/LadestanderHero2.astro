@@ -1,0 +1,83 @@
+---
+// src/pages/index.astro
+import Dropdown from "../components/Dropdown.astro";
+import Link from "../components/Dropdown.astro";
+
+const materiale = [
+  { value: "Ladestander i træ", label: "Elby Ladestander i træ" },
+  { value: "Ladestander i beton", label: "Elby Ladestander i beton" },
+  { value: "Ladestander i stål", label: "Elby Ladestander i stål" },
+];
+---
+
+<section x-data="{ selected: 'Ladestander i træ' }" @dropdown-change.window="selected = $event.detail" class="relative bg-[url('/Ladestander_hero.webp')] bg-cover bg-center
+           min-h-[600px] md:min-h-[700px] lg:min-h-[800px]
+           flex items-center justify-center">
+ 
+  <div class="relative container mx-auto flex flex-col-reverse lg:flex-row px-4 md:px-20 items-center justify-between gap-12">
+
+    <!-- Venstre kolonne -->
+    <div class="w-full lg:w-7/12 lg:max-w-2xl break-words">
+      <div class="pl-24">
+        <h1 class="text-primary-50">Elby Ladestander</h1>
+        <p class="text-body-lg text-primary-50">Med Elby Ladestander får du en helt ny måde at tænke ladestander på.</p>
+      </div>
+      <div class="mt-s pl-24">
+        <Dropdown options={materiale} placeholder="Vælg materiale..." />
+      </div>
+
+      <!-- "Cards" under tekst -->
+      <div class="mt-8 pl-24 space-y-s">
+        <template x-if="selected === 'Ladestander i træ'">
+          <div class="mb-xs">
+            <ul>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 120 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 50%</p></li>
+            </ul>
+            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
+            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
+          </div>
+        </template>
+
+        <template x-if="selected === 'Ladestander i beton'">
+          <div class="mb-xs">
+            <ul>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 320 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 50%</p></li>
+            </ul>
+            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
+            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
+          </div>
+        </template>
+
+        <template x-if="selected === 'Ladestander i stål'">
+          <div class="mb-xs">
+            <ul>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 052424 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 50%</p></li>
+            </ul>
+            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
+            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Højre kolonne: Video -->
+    <div class="order-1 lg:order-2 w-full lg:w-5/12">
+      <div class="w-full h-full">
+        <div class="w-full h-full aspect-video">
+          <video class="w-full h-full object-cover rounded-xl shadow-lg" autoplay muted loop playsinline>
+            <source src="/video/elby-demo.mp4" type="video/mp4" />
+            Din browser understøtter ikke video.
+          </video>
+        </div>
+      </div>
+    </div>  
+  </div>
+  <Link variant="primary"></Link>
+</section>
+
