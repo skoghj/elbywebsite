@@ -1,0 +1,94 @@
+---
+// src/pages/index.astro
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/ProductCard.astro";
+import Dropdown from "../components/Dropdown.astro";
+
+const myOptions = [
+  { value: "Ladestander i træ", label: "Elby Ladestander i træ" },
+  { value: "Ladestander i beton", label: "Elby Ladestander i beton" },
+  { value: "Ladestander i stål", label: "Elby Ladestander i stål" },
+];
+---
+
+<section x-data="{ selected: 'Ladestander i træ' }" @dropdown-change.window="selected = $event.detail" class="relative bg-[url('/Ladestander_hero.webp')] bg-cover bg-center
+           min-h-[600px] md:min-h-[700px] lg:min-h-[800px]
+           flex items-center justify-center">
+  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="relative container mx-auto flex flex-col px-4 md:px-20
+                lg:flex-row items-center justify-between gap-12">
+    <!-- Left:title og Dropdown -->
+    <div class="w-full lg:w-7/12 lg:max-w-2xl break-words">
+      <div class="pl-24">
+        <h1 class="text-primary-50">Elby Ladestander</h1>
+        <p class="text-body-lg text-primary-50">Med Elby Ladestander får du en helt ny måde at tænke ladestander på.</p>
+      </div>
+      <div class="mt-s pl-24">
+        <Dropdown options={myOptions} placeholder="Vælg materiale..." />
+      </div>
+    </div>
+
+    <!-- Right:Card -->
+    <div class="w-full lg:w-5/12 lg:ml-auto space-y-s">
+      <template x-if="selected === 'Ladestander i træ'">
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Ladestander i træ"
+          buildingIcon="/ladestander_T.svg"
+          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          image="/ladestander4.webp"
+          pricetitle="Pris inkl. moms"
+          price="39.999 kr"
+          linkVariant="primary"
+          buttonText="Bestil træ-versionen"
+          buttonLink="#"
+          features={[
+            { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
+            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
+            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
+          ]}
+        />
+      </template>
+
+      <template x-if="selected === 'Ladestander i beton'">
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Ladestander i beton"
+          buildingIcon="/sleevB.svg"
+          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          image="/ladestander_beton.webp"
+          pricetitle="Pris inkl. moms"
+          price="43,999 kr."
+          linkVariant="primary"
+          buttonText="Bestil beton-versionen"
+          buttonLink="#"
+          features={[
+            { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
+            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
+            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
+          ]}
+        />
+      </template>
+
+      <template x-if="selected === 'Ladestander i stål'">
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Ladestander i stål"
+          buildingIcon="/ladestander_S.svg"
+          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          image="/ladestander_staal.webp"
+          pricetitle="Pris inkl. moms"
+          price="49,999 kr."
+          linkVariant="primary"
+          buttonText="Bestil stål-versionen"
+          buttonLink="#"
+          features={[
+            { icon: '<img src="/nytaenkIcon.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Nytænkende ladestander" },
+            { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "Mellem 1-2 dages installation" },
+            { icon: '<img src="/ansogningIcon.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Din privateladestander" },
+          ]}
+        />
+      </template>
+    </div>
+  </div>
+</section>
