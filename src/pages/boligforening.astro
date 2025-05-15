@@ -21,17 +21,16 @@ import Link from "../components/Link.astro";
   <section x-data="{ selected: 'bolig' }" @toggle-change.window="selected = $event.detail">
     <!-- Øverste del af det fælles layout -->
     <section class="flex flex-col lg:flex-row min-h-screen bg-sec_be-500">
-      <div class="flex flex-col justify-center max-w-2xl mx-auto p-2xl md:w-1/2">
-        <div class="mb-4">
+      <div class="flex flex-col justify-center mx-auto p-sm w-full order-2 lg:order-1 sm:max-w-md min-440">
+        <div class="mb-4 break-words">
           <h2 x-show="selected === 'bolig'">Elby ladeløsning til boligforeninger</h2>
           <h2 x-show="selected === 'ejendom'">Elby ladeløsning til ejendomsselskaber</h2>
         </div>
-        <p>Hos Elby har vi løsninger, der passer til forskellige behov.</p>
-        <p>Elby Partner tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip.</p>
+        <p class="break-words">Hos Elby har vi løsninger, der passer til forskellige behov. Elby Partner tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip.</p>
 
         <!-- Toggle -->
         <div class="my-sm">
-          <p class="mb-xs">Er du en boligforening eller et ejendomsselskab?</p>
+          <p class="mb-xs break-words">Er du en boligforening eller et ejendomsselskab?</p>
           <Toggle />
         </div>
 
@@ -39,9 +38,9 @@ import Link from "../components/Link.astro";
         <template x-if="selected === 'bolig'">
           <div class="mb-xs">
             <ul>
-              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 0 kr.</p></li>
-              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
-              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 50%</p></li>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation <span class="font-semibold">0 kr.</span></p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement <span class="font-semibold">0 kr.</span></p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling <span class="font-semibold">op til 50%</span></p></li>
             </ul>
             <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
             <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
@@ -52,22 +51,22 @@ import Link from "../components/Link.astro";
         <template x-if="selected === 'ejendom'">
           <div class="mb-xs">
             <ul>
-              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation 30.000 kr.</p></li>
-              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement 0 kr.</p></li>
-              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling op til 60%</p></li>
+              <li class="flex items-center gap-xs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation <span class="font-semibold">30,000 kr.</span></p></li>
+              <li class="flex items-center gap-xs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement<span class="font-semibold"> 0 kr.</span></p></li>
+              <li class="flex items-center gap-xs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling <span class="font-semibold">op til 60%</span></p></li>
             </ul>
             <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
             <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
-            <Link href="../bestil" variant="tertiary" size="standard">Bestil Elby til din ejendomsselskaber</Link>
+            <Link href="../bestil" variant="tertiary" size="standard">Bestil Elby til din ejendomsselskab</Link>
           </div>
         </template>
       </div>
-      <div class="lg:w-1/2">
+      <div class="order-1 lg:order-2 lg:w-1/2">
         <!-- bolig image -->
-        <img x-show="selected === 'bolig'" src="HeroTilBolig.webp" alt="Elby oplader bolig" class="w-full h-full object-cover" />
+        <img x-show="selected === 'bolig'" src="Boligforening_Hero.webp" alt="Elby oplader bolig" class="w-full h-full object-cover" />
 
         <!-- ejendom image -->
-        <img x-show="selected === 'ejendom'" src="HeroTilEjendom.webp" alt="Elby oplader ejendom" class="w-full h-full object-cover" />
+        <img x-show="selected === 'ejendom'" src="Ejendom_Hero.webp" alt="Elby oplader ejendom" class="w-full h-full object-cover" />
       </div>
     </section>
 
@@ -136,3 +135,10 @@ import Link from "../components/Link.astro";
     <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 </MainLayout>
+<style>
+  @media (min-width: 440px) {
+    .min-440 {
+      max-width: 500px;
+    }
+  }
+</style>
