@@ -4,17 +4,17 @@ import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Få Elby i din bygning">
-  <div x-data="{ step: 1 }" class="flex flex-col md:flex-row w-full">
-    <!-- Venstre billede – 40% -->
+  <div x-data="contactForm()" class="flex flex-col md:flex-row w-full">
+    <!-- Left Image -->
     <div class="hidden md:block md:basis-2/5 w-full h-64 md:h-auto">
       <img src="/kontakt.webp" alt="Elby oplader" class="w-full h-full object-cover hidden md:block" />
     </div>
 
-    <!-- Højre formular – 60% -->
+    <!-- Right Form -->
     <div class="md:basis-3/5 w-full flex items-center justify-center p-sm">
-      <!-- Step 1: Formular -->
+      <!-- Step 1: Form -->
       <template x-if="step === 1">
-        <form name="kontakt" method="POST" data-netlify="true" netlify @submit="step = 2" target="netlifyFrame" class="space-y-m w-full max-w-2xl">
+        <form name="kontakt" method="POST" data-netlify="true" netlify @submit.prevent="handleSubmit" target="netlifyFrame" class="space-y-m w-full max-w-2xl">
           <input type="hidden" name="form-name" value="kontakt" />
 
           <h2>Kontakt os</h2>
@@ -26,28 +26,31 @@ import Button from "../components/Button.astro";
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-m">
             <div>
               <label class="block mb-1 font-semibold">Fornavn <span class="text-acc_yel-700">*</span></label>
-              <input type="text" name="firstName" placeholder="Mads" required class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" />
+              <input type="text" name="firstName" x-model="form.firstName" @input="clearFieldError('firstName')" placeholder="Mads" class="w-full p-xxs rounded-xs border" :class="errors.firstName ? 'border-red-500' : 'border-neu_db-300'" />
+              <p x-show="errors.firstName" class="mt-1 text-xs text-red-500" x-text="errors.firstName"></p>
             </div>
 
             <div>
               <label class="block mb-1 font-semibold">Efternavn <span class="text-acc_yel-700">*</span></label>
-              <input type="text" name="lastName" placeholder="Hansen" required class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" />
+              <input type="text" name="lastName" x-model="form.lastName" @input="clearFieldError('lastName')" placeholder="Hansen" class="w-full p-xxs rounded-xs border" :class="errors.lastName ? 'border-red-500' : 'border-neu_db-300'" />
+              <p x-show="errors.lastName" class="mt-1 text-xs text-red-500" x-text="errors.lastName"></p>
             </div>
 
             <div>
               <label class="block mb-1 font-semibold">E-mail <span class="text-acc_yel-700">*</span></label>
-              <input type="email" name="email" placeholder="mads.hansen@gmail.com" required class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" />
+              <input type="email" name="email" x-model="form.email" @input="clearFieldError('email')" placeholder="mads.hansen@gmail.com" class="w-full p-xxs rounded-xs border" :class="errors.email ? 'border-red-500' : 'border-neu_db-300'" />
+              <p x-show="errors.email" class="mt-1 text-xs text-red-500" x-text="errors.email"></p>
             </div>
 
             <div>
               <label class="block mb-1 font-semibold">Telefon (valgfri)</label>
-              <input type="tel" name="phone" placeholder="+45 12 34 56 78" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" />
+              <input type="tel" name="phone" x-model="form.phone" placeholder="+45 12 34 56 78" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" />
             </div>
           </div>
 
           <div>
             <label class="block mb-1 font-semibold">Besked (valgfri)</label>
-            <textarea name="message" placeholder="Skriv kort, hvad du gerne vil vide, så vender vi hurtigt tilbage" rows="5" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm"></textarea>
+            <textarea name="message" x-model="form.message" placeholder="Skriv kort, hvad du gerne vil vide, så vender vi hurtigt tilbage" rows="5" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm"></textarea>
           </div>
 
           <div class="flex justify-center mt-md">
@@ -56,15 +59,12 @@ import Button from "../components/Button.astro";
         </form>
       </template>
 
-      <!-- Step 2: Takkevisning -->
+      <!-- Step 2: Thank You -->
       <template x-if="step === 2">
         <div class="text-center p-sm md:mt-l md:p-l border-4 rounded-lg border-acc_yel-700 max-w-lg w-full">
-          <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 mx-auto text-acc_yel-700">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
-              ></path>
-            </svg>
-          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 mx-auto text-acc_yel-700 pb-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"></path>
+          </svg>
 
           <h2 class="pb-4">Tak for din henvendelse!</h2>
           <p class="text-body-md pb-4">Vi vender tilbage hurtigst muligt.</p>
@@ -75,4 +75,44 @@ import Button from "../components/Button.astro";
       <iframe name="netlifyFrame" style="display:none;"></iframe>
     </div>
   </div>
+
+  <script is:inline>
+    function contactForm() {
+      return {
+        step: 1,
+        errors: {},
+        form: {
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        },
+        validate() {
+          this.errors = {};
+          if (!this.form.firstName) this.errors.firstName = "Fornavn er påkrævet.";
+          if (!this.form.lastName) this.errors.lastName = "Efternavn er påkrævet.";
+          if (!this.form.email) this.errors.email = "E-mail er påkrævet.";
+          else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) this.errors.email = "Ugyldig e-mail.";
+          return Object.keys(this.errors).length === 0;
+        },
+        clearFieldError(field) {
+          delete this.errors[field];
+        },
+        handleSubmit(e) {
+          if (!this.validate()) return;
+          const formData = new FormData(e.target);
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams([...formData]).toString(),
+          })
+            .then(() => {
+              this.step = 2;
+            })
+            .catch(() => alert("Noget gik galt. Prøv igen."));
+        },
+      };
+    }
+  </script>
 </MainLayout>
