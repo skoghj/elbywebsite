@@ -25,7 +25,7 @@ import Link from "../components/Link.astro";
     }
   }" @toggle-change.window="selected = $event.detail">
     <!-- Øverste del af det fælles layout -->
-    <section class="flex flex-col lg:flex-row min-h-screen bg-sec_be-500">
+    <section class="flex flex-col lg:flex-row bg-sec_be-500">
       <div class="flex flex-col justify-center mx-auto p-sm w-full order-2 lg:order-1 sm:max-w-md min-440">
         <div class="mb-4 break-words">
           <h2 x-show="selected === 'bolig'">Elby ladeløsning til boligforeninger</h2>
@@ -62,7 +62,7 @@ import Link from "../components/Link.astro";
             </ul>
             <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
             <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
-            <Link href="../bestil" variant="tertiary" size="standard">Bestil Elby til din ejendomsselskab</Link>
+            <Link href="../bestil" variant="tertiary" size="standard">Bestil Elby til ejendomsselskab</Link>
           </div>
         </template>
       </div>
@@ -105,7 +105,7 @@ import Link from "../components/Link.astro";
           />
         </div>
         <div class="bg-sec_be-500">
-          <Splitcontent img="/by.webp" header="En in-wall løsning til alle os i byen, der ikke kan sætte en ladeboks op" text1="I byen kan det være svært at installere en privat ladeboks, og derfor har vi skabt Elby – en innovativ ladeløsning tilpasset etageejendomme. Laderen installeres inden for bygningens matrikel og kan derfor bruges i de fleste bygninger. En smart kabelskinne til fortovet sikrer, at ladekablet ikke generer fodgængere eller bymiljøet. I modsætning til kantstensladere optager Elby hverken fortovs- eller parkeringsplads og gør det dermed lettere at lade elbiler – uden at ændre byens udtryk." text2="" alt="boligforening by picture" buttonText="Se hvordan Elby virker" buttonlink="#" linkVariant="primary" />
+          <Splitcontent img="/by.webp" header="En in-wall løsning til alle os i byen, der ikke kan sætte en ladeboks op" text1="I byen kan det være svært at installere en privat ladeboks, og derfor har vi skabt Elby – en innovativ ladeløsning tilpasset etageejendomme. Laderen installeres inden for bygningens matrikel og kan derfor bruges i de fleste bygninger. En smart kabelskinne til fortovet sikrer, at ladekablet ikke generer fodgængere eller bymiljøet. I modsætning til kantstensladere optager Elby hverken fortovs- eller parkeringsplads og gør det dermed lettere at lade elbiler – uden at ændre byens udtryk." text2="" alt="boligforening by picture" buttonText="Se hvordan Elby virker" buttonlink="../inwall" linkVariant="primary" />
         </div>
 
         <div>
@@ -117,7 +117,7 @@ import Link from "../components/Link.astro";
     <!-- Ejendomsselskaber under sektion -->
     <template x-if="selected === 'ejendom'">
       <div>
-        <Uspsection header="Fordele ved at vælge Elby Pro" text1="1. Intet abonnement" text2="2. Nemt at komme i gang - Vi klarer tilladelser og installation" text3="3. Overskudsdeling op til 60%" img1="/abonnement.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din bygning" buttonlink="../bestil" linkVariant="tertiary" />
+        <Uspsection header="Fordele ved at vælge Elby Pro" text1="1. Intet abonnement" text2="2. Nemt at komme i gang - Vi klarer tilladelser og installation" text3="3. Overskudsdeling op til 60%" img1="/abonnement.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til ejendomsselskaber" buttonlink="../bestil" linkVariant="tertiary" />
         <div class="bg-sec_be-500">
           <Splitcontent img="/opladning1.webp" header="Ladeløsningen, der tjener sig selv ind" text1="At have et ladepunkt i bygningen gør boligen mere attraktiv. Og med overskudsdeling får I kontante fordele, hver gang laderen bruges – uanset om I selv har elbiler eller ej." text2="Få en Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen." alt="vægoplader picture" buttonText="Læs mere om Elbys vision" buttonlink="../omelby" linkVariant="secondary" />
         </div>
@@ -126,7 +126,7 @@ import Link from "../components/Link.astro";
           <Infografik img="/infografikEjendom.svg" header="Jo mere der lades, </br>Jo større del af overskudder får i udbetalt" text1="<strong>Op til 60 % i overskudsdeling</strong> </br>Med en Elby ladeløsning i din bygning, kan dine lejere og brugere lade, hvor de bor eller arbejder. Du tjener op til 60 % af overskuddet, så dine udgifter til laderen er snart tjent hjem. Herefter bliver giver Elby laderen et fast bidrag til din bygnings indtjening." text2="<strong>Ingen administration</strong> </br>Vi tager os desuden af alt det administrative med afregning med elselskabet. Og fordi vi også leverer strømmen, skal du ikke heller ikke bøvle med afgiftsrefusion." alt="infografik til ejendom" imgBg="bg-acc_gr-500" />
         </div>
         <div class="bg-sec_be-500">
-          <Splitcontent img="/ejendomby.webp" header="En skræddersyet ladeløsning til din bygning" text1="Elbys ladeløsning er et aktiv, der kan øge forrentningen på din bygning og samtidig gøre, at du bidrager til den grønne omstilling - og så tager den kun et par timer at installere." text2="Elbys ladeløsning integreres let ind i din eksisterende bygning, og optager ingen plads. På den måde kan du tilbyde dine brugere af parkeringsområdet at lade, hvor det tidligerer ikke har været muligt" alt="ejendomsselskab bygning picture" buttonText="Bestil Elby Pro" buttonlink="../bestil" linkVariant="tertiary" />
+          <Splitcontent img="/ejendomby.webp" header="En skræddersyet ladeløsning til din bygning" text1="Elbys ladeløsning er et aktiv, der kan øge forrentningen på din bygning og samtidig gøre, at du bidrager til den grønne omstilling - og så tager den kun et par timer at installere." text2="Elbys ladeløsning integreres let ind i din eksisterende bygning, og optager ingen plads. På den måde kan du tilbyde dine brugere af parkeringsområdet at lade, hvor det tidligerer ikke har været muligt" alt="ejendomsselskab bygning picture" buttonText="Bestil Elby til ejendomsselskaber" buttonlink="../bestil" linkVariant="tertiary" />
         </div>
 
         <div>
