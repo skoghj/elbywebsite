@@ -1,7 +1,7 @@
 ---
 const { type = "button", variant = "primary", size = "medium", ...restProps } = Astro.props;
 
-const buttonStyling = "inline-flex items-center justify-center gap-2 rounded-full px-[40px] py-[16px] font-knap font-semibold text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop transition focus-visible:ring-2 focus-visible:ring-sec_bl-100";
+const buttonStyling = "inline-flex items-center justify-center gap-2 rounded-full px-sm sm:px-m py-xs font-knap font-semibold text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop transition focus-visible:ring-2 focus-visible:ring-sec_bl-100";
 
 const variantClasses = {
   primary: "bg-acc_yel-500 text-sec_bl-950 hover:bg-acc_yel-600",

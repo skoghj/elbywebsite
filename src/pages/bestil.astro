@@ -11,14 +11,14 @@ import MultiForm from "../components/Multiform.astro";
   <a href="../inwall">Sådan virker Elby</a>
   <a href="../omelby">Om elby</a>
   <a href="../bestil">bestil</a>
-  <div class="grid grid-cols-1 md:grid-cols-5 w-full min-h-screen">
+  <div class="grid grid-cols-1 lg:grid-cols-5 w-full min-h-screen">
     <!-- Venstre billede -->
-    <div class="w-full h-full col-span-2">
+    <div class="hidden md:block md:w-full md:h-full lg:col-span-2">
       <img src="/bestil.webp" alt="Elby oplader" class="w-full h-full object-cover" />
     </div>
 
     <!-- Højre formular-side -->
-    <div class="w-full h-full flex flex-col items-center justify-center col-span-3">
+    <div class="w-full h-full flex flex-col items-center justify-center lg:col-span-3">
       <MultiForm />
     </div>
   </div>
