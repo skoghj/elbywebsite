@@ -1,13 +1,7 @@
 ---
-import Accordion from "../components/Accordion.astro";
-import InfoCard from '../components/InfoCard.astro';
 import MainLayout from "../layouts/MainLayout.astro";
 import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 import Splitcontent from "../components/Splitcontent.astro";
-import SplitcontentRight from "../components/SplitcontentRight.astro";
-import Uspsection from "../components/Uspsection.astro";
-import Prefooter from "../components/Prefooter.astro";
-import Link from "../components/Link.astro";
 import InwallHero from"../components/InwallHero.astro";
 import Button from "../components/Button.astro";
 ---
@@ -15,11 +9,9 @@ import Button from "../components/Button.astro";
 <MainLayout title="Titel">
    <InwallHero />
 
-<section class="bg-sec_be-500 p-xxs lg:p-12">
+<section class="bg-primary-500 px-sm py-xl">
     <!-- Titel -->
-  <h2 class="text-center">
-    Sådan lader du med Elby
-  </h2>
+  <h2 class="text-center pb-sm">Sådan lader du med Elby</h2>
 
   <!-- Steps Grid -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-sm max-w-5xl mx-auto">
@@ -66,7 +58,7 @@ import Button from "../components/Button.astro";
   </div>
 </section>
 
-  <section>
+  <section class="bg-sec_be-500">
     <Splitcontent
      img="/kort_prikker.png"
      header="Hav af ladere"
@@ -81,7 +73,7 @@ import Button from "../components/Button.astro";
    />
  </section>
 
- <TestimonialsSlider/>
+<!--  <TestimonialsSlider/> -->
 
  <section class="bg-primary-500 py-16 px-4">
     <div class="max-w-6xl mx-auto text-center mb-12">

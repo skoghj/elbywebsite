@@ -32,48 +32,9 @@ import SleeveHero2 from "../components/SleeveHero2.astro";
     </div>
 
   <section class="bg-primary-500">
-    <Uspsection header="Hvorfor bestille Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="/SleevIcon.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
+    <Uspsection header="Hvorfor få Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="/SleevIcon.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby til din boligforening" buttonlink="/" linkVariant="primary" />
   </section>
-
-  <section class="bg-sec_be-500">
-    <Splitcontent
-      img="/fortovskinne2.webp"
-      header="Skabt til byen"
-      ,
-      text1="Elbys skinne er testet med cykler, rulleskøjter, løbehjul, kørestole, små børn, hunde, sko og høje hæle."
-      ,
-      text2="Skinnen er så lille at når skinnen er tom, kan man dårligt mærke den, når man går eller kører over den. Det eneste der kan gå i skinnen er stilethæle. Bredden på skinnens synlige rille er nemlig blot omtrent den samme som afstanden mellem almindelige brosten på gaden."
-      ,
-      text3="Når ladekablet ligger i skinnen, føles den som en naturlig del af fortovet."
-      ,
-      alt="Elby væglader i murstensvæg"
-      ,
-      buttonText="Læs mere om Elbys vision"
-      ,
-      buttonlink="#"
-      ,
-      linkVariant="secondary"
-    />
-  </section>
-  <section class="bg-primary-500">
-   <SplitcontentRight
-      img="/ladestander4.webp"
-      header="HUSK AT TILFØJE NOGET RELEVANT HER PLUS BILLED"
-      ,
-      text1="OG HER"
-      ,
-      text2="OG HER"
-      ,
-      alt="SKRIV RELEVANT TEKST HER"
-      ,
-      buttonText="HVAD SKAL DER STÅ HER"
-      ,
-      buttonlink="#"
-      ,
-      linkVariant="primary"
-    />
-  </section>
-
+  
   <div class="bg-sec_be-500">
   <section class="items-start justify-between max-w-7xl mx-auto lg:p-l p-xs lg:py-8xl gap-8xl">
     <h3 class="mb-xxxs pb-xxs">Den rigtige løsning for borgere, byer og kommuner.</h3>
@@ -138,51 +99,74 @@ import SleeveHero2 from "../components/SleeveHero2.astro";
   </section>
 </div>
 
-  <div class="bg-primary-500">
-  <section class="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto p-4xl lg:p-xxs lg:py-8xl gap-8xl ">
-    <!-- Tekstdel -->
-    <div class="w-full md:w-1/2">
-      <h3 class="mb-xxxs pb-xxs">Kommuner der tillader fortovsskinner</h3>
-      <p class="mb-6">Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.</p>
+  <section class="bg-primary-500">
+    <Splitcontent
+      img="/fortovskinne2.webp"
+      header="Skabt til byen"
+      ,
+      text1="Elbys skinne er testet med cykler, rulleskøjter, løbehjul, kørestole, små børn, hunde, sko og høje hæle."
+      ,
+      text2="Skinnen er så lille at når skinnen er tom, kan man dårligt mærke den, når man går eller kører over den. Det eneste der kan gå i skinnen er stilethæle. Bredden på skinnens synlige rille er nemlig blot omtrent den samme som afstanden mellem almindelige brosten på gaden."
+      ,
+      text3="Når ladekablet ligger i skinnen, føles den som en naturlig del af fortovet."
+      ,
+      alt="Elby væglader i murstensvæg"
+      ,
+      buttonText="Læs mere om Elbys vision"
+      ,
+      buttonlink="/omelby"
+      ,
+      linkVariant="secondary"
+    />
+  </section>
 
-      <div class="mb-m relative">
-        <Dropdown options={kommune} placeholder="Find din kommune..." />
-      </div>
 
-      <div class="mb-m">
-        <h4 class="pb-xxs">Få flere kommuner skrevet på</h4>
-        <p class="">
-          Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig selv og dine naboer til gode, at der er styr på ladekablet.
-        </p>
-        <p class="">
-          Kontaktinformationen finder du typisk på kommunens hjemmeside.
-        </p>
-        <a href="#" class="text-acc_gr-700 mt-2 inline-block hover:underline">
-          Download materiale til myndighedsansøgning →
-        </a>
-      </div>
 
-      <div class="mb-m">
-        <h4 class="pb-xxs">Har du brug for hjælp?</h4>
-        <p class="">
-          Vi har stor erfaring med dialogen med kommunerne, og vi hjælper dig gerne med ansøgningen.</p>
+<div class="bg-sec_be-500">
+    <section class="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto">
+      <!-- Tekstdel -->
+      <div class="w-full p-4 md:p-xl">
+        <h3 class="mb-xxxs pb-xxs">Kommuner der tillader fortovsskinner</h3>
+        <p class="mb-6">Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.</p>
+    
+        <div class="mb-m relative">
+          <Dropdown options={kommune} placeholder="Find din kommune..." />
+        </div>
+    
+        <div class="mb-m">
+          <h4 class="pb-xxs">Få flere kommuner skrevet på</h4>
+          <p>
+            Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig selv og dine naboer til gode, at der er styr på ladekablet.
+          </p>
+          <p>
+            Kontaktinformationen finder du typisk på kommunens hjemmeside.
+          </p>
+          <a href="#" class="text-acc_gr-700 mt-2 inline-block hover:underline">
+            Download materiale til myndighedsansøgning →
+          </a>
+        </div>
+    
+        <div class="mb-m">
+          <h4 class="pb-xxs">Har du brug for hjælp?</h4>
+          <p>
+            Vi har stor erfaring med dialogen med kommunerne, og vi hjælper dig gerne med ansøgningen.
+          </p>
+        </div>
+      
+        <div>
+          <Link href="#" variant="primary" size="full">Kontakt os</Link>
+        </div>
       </div>
     
-      <div>
-       <!-- Link -->
-      <Link href="#" variant="primary" size="full">Kontakt os</Link>
+      <!-- Kortdel -->
+      <div class="hidden md:block w-full h-full bg-neu_dg-200 relative">
+        <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto" />
       </div>
-    </div>
-
-    <!-- Kortdel (skjult på mobil) -->
-    <div class="w-full md:w-1/2 hidden md:block">
-      <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto" />
-    </div>
-  </section>
+    </section>
  </div>
 
   <!-- Grafik Section prefooter -->
-  <div class="bg-primary-500">
+  <div class="bg-sec_be-500 pt-xl">
     <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full" />
     </div>
 </MainLayout>
