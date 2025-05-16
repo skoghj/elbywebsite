@@ -63,7 +63,7 @@ import Link from "./Link.astro"
                           <a href="/boligforening" class="block">Elby til Boligforeninger</a>
                       </li>
                       <li class="py-xxxs">
-                          <a href="/boligforening" class="block">Elby til Ejendomsselskaber</a>
+                          <a href="/boligforening?ejendom=&tab=ejendom" class="block">Elby til Ejendomsselskaber</a>
                       </li>
                       <li class="py-xxxs">
                           <a href="/sleeve" class="block">Elby Fortovsskinne</a>
@@ -112,13 +112,13 @@ import Link from "./Link.astro"
               <div class="absolute left-0 mt-xs w-64 bg-primary-500 text-accent-500 shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
                 <ul class="bg-accent-400">
                   <li class="hover:bg-accent-600 px-xs py-xs">
-                    <a href="/boligforening" class="block font-body">
+                    <a href="/boligforening?tab=bolig" class="block font-body">
                       <div class="flex flex-col">
                         <p class="text-neutral-900 text-body-sm">Elby til Boligforeninger</p>
                     </a>
                   </li>
                   <li class=" hover:bg-accent-600 px-xs py-xs">
-                    <a href="/boligforening" class="block font-body">
+                    <a href="/boligforening?ejendom=&tab=ejendom" class="block font-body">
                       <div class="flex flex-col">
                         <p class="text-neutral-900 text-body-sm">Elby til Ejendomsselskaber</p>
                     </a>
@@ -151,7 +151,7 @@ import Link from "./Link.astro"
         </nav>
 
         <div>
-           <Link>Få Elby i din bygning</Link>
+           <Link variant="primary" size="standard" icon="loginIcon.svg"> Få Elby i din bygning</Link>
         </div>
        </div>
         
