@@ -4,16 +4,14 @@ import Button from "./Button.astro";
 ---
 
 <div x-data="multiStepForm()" class="flex flex-col md:flex-row overflow-hidden w-full">
-  <!-- Højre formular -->
-  <div class="w-full p-2xl">
-    <h2 class="font-title font-bold mb-xs">Få Elby i din opgang</h2>
-    <p class="text-body-md mb-l">
-      Vi har behov for lidt mere information, end hvad du er vant til,<br />
-      men det tager kun 2 minutter!
-    </p>
+  <div class="w-full p-sm md:p-2xl">
+    <div class="mb-sm">
+      <h2 class="font-title font-bold mb-xs">Få Elby i din opgang</h2>
+      <p class="text-body-md">Vi har behov for lidt mere information, end hvad du er vant til, men det tager kun 2 minutter!</p>
+    </div>
 
     <!-- PROCESBAR -->
-    <div class="relative mb-l">
+    <div class="relative mb-sm">
       <div class="absolute inset-x-0 top-0 flex justify-between">
         <template x-for="(_, i) in labels" :key="i">
           <div class="w-4 h-4 rounded-full z-10" :class="step > i ? 'bg-acc_yel-500' : 'bg-neu_db-300'"></div>
@@ -29,40 +27,28 @@ import Button from "./Button.astro";
     </div>
 
     <!-- FORM -->
-    <form name="elby-form" method="POST" data-netlify="true" netlify @submit.prevent="handleSubmit" class="space-y-m">
+    <form name="elby-form" method="POST" netlify data-netlify="true" class="space-y-m" @submit.prevent="submitStep2">
       <input type="hidden" name="form-name" value="elby-form" />
 
       <!-- STEP 1 -->
       <div x-show="step === 1" x-cloak class="space-y-m">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-m">
-          <div>
-            <label class="block mb-1 font-semibold">Fornavn <span class="text-acc_yel-700">*</span></label>
-            <input type="text" name="firstName" x-model="form.firstName" placeholder="Mads" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.firstName ? 'border-red-500' : ''" required />
-            <p x-show="errors.firstName" class="mt-1 text-xs text-red-500" x-text="errors.firstName"></p>
-          </div>
-          <div>
-            <label class="block mb-1 font-semibold">Efternavn <span class="text-acc_yel-700">*</span></label>
-            <input type="text" name="lastName" x-model="form.lastName" placeholder="Hansen" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.lastName ? 'border-red-500' : ''" required />
-            <p x-show="errors.lastName" class="mt-1 text-xs text-red-500" x-text="errors.lastName"></p>
-          </div>
-          <div>
-            <label class="block mb-1 font-semibold">E-mail <span class="text-acc_yel-700">*</span></label>
-            <input type="email" name="email" x-model="form.email" placeholder="mads.hansen@gmail.com" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.email ? 'border-red-500' : ''" required />
-            <p x-show="errors.email" class="mt-1 text-xs text-red-500" x-text="errors.email"></p>
-          </div>
-          <div>
-            <label class="block mb-1 font-semibold">Telefon (valgfri)</label>
-            <input type="tel" name="phone" x-model="form.phone" placeholder="+45 12 34 56 78" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm" :class="errors.phone ? 'border-red-500' : ''" />
-            <p x-show="errors.phone" class="mt-1 text-xs text-red-500" x-text="errors.phone"></p>
-          </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-s md:gap-m">
+          <template x-for="(field, key) in step1Fields" :key="key">
+            <div>
+              <label class="block mb-1 font-semibold" x-text="field.label"></label>
+              <input :type="field.type" :name="key" x-model="form[key]" :placeholder="field.placeholder" @input="clearFieldError(key)" class="w-full p-xxs rounded-xs border focus:outline focus:outline-blue-500" :class="errors[key] ? 'border-red-500' : 'border-gray-300'" />
+              <p x-show="errors[key]" class="mt-1 text-xs text-red-500" x-text="errors[key]"></p>
+            </div>
+          </template>
         </div>
+
         <div>
           <label class="block mb-2 font-semibold">Din rolle i bygningen? <span class="text-acc_yel-700">*</span></label>
           <template x-for="role in roles" :key="role">
-            <label class="flex items-center space-x-xs mb-2">
+            <label class="flex items-center space-x-xxs sm:space-x-xs mb-2">
               <div class="relative w-5 h-5 cursor-pointer">
-                <input type="radio" :value="role" x-model="form.role" name="role" class="peer absolute inset-0 w-full h-full opacity-0" required />
-                <span class="absolute inset-0 border-2 border-neu_db-300 rounded-full"></span>
+                <input type="radio" :value="role" x-model="form.role" name="role" class="peer absolute inset-0 w-full h-full opacity-0" @change="clearFieldError('role')" />
+                <span class="absolute inset-0 border-2 border-gray-300 rounded-full"></span>
                 <span class="absolute inset-1 rounded-full bg-acc_yel-700 scale-0 peer-checked:scale-100 transition-transform duration-150"></span>
               </div>
               <span x-text="role"></span>
@@ -80,16 +66,17 @@ import Button from "./Button.astro";
       <div x-show="step === 2" x-cloak class="space-y-m">
         <div>
           <label class="block mb-1 font-semibold">Bygningens adresse <span class="text-acc_yel-600">*</span></label>
-          <input type="text" name="address" x-model="form.address" placeholder="Nørrebrogade 45, 2. th., 2200 København N" class="w-full p-xs rounded-xs border neu_db-300 shadow-sm" :class="errors.address ? 'border-red-500' : ''" required />
+          <input type="text" name="address" x-model="form.address" placeholder="Nørrebrogade 45, 2. th., 2200 København N" class="w-full p-xxs rounded-xs border focus:outline focus:outline-blue-500" :class="errors.address ? 'border-red-500' : 'border-gray-300'" @input="clearFieldError('address')" />
           <p x-show="errors.address" class="mt-1 text-xs text-red-500" x-text="errors.address"></p>
         </div>
+
         <div>
           <label class="block mb-2 font-semibold">Bygningstype <span class="text-acc_yel-700">*</span></label>
           <template x-for="type in bygningstype" :key="type">
             <label class="flex items-center space-x-xs mb-2">
               <div class="relative w-5 h-5 cursor-pointer">
-                <input type="radio" :value="type" x-model="form.type" name="type" class="peer absolute inset-0 w-full h-full opacity-0" required />
-                <span class="absolute inset-0 border-2 border-neu_db-300 rounded-full"></span>
+                <input type="radio" :value="type" x-model="form.type" name="type" class="peer absolute inset-0 w-full h-full opacity-0" @change="clearFieldError('type')" />
+                <span class="absolute inset-0 border-2 border-gray-300 rounded-full"></span>
                 <span class="absolute inset-1 rounded-full bg-acc_yel-700 scale-0 peer-checked:scale-100 transition-transform duration-150"></span>
               </div>
               <span x-text="type"></span>
@@ -98,17 +85,43 @@ import Button from "./Button.astro";
           <p x-show="errors.type" class="mt-1 text-xs text-red-500" x-text="errors.type"></p>
         </div>
 
-        <div class="flex gap-m mt-l">
+        <div>
+          <label class="block mb-2 font-semibold">Er facaden, hvor laderen skal sidde fredet eller beskyttet mod ændringer <span class="text-acc_yel-700">*</span></label>
+          <template x-for="item in facaden" :key="item">
+            <label class="flex flex-row items-center space-x-xs mb-2">
+              <div class="relative w-5 h-5 cursor-pointer">
+                <input type="radio" :value="item" x-model="form.facade" name="facade" class="peer absolute inset-0 w-full h-full opacity-0" @change="clearFieldError('facade')" />
+                <span class="absolute inset-0 border-2 border-gray-300 rounded-full"></span>
+                <span class="absolute inset-1 rounded-full bg-acc_yel-700 scale-0 peer-checked:scale-100 transition-transform duration-150"></span>
+              </div>
+              <span x-text="item"></span>
+            </label>
+          </template>
+          <p x-show="errors.facade" class="mt-1 text-xs text-red-500" x-text="errors.facade"></p>
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold">
+            Er der fortov mellem bygningen og vejen? Hvis ja, hvor bredt er det cirka?
+            <span class="text-acc_yel-600">*</span>
+          </label>
+          <input type="text" name="sidewalk" x-model="form.sidewalk" placeholder="Ja, det er ca. 10 meter mellem bygningen og vejen" class="w-full p-xxs rounded-xs border focus:outline focus:outline-blue-500" :class="errors.sidewalk ? 'border-red-500' : 'border-gray-300'" @input="clearFieldError('sidewalk')" />
+          <p class="text-xs text-neu_db-500 mt-1">Hvis du er i tvivl, kan du skrive “ved ikke”.</p>
+          <p x-show="errors.sidewalk" class="mt-1 text-xs text-red-500" x-text="errors.sidewalk"></p>
+        </div>
+
+        <div class="flex gap-s md:gap-m mt-l">
           <Button variant="secondary" size="standard" type="button" @click="back()">Tilbage</Button>
           <Button variant="primary" size="standard" type="submit">Indsend</Button>
         </div>
       </div>
 
       <!-- STEP 3 -->
-      <div x-show="step === 3" x-cloak class="mt-l p-l border-4 rounded-lg border-acc_yel-700 text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 mx-auto text-acc_yel-700 pb-4">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c..."></path>
+      <div x-show="step === 3" x-cloak class="p-sm md:mt-l md:p-l border-4 rounded-lg border-acc_yel-700 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-24 text-acc_yel-700 flex items-center justify-center mx-auto">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"></path>
         </svg>
+
         <h2 class="font-title text-2xl mb-xxs">Tak for din henvendelse</h2>
         <p class="text-body-md">Din besked er modtaget, og vi vender tilbage hurtigst muligt.</p>
         <div class="flex justify-center mt-md">
@@ -126,6 +139,7 @@ import Button from "./Button.astro";
       labels: ["Om dig", "Om bygningen", "Indsend"],
       roles: ["Beboer i bygningen", "Bestyrelsesmedlem i bygningen", "Ejer af bygningen", "Administrator af bygningen", "Andet/ønsker ikke at oplyse"],
       bygningstype: ["Ejerforening", "Andelsforening", "Almen bolig", "Lejebolig", "Erhvervslejemål", "Andet/ved ikke"],
+      facaden: ["Ja", "Nej", "Ved ikke"],
       form: {
         firstName: "",
         lastName: "",
@@ -134,8 +148,16 @@ import Button from "./Button.astro";
         role: "",
         address: "",
         type: "",
+        facade: "",
+        sidewalk: "",
       },
       errors: {},
+      step1Fields: {
+        firstName: { label: "Fornavn *", type: "text", placeholder: "Mads" },
+        lastName: { label: "Efternavn *", type: "text", placeholder: "Hansen" },
+        email: { label: "E-mail *", type: "email", placeholder: "mads.hansen@gmail.com" },
+        phone: { label: "Telefon (valgfri)", type: "tel", placeholder: "+45 12 34 56 78" },
+      },
 
       next() {
         this.clearErrors();
@@ -145,9 +167,7 @@ import Button from "./Button.astro";
         else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) this.errors.email = "Ugyldigt e-mail-format.";
         if (this.form.phone && !/^[\d+\s\-]+$/.test(this.form.phone)) this.errors.phone = "Ugyldigt telefonnummer.";
         if (!this.form.role) this.errors.role = "Vælg venligst en rolle.";
-        if (Object.keys(this.errors).length === 0) {
-          this.step++;
-        }
+        if (Object.keys(this.errors).length === 0) this.step = 2;
       },
 
       back() {
@@ -161,24 +181,31 @@ import Button from "./Button.astro";
       clearErrors() {
         this.errors = {};
       },
+      clearFieldError(key) {
+        if (this.errors[key]) delete this.errors[key];
+      },
 
-      handleSubmit(e) {
-        const form = e.target;
-        const data = new FormData(form);
-        const encoded = new URLSearchParams([...data]).toString();
+      submitStep2(e) {
+        this.clearErrors();
+        if (!this.form.address) this.errors.address = "Adresse er påkrævet.";
+        if (!this.form.type) this.errors.type = "Vælg venligst en bygningstype.";
+        if (!this.form.facade) this.errors.facade = "Vælg venligst et svar om facaden.";
+        if (!this.form.sidewalk) this.errors.sidewalk = "Udfyld venligst oplysninger om fortovet.";
+        if (Object.keys(this.errors).length > 0) return;
+
+        const form = document.querySelector('form[name="elby-form"]');
+        const formData = new FormData(form);
 
         fetch("/", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: encoded,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
         })
           .then(() => {
             this.step = 3;
           })
-          .catch((error) => {
-            console.error("Form submission error:", error);
+          .catch(() => {
+            alert("Noget gik galt. Prøv igen senere.");
           });
       },
     };

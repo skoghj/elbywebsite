@@ -4,7 +4,7 @@ import Link from "./Link.astro";
 const { header, text, buttonText, linkText, buttonlink = "#", buttonlink2 = "#", linkVariant = "primary", linkVariant2 = "textlink", icon } = Astro.props;
 ---
 
-<section class="py-xl">
+<section class="px-sm py-xl">
   <h2 class="text-center pb-sm" set:html={header} />
 
   {text && <p class="text-center mb-s" set:html={text} />}
