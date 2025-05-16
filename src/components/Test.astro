@@ -10,14 +10,14 @@ const sleeve = [
 ];
 ---
 
-<section x-data="{ selected: 'Ladestander i træ' }" @dropdown-change.window="selected = $event.detail">
+<section x-data="{ selected: 'm/installation og ansøgning' }" @dropdown-change.window="selected = $event.detail">
   <div class="relative max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-8 px-4 sm:px-6 md:px-12 lg:pl-14 lg:py-2xl py-8">
 
     <!-- Venstre kolonne -->
     <div class="w-full lg:max-w-[344px] ">
       <div class="space-y-6">
         <h2 class="">ELBY Fortovsskinne</h2>
-        <p class="">Er fortovet i vejen for din drøm om at køre elbil? Elby har løst problemet med en fortovsskinne i et kompakt og funktionelt design.</p>
+        <p class="">Er fortovet i vejen for din drøm om at køre elbil? <br> Elby har løst problemet med en fortovsskinne i et kompakt og funktionelt design.</p>
 
         <div class="mx-auto lg:mx-0">
           <Dropdown options={sleeve} placeholder="Vælg skinne til dit behov..." />
@@ -25,7 +25,7 @@ const sleeve = [
 
         <!-- Info Cards -->
         <div class="space-y-4 text-left">
-            <template x-if="selected === 'm/installation og ansøgning'">
+          <template x-if="selected === 'm/installation og ansøgning'">
             <div>
               <ul class="space-y-2 lg:space-y-0  border-t border-neu_db-400" >
                 <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/SleevIcon.svg" class="w-10 h-10" alt="icon"/> <p>2m fortovsskinne inkl. lim</p></li>
