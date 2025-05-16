@@ -14,12 +14,12 @@ const materiale = [
   <div class="relative max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-8 px-4 sm:px-6 md:px-12 lg:pl-14 lg:py-2xl py-8">
 
     <!-- Venstre kolonne -->
-    <div class="w-full lg:w-1/2">
+    <div class="w-full lg:max-w-[344px] ">
       <div class="space-y-6">
         <h2 class="">ELBY Ladestander</h2>
         <p class="">Med Elby Ladestander får du en helt ny <br> måde at tænke ladestander på.</p>
 
-        <div class="lg:max-w-24 mx-auto lg:mx-0">
+        <div class="mx-auto lg:mx-0">
           <Dropdown options={materiale} placeholder="Vælg ladestander type..." />
         </div>
 
@@ -27,10 +27,10 @@ const materiale = [
         <div class="space-y-4 text-left">
           <template x-if="selected === 'Ladestander i træ'">
             <div>
-              <ul class="space-y-2 lg:space-y-0">
-                <li class="flex items-center gap-3"><img src="/layers2.svg" class="w-10 h-10"/><p>Egetræ</p></li>
-                <li class="flex items-center gap-3"><img src="/maaler2.svg" class="w-10 h-10"/><p>Mål: 77x22x22cm</p></li>
-                <li class="flex items-center gap-3"><img src="/installation.svg" class="w-10 h-10"/><p>Installation 1-2 dage</p></li>
+              <ul class="space-y-2 lg:space-y-0  border-t border-neu_db-400" >
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/layers2.svg" class="w-10 h-10"/><p>Egetræ</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/maaler2.svg" class="w-10 h-10"/><p>Mål: 77x22x22cm</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/installation.svg" class="w-10 h-10"/><p>Installation 1-2 dage</p></li>
               </ul>
               <p class="mt-4 text-sm">Pris inkl. moms</p>
               <p class="text-3xl font-bold">39.999 kr.</p>
@@ -40,9 +40,9 @@ const materiale = [
           <template x-if="selected === 'Ladestander i beton'">
             <div>
               <ul class="space-y-2 lg:space-y-0">
-                <li class="flex items-center gap-3"><img src="/layers2.svg" class="w-10 h-10"/><p>Beton</p></li>
-                <li class="flex items-center gap-3"><img src="/maaler2.svg" class="w-10 h-10"/><p>Mål: 60x20x20cm</p></li>
-                <li class="flex items-center gap-3"><img src="/installation.svg" class="w-10 h-10"/><p>Installation 1-2 dage</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/layers2.svg" class="w-10 h-10"/><p>Beton</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/maaler2.svg" class="w-10 h-10"/><p>Mål: 60x20x20cm</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/installation.svg" class="w-10 h-10"/><p>Installation 1-2 dage</p></li>
               </ul>
               <p class="mt-4 text-sm">Pris inkl. moms</p>
               <p class="text-3xl font-bold">43.999 kr.</p>
@@ -52,9 +52,9 @@ const materiale = [
           <template x-if="selected === 'Ladestander i stål'">
             <div>
               <ul class="space-y-2 lg:space-y-0">
-                <li class="flex items-center gap-3"><img src="/layers2.svg" class="w-10 h-10"/><p>Stål</p></li>
-                <li class="flex items-center gap-3"><img src="/maaler2.svg" class="w-10 h-10"/><p>Mål: 55x22x22cm</p></li>
-                <li class="flex items-center gap-3"><img src="/installation.svg" class="w-10 h-10"/><p>Installation 1-2 dage</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/layers2.svg" class="w-10 h-10"/><p>Stål</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/maaler2.svg" class="w-10 h-10"/><p>Mål: 55x22x22cm</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/installation.svg" class="w-10 h-10"/><p>Installation 1-2 dage</p></li>
               </ul>
               <p class="mt-4 text-sm">Pris inkl. moms</p>
               <p class="text-3xl font-bold">49.999 kr.</p>
@@ -62,7 +62,7 @@ const materiale = [
           </template>
 
           <div class="pt-4">
-            <Link href="../bestil" variant="primary" size="standard">
+            <Link href="../bestil" variant="primary" size="full">
               Bestil Elby til din boligforening
             </Link>
           </div>
