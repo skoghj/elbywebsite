@@ -10,11 +10,12 @@ const sleeve = [
 ];
 ---
 
-<section x-data="{ selected: 'Ladestander i træ' }" @dropdown-change.window="selected = $event.detail">
+<section x-data="{ selected: 'm/installation og ansøgning' }" @dropdown-change.window="selected = $event.detail">
   <div class="relative max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-8 px-4 sm:px-6 md:px-12 lg:pl-14 lg:py-2xl py-8">
 
     <!-- Venstre kolonne -->
-    <div class="w-full lg:max-w-[344px] ">
+    <div class="lg:w-1/2">
+    <div class="w-full lg:max-w-[444px] ">
       <div class="space-y-6">
         <h2 class="">ELBY Fortovsskinne</h2>
         <p class="">Er fortovet i vejen for din drøm om at køre elbil? Elby har løst problemet med en fortovsskinne i et kompakt og funktionelt design.</p>
@@ -42,6 +43,7 @@ const sleeve = [
               <ul class="space-y-2 lg:space-y-0">
                 <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/SleevIcon.svg" class="w-10 h-10" alt="icon"/> <p>2m fortovsskinne inkl. lim</p></li>
                 <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/installation.svg" class="w-10 h-10" alt="icon"/> <p>1-2 dages Installation</p></li>
+                <li class="flex items-center gap-3 border-b border-neu_db-400 py-2"><img src="/fragtIcon.svg" class="w-10 h-10" alt="icon"/> <p>Fri fragt</p></li>
               </ul>
               <p class="mt-4 text-sm">Pris inkl. moms</p>
               <p class="text-3xl font-bold">2.799 kr.</p>
@@ -68,6 +70,7 @@ const sleeve = [
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Højre kolonne: Video -->
     <div class="w-full lg:w-1/2">

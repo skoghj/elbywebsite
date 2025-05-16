@@ -7,7 +7,6 @@ import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Dropdown from "../components/Dropdown.astro";
 import SleeveHero2 from "../components/SleeveHero2.astro";
-import Test from "../components/Test.astro";
 
   const kommune = [
   { value: "Københavns Kommune", label: "Københavns Kommune" },
@@ -28,15 +27,9 @@ import Test from "../components/Test.astro";
 
 <MainLayout title="Elby-sleeve">
 
-  <SleeveHero2 />
-
   <div class="bg-sec_be-500">
     <SleeveHero2/>
     </div>
-
-    <div class="bg-sec_be-500">
-      <Test/>
-      </div>
 
   <section class="bg-primary-500">
     <Uspsection header="Hvorfor bestille Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="/SleevIcon.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
@@ -82,7 +75,7 @@ import Test from "../components/Test.astro";
   </section>
 
   <div class="bg-sec_be-500">
-  <section class="items-start justify-between max-w-7xl mx-auto p-4xl lg:p-xxs lg:py-8xl gap-8xl">
+  <section class="items-start justify-between max-w-7xl mx-auto lg:p-l p-xs lg:py-8xl gap-8xl">
     <h3 class="mb-xxxs pb-xxs">Den rigtige løsning for borgere, byer og kommuner.</h3>
       <p class="mb-6">Vælg mellem følgende:</p>
 
