@@ -7,6 +7,7 @@ import Uspsection from "../components/Uspsection.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Dropdown from "../components/Dropdown.astro";
+import LadestanderHero2 from "../components/LadestanderHero2.astro";
 
 const myOptions = [
   { value: "m/installation og ansøgning", label: "Med installation og ansøgning" },
@@ -34,6 +35,10 @@ const myOptions = [
 <MainLayout title="Elby-sleeve">
 
   <SleeveHero />
+
+  <div class="bg-sec_be-500">
+    <LadestanderHero2/>
+    </div>
 
   <section class="bg-primary-500">
     <Uspsection header="Hvorfor bestille Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="/SleevIcon.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Bestil Elby til din boligforening" buttonlink="/" linkVariant="primary" />
