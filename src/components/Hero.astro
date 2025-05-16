@@ -1,0 +1,27 @@
+---
+import Button from "./Button.astro"
+---
+
+<section class="relative w-full h-[75vh] overflow-hidden">
+  <!-- Baggrundsvideo -->
+  <video
+    class="absolute top-0 left-0 w-full h-full object-cover"
+    src="./ForsideHero-desktop.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+  ></video>
+
+  <!-- Overlay, fx mørk tint -->
+  <div class="absolute inset-0 bg-black bg-opacity-90"></div>
+
+  <!-- Hero-indhold -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+    <h1 class="text-white font-body text-4xl md:text-6xl font-bold mb-4"><span class="text-acc_yel-500">Ladeløsning</span> til byens lejligheder</h1>
+    <p class=" text-white text-lg md:text-2xl max-w-3xl mb-8">
+      Oplev den mest effektive ladeoplevelse lige ved din hoveddør - en løsning skabt til byens behov
+    </p>
+  <Button>Få Elby til din bygning</Button>
+  </div>
+</section>

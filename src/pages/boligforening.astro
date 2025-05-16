@@ -10,13 +10,6 @@ import Link from "../components/Link.astro";
 ---
 
 <MainLayout title="Elby-oplader">
-  <a href="/">forside</a>
-  <a href="../sleeve">Elby sleeve</a>
-  <a href="/boligforening">boligforening</a>
-  <a href="../ladestander">Elby ladestander</a>
-  <a href="../inwall">Sådan virker Elby</a>
-  <a href="../omelby">Om elby</a>
-  <a href="../bestil">bestil</a>
 
   <section x-data="{ selected: 'bolig' }" @toggle-change.window="selected = $event.detail">
     <!-- Øverste del af det fælles layout -->
