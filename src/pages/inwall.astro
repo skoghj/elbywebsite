@@ -15,6 +15,57 @@ import Button from "../components/Button.astro";
 <MainLayout title="Titel">
    <InwallHero />
 
+<section class="bg-sec_be-500 p-xxs lg:p-12">
+    <!-- Titel -->
+  <h2 class="text-center">
+    Sådan lader du med Elby
+  </h2>
+
+  <!-- Steps Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-sm max-w-5xl mx-auto">
+    
+    <!-- Step 1 -->
+    <div class="flex flex-col items-center text-center">
+      <div class="w-5xl h-5xl md:w-7xl md:h-7xl flex items-center justify-center">
+        <img src="/væglader.svg" alt="Brug dit eget kabel" class="w-128 h-128">
+      </div>
+      <p class="mt-4 text-sm md:text-base">
+        Brug dit eget kabel<br>(Type 2-stik)
+      </p>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="flex flex-col items-center text-center">
+        <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
+        <img src="/væglader_m_stik.svg" alt="Forbind til bil" class="w-128 h-128">
+      </div>
+      <p class="mt-4 text-sm md:text-base">
+        Forbind fra lader til din bil
+      </p>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="flex flex-col items-center text-center">
+      <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
+        <img src="/fastgør_kabel.svg" alt="Fastgør kabel" class="w-128 h-128">
+      </div>
+      <p class="mt-4 text-sm md:text-base">
+        Fastgør kablet i fortovsskinnen
+      </p>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="flex flex-col items-center text-center">
+      <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
+        <img src="/Elby_app.svg" alt="Start ladning" class="w-128 h-128">
+      </div>
+      <p class="mt-4 text-sm md:text-base">
+        Start ladning med Elby App
+      </p>
+    </div>
+  </div>
+</section>
+
   <section>
     <Splitcontent
      img="/kort_prikker.png"
