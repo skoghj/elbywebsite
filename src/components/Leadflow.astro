@@ -1,22 +1,23 @@
-<div class="w-full mx-auto" id="leadflow">
+
+<div class="w-full bg-sec_be-500" id="leadflow">
   <div class="grid grid-cols-1 md:grid-cols-2">
-    <!-- LEFT -->
-    <div class="h-[500px] flex flex-col justify-between p-6">
-      <div id="app" class="flex-grow"></div>
-
-      <div id="progressWrapper" class="flex justify-center max-w-[600px] mx-auto mt-4">
-        <div class="h-2 bg-gray-200 rounded overflow-hidden w-full">
-          <div id="progressBar" class="h-2 bg-acc_yel-500 transition-all duration-300 ease-in-out" style="width: 0%"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT -->
-    <div class="hidden md:block h-[500px]">
+    
+    <!-- venstre billede -->
+    <div class="hidden md:block h-[600px] md:h-[700px]">
       <img src="../bestil.webp" alt="Elby illustration" id="rightImage" class="w-full h-full object-cover" />
     </div>
+    
+    <!-- højre leadflow -->
+ <div class="h-[700px] md:h-[600px] mx-lg mt-lg flex flex-col justify-center items-center">
+  <!-- Container med max-width og centreret -->
+  <div class="w-full max-w-[600px]">
+    <h2 class="mb-md lg:mb-lg text-title-lg">Se hvilken løsning fra Elby, der passer til dig</h2>
+    <div id="app" class="w-full"></div>
   </div>
 </div>
+  </div>
+  </div>
+
 
 <script type="module">
   import { animate } from "https://cdn.skypack.dev/motion";
@@ -25,21 +26,9 @@
     {
       question: "Hvilken type lejlighed bor du i?",
       options: [
-        {
-          label: "Leje",
-          icon: "/boligforening-building.svg", // ikon til venstre
-          image: "/ejendomby.webp" // billede til højre
-        },
-        {
-          label: "Andel",
-          icon: "/ejendom-building.svg",
-          image: "/"
-        },
-        {
-          label: "Ejer",
-          icon: "/icons/ejer-icon.webp",
-          image: "/images/ejer-hero.webp"
-        }
+        { label: "Leje", icon: "/boligforening-building.svg", image: "/ejendomby.webp" },
+        { label: "Andel", icon: "/ejendom-building.svg", image: "/opladning2.webp" },
+        { label: "Ejer", icon: "/ejendom-building.svg", image: "/opladning3.webp" }
       ]
     },
     {
@@ -70,14 +59,29 @@
   let step = 0;
   const answers = [];
   const app = document.getElementById("app");
-  const progressBar = document.getElementById("progressBar");
-  const progressWrapper = document.getElementById("progressWrapper");
   const rightImg = document.querySelector("#leadflow img");
 
-  function updateProgress() {
+  // Vi opretter progressbar-elementerne her, men indsætter dem dynamisk i render
+  const progressBarContainer = document.createElement("div");
+  progressBarContainer.id = "progressBarContainer";
+  progressBarContainer.className = "w-full h-2 bg-gray-300 rounded overflow-hidden mt-4";
+
+  const progressBar = document.createElement("div");
+  progressBar.id = "progressBar";
+  progressBar.className = "h-2 bg-acc_yel-500 rounded w-0";
+
+  progressBarContainer.appendChild(progressBar);
+
+  function updateProgressBar() {
     const totalSteps = questions.length;
-    progressWrapper.style.display = (step === 0 || step >= totalSteps) ? "none" : "block";
-    progressBar.style.width = `${(step / totalSteps) * 100}%`;
+    if (step > 0 && step < totalSteps) {
+      progressBarContainer.style.display = "block";
+      const progressPercent = (step / totalSteps) * 100;
+      progressBar.style.width = progressPercent + "%";
+    } else {
+      progressBarContainer.style.display = "none";
+      progressBar.style.width = "0%";
+    }
   }
 
   function animateIn() {
@@ -89,25 +93,25 @@
       const selected = questions[0].options.find(o => o.label === answers[0]);
       if (selected) rightImg.src = selected.image;
     } else if (step > 0) {
-      rightImg.src = "/bestil.webp";
+      rightImg.src = "/opladning1.webp";
     } else {
-      rightImg.src = "/images/leje-hero.webp"; // default billede
+      rightImg.src = "../Elby_løsning.png";
     }
   }
 
   function render() {
     app.innerHTML = "";
-    updateProgress();
     updateRightImage();
 
     const q = questions[step];
 
     if (step < questions.length) {
       const container = document.createElement("div");
-      container.className = "max-w-[600px] mx-auto px-4 sm:px-6";
+      container.className = "max-w-[600px] mx-auto";
 
       if (step === 0) {
         container.innerHTML = `
+     
           <h2 class="text-lg font-body font-semibold mb-4">${q.question}</h2>
           <div id="optionSelector" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             ${q.options.map(opt => `
@@ -119,7 +123,6 @@
           </div>
           <button id="firstNextBtn" class="w-full bg-acc_yel-500 text-black py-2 rounded mt-4">Se om du kan få Elby</button>
         `;
-
         app.appendChild(container);
 
         const nextBtn = container.querySelector("#firstNextBtn");
@@ -135,11 +138,17 @@
         });
 
         nextBtn.addEventListener("click", () => {
+          if (!answers[0]) {
+            alert("Vælg venligst en mulighed før du fortsætter");
+            return;
+          }
           step++;
           render();
         });
 
+        // Ingen progressbar på step 0
       } else {
+        // Step > 0: spørgsmål med tilbage-knap og progressbar UNDER tilbageknappen
         container.innerHTML = `
           <h2 class="text-lg font-body font-semibold mb-4">${q.question}</h2>
           <div class="space-y-2">
@@ -151,6 +160,7 @@
         `;
 
         app.appendChild(container);
+
         container.querySelectorAll("[data-answer]").forEach(btn => {
           btn.addEventListener("click", () => {
             answers[step] = btn.dataset.answer;
@@ -163,12 +173,16 @@
           step--;
           render();
         });
-      }
 
+        // Indsæt progressbar lige under tilbageknappen
+        container.appendChild(progressBarContainer);
+        updateProgressBar();
+      }
     } else if (step === questions.length) {
+      // Slutskærm med tilbageknap OG progressbar skjult
       const hasDisqualifying = answers.some(a => disqualifyingAnswers.includes(a));
       const container = document.createElement("div");
-      container.className = "max-w-[600px] mx-auto px-4 sm:px-6";
+      container.className = "max-w-[600px] mx-auto";
 
       if (hasDisqualifying) {
         container.innerHTML = `
@@ -201,47 +215,55 @@
         render();
       });
 
+      // Skjul progressbar på slutskærm
+      progressBarContainer.style.display = "none";
     } else if (step === questions.length + 1) {
+      // Kontaktformular
       const form = document.createElement("div");
-      form.className = "max-w-[600px] mx-auto px-4 sm:px-6";
+      form.className = "max-w-[600px] mx-auto";
       form.innerHTML = `
         <h2 class="text-lg font-body font-semibold mb-4">Indtast dine kontaktoplysninger</h2>
-        <form class="space-y-4">
+        <form id="contactForm" class="space-y-4">
           <input type="text" placeholder="Navn" class="w-full border p-2 rounded" required />
           <input type="email" placeholder="Email" class="w-full border p-2 rounded" required />
           <input type="tel" placeholder="Telefonnummer" class="w-full border p-2 rounded" />
           <textarea placeholder="Evt. kommentar" class="w-full border p-2 rounded"></textarea>
-          <button type="submit" class="bg-acc_yel-500 text-black px-4 py-2 rounded w-full">Send</button>
+          <button type="submit" class="w-full bg-acc_yel-500 text-black py-2 rounded">Send</button>
         </form>
         <button id="backBtn" class="mt-4 text-blue-600">Tilbage</button>
       `;
 
       app.appendChild(form);
 
-      form.querySelector("#backBtn").addEventListener("click", () => {
-        step--;
-        render();
-      });
-
-      form.querySelector("form").addEventListener("submit", e => {
+      form.querySelector("#contactForm").addEventListener("submit", (e) => {
         e.preventDefault();
         step++;
         render();
       });
 
+      form.querySelector("#backBtn").addEventListener("click", () => {
+        step--;
+        render();
+      });
+
+      // Skjul progressbar på kontaktformular
+      progressBarContainer.style.display = "none";
     } else {
-      const thankYou = document.createElement("div");
-      thankYou.className = "max-w-[600px] mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center";
-      thankYou.innerHTML = `
-        <img src="/images/thumbsup.png" alt="Tak" class="w-24 h-24 mb-4 object-contain" />
-        <h2 class="text-2xl font-semibold mb-2 text-acc_yel-500">Tak for din henvendelse!</h2>
-        <p class="text-gray-700">Vi vender tilbage hurtigst muligt.</p>
+      // Slutskærm efter form
+      app.innerHTML = `
+    
+      <div class="flex flex-col mt-lg items-center text-center">
+        <img src="../" alt="Thumbs Up" class="mb-6 w-20 h-20" />
+        <h2 class="text-2xl font-bold ">Tak for din henvendelse!</h2>
+        <p>Vi vender tilbage hurtigst muligt.</p>
+      </div>
+  
       `;
-      app.appendChild(thankYou);
+      // Skjul progressbar på slutskærm
+      progressBarContainer.style.display = "none";
     }
 
     animateIn();
   }
 
   render();
-</script>

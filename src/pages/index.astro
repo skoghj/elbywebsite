@@ -11,32 +11,63 @@ import Accordion from "../components/Accordion.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import Uspsection from "../components/Uspsection.astro";
 import Prefooter from "../components/Prefooter.astro";
+import SplitcontentRight from "../components/SplitcontentRight.astro";
+import TestimonialsSlider from "../components/TestimonialsSlider.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
 ---
 
 <MainLayout title="Titel">
  
   <Hero />
+
     <Uspsection 
-  header="Så nemt kommer du i gang med Elby"
-  text1="1. Få et uforpligende løsningsforslag"
-  text2="2. Vi klarer tilladelser og installation"
-  text3="3. Oplad med dine naboer og venner"
-  img1="../by.webp"
-  img2="../by.webp"
-  img3="../by.webp"
-  alt1=""
-  alt2=""
-  alt3=""
-  buttonText="Bestil Elby til din boligforening"
-  buttonlink=""
-  linkVariant="primary"
+      header="Sådan virker Elby"
+      text1="1. Elby installere et ladepunkt i bygningens facade"
+      text2="2. Beborere og andre elbilister kan lade med eget kabel og Elby app"
+      text3="3. Bygningen tjener penge og biddrager til den grønne omstilling"
+      img1="../ladepunkt.svg"
+      img2="../beboeropladning.svg"
+      img3="../fordele.svg"
+      alt1="Elby ladepunkt"
+      alt2="Elby App"
+      alt3="Elby fordele"
+      buttonText="Bestil Elby til din boligforening"
+      buttonlink=""
+      linkVariant="primary"
   />
   
-<Leadflow></Leadflow>
+ <section class="flex flex-col md:flex-row w-full bg-primary-500">
 
+  <div class="basis-full md:basis-[50%] flex items-center justify-center p-md">
+    <div class="">
+        <h2 class="mb-md">Hvorfor vælge Elby?</h2>
+       <div class="flex flex-col gap-sm mb-md">
+  <div class="flex items-center gap-2">
+ <img src="../install.svg" alt="" class="w-16 h-16 mt-1" />
+    <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Gratis lader, fri installation og intet abonnement</p>
+  </div>
+  <div class="flex items-center gap-2">
+   <img src="../overskueligIcon.svg" alt="" class="w-16 h-16 mt-1" />
+    <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Få op til 50% af overskuddet til dit ejendomsselskab eller boligforening</p>
+  </div>
+  <div class="flex items-center gap-2">
+    <img src="../groenomstilling.svg" alt="" class="w-16 h-16 mt-1" />
+    <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Deltag aktivit i den grønne omstilling</p>
+  </div>
+</div>
+        <Button size="full" variant="secondary">Bliv klogere på fordelene ved Elby</Button>
+    </div>
+  </div>
 
-  <Splitcontent
-  img="../by.webp"
+  <div class="basis-full md:basis-[50%]">
+    <img src="../opladning1.webp" class="w-full h-full object-cover" />
+  </div>
+</section>
+
+<Leadflow/>
+
+   <SplitcontentRight
+  img="../grøn.jpg"
   header="Sammen om den grønne omstilling"
   text1="Den grønne omstilling har brug for at vi alle tager fat og hjælper hinanden. Bor du i en by, så kan du nu tage handling, sammen med Elby og byens andre borgere. Også selvom du ikke har en elbil."
   text2="Få en Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen."
@@ -44,17 +75,22 @@ import Prefooter from "../components/Prefooter.astro";
   buttonText="Læs mere om Elbys vision"
   buttonLink=""
   />
-  
-  <Prefooter
-  header="Vil du vide mere om Elby?"
-  linkVariant="primary"
-  buttonText="Læs vores FAQ for at lære mere"
+
+
+<Splitcontent
+  img="../by.webp"
+  header="Tilmeld dig vores nyhedsbrev"
+  text1="Når du tilmelder dig Elbys nyhedsbrev, lover vi kun at sende dig relevante og inspirerende nyheder om Elby"
+  buttonText="Tilmeld dig Elby Liv"
   buttonLink=""
-  />
+/>
+
+ 
   
-  <!-- Grafik Section prefooter -->
-  <div class="bg-primary-500">
+  <div class="bg-sec_be-500">
   <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
-  </div>
+  </div> 
+  
+
  
 </MainLayout>
