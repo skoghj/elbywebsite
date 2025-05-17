@@ -2,7 +2,13 @@
 
 ---
 
-<div x-data="{ selected: 'bolig' }" class="flex bg-primary-50 p-1 rounded-full w-fit">
+<div x-data="{
+    selected: 'bolig',
+    init() {
+      const param = new URLSearchParams(window.location.search).get('tab');
+      if (param === 'ejendom') this.selected = 'ejendom';
+    }
+  }" class="flex bg-primary-50 p-1 rounded-full w-fit">
   <button @click="$dispatch('toggle-change', 'bolig'); selected = 'bolig'" :class="selected === 'bolig' ? 'bg-acc_yel-500 text-sec_bl-950' : 'bg-primary-50 text-neu_db-500'" class="px-2 min-375 py-2 rounded-full font-semibold transition text-body-sm md:text-body-md"> Boligforeninger </button>
   <button @click="$dispatch('toggle-change', 'ejendom'); selected = 'ejendom'" :class="selected === 'ejendom' ? 'bg-acc_gr-500 text-sec_bl-950 ' : 'bg-primary-50 text-neu_db-500'" class="px-2 min-375 py-2 rounded-full font-semibold transition text-body-sm md:text-body-md"> Ejendomsselskaber </button>
 </div>
