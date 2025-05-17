@@ -15,7 +15,7 @@ import Link from "../components/Link.astro";
 
           <div class="pt-4">
             <Link href="../bestil" variant="primary" size="full">
-              Få Elby til din etageejendom
+              Få Elby til din Etageejendom
             </Link>
           </div>
       </div>
@@ -23,15 +23,18 @@ import Link from "../components/Link.astro";
     </div>
  
 
-    <!-- Højre kolonne: Video -->
-    <div class="w-full lg:w-1/2">
-      <div class="w-full aspect-video max-h-[400px] overflow-hidden">
-        <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-          <source src="/fortovskinne.webm" type="video/webm" />
-        </video>
-      </div>
-    </div>
-
+    <!-- Højre kolonne: Embedded YouTube-video -->
+<div class="w-full lg:w-1/2">
+  <div class="relative w-full pt-[56.25%] max-h-[400px] overflow-hidden">
+    <iframe
+      class="absolute top-0 left-0 w-full h-full"
+      src="https://www.youtube.com/embed/1Ta-qd4lxZA"
+      title="Elby"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
   </div>
 </section>
-

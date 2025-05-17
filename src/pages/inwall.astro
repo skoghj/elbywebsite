@@ -66,14 +66,19 @@ import Button from "../components/Button.astro";
 
   <section id="4_elby_app" class="bg-primary-500">
     <SplitcontentRight
-      img="/mobil_app.png"
+      img="/mobil_app1.svg"
       header="Kom I gang med at lade med Elby"
       text1="Download Elby-app'en og få adgang til Elbys ladere."
       alt="Mobil dummy med Elby login app"
     />
-    <div class="flex gap-4 lg:-mt-48 lg:pl-32 lg:pb-[128px]">
-      <img src="/appstore.svg" alt="Download Elby-appen fra App Store" class="w-36 cursor-pointer" />
-      <img src="/googleplay.svg" alt="Download Elby-appen fra Google play" class="w-36 cursor-pointer" />
+  </div>
+    <div class="flex gap-4 lg:-mt-48 lg:pl-32 lg:pb-[128px] lg:h-[192px]">
+      <a href="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723" target="_blank" rel="noopener">
+        <img src="/appstore.svg" alt="Download Elby-appen fra App Store" class="w-36 cursor-pointer" />
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en" target="_blank" rel="noopener">
+        <img src="/googleplay.svg" alt="Download Elby-appen fra Google play" class="w-36 cursor-pointer" />
+      </a>
     </div>
   </section>
 
@@ -116,3 +121,4 @@ import Button from "../components/Button.astro";
     <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </section>
 </MainLayout>
+
