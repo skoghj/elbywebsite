@@ -2,7 +2,6 @@
 import Accordion from "../components/Accordion.astro";
 import InfoCard from '../components/InfoCard.astro';
 import MainLayout from "../layouts/MainLayout.astro";
-import TestimonialsSlider from "../components/TestimonialsSlider.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Prefooter from "../components/Prefooter.astro";
@@ -10,21 +9,127 @@ import Prefooter from "../components/Prefooter.astro";
 
 <MainLayout title="Titel">
 
-  <a href="../bestil">bestil</a>
+  <section>
+    <section class="flex flex-col lg:flex-row bg-sec_be-500">
+      <div class="flex flex-col justify-center mx-auto p-sm w-full order-2 lg:order-1 sm:max-w-md min-440">
+        <div class="mb-xs break-words">
+          <h2 class="">Om Elby</h2>
+        </div>
+        <p class="mb-xs">Et passioneret team med en fælles mission: at fremme grøn mobilitet.
+          Vi tror på, at elbiler skal være for alle – nemme at bruge og tilgængelige i hverdagen.</p>
 
-  <section class="relative bg-[url('/HeroTilOmos.webp')] bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center pl-[56px] lg:pl-[256px]">
-           <h1 class="text-primary-50">Om ELBY</h1>
-           
-  </section>
+      </div>
+      <div class="order-1 lg:order-2 lg:w-1/2">
+        <img src="/1743102782811.jpeg" alt="Foto af Elbys medarbejder ude foran deres hovedkontor" class="w-full h-full object-cover" />
+      </div>
+    </section>
+
 <!-- <TestimonialsSlider/> -->
 
+<article class="md:pb-2xl">
+  <h2 class="text-center pt-m pb-m md:pt-xl">Mød teamet bag Elby</h2>
+  <div class="sticky top-1/4 mangeelementerinview grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-y-6">
+    <div class="mangeelementer1">
+      <InfoCard
+        image="./michael_elby.webp"
+        name="Michael"
+        title="CEO"
+        category="Tech & Startup"
+        description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+      />
+    </div>
+    <div class="mangeelementer2">
+      <InfoCard
+        image="./michael_elby.webp"
+        name="Michael"
+        title="CEO"
+        category="Tech & Startup"
+        description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+      />
+    </div>
+    <div class="mangeelementer3">
+      <InfoCard
+        image="./lars_elby.webp"
+        name="Lars"
+        title="CINO"
+        category="Built Environment & Regulations"
+        description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne."
+      />
+    </div>
+    <div class="mangeelementer4">
+      <InfoCard
+        image="./jacob_elby.webp"
+        name="Jacob"
+        title="COO"
+        category="Operations & Busines Development"
+        description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+      />
+    </div>
+    <div class="mangeelementer5">
+      <InfoCard
+        image="./jacob_elby.webp"
+        name="Jacob"
+        title="COO"
+        category="Operations & Busines Development"
+        description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
+      />
+    </div>
+    <div class="mangeelementer6">
+      <InfoCard
+        image="./kristian_elby.webp"
+        name="Kristian"
+        title="CCO"
+        category="Commercial & Sales"
+        description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet bøfferne med planter for at efterlade en bedre verden til sine tre børn."
+      />
+    </div>
+    <div class="mangeelementer7">
+      <InfoCard
+        image="./kristian_elby.webp"
+        name="Kristian"
+        title="CCO"
+        category="Commercial & Sales"
+        description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet bøfferne med planter for at efterlade en bedre verden til sine tre børn."
+      />
+    </div>
+    <div class="mangeelementer8">
+      <InfoCard
+        image="./mads_elby.webp"
+        name="Mads"
+        title="CPO"
+        category="Product & Experience"
+        description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'."
+      />
+    </div>
+    <div class="mangeelementer9">
+      <InfoCard
+        image="./marco_elby.webp"
+        name="Marco"
+        title="CMO"
+        category="Marketing"
+        description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt."
+      />
+    </div>
+    <div class="mangeelementer9">
+      <InfoCard
+        image="./marco_elby.webp"
+        name="Marco"
+        title="CMO"
+        category="Marketing"
+        description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt."
+      />
+    </div>
+  </div>
+</article>
 
-<h2 class="text-center pb-8">Mød teamet bag Elby</h2>
+
+
+<!-- 
 <div class="stack-area flex w-full h-[400vh] relative">
-  <!-- Cards -->
+  !-- Cards --
   <div class="sticky top-0 h-screen flex-1 flex items-center justify-center relative overflow-hidden">
     <div class="relative bg-slate-400">
-      <!-- Card 1 -->
+      !-- Card 1 --
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
         <InfoCard
           image="./michael_elby.webp"
@@ -34,7 +139,7 @@ import Prefooter from "../components/Prefooter.astro";
           description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
         />
       </div>
-      <!-- Card 2 -->
+      !-- Card 2 --
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
         <InfoCard
         image="./lars_elby.webp"
@@ -44,7 +149,7 @@ import Prefooter from "../components/Prefooter.astro";
         description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne."
       />
       </div>
-      <!-- Card 3 -->
+      !-- Card 3 --
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
         <InfoCard
           image="./jacob_elby.webp"
@@ -54,7 +159,7 @@ import Prefooter from "../components/Prefooter.astro";
           description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
         />
       </div>
-      <!-- Card 4 -->
+      !-- Card 4 --
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
         <InfoCard
           image="./kristian_elby.webp"
@@ -64,7 +169,7 @@ import Prefooter from "../components/Prefooter.astro";
           description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet Volvoen ud med en brugt ID Buzz og bøfferne med planter for at efterlade en bedre verden til sine tre børn."
         />
       </div>
-      <!-- Card 5 -->
+      !-- Card 5 --
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
         <InfoCard
         image="./mads_elby.webp"
@@ -74,7 +179,7 @@ import Prefooter from "../components/Prefooter.astro";
         description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'."
       />
       </div>
-      <!-- Card 6 -->
+      !-- Card 6 --
       <div class="card absolute top-1/2 left-1/2 flex flex-col transition-all ease-in-out duration-500">
         <InfoCard
           image="./marco_elby.webp"
@@ -86,10 +191,10 @@ import Prefooter from "../components/Prefooter.astro";
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-------------- scroll section slut -------------->
 
-<section>
+<section class="bg-sec_be-500">
   <SplitcontentRight
     img="/kvinder_baggagerum.webp"
     header="Når byen og borgerne lader op i fællesskab"
@@ -100,35 +205,32 @@ import Prefooter from "../components/Prefooter.astro";
   />
 </section>
 
-<section class="bg-sec_be-500">
+<section class="bg-primary-500">
   <Splitcontent
     img="/mobil_infografik.png"
-    header="Elby, der giver overskud til både dig og din by"
-    ,
-    text1="Dernæst kunne bilerne være en indtægtskilde for bygningsejerne, når de lader dem op med etagebygningens delestrøm. Det er godt for bygningens økonomi. Måske kunne laderne også hjælpe med at finde de ledige parkeringspladser, så kunne vi nemlig nedsætte bytrafikken med 15 %."
-    ,
-    text2="På sigt kunne elbilerne styrke elnettet ved at sælge lidt af deres strøm tilbage, når den er dyr. Så blev bilerne et fælles batteri for byen, der blot ladede sig selv op, når strømmen blev billig igen. Det ville gøre byen mere robust og styrke den grønne omstilling, hvor vi har brug for at lagre den rene vedvarende energi."
-    ,
-    text3="Og måske en dag kunne bilen fungere som offentlig transportmiddel for andre, når du ikke selv brugte den. Så ville vi få brug for langt færre biler. Og vi ville få noget af den plads tilbage, som byen i sin tid gav til bilerne."
+    header="Elby, der giver overskud til både dig og din by",
+    
+    text1 = "Med Elby får du del i overskuddet, når din lader bruges af byens elbilejere.",
+
+    text2 = "Modellen bygger på fællesskab – som bygningsejer kan du få op til 60 % af overskuddet.",
+    
+    text3 = "Det skaber værdi for både dig og dit kvarter – også selvom du ikke selv har bil. Skal du være med?",
+    buttonText="Få Elby til din Etageejendom"
+    buttonlink="/bestil"
+    linkVariant="primary"
     alt="Mobile dummy med overskud grafik."
   />
 </section>
 
-
- 
- 
-
-
-
-
 <!-------------- FAQ accordion -------------->
-  <section class="pt-8xl">
+  <section class="pt-m md:pt-xl bg-sec_be-500">
      <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-8 p-xs">
+     <div class="grid grid-cols-1 md:grid-cols-3 items-start lg:gap-8 p-xs">
+
   <!-- Om installation -->
   <div class="grid col-span-1 pb-m">
-    <h3 class="pl-xs">Om installation</h3>
+    <h3 class="pl-xs md:pl-xs">Om installation</h3>
 
     <Accordion question="Skal man have tilladelse til at installere Elby?">
       Det kommer an på, hvilken type vej din bygning ligger ud til. <br /><br />
@@ -136,7 +238,7 @@ import Prefooter from "../components/Prefooter.astro";
       <strong>Offentlig vej eller privat fællesvej:</strong> Ja, det kræver en tilladelse fra kommunen at installere Elbys fortovsskinne på offentlig vej eller privat fællesvej. <br /><br />
       Uanset hvilken vej din bygning ligger ud til, så står vi klar til at rådgive dig.
       <div class="text-acc_yel-700">
-        <u><a href="/#kontakt">Kontakt os og hør om dine muligheder</a></u>
+        <u><a href="/kontakt">Kontakt os og hør om dine muligheder</a></u>
       </div>
     </Accordion>
 
@@ -151,7 +253,7 @@ import Prefooter from "../components/Prefooter.astro";
       <div class="mt-4">
         Matcher din bygning ikke ovenstående?<br />
         <u class="text-acc_yel-700">
-          <a href="/#kontakt">Kontakt os for at høre, hvordan vi kan lave en tilpasset løsning til netop jer.</a>
+          <a href="/kontakt">Kontakt os for at høre, hvordan vi kan lave en tilpasset løsning til netop jer.</a>
         </u>
       </div>
     </Accordion>
@@ -172,7 +274,7 @@ import Prefooter from "../components/Prefooter.astro";
 
   <!-- Pris -->
   <div class="grid col-span-1 pb-m">
-    <h3 class="pl-xs">Pris</h3>
+    <h3 class="pl-xs md:pl-xs">Pris</h3>
 
     <Accordion question="Hvad koster det at få Elby?" answer="Elby udbydes både til boligforeninger (ejer-, andel- og almene boligforeninger) samt til ejendomsselskaber og andet erhverv. Se prisen for Elby på de respektive sider."></Accordion>
 
@@ -185,7 +287,7 @@ import Prefooter from "../components/Prefooter.astro";
 
   <!-- Sikkerhed og praktik -->
   <div class="grid col-span-1 pb-m">
-    <h3 class="pl-xs">Sikkerhed og praktik</h3>
+    <h3 class="pl-xs md:pl-xs">Sikkerhed og praktik</h3>
 
     <Accordion question="Hvor meget lader Elby med?" answer="Op til 11 kW tilpasset til bygningen. Vi tager højde for bygningens eget behov og at strømforsyningen varierer fra bygning til bygning."></Accordion>
 
@@ -202,13 +304,13 @@ import Prefooter from "../components/Prefooter.astro";
   </section>
 <!-------------- FAQ accordion slut -------------->
 
-<div class="bg-sec_be-500">
+<div class="bg-primary-500">
 <div>
   <Prefooter header="Vil du høre mere om ELby og visionen bag?" buttonText="Kontakt os og hør mere" buttonlink="../kontakt" linkVariant="primary" />
 </div>
 
 <!-- Grafik Section prefooter -->
-<div class="bg-sec_be-500">
+<div id="6_bygrafik_omelby" class="bg-primary-500">
   <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 
@@ -223,7 +325,36 @@ import Prefooter from "../components/Prefooter.astro";
 }
 </style>
 
-<script>
+  <script type="module">
+  import { animate, inView } from "https://cdn.skypack.dev/motion";
+
+  /* Infocards der animerer ind */
+	inView( ".mangeelementerinview", () =>{
+	animate( ".mangeelementer1", { x: [-2000, 0 ], y: [-50, 0 ] }, { duration: 1 }) 
+	animate( ".mangeelementer2", { x: [-1500, 0 ], y: [-100, 0 ] }, { duration: 3 })
+	animate( ".mangeelementer3", { x: [-1000, 0 ], y: [-150, 0 ] }, { duration: 3 })
+	animate( ".mangeelementer4", { x: [1750, 0 ] }, { duration: 2 })
+	animate( ".mangeelementer5", { x: [-2000, 0 ], y: [-100, 0 ]  }, { duration: 1 })
+	animate( ".mangeelementer6", { x: [2000, 0 ] }, { duration: 2 })
+	animate( ".mangeelementer7", { x: [1500, 0 ], y: [50, 0 ] }, { duration: 3 })
+	animate( ".mangeelementer8", { x: [1000, 0 ], y: [150, 0 ] }, { duration: 2 })
+	animate( ".mangeelementer9", { x: [1500, 0 ], y: [0, 0 ] }, { duration: 1 })
+	animate( ".mangeelementer10", { x: [2000, 0 ] , y: [50, 0 ] }, { duration: 2 })
+	return () => {
+		animate( ".mangeelementer1", { x: [-2000, 0 ], y: [-50, 0 ] }, { duration: 1 }) 
+		animate( ".mangeelementer2", { x: [-1500, 0 ], y: [-100, 0 ] }, { duration: 3 })
+		animate( ".mangeelementer3", { x: [-1000, 0 ], y: [-150, 0 ] }, { duration: 3 })
+		animate( ".mangeelementer4", { x: [1750, 0 ] }, { duration: 2 })
+		animate( ".mangeelementer5", { x: [-2000, 0 ], y: [-100, 0 ]  }, { duration: 1 })
+		animate( ".mangeelementer6", { x: [2000, 0 ] }, { duration: 2 })
+		animate( ".mangeelementer7", { x: [1500, 0 ], y: [50, 0 ] }, { duration: 3 })
+		animate( ".mangeelementer8", { x: [1000, 0 ], y: [150, 0 ] }, { duration: 2 })
+		animate( ".mangeelementer9", { x: [1500, 0 ], y: [0, 0 ] }, { duration: 1 })
+		animate( ".mangeelementer10", { x: [2000, 0 ] , y: [50, 0 ] }, { duration: 2 })
+   		}
+  	})
+
+/* ********************************************************** */
   const cards = document.querySelectorAll(".card");
 const stackArea = document.querySelector(".stack-area");
 
@@ -249,7 +380,7 @@ function updateCardTransforms() {
     let rotation = 0;
 
     if (card.classList.contains("entering")) {
-      card.style.transform = `translate(calc(50% + ${xOffset}px), calc(30% - ${yOffset}px)) rotate(${rotation}deg) scale(1)`;
+      card.style.transform = `translate(calc(0% + ${xOffset}px), calc(30% - ${yOffset}px)) rotate(${rotation}deg) scale(1)`;
       card.style.opacity = inView ? "1" : "0";
       card.style.zIndex = stackHeight - index;
     } else if (card.classList.contains("exiting")) {

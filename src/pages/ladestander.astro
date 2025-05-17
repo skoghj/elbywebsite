@@ -6,128 +6,158 @@ import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Prefooter from "../components/Prefooter.astro";
 import LadestanderHero2 from "../components/LadestanderHero2.astro";
-
-
 ---
 
 <MainLayout title="Elby-ladestander">
-  
-  <div class="bg-sec_be-500">
-  <LadestanderHero2/>
+  <div id="1_ladestanderhero" class="bg-sec_be-500">
+    <LadestanderHero2 />
   </div>
 
-  <section class="bg-primary-500 p-xxs lg:px-12">
-    <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, beton eller stål" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/ladestander2.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby ladestander" buttonlink="/bestil" linkVariant="primary" />
+  <section id="2_usp_ladestander" class="bg-primary-500 p-xxs lg:px-12">
+    <Uspsection
+      header="Hvorfor vælge Elby ladestander?"
+      text1="1. Nytænkende ladestander, der er nænsom for byen"
+      text2="2. Kort installationstid på typisk mellem 1-2 dage"
+      text3="3. Din private ladestander, der kommer i både træ, beton eller stål"
+      img1="/nytaenkIcon.svg"
+      img2="/installation.svg"
+      img3="/ladestander2.svg"
+      alt1="Installation ikon"
+      alt2="Abonnement ikon"
+      alt3="Overskudsdeling ikon"
+      buttonText="Få Elby ladestander"
+      buttonlink="/bestil"
+      linkVariant="primary"
+    />
   </section>
 
-  <section class="bg-sec_be-500">
+  <section id="3_branding_ladestander" class="bg-sec_be-500">
     <Splitcontent
       img="/elbyskilt.webp"
       header="Elby – Ladestander med respekt for byen"
-      ,
       text1="I Elby tror vi på, at grøn omstilling kun virker, hvis den også giver mening for mennesker. Derfor designer vi ladeinfrastruktur, der ikke bare er effektiv – men også folkelig, smuk og nænsom for byen."
-      ,
       text2="Vores ladestandere falder i ét med omgivelserne og bliver en naturlig del af gadebilledet. De er skabt til at patinere, ikke forstyrre – og med løsninger, der både kan være næsten usynlige eller æstetisk integrerede, tager vi hensyn til både fortov, fællesskab og fremtid."
-      ,
       alt="Elby ladestander installeret i indreby ved Thorvalsens museum"
-      ,
       buttonText="Få Elby ladestander"
-      ,
       buttonlink="/bestil"
-      ,
-      linkVariant="primary"
-    />
-
-    <section class="bg-primary-500">
-    <SplitcontentRight
-      img="/ladestander4.webp"
-      header="Elby ladestander til Erhverv"
-      ,
-      text1="Uanset om I er en boligforening, offentlig virksomhed eller anden form for erhverv finder vi den rigtige ladeløsning til jer."
-      ,
-      text2="Vi tilpasser løsningen efter jeres behov – og vi hjælper gerne hele vejen fra installation til ladeboksen er klar til brug."
-      ,
-      alt="Nærbilled af Elby ladestander med ladekabel"
-      ,
-      buttonText="Bliv ringet op og hør mere"
-      ,
-      buttonlink="/kontakt"
-      ,
       linkVariant="primary"
     />
   </section>
 
-  <div class="bg-sec_be-500">
+  <section id="4_erhverv_ladestander" class="bg-primary-500">
+    <SplitcontentRight
+      img="/ladestander4.webp"
+      header="Elby ladestander til Erhverv"
+      text1="Uanset om I er en boligforening, offentlig virksomhed eller anden form for erhverv finder vi den rigtige ladeløsning til jer."
+      text2="Vi tilpasser løsningen efter jeres behov – og vi hjælper gerne hele vejen fra installation til ladeboksen er klar til brug."
+      alt="Nærbilled af Elby ladestander med ladekabel"
+      buttonText="Bliv ringet op og hør mere"
+      buttonlink="/kontakt"
+      linkVariant="primary"
+    />
+  </section>
+
+  <div id="5_tbs_løsning_ladestander" class="bg-sec_be-500">
     <section class="items-start justify-between max-w-7xl mx-auto lg:p-l p-xs lg:py-8xl gap-8xl">
       <h3 class="mb-xxxs pb-xxs">Den rigtige løsning for dig og din bopæl.</h3>
-        <p class="mb-6">Vælg mellem følgende:</p>
-  
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <Card
-        headerColor="bg-acc_yel-500"
-        title="Ladestander i træ"
-        buildingIcon="/ladestander_T.svg"
-        subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
-        image="/ladestander_wood.webp"
-        pricetitle="Pris inkl. moms"
-        price="39.999 kr."
-        linkVariant="primary"
-        buttonText="Få ladestander i træ"
-        buttonLink="/bestil"
-        features={[
-          { icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Egetræ - din ladestander" },
-          { icon: '<img src="/maaler2.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Mål: 77x22x22cm" },
-          { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "1-2 dages installation" },
-        ]}
-      />
-    </template>
+      <p class="mb-6">Vælg mellem følgende:</p>
 
-      <Card
-        headerColor="bg-acc_yel-500"
-        title="Ladestander i beton"
-        buildingIcon="/sleevB.svg"
-        subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
-        image="/ladestander_beton.webp"
-        pricetitle="Pris inkl. moms"
-        price="43.999 kr."
-        linkVariant="primary"
-        buttonText="Få ladestander i beton"
-        buttonLink="/bestil"
-        features={[
-          { icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Beton - din ladestander" },
-          { icon: '<img src="/maaler2.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Mål: 60x20x20cm" },
-          { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "1-2 dages installation" },
-        ]}
-      />
-    </template>
-    
-      <Card
-        headerColor="bg-acc_yel-500"
-        title="Ladestander i stål"
-        buildingIcon="/ladestander_S.svg"
-        subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
-        image="/ladestander_staal.webp"
-        pricetitle="Pris inkl. moms"
-        price="49.999 kr."
-        linkVariant="primary"
-        buttonText="Få ladestander i stål"
-        buttonLink="/bestil"
-        features={[
-          { icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />', text: "Stål - din ladestander" },
-          { icon: '<img src="/maaler2.svg" class="w-12 h-12" alt="Fri fragt ikon" />', text: "Mål: 55x22x22cm" },
-          { icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />', text: "1-2 dages installation" },
-        ]}
-      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Ladestander i træ"
+          buildingIcon="/ladestander_T.svg"
+          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          image="/ladestander_wood.webp"
+          pricetitle="Pris inkl. moms"
+          price="39.999 kr."
+          linkVariant="primary"
+          buttonText="Få din ladestander i træ"
+          buttonLink="/bestil"
+          features={[
+            {
+              icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />',
+              text: "Egetræ - ladestander",
+            },
+            {
+              icon: '<img src="/maaler2.svg" class="w-12 h-12" alt="Fri fragt ikon" />',
+              text: "Mål: 77x22x22cm",
+            },
+            {
+              icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
+              text: "1-2 dages installation",
+            },
+          ]}
+        />
+
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Ladestander i beton"
+          buildingIcon="/sleevB.svg"
+          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          image="/ladestander_beton.webp"
+          pricetitle="Pris inkl. moms"
+          price="43.999 kr."
+          linkVariant="primary"
+          buttonText="Få din ladestander i beton"
+          buttonLink="/bestil"
+          features={[
+            {
+              icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />',
+              text: "Beton - ladestander",
+            },
+            {
+              icon: '<img src="/maaler2.svg" class="w-12 h-12" alt="Fri fragt ikon" />',
+              text: "Mål: 60x20x20cm",
+            },
+            {
+              icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
+              text: "1-2 dages installation",
+            },
+          ]}
+        />
+
+        <Card
+          headerColor="bg-acc_yel-500"
+          title="Ladestander i stål"
+          buildingIcon="/ladestander_S.svg"
+          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          image="/ladestander_staal.webp"
+          pricetitle="Pris inkl. moms"
+          price="49.999 kr."
+          linkVariant="primary"
+          buttonText="Få din ladestander i stål"
+          buttonLink="/bestil"
+          features={[
+            {
+              icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />',
+              text: "Stål - ladestander",
+            },
+            {
+              icon: '<img src="/maaler2.svg" class="w-12 h-12" alt="Fri fragt ikon" />',
+              text: "Mål: 55x22x22cm",
+            },
+            {
+              icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
+              text: "1-2 dages installation",
+            },
+          ]}
+        />
       </div>
     </section>
   </div>
 
   <div class="bg-primary-500 lg:py-l">
-    <Prefooter header="SKAF DIG EN ELBY LADESTANDER!" , buttonText="Elby ladestander, ja tak!" , buttonlink="/bestil" , linkVariant="primary" />
+    <Prefooter
+      header="SKAF DIG EN ELBY LADESTANDER!"
+      buttonText="Elby ladestander, ja tak!"
+      buttonlink="/bestil"
+      linkVariant="primary"
+    />
   </div>
-<!-- Grafik Section prefooter -->
-<div class="bg-primary-500">
-<img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
-</div>
+
+  <!-- Grafik Section prefooter -->
+  <div class="bg-primary-500">
+    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+  </div>
 </MainLayout>
