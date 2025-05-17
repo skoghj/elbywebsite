@@ -9,7 +9,7 @@ import Prefooter from "../components/Prefooter.astro";
 
 <MainLayout title="Titel">
 
-  <section>
+  <section id="1_omelby_hero">
     <section class="flex flex-col lg:flex-row bg-sec_be-500">
       <div class="flex flex-col justify-center mx-auto p-sm w-full order-2 lg:order-1 sm:max-w-md min-440">
         <div class="mb-xs break-words">
@@ -26,7 +26,7 @@ import Prefooter from "../components/Prefooter.astro";
 
 <!-- <TestimonialsSlider/> -->
 
-<article class="md:pb-2xl">
+<article id="2_cardanimation" class="md:pb-2xl">
   <h2 class="text-center pt-m pb-m md:pt-xl">Mød teamet bag Elby</h2>
   <div class="sticky top-1/4 mangeelementerinview grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-y-6">
     <div class="mangeelementer1">
@@ -194,7 +194,7 @@ import Prefooter from "../components/Prefooter.astro";
 </div> -->
 <!-------------- scroll section slut -------------->
 
-<section class="bg-sec_be-500">
+<section id="3_branding_omelby" class="bg-sec_be-500">
   <SplitcontentRight
     img="/kvinder_baggagerum.webp"
     header="Når byen og borgerne lader op i fællesskab"
@@ -205,7 +205,7 @@ import Prefooter from "../components/Prefooter.astro";
   />
 </section>
 
-<section class="bg-primary-500">
+<section id="4_overskud_omelby" class="bg-primary-500">
   <Splitcontent
     img="/mobil_infografik.png"
     header="Elby, der giver overskud til både dig og din by",
@@ -223,14 +223,14 @@ import Prefooter from "../components/Prefooter.astro";
 </section>
 
 <!-------------- FAQ accordion -------------->
-  <section class="pt-m md:pt-xl bg-sec_be-500">
+  <section id="5_faq_omelby" class="pt-m md:pt-xl bg-sec_be-500">
      <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
 
      <div class="grid grid-cols-1 md:grid-cols-3 items-start lg:gap-8 p-xs">
 
   <!-- Om installation -->
   <div class="grid col-span-1 pb-m">
-    <h3 class="pl-sm md:pl-xs">Om installation</h3>
+    <h3 class="pl-s md:pl-xs">Om installation</h3>
 
     <Accordion question="Skal man have tilladelse til at installere Elby?">
       Det kommer an på, hvilken type vej din bygning ligger ud til. <br /><br />
@@ -274,7 +274,7 @@ import Prefooter from "../components/Prefooter.astro";
 
   <!-- Pris -->
   <div class="grid col-span-1 pb-m">
-    <h3 class="pl-sm md:pl-xs">Pris</h3>
+    <h3 class="pl-s md:pl-xs">Pris</h3>
 
     <Accordion question="Hvad koster det at få Elby?" answer="Elby udbydes både til boligforeninger (ejer-, andel- og almene boligforeninger) samt til ejendomsselskaber og andet erhverv. Se prisen for Elby på de respektive sider."></Accordion>
 
@@ -287,7 +287,7 @@ import Prefooter from "../components/Prefooter.astro";
 
   <!-- Sikkerhed og praktik -->
   <div class="grid col-span-1 pb-m">
-    <h3 class="pl-sm md:pl-xs">Sikkerhed og praktik</h3>
+    <h3 class="pl-s md:pl-xs">Sikkerhed og praktik</h3>
 
     <Accordion question="Hvor meget lader Elby med?" answer="Op til 11 kW tilpasset til bygningen. Vi tager højde for bygningens eget behov og at strømforsyningen varierer fra bygning til bygning."></Accordion>
 
@@ -304,13 +304,13 @@ import Prefooter from "../components/Prefooter.astro";
   </section>
 <!-------------- FAQ accordion slut -------------->
 
-<div class="bg-primary-500">
+<div id="6_prefooter_omelby" class="bg-primary-500">
 <div>
   <Prefooter header="Vil du høre mere om ELby og visionen bag?" buttonText="Kontakt os og hør mere" buttonlink="../kontakt" linkVariant="primary" />
 </div>
 
 <!-- Grafik Section prefooter -->
-<div id="6_bygrafik_omelby" class="bg-primary-500">
+<div id="7_bygrafik_omelby" class="bg-primary-500">
   <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 
