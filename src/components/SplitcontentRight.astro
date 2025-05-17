@@ -9,7 +9,13 @@ const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVarian
       <h2 class="mb-4" set:html={header} />
       <p class="mb-4" set:html={text1} />
       <p class="mb-6" set:html={text2} />
-      <Link href={buttonlink} variant={linkVariant} size="full">{buttonText}</Link>
+      {
+        buttonText && (
+          <Link href={buttonlink} variant={linkVariant} size="full">
+            {buttonText}
+          </Link>
+        )
+      }
     </div>
   </div>
   <div class="basis-full md:basis-[50%]">
