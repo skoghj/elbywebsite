@@ -1,0 +1,101 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+import Uspsection from "../components/Uspsection.astro";
+
+import SleeveHero2 from "../components/SleeveHero2.astro";
+import InfoCard from '../components/InfoCard.astro';
+---
+
+<head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css"
+    />
+  </head>
+<MainLayout>
+
+ <!-- Hero Section -->
+ <div id="1_sleevehero" class="bg-sec_be-500">
+    <SleeveHero2 />
+  </div>
+
+  <!-- USP Section -->
+  <section id="2_usp_sleeve" class="bg-primary-500">
+    <Uspsection
+      header="Hvorfor få Elby fortovsskinne?"
+      text1="1. Eliminerer snublefare - den er sikker for alle"
+      text2="2. Kort installationstid på typisk mellem 1-2 dage"
+      text3="3. Robust design der øger boligværdien"
+      img1="/SleevIcon.svg"
+      img2="/installation.svg"
+      img3="/overskueligIcon.svg"
+      alt1="Installation ikon"
+      alt2="Abonnement ikon"
+      alt3="Overskudsdeling ikon"
+      buttonText="Få Elby til din boligforening"
+      buttonlink="/bestil"
+      linkVariant="primary"
+    />
+  </section>
+
+  <div class="h-screen overflow-hidden relative">
+    <div id="rotating-carousel" class="w-full h-full relative">
+      <div class="carousel-inner w-full h-full absolute top-0 left-0 flex items-center justify-center" style="transform-style: preserve-3d;">
+        <div class="slide absolute"><InfoCard image="./michael_elby.webp" name="Michael" title="CEO" category="Tech & Startup" description="Michael, engang kaldt “godfather” af Københavns startup-miljø..." /></div>
+        <div class="slide absolute"><InfoCard image="./lars_elby.webp" name="Lars" title="CINO" category="Built Environment" description="Lars er idealisten og designeren..." /></div>
+        <div class="slide absolute"><InfoCard image="./jacob_elby.webp" name="Jacob" title="COO" category="Operations" description="Michael, engang kaldt 'godfather'..." /></div>
+        <div class="slide absolute"><InfoCard image="./kristian_elby.webp" name="Kristian" title="CCO" category="Commercial" description="Kristian bruger markedskræfterne..." /></div>
+        <div class="slide absolute"><InfoCard image="./mads_elby.webp" name="Mads" title="CPO" category="Product" description="Mads er perfektionisten der sørger for at samle detaljerne..." /></div>
+        <div class="slide absolute"><InfoCard image="./marco_elby.webp" name="Marco" title="CMO" category="Marketing" description="Marcoting bor på Vesterbro..." /></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- USP Section -->
+  <section id="2_usp_sleeve" class="bg-primary-500">
+    <Uspsection
+      header="Hvorfor få Elby fortovsskinne?"
+      text1="1. Eliminerer snublefare - den er sikker for alle"
+      text2="2. Kort installationstid på typisk mellem 1-2 dage"
+      text3="3. Robust design der øger boligværdien"
+      img1="/SleevIcon.svg"
+      img2="/installation.svg"
+      img3="/overskueligIcon.svg"
+      alt1="Installation ikon"
+      alt2="Abonnement ikon"
+      alt3="Overskudsdeling ikon"
+      buttonText="Få Elby til din boligforening"
+      buttonlink="/bestil"
+      linkVariant="primary"
+    />
+  </section>
+
+  <style>
+    .slide {
+      width: 320px;
+      height: 400px;
+      transform-origin: center center -500px;
+      transition: transform 0.3s ease;
+    }
+  
+    .carousel-inner > .slide:nth-child(1) { transform: rotateY(0deg) translateZ(500px); }
+    .carousel-inner > .slide:nth-child(2) { transform: rotateY(60deg) translateZ(500px); }
+    .carousel-inner > .slide:nth-child(3) { transform: rotateY(120deg) translateZ(500px); }
+    .carousel-inner > .slide:nth-child(4) { transform: rotateY(180deg) translateZ(500px); }
+    .carousel-inner > .slide:nth-child(5) { transform: rotateY(240deg) translateZ(500px); }
+    .carousel-inner > .slide:nth-child(6) { transform: rotateY(300deg) translateZ(500px); }
+  </style>
+  
+  <script>
+    let currentRotation = 0;
+    window.addEventListener("scroll", () => {
+      const delta = window.scrollY;
+      const rotation = delta * 0.1; // Adjust speed here
+      const container = document.querySelector(".carousel-inner");
+      currentRotation = rotation;
+      container.style.transform = `rotateY(${rotation}deg)`;
+    });
+  </script>
+
+  
