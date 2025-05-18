@@ -5,12 +5,59 @@ import Uspsection from "../components/Uspsection.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Prefooter from "../components/Prefooter.astro";
-import LadestanderHero2 from "../components/LadestanderHero2.astro";
+import SplitcontentHero from "../components/SplitcontentHero.astro";
+
+const materiale = [
+  { value: "Ladestander i træ", label: "Elby Ladestander i træ" },
+  { value: "Ladestander i beton", label: "Elby Ladestander i beton" },
+  { value: "Ladestander i stål", label: "Elby Ladestander i stål" },
+];
+
+const infoCards = [
+  {
+    match: "Ladestander i træ",
+    price: "39.999 kr.",
+    items: [
+      { icon: "/layers2.svg", text: "Egetræ" },
+      { icon: "/maaler2.svg", text: "Mål: 77x22x22cm" },
+      { icon: "/installation.svg", text: "Installation 1-2 dage" }
+    ]
+  },
+  {
+    match: "Ladestander i beton",
+    price: "43.999 kr.",
+    items: [
+      { icon: "/layers2.svg", text: "Beton" },
+      { icon: "/maaler2.svg", text: "Mål: 60x20x20cm" },
+      { icon: "/installation.svg", text: "Installation 1-2 dage" }
+    ]
+  },
+  {
+    match: "Ladestander i stål",
+    price: "49.999 kr.",
+    items: [
+      { icon: "/layers2.svg", text: "Stål" },
+      { icon: "/maaler2.svg", text: "Mål: 55x22x22cm" },
+      { icon: "/installation.svg", text: "Installation 1-2 dage" }
+    ]
+  }
+];
 ---
 
 <MainLayout title="Elby-ladestander">
+
   <div id="1_ladestanderhero" class="bg-sec_be-500">
-    <LadestanderHero2 />
+    <SplitcontentHero
+    title="ELBY Ladestander"
+    text="Med Elby ladestander får du en helt ny måde at tænke ladestander på."
+    dropdownOptions={materiale}
+    dropdownBinding="Ladestander i træ"
+    infoCards={infoCards}
+    buttonText="Få Elby ladestander"
+    buttonLink="../bestil"
+    rightMediaType="video"
+    rightMediaSrc="/fortovskinne.webm"
+  />
   </div>
 
   <section id="2_usp_ladestander" class="bg-primary-500 p-xxs lg:px-12">

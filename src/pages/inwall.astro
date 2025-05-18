@@ -1,16 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import InwallHero from "../components/InwallHero.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
+import SplitcontentHero from "../components/SplitcontentHero.astro";
 ---
 
 <MainLayout title="Titel">
-  <section id="1_inwall">
-    <InwallHero />
-  </section>
+
+  <div id="1_inwallhero" class="bg-sec_be-500">
+    <SplitcontentHero
+      title="Sådan virker elby"
+      text="Hos Elby har vi løsningen, der passer til forskellige behov. Er du en boligforening eller et ejendomsselskab?"
+      buttonText="Få Elby til din Etageejendom"
+      buttonLink="../bestil"
+      rightMediaType="youtube"
+      rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA"
+    />
+  </div>
 
   <section id="2_brugerguide" class="bg-primary-500 px-sm py-xl">
     <h2 class="text-center pb-md">Sådan lader du med Elby</h2>

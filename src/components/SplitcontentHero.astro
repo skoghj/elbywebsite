@@ -1,0 +1,111 @@
+---
+import Link from "./Link.astro";
+import Dropdown from "./Dropdown.astro";
+
+const {
+  title,
+  text,
+  bg = "", // fx bg-sec_be-500
+  dropdownOptions = null,
+  dropdownBinding = "",
+  infoCards = null,
+  price = "",
+  buttonText = "",
+  buttonLink = "",
+  rightMediaType = "video", // "video" | "iframe" | "image" | "youtube"
+  rightMediaSrc = "",
+  iframeTitle = "Embedded content"
+} = Astro.props;
+---
+
+<section x-data={dropdownOptions ? `{ selected: '${dropdownBinding}' }` : null}
+  @dropdown-change.window="selected = $event.detail"
+  class={bg}
+>
+  <div class="relative max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-8 px-4 sm:px-6 md:px-12 lg:pl-14 lg:py-md py-8">
+    
+    <!-- Venstre kolonne -->
+    <div class="lg:w-1/2 w-full max-w-[444px]">
+      <div class="space-y-6">
+        <h2>{title}</h2>
+        <p>{text}</p>
+
+        {dropdownOptions &&
+          <div class="mx-auto lg:mx-0">
+            <Dropdown options={dropdownOptions} placeholder="Vælg en mulighed..." />
+          </div>
+        }
+
+        {infoCards &&
+          <div class="space-y-4 text-left">
+            {infoCards.map(card => (
+              <template x-if={`selected === '${card.match}'`}>
+                <div>
+                  <ul class="space-y-2 lg:space-y-0 border-t border-neu_db-400">
+                    {card.items.map(item => (
+                      <li class="flex items-center gap-3 border-b border-neu_db-400 py-2">
+                        <img src={item.icon} class="w-10 h-10" alt="icon" />
+                        <p>{item.text}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  <p class="mt-4 text-sm">Pris inkl. moms</p>
+                  <p class="text-3xl font-bold">{card.price}</p>
+                </div>
+              </template>
+            ))}
+          </div>
+        }
+
+        {buttonText &&
+          <div class="pt-4">
+            <Link href={buttonLink} variant="primary" size="standard">
+              {buttonText}
+            </Link>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Højre kolonne -->
+    <div class="w-full lg:w-1/2 ml-auto">
+      {rightMediaType === "video" && (
+        <div class="w-full aspect-video max-h-[400px] overflow-hidden">
+          <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+            <source src={rightMediaSrc} type="video/webm" />
+          </video>
+        </div>
+      )}
+
+      {rightMediaType === "iframe" && (
+        <div class="relative w-full pt-[56.25%] max-h-[400px] overflow-hidden">
+          <iframe
+            class="absolute top-0 left-0 w-full h-full"
+            src={rightMediaSrc}
+            title={iframeTitle}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
+
+      {rightMediaType === "youtube" && (
+        <div class="relative w-full pt-[56.25%] max-h-[400px] overflow-hidden">
+          <iframe
+            class="absolute top-0 left-0 w-full h-full"
+            src={rightMediaSrc}
+            title={iframeTitle}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
+
+      {rightMediaType === "image" && (
+        <img src={rightMediaSrc} alt="Media image" class="w-full h-auto object-cover max-h-[400px]" />
+      )}
+    </div>
+  </div>
+</section>

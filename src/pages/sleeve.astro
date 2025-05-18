@@ -5,7 +5,43 @@ import Card from "../components/ProductCard.astro";
 import Uspsection from "../components/Uspsection.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import Dropdown from "../components/Dropdown.astro";
-import SleeveHero2 from "../components/SleeveHero2.astro";
+import SplitcontentHero from "../components/SplitcontentHero.astro";
+
+const sleeve = [
+  { value: "m/installation og ansøgning", label: "Med installation og ansøgning" },
+  { value: "m/installation", label: "Med installation" },
+  { value: "u/installation", label: "Uden installation" },
+];
+
+const infoCards = [
+  {
+    match: "m/installation og ansøgning",
+    price: "3.299 kr.",
+    items: [
+      { icon: "/SleevIcon.svg", text: "2m fortovsskinne inkl. lim" },
+      { icon: "/installation.svg", text: "1-2 dages Installation" },
+      { icon: "/ansogningIcon.svg", text: "Ansøgning til kommunen" }
+    ]
+  },
+  {
+    match: "m/installation",
+    price: "2.799 kr.",
+    items: [
+      { icon: "/SleevIcon.svg", text: "2m fortovsskinne inkl. lim" },
+      { icon: "/installation.svg", text: "1-2 dages Installation" },
+      { icon: "/fragtIcon.svg", text: "Fri fragt" }
+    ]
+  },
+  {
+    match: "u/installation",
+    price: "999 kr.",
+    items: [
+      { icon: "/SleevIcon.svg", text: "2m fortovsskinne inkl. lim" },
+      { icon: "/Montagevejledning.svg", text: "Montagevejledning" },
+      { icon: "/fragtIcon.svg", text: "Fri fragt" }
+    ]
+  }
+];
 
 const kommune = [
   { value: "Københavns Kommune", label: "Københavns Kommune" },
@@ -24,9 +60,20 @@ const kommune = [
 ---
 
 <MainLayout title="Elby-sleeve">
-  <!-- Hero Section -->
+  
+ <!-- Hero Section -->
   <div id="1_sleevehero" class="bg-sec_be-500">
-    <SleeveHero2 />
+    <SplitcontentHero
+      title="ELBY Fortovsskinne"
+      text="Er fortovet i vejen for din drøm om at køre elbil? Elby har løst problemet med en fortovsskinne i et kompakt og funktionelt design."
+      dropdownOptions={sleeve}
+      dropdownBinding="m/installation og ansøgning"
+      infoCards={infoCards}
+      buttonText="Få Elby til din boligforening"
+      buttonLink="../bestil"
+      rightMediaType="video"
+      rightMediaSrc="/fortovskinne.webm"
+    />
   </div>
 
   <!-- USP Section -->
