@@ -32,7 +32,7 @@ const { placeholder = "", options = [] } = Astro.props;
   <ul x-show="open" x-cloak @click.outside="open = false" class="absolute z-10 mt-1 w-full bg-primary-50 border rounded-xs shadow-md space-y-xxs">
     <template x-for="opt in options" :key="opt.value">
       <li>
-        <button type="button" class="w-full text-left p-xs hover:bg-acc_yel-500 text-sec_bl-950 text-body-sm font-body" @click="select(opt)">
+        <button type="button" class="w-full text-left p-[10px] hover:bg-acc_yel-500 text-sec_bl-950 text-body-sm font-body" @click="select(opt)">
           <span x-text="opt.label"></span>
         </button>
       </li>
