@@ -2,9 +2,9 @@
 import Link from "./Link.astro";
 ---
 
-<div class="relative w-full">
+<div class="fixed top-0 left-0 w-full z-50 bg-primary-50 shadow-sm">
   <!-- Mobile Navigation -->
-  <div class="flex md:hidden items-center justify-between px-4 py-3 bg-white shadow-sm">
+  <div class="flex md:hidden items-center justify-between px-4 py-3 bg-primary-50 shadow-sm">
     <!-- Burger -->
     <button id="burger-menu" class="z-50">
       <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -17,7 +17,7 @@ import Link from "./Link.astro";
 
     <!-- Logo -->
     <a href="/">
-      <img src="./elby_logo.svg" alt="Logo" class="h-10" />
+      <img src="/elby_logo.svg" alt="Logo" class="h-10" />
     </a>
 
     <!-- CTA -->
@@ -27,8 +27,8 @@ import Link from "./Link.astro";
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="dropdown-overlay" class="hidden md:hidden absolute inset-x-0 top-[80px] z-40 bg-white shadow-lg px-4 py-4" x-data="{ openDropdown: false }">
-    <div class="bg-white px-4 py-4">
+  <div id="dropdown-overlay" class="hidden md:hidden absolute inset-x-0 top-[80px] z-40 bg-primary-50 shadow-lg px-4 py-4" x-data="{ openDropdown: false }">
+    <div class="bg-primary-50 px-4 py-4">
       <ul class="space-y-6 text-accent-500 font-semibold text-sm">
         <!-- Dropdown toggler -->
         <li class="relative">
@@ -40,7 +40,7 @@ import Link from "./Link.astro";
           </button>
 
           <!-- Dropdown content (mobile-friendly) -->
-          <div x-show="openDropdown" x-transition class="mt-2 bg-white text-accent-500 z-20">
+          <div x-show="openDropdown" x-transition class="mt-2 bg-primary-50 text-accent-500 z-20">
             <ul class="space-y-1 pl-4">
               <li class="hover:bg-acc_yel-500 px-3 py-2 rounded-[4px]">
                 <a href="/boligforening?tab=bolig" class="block text-neutral-900">Elby til Boligforeninger</a>
@@ -69,10 +69,10 @@ import Link from "./Link.astro";
   </div>
 
   <!-- Desktop Navigation -->
-  <div class="hidden md:flex items-center justify-between px-4 lg:px-8 xl:px-12 py-3 w-full bg-white">
+  <div class="hidden md:flex items-center justify-between px-4 lg:px-8 xl:px-12 py-3 w-full bg-primary-50">
     <!-- Left: Logo -->
     <a href="/" class="shrink-0">
-      <img src="./elby_logo.svg" alt="Logo" class="h-10 w-auto" />
+      <img src="./elby_logo.svg" alt="Logo" class="h-12 w-auto" />
     </a>
 
     <!-- Center: Menu -->
@@ -86,7 +86,7 @@ import Link from "./Link.astro";
             </svg>
           </div>
           <!-- Dropdown -->
-          <div class="absolute left-0 mt-2 w-64 rounded-[4px] bg-white text-accent-500 shadow-lg z-40 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div class="absolute left-0 mt-2 w-64 rounded-[4px] bg-primary-50 text-accent-500 shadow-lg z-40 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <ul>
               <li class="hover:bg-acc_yel-500 px-3 py-2 rounded-[4px]">
                 <a href="/boligforening?tab=bolig" class="block text-neutral-900">Elby til Boligforeninger</a>
@@ -106,7 +106,7 @@ import Link from "./Link.astro";
         <li><a href="/inwall" class="hover:text-acc_yel-700">Sådan virker Elby</a></li>
         <li><a href="/omelby" class="hover:text-acc_yel-700">Om Elby</a></li>
         <li>
-          <a href="/kontakt" class="hover:underline hover:text-acc_yel-700">Kontakt</a>
+          <a href="/kontakt" class="hover:text-acc_yel-700">Kontakt</a>
         </li>
       </ul>
     </nav>
