@@ -50,8 +50,8 @@ const {
                     ))}
                   </ul>
                   <div class="mt-4 flex items-baseline gap-4 pt-2">
-                    <p class="text-3xl font-bold">{card.price}</p>
-                    <p class="text-sm">Pris inkl. moms</p>
+                    <p class="text-3xl font-bold md:pl-4">{card.price}</p>
+                    <p class="">Pris inkl. moms.</p>
                   </div>
                 </div>
               </template>
@@ -70,7 +70,7 @@ const {
     </div>
 
     <!-- Højre kolonne -->
-    <div class="w-full lg:w-1/2 ml-auto border border-indigo-600">
+    <div class="w-full lg:w-1/2 ml-auto">
       {rightMediaType === "video" && (
         <div class="w-full aspect-video max-h-[400px] overflow-hidden">
           <video class="w-full h-full object-cover" autoplay muted loop playsinline>
