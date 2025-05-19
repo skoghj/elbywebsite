@@ -8,10 +8,11 @@
     </div>
     
     <!-- højre leadflow -->
- <div class="h-[700px] md:h-[600px] mx-lg mt-lg flex flex-col justify-center items-center">
+ <div class="my-lg mx-lg  flex flex-col justify-center items-center">
+  <div class="charging-container"></div>
   <!-- Container med max-width og centreret -->
   <div class="w-full max-w-[600px]">
-    <h2 class="mb-md lg:mb-lg text-title-lg">Se hvilken løsning fra Elby, der passer til dig</h2>
+    <h2 class="mb-sm">Se hvilken løsning fra Elby, der passer til dig</h2>
     <div id="app" class="w-full"></div>
   </div>
 </div>
@@ -26,9 +27,9 @@
     {
       question: "Hvilken type lejlighed bor du i?",
       options: [
-        { label: "Leje", icon: "/boligforening-building.svg", image: "/ejendomby.webp" },
-        { label: "Andel", icon: "/ejendom-building.svg", image: "/opladning2.webp" },
-        { label: "Ejer", icon: "/ejendom-building.svg", image: "/opladning3.webp" }
+        { label: "Leje", icon: "/boligforening-building.svg", image: "/leje.jpg" },
+        { label: "Andel", icon: "/ejendom-building.svg", image: "/anddel.jpg" },
+        { label: "Ejer", icon: "/ejendom-building.svg", image: "/ejer.jpg" }
       ]
     },
     {
@@ -95,7 +96,7 @@
     } else if (step > 0) {
       rightImg.src = "/opladning1.webp";
     } else {
-      rightImg.src = "../Elby_løsning.png";
+      rightImg.src = "../fp1.png";
     }
   }
 
@@ -156,7 +157,12 @@
               <button class="w-full text-left border-black shadow bg-acc_yel-50 hover:bg-acc_yel-500 px-4 py-2 rounded transition" data-answer="${opt}">${opt}</button>
             `).join('')}
           </div>
-          <button id="backBtn" class="mt-6 text-blue-600">Tilbage</button>
+          <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+  </svg>
+  Tilbage
+</button>
         `;
 
         app.appendChild(container);
@@ -186,21 +192,26 @@
 
       if (hasDisqualifying) {
         container.innerHTML = `
-          <h2 class="text-2xl font-bold mb-4">Vi har brug for flere oplysninger</h2>
+          <p class="text-2xl font-bold font-body mb-4">Vi har brug for flere oplysninger</p>
           <p class="text-gray-700 mb-4">Vi mangler lidt information for at kunne give dig den bedste løsning.</p>
           <img src="/images/extra-info.png" alt="Ekstra oplysninger" class="w-full h-auto mb-6 rounded" />
         `;
       } else {
         container.innerHTML = `
-          <h2 class="text-2xl font-bold mb-4">Du er klar til Elby!</h2>
-          <p class="text-gray-700 mb-4">Fantastisk! Send os dine kontaktoplysninger.</p>
+          <p class="text-2xl font-body font-bold mb-4">Du er klar til Elby!</p>
+          <p class="text-gray-700 mb-4">Fantastisk! Send os dine kontaktoplysninger, så kontakter vi dig for hurtigt at komme i gang.</p>
           <img src="/images/ready-elby.png" alt="Klar til Elby" class="w-full h-auto mb-6 rounded" />
         `;
       }
 
       container.innerHTML += `
-        <button id="continueBtn" class="w-full bg-acc_yel-500 text-black py-2 rounded mb-2">Indtast dine kontaktoplysninger</button>
-        <button id="backBtn" class="text-blue-600">Tilbage</button>
+        <button id="continueBtn" class="w-full bg-acc_yel-500 text-black py-2 rounded ">Indtast dine kontaktoplysninger</button>
+       <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+  </svg>
+  Tilbage
+</button>
       `;
 
       app.appendChild(container);
@@ -230,7 +241,12 @@
           <textarea placeholder="Evt. kommentar" class="w-full border p-2 rounded"></textarea>
           <button type="submit" class="w-full bg-acc_yel-500 text-black py-2 rounded">Send</button>
         </form>
-        <button id="backBtn" class="mt-4 text-blue-600">Tilbage</button>
+      <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+  </svg>
+  Tilbage
+</button>
       `;
 
       app.appendChild(form);
@@ -254,7 +270,7 @@
     
       <div class="flex flex-col mt-lg items-center text-center">
         <img src="../" alt="Thumbs Up" class="mb-6 w-20 h-20" />
-        <h2 class="text-2xl font-bold ">Tak for din henvendelse!</h2>
+        <p class="text-2xl font-bold ">Tak for din henvendelse!</p>
         <p>Vi vender tilbage hurtigst muligt.</p>
       </div>
   
@@ -267,3 +283,4 @@
   }
 
   render();
+  
