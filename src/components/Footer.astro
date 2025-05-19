@@ -3,104 +3,83 @@
 ---
 
 <div class="flex flex-col w-full">
-  <div class="bg-neu_dg-500 text-sec_bl-950 px-sm py-md md:p-md lg:px-xl lg:py-s">
-    <div class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-sm justify-between items-start w-full">
-      <!-- Kontakt Section -->
-      <div class="flex flex-col items-start">
-        <img src="/elby_logo.svg" alt="Elby logo" class="lg:h-l pb-xs" />
-
-        <div class="flex flex-col items-start pb-xs text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop space-y-1">
-          <p>Elby Aps</p>
-          <p>Islands Brygge 27</p>
-          <p>2300 København S</p>
+    
+    <div class="bg-neu_dg-500 text-sec_bl-950 pt-sm lg:pt-m px-md md:px-xl lg:px-2xl md:pt-md  py-xl lg:py-s">
+      <div class="flex flex-col md:flex-row md:justify-between items-start w-full max-w-full">
+        
+        <!-- Kontakt Section -->
+        <div class="flex flex-col items-start pb-md md:pb-none lg:pb-none">
+          <img src="./elby_logo.svg" alt="Elby logo" class="lg:h-l pb-xxs" />
+  
+          <div class="flex flex-col items-start pb-s md:pb-s">
+            <p class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">Elby Aps</p>
+            <p class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">Islands Brygge 27</p>
+            <p class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">2300 København S</p>
+          </div>
+  
+          <div class="flex flex-col items-start pb-md md:pb-none lg:pb-none">
+            <p class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">CVR. 43151436</p>
+            <p class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop">hej@elby.dk</p>
+          </div>
         </div>
-
-        <div class="flex flex-col items-start text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop space-y-1">
-          <p>CVR. 43151436</p>
-          <p>hej@elby.dk</p>
+  
+        <!-- Navigation Section 1 -->
+        <div class="flex flex-col items-start pb-md md:pb-none lg:pb-none">
+          <p class="font-body text-body-md md:text-body-lg-tablet lg:text-body-lg-tablet pb-s lg:pb-s">Ladeløsning til byerne</p>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">Sådan virker Elbys løsning</a>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">Til boligforeningen</a>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">Til ejendomsselskabet</a>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">Fortovsskinnen</a>
+          <a href="/" class="font-body c pb-xs">Download app</a>
         </div>
-      </div>
-
-      <!-- Navigation Section 1 -->
-      <div class="flex flex-col items-start font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop space-y-1">
-        <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-tablet pb-xs">Ladeløsning til byerne</p>
-        <a href="/inwall" class="">Sådan virker Elbys løsning</a>
-        <a href="/boligforening?tab=bolig" class="">Til boligforeningen</a>
-        <a href="/boligforening?tab=ejendom" class="">Til ejendomsselskabet</a>
-        <a href="/sleeve" class="">Fortovsskinnen</a>
-        <a href="/" class="">Download app</a>
-      </div>
-
-      <!-- Navigation Section 2 -->
-      <div class="flex flex-col items-start font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop space-y-1">
-        <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-tablet pb-xs">Om Elby</p>
-        <a href="/omelby">Visionen og holdet bag</a>
-        <a href="/kontakt">Kontakt</a>
-        <a href="/omelby">FAQ</a>
-        <a href="/">Support</a>
-      </div>
-
-      <!-- Nyhedsbrev Section -->
-      <div class="flex flex-col items-start font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop space-y-1">
-        <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-tablet pb-xs">Få nyt om Elby i din indbakke</p>
-        <!-- Nyhedsbrev form -->
-        <form id="newsletterForm" class="flex mt-2 w-full">
-          <input type="email" placeholder="Skriv dig op til vores nyhedsbrev" required class="flex-grow p-xs text-sm bg-primary-50 border border-neu_db-300 focus:outline-none" />
-          <button type="submit" class="bg-sec_bl-400 text-primary-50 px-4 flex items-center hover:bg-sec_bl-500">
-            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </form>
+  
+        <!-- Navigation Section 2 -->
+        <div class="flex flex-col items-start pb-md md:pb-none lg:pb-none">
+          <p class="font-body text-body-md md:text-body-lg-tablet lg:text-body-lg-tablet pb-s lg:pb-s">Om Elby</p>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">Visionen og holdet bag</a>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">Kontakt</a>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">FAQ</a>
+          <a href="/" class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop pb-xxs">Support</a>
+        </div>
+  
+        <!-- Nyhedsbrev Section -->
+        <div class="pb-md md:pb-none lg:pb-none">
+          <p class="font-body text-body-md md:text-body-lg-tablet lg:text-body-lg-tablet lg:pb-s">Få nyt om Elby i din indbakke</p>
+          <form id="newsletterForm" class="flex mt-2">
+            <input type="email" placeholder="Skriv dig op til vores nyhedsbrev" required
+              class="w-full p-xs text-sm bg-primary-50 border border-neu_db-300 focus:outline-none" />
+            <button type="submit" class="bg-sec_bl-400 text-primary-50 px-4 flex items-center hover:bg-sec_bl-500">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Bottom Bar -->
-<div class="bg-sec_bl-400 text-primary-50 w-full p-sm md:py-sm lg:px-xl lg:py-xs">
-  <div class="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] justify-between items-start gap-sm md:items-center text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop font-body">
-    <div>Made with <span>💚</span> in Copenhagen</div>
-    <div>©Elby.dk™ 2025</div>
-    <div>Elbys løsning er under patentering</div>
-    <div class="flex space-x-4">
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/elbydotco/" class="relative w-m h-m block group">
-        <img src="/Instagram.svg" class="absolute inset-0 w-full h-full group-hover:opacity-0 transition duration-300" alt="Instagram" />
-        <img src="/Instagram_hover.svg" class="w-full h-full transition duration-300" alt="Instagram hover" />
-      </a>
-
-      <!-- Twitter (X) -->
-      <a href="https://twitter.com/elby_co" class="relative w-m h-m block group">
-        <img src="/Twitter.svg" class="absolute inset-0 w-full h-full group-hover:opacity-0 transition duration-300" alt="X" />
-        <img src="/Twitter_hover.svg" class="w-full h-full transition duration-300" alt="X hover" />
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/company/elby-co" class="relative w-m h-m block group">
-        <img src="/Linkedin.svg" class="absolute inset-0 w-full h-full group-hover:opacity-0 transition duration-300" alt="LinkedIn" />
-        <img src="/Linkedin_hover.svg" class="w-full h-full transition duration-300" alt="LinkedIn hover" />
-      </a>
-
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/profile.php?id=61551046767662" class="relative w-m h-m block group">
-        <img src="/Facebook.svg" class="absolute inset-0 w-full h-full group-hover:opacity-0 transition duration-300" alt="Facebook" />
-        <img src="/Facebook_hover.svg" class="w-full h-full transition duration-300" alt="Facebook hover" />
-      </a>
-
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/@elby_co" class="relative w-m h-m block group">
-        <img src="/YouTube.svg" class="absolute inset-0 w-full h-full group-hover:opacity-0 transition duration-300" alt="YouTube" />
-        <img src="/YouTube_hover.svg" class="w-full h-full transition duration-300" alt="YouTube hover" />
-      </a>
+  
+  <!-- Bottom Bar -->
+  <div class="bg-sec_bl-400 text-primary-50 text-sm py-4 w-full">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0 px-4 md:px-xl">
+      <div>Made with <span>💚</span> in Copenhagen</div>
+      <div>©Elby.dk™ 2025</div>
+      <div>Elbys løsning er under patentering</div>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <a href="https://www.instagram.com/elbydotco/o"><img src="/./Instagram.svg" class="w-m h-m" alt="Instagram" /></a>
+        <a href="https://twitter.com/elby_co"><img src="/./Twitter.svg" class="w-m h-m" alt="X" /></a>
+        <a href="https://www.linkedin.com/company/elby-co"><img src="/./Linkedin.svg" class="w-m h-m" alt="LinkedIn" /></a>
+        <a href="https://www.facebook.com/profile.php?id=61551046767662"><img src="/./Facebook.svg" class="w-m h-m" alt="Facebook" /></a>
+        <a href="https://www.youtube.com/@elby_co"><img src="/./YouTube.svg" class="w-m h-m" alt="YouTube" /></a>
+      </div>
     </div>
   </div>
-</div>
-
-<script>
-  document.getElementById("newsletterForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Tak for din tilmelding!");
-    this.reset();
-  });
-</script>
+  
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Tak for din tilmelding!");
+      this.reset();
+    });
+  </script>
+  
