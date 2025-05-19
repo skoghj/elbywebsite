@@ -69,7 +69,7 @@ const kommune = [
       dropdownOptions={sleeve}
       dropdownBinding="m/installation og ansøgning"
       infoCards={infoCards}
-      buttonText="Få Elby til din boligforening"
+      buttonText="Få Elby fortovskinne"
       buttonLink="../bestil"
       rightMediaType="video"
       rightMediaSrc="/fortovskinne.webm"
@@ -89,7 +89,7 @@ const kommune = [
       alt1="Installation ikon"
       alt2="Abonnement ikon"
       alt3="Overskudsdeling ikon"
-      buttonText="Få Elby til din boligforening"
+      buttonText="Få Elby fortovskinne"
       buttonlink="/bestil"
       linkVariant="primary"
     />
@@ -97,7 +97,7 @@ const kommune = [
 
   <!-- Produktkort Section -->
   <div id="3_abc_løsning_sleeve" class="bg-sec_be-500">
-    <section class="items-start justify-between max-w-7xl mx-auto lg:p-l p-sm lg:py-xl gap-8xl">
+    <section class="items-start justify-between max-w-7xl mx-auto p-sm gap-8xl lg:p-12 lg:py-xl ">
       <h2 class="mb-xxxs pb-xxs">Den rigtige løsning for borgere, byer og kommuner.</h2>
       <p class="mb-10">Vælg mellem følgende:</p>
 
@@ -206,19 +206,19 @@ const kommune = [
 
   <!-- Kommune Section -->
   <div id="5_kommune_sleeve" class="bg-sec_be-500">
-    <section class="grid grid-cols-1 md:grid-cols-2 mx-auto">
+    <section class="grid grid-cols-1 md:grid-cols-2">
       <!-- Tekstdel -->
-      <div class="w-full md:p-xl">
-        <h3 class="mb-xxxs pb-xxs">Kommuner der tillader fortovsskinner</h3>
-        <p class="mb-6">
+      <div class="w-full md:px-xl md:py-l">
+        <h3 class="mb-xxxs pb-xxs lg:px-12">Kommuner der tillader fortovsskinner</h3>
+        <p class="mb-6 lg:px-12">
           Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.
         </p>
 
-        <div class="mb-m relative">
+        <div class="mb-m relative lg:px-12">
           <Dropdown options={kommune} placeholder="Find din kommune..." />
         </div>
 
-        <div class="mb-m">
+        <div class="mb-m lg:px-12">
           <h4 class="pb-xxs">Få flere kommuner skrevet på</h4>
           <p>
             Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig
@@ -233,7 +233,7 @@ const kommune = [
           </a>
         </div>
 
-        <div class="mb-m">
+        <div class="mb-m lg:px-12">
           <h4 class="pb-xxs">Har du brug for hjælp?</h4>
           <p>
             Vi har stor erfaring med dialogen med kommunerne, og vi hjælper dig gerne med
@@ -241,14 +241,14 @@ const kommune = [
           </p>
         </div>
 
-        <div>
+        <div class="lg:px-12">
           <Link href="/kontakt" variant="primary" size="full">Kontakt os</Link>
         </div>
       </div>
 
       <!-- Kortdel -->
       <div class="hidden md:block w-full h-full bg-neu_dg-200 relative p-sm">
-        <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto p-10 my-auto" />
+        <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto lg:p-l my-auto" />
       </div>
     </section>
   </div>
