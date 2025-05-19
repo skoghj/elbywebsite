@@ -8,30 +8,37 @@ import Prefooter from "../components/Prefooter.astro";
 ---
 
 <MainLayout title="Titel">
-
+  <!-- Hero Section -->
   <section id="1_omelby_hero">
     <section class="flex flex-col lg:flex-row bg-sec_be-500">
-      <div class="flex flex-col justify-center mx-auto p-sm w-full order-2 lg:order-1 sm:max-w-md min-440">
-        <div class="mb-xs break-words">
-          <h2 class="">Om Elby</h2>
+      <div class="flex flex-col justify-center mx-auto p-sm sm:p-1 w-full order-2 lg:order-1 sm:max-w-md min-440">
+        <div class="mb-4 break-words">
+          <h2>Om Elby</h2>
         </div>
-        <p class="mb-xs">Et passioneret team med en fælles mission: at fremme grøn mobilitet.
-          Vi tror på, at elbiler skal være for alle – nemme at bruge og tilgængelige i hverdagen.</p>
-
+        <p class="mb-4">
+          Et passioneret team med en fælles mission: at fremme grøn mobilitet.
+          Vi tror på, at elbiler skal være for alle – nemme at bruge og tilgængelige i hverdagen.
+        </p>
       </div>
       <div class="order-1 lg:order-2 lg:w-1/2">
-        <img src="/1743102782811.jpeg" alt="Foto af Elbys medarbejder ude foran deres hovedkontor" class="w-full h-full object-cover" />
+        <img
+          src="/1743102782811.jpeg"
+          alt="Foto af Elbys medarbejder ude foran deres hovedkontor"
+          class="w-full h-full object-cover"
+        />
       </div>
     </section>
+  </section>
 
-<article id="2_cardanimation" class="md:pb-[180px]">
-  <h2 class="text-center pt-m pb-m md:pt-xl">Mød teamet bag Elby</h2>
-<div class="sticky top-1/4 mangeelementerinview grid grid-cols-1 md:grid-cols-3 gap-y-6 max-w-5xl mx-auto pb-l">
+  <!-- Team Cards Section -->
+  <article id="2_cardanimation" class="md:pb-[180px]">
+    <h2 class="text-center pt-m pb-m md:pb-2xl md:pt-xl">Mød teamet bag Elby</h2>
+<div class="sticky top-1/4 mangeelementerinview grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 max-w-5xl mx-auto pb-l md:pb-0">
     <div class="mangeelementer1">
       <InfoCard
         image="./michael_elby.webp"
         name="Michael"
-        title="CEO - "
+        title="CEO"
         category="Tech & Startup"
         description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
       />
@@ -41,7 +48,7 @@ import Prefooter from "../components/Prefooter.astro";
       <InfoCard
         image="./lars_elby.webp"
         name="Lars"
-        title="CINO -"
+        title="CINO"
         category="Built Environment & Regulations"
         description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne."
       />
@@ -50,7 +57,7 @@ import Prefooter from "../components/Prefooter.astro";
       <InfoCard
         image="./jacob_elby.webp"
         name="Jacob"
-        title="COO - "
+        title="COO"
         category="Operations & Busines Development"
         description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen."
       />
@@ -60,7 +67,7 @@ import Prefooter from "../components/Prefooter.astro";
       <InfoCard
         image="./kristian_elby.webp"
         name="Kristian"
-        title="CCO - "
+        title="CCO"
         category="Commercial & Sales"
         description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet bøfferne med planter for at efterlade en bedre verden til sine tre børn."
       />
@@ -70,7 +77,7 @@ import Prefooter from "../components/Prefooter.astro";
       <InfoCard
         image="./mads_elby.webp"
         name="Mads"
-        title="CPO - "
+        title="CPO"
         category="Product & Experience"
         description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'."
       />
@@ -79,7 +86,7 @@ import Prefooter from "../components/Prefooter.astro";
       <InfoCard
         image="./marco_elby.webp"
         name="Marco"
-        title="CMO - "
+        title="CMO"
         category="Marketing"
         description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt."
       />
@@ -194,7 +201,7 @@ import Prefooter from "../components/Prefooter.astro";
      <div class="grid grid-cols-1 md:grid-cols-3 items-start lg:gap-8 p-xs">
 
   <!-- Om installation -->
-  <div class="grid col-span-1 pb-m">
+  <div class="grid col-span-1 pb-m sm:pl-2xl">
     <h3 class="pl-s md:pl-xs">Om installation</h3>
 
     <Accordion question="Skal man have tilladelse til at installere Elby?">
