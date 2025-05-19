@@ -111,71 +111,16 @@ import Link from "./Link.astro";
       </ul>
     </nav>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex items-center py-xs px-md">
-
-        <div>
-          <a href="/">
-            <img src="./elby_logo.svg" alt="Logo" class="h-10 w-auto">
-          </a>
-        </div>
-       
-        <nav class="flex-1">
-          <ul class="flex justify-center ml-lg md:space-x-md lg:space-x-xl text-accent-500 font-regular">
-            <!-- Ladeløsninger medd Hover Dropdown -->
-            <li class="relative group">
-              <a href="/boligforening" class="flex items-center text-body-sm lg:text-body-sm-desktop">Ladeløsninger
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[24px] w-[24px] ml-xs transition-transform transform group-hover:rotate-180">
-                  <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
-                </svg>
-              </a>
-              <!-- Dropdown Menu -->
-              <div class="absolute left-0 mt-xs w-64 bg-primary-500 text-accent-500 shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
-                <ul class="bg-accent-400">
-                  <li class="hover:bg-accent-600 px-xs py-xs">
-                    <a href="/boligforening?tab=bolig" class="block font-body">
-                      <div class="flex flex-col">
-                        <p class="text-neutral-900 text-body-sm">Elby til Boligforeninger</p>
-                    </a>
-                  </li>
-                  <li class=" hover:bg-accent-600 px-xs py-xs">
-                    <a href="/boligforening?ejendom=&tab=ejendom" class="block font-body">
-                      <div class="flex flex-col">
-                        <p class="text-neutral-900 text-body-sm">Elby til Ejendomsselskaber</p>
-                    </a>
-                  </li>
-                   <li class="hover:bg-accent-600 px-xs py-xs">
-                    <a href="/sleeve" class="block font-body">
-                      <div class="flex flex-col">
-                        <p class="text-neutral-900 text-body-sm">Elby Fortovsskinne</p>
-                    </a>
-                  </li>
-                   <li class="hover:bg-accent-600 px-xs py-xs">
-                    <a href="/ladestander" class="block font-body">
-                      <div class="flex flex-col">
-                        <p class="text-neutral-900 text-body-sm">Elby Ladestander</p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-           
-            <li>
-              <a href="/inwall" class="text-body-sm lg:text-body-sm-desktop">Sådan virker Elby</a>
-            </li>
-            <li>
-              <a href="/omelby" class="text-body-sm lg:text-body-sm-desktop">Om Elby</a>
-            </li>
-              <li>
-              <a href="/kontakt" class="text-body-sm lg:text-body-sm-desktop">Kontakt</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div>
-           <Link variant="primary" size="standard" icon="loginIcon.svg" class="w-6 h-6" alt="icon"> Få Elby i din bygning</Link>
-        </div>
-       </div>
-        
+    <!-- Tablet only icon CTA -->
+    <div class="shrink-0 hidden md:block lg:hidden">
+      <Link href="../bestil" variant="icon" size="standard" icon="loginIcon.svg" />
+    </div>
+    <!-- Desktop : CTA -->
+    <div class="shrink-0 hidden lg:block">
+      <Link href="../bestil" variant="primary" size="standard" icon="loginIcon.svg">Få Elby i din bygning</Link>
+    </div>
+  </div>
+</div>
 
 <!-- Script -->
 <script>
