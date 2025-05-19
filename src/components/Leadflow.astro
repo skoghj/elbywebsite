@@ -12,7 +12,7 @@
   <div class="charging-container"></div>
   <!-- Container med max-width og centreret -->
   <div class="w-full max-w-[600px]">
-    <h2 class="mb-sm">Se hvilken løsning fra Elby, der passer til dig</h2>
+   <h2 class="mb-sm" id="leadflowTitle">Se hvilken løsning fra Elby, der passer til dig</h2>
     <div id="app" class="w-full"></div>
   </div>
 </div>
@@ -56,6 +56,15 @@
     "Cykelsti",
     "3 eller flere fliser"
   ];
+const stepImages = [
+  null, // step 0 styres allerede via answers[0].image
+  "/leadflow_parkering.jpg",
+  "/leadflow_cykelsti.jpg",
+  "/leadflow_fortov.jpg",
+  "/leadflow_person.jpg",
+  "/opladning1.webp",       // slutskærm (qualified/disqualified)
+  "/kontakt.webp"      // kontaktformular
+];
 
   let step = 0;
   const answers = [];
@@ -89,16 +98,26 @@
     animate("#app > *", { opacity: [0, 1], y: [20, 0] }, { duration: 0.4 });
   }
 
-  function updateRightImage() {
-    if (step === 0 && answers[0]) {
-      const selected = questions[0].options.find(o => o.label === answers[0]);
-      if (selected) rightImg.src = selected.image;
-    } else if (step > 0) {
-      rightImg.src = "/opladning1.webp";
-    } else {
-      rightImg.src = "../fp1.png";
-    }
+function updateRightImage() {
+  // Sæt lav opacitet og placer billedet lidt til venstre som udgangspunkt
+  rightImg.style.opacity = 0;
+  rightImg.style.transform = "translateX(-40px)";
+
+  // Skift billedkilde med det samme
+  if (step === 0 && answers[0]) {
+    const selected = questions[0].options.find(o => o.label === answers[0]);
+    if (selected) rightImg.src = selected.image;
+  } else if (step > 0 && stepImages[step]) {
+    rightImg.src = stepImages[step];
+  } else {
+    rightImg.src = "../fp1.png"; // fallback
   }
+
+  // Vent til billedet er loadet, så vi ikke animerer for tidligt
+  rightImg.onload = () => {
+    animate(rightImg, { opacity: [0, 1], x: [-40, 0] }, { duration: 0.5, easing: "ease-out" });
+  };
+}
 
   function render() {
     app.innerHTML = "";
@@ -140,14 +159,17 @@
           });
         });
 
-        nextBtn.addEventListener("click", () => {
-          if (!answers[0]) {
-            alert("Vælg venligst en mulighed før du fortsætter");
-            return;
-          }
-          step++;
-          render();
-        });
+       nextBtn.addEventListener("click", () => {
+  if (!answers[0]) {
+    alert("Vælg venligst en mulighed før du fortsætter");
+    return;
+  }
+  // Skjul overskriften
+  document.getElementById("leadflowTitle").style.display = "none";
+
+  step++;
+  render();
+});
 
         // Ingen progressbar på step 0
       } else {
@@ -196,13 +218,12 @@
         container.innerHTML = `
           <p class="text-2xl font-bold font-body mb-4">Vi har brug for flere oplysninger</p>
           <p class="text-gray-700 mb-4">Vi mangler lidt information for at kunne give dig den bedste løsning.</p>
-          <img src="/images/extra-info.png" alt="Ekstra oplysninger" class="w-full h-auto mb-6 rounded" />
+    
         `;
       } else {
         container.innerHTML = `
           <p class="text-2xl font-body font-bold mb-4">Du er klar til Elby!</p>
           <p class="text-gray-700 mb-4">Fantastisk! Send os dine kontaktoplysninger, så kontakter vi dig for hurtigt at komme i gang.</p>
-          <img src="/images/ready-elby.png" alt="Klar til Elby" class="w-full h-auto mb-6 rounded" />
         `;
       }
 
