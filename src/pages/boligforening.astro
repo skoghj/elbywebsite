@@ -42,13 +42,15 @@ import Link from "../components/Link.astro";
         <template x-if="selected === 'bolig'">
           <div class="mb-xs">
             <ul>
-              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 pb-xxxs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation <span class="font-semibold">0 kr.</span></p></li>
-              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 pb-xxxs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement <span class="font-semibold">0 kr.</span></p></li>
-              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 pb-xxxs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling <span class="font-semibold">op til 50%</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-t-[1px] border-neu_db-400 py-xxxs"><img src="/installation.svg" class="w-12 h-10" /><p>Installation <span class="font-semibold">0 kr.</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement <span class="font-semibold">0 kr.</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling <span class="font-semibold">op til 50%</span></p></li>
             </ul>
-            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
-            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
-            <Link href="../bestil" variant="primary" size="standard">Få Elby til din boligforening</Link>
+            <dl class="my-6 flex flex-col sm:flex-row items-baseline gap-x-3 w-full">
+              <dd class="text-3xl font-bold">2,99 kr/kWh</dd>
+              <dt class="">Ladepris for brugerne</dt>
+            </dl>
+            <Link href="../bestil" variant="primary" size="full">Få Elby til din boligforening</Link>
           </div>
         </template>
 
@@ -59,9 +61,11 @@ import Link from "../components/Link.astro";
               <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/abonnement.svg" class="w-12 h-10" /><p>Abonnement<span class="font-semibold"> 0 kr.</span></p></li>
               <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/overskueligIcon.svg" class="w-12 h-10" /><p>Overskudsdeling <span class="font-semibold">op til 60%</span></p></li>
             </ul>
-            <p class="mt-sm mb-xxs">Ladepris for brugerne</p>
-            <p class="text-3xl font-bold mb-s">2,99 kr/kWh</p>
-            <Link href="../bestil" variant="tertiary" size="standard">Få Elby til ejendomsselskab</Link>
+            <dl class="my-6 flex flex-col sm:flex-row items-baseline gap-x-3 w-full">
+              <dd class="text-3xl font-bold">2,99 kr/kWh</dd>
+              <dt class="">Ladepris for brugerne</dt>
+            </dl>
+            <Link href="../bestil" variant="tertiary" size="full">Få Elby til ejendomsselskab</Link>
           </div>
         </template>
       </div>
@@ -110,7 +114,6 @@ import Link from "../components/Link.astro";
         <div>
           <Prefooter header="Vil du vide mere om Elby?" buttonText="Læs vores FAQ for flere detaljer" buttonlink="../omelby" linkVariant="primary" />
         </div>
-        
       </div>
     </template>
 
