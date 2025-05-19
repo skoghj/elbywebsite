@@ -68,7 +68,7 @@ import Button from "./Button.astro";
       <!-- STEP 2 -->
       <div x-show="step === 2" x-cloak class="space-y-m">
         <div>
-          <label class="block mb-1 font-semibold">Bygningens adresse <span class="text-acc_yel-600">*</span></label>
+          <label class="block mb-2 font-semibold">Bygningens adresse <span class="text-acc_yel-600">*</span></label>
           <input type="text" name="address" x-model="form.address" placeholder="Nørrebrogade 45, 2. th., 2200 København N" class="w-full p-xxs rounded-xs border focus:outline focus:outline-blue-500" :class="errors.address ? 'border-red-500' : 'border-gray-300'" @input="clearFieldError('address')" />
           <p x-show="errors.address" class="mt-1 text-xs text-red-500" x-text="errors.address"></p>
         </div>
@@ -104,7 +104,7 @@ import Button from "./Button.astro";
         </div>
 
         <div>
-          <label class="block mb-1 font-semibold">
+          <label class="block mb-2 font-semibold">
             Er der fortov mellem bygningen og vejen? Hvis ja, hvor bredt er det cirka?
             <span class="text-acc_yel-600">*</span>
           </label>
