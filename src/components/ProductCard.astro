@@ -18,13 +18,13 @@ import Link from "../components/Link.astro";
 
 <article class="rounded-md w-full max-w-sm mx-auto overflow-hidden bg-primary-50 shadow-md">
   <!-- Header -->
-  <div class={`${headerColor} p-6 flex items-center gap-6`}>
+  <div class={`${headerColor} p-4 md:p-6 flex items-center gap-4`}>
     <div class="aspect-square w-16 bg-primary-50 rounded-full flex items-center justify-center">
       <img src={buildingIcon} alt="card ikon" />
     </div>
     <div>
-      <p class="text-body-l md:text-body-md-desktop font-bold">{title}</p>
-      <p class="font-regular text-body-sm text-neu_db-700" set:html={subtitle} />
+      <p class="text-body-m md:text-body-md-desktop font-bold">{title}</p>
+      <p class="font-regular text-body-s text-neu_db-700" set:html={subtitle} />
     </div>
   </div>
 
@@ -43,12 +43,11 @@ import Link from "../components/Link.astro";
     }
 
     <!-- Price -->
-    <div class="pt-6">
-      <p>{pricetitle}</p>
-      <p class="text-body-lg font-bold py-2 md:text-body-lg-tablet lg:text-body-lg-desktop">{price}</p>
-    </div>
+    <div class="pt-4 my-6 flex flex-row items-baseline gap-3 w-full">
+    <p class="text-body-lg font-bold py-2 md:text-body-lg-tablet lg:text-body-lg-desktop">{price}</p>
+    <p>{pricetitle}</p></div>
 
     <!-- Link -->
-    <Link href={buttonLink} variant={linkVariant} size="standard">{buttonText}</Link>
+    <Link href={buttonLink} variant={linkVariant} size="full">{buttonText}</Link>
   </div>
 </article>
