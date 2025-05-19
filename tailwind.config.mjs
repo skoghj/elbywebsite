@@ -141,7 +141,7 @@ export default {
 
         /*Tablet*/
         "h1-tablet": ["3rem", { lineHeight: "3.875rem" }], // 48px, line-height: 62px
-        "h2-tablet": ["2.5rem", { lineHeight: "3.25rem" }], // 40px, line-height: 52px
+        "h2-tablet": ["2rem", { lineHeight: "3.25rem" }], // 40px, line-height: 52px
         "h3-tablet": ["2rem", { lineHeight: "2.625rem" }], // 32px, line-height: 42px
         "h4-tablet": ["1.75rem", { lineHeight: "2.25rem" }], // 28px, line-height: 36px
         "h5-tablet": ["1.5rem", { lineHeight: "1.9375rem" }], // 24px, line-height: 31px
