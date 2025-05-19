@@ -43,14 +43,16 @@ const {
                 <div>
                   <ul class="space-y-2 lg:space-y-0 border-t border-neu_db-400">
                     {card.items.map(item => (
-                      <li class="flex items-center gap-3 border-b border-neu_db-400 py-2">
+                      <li class="flex items-center md:gap-6 md:pl-2 border-b border-neu_db-400 py-2">
                         <img src={item.icon} class="w-10 h-10" alt="icon" />
                         <p>{item.text}</p>
                       </li>
                     ))}
                   </ul>
-                  <p class="mt-4 text-sm">Pris inkl. moms</p>
-                  <p class="text-3xl font-bold">{card.price}</p>
+                  <div class="mt-4 flex items-baseline gap-4 pt-2">
+                    <p class="text-3xl font-bold">{card.price}</p>
+                    <p class="text-sm">Pris inkl. moms</p>
+                  </div>
                 </div>
               </template>
             ))}
@@ -58,7 +60,7 @@ const {
         }
 
         {buttonText &&
-          <div class="pt-4">
+          <div class="">
             <Link href={buttonLink} variant="primary" size="standard">
               {buttonText}
             </Link>
@@ -68,7 +70,7 @@ const {
     </div>
 
     <!-- Højre kolonne -->
-    <div class="w-full lg:w-1/2 ml-auto">
+    <div class="w-full lg:w-1/2 ml-auto border border-indigo-600">
       {rightMediaType === "video" && (
         <div class="w-full aspect-video max-h-[400px] overflow-hidden">
           <video class="w-full h-full object-cover" autoplay muted loop playsinline>
