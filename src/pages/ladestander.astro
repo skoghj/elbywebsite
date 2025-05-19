@@ -20,8 +20,8 @@ const infoCards = [
     items: [
       { icon: "/layers2.svg", text: "Egetræ" },
       { icon: "/maaler2.svg", text: "Mål: 77x22x22cm" },
-      { icon: "/installation.svg", text: "Installation 1-2 dage" }
-    ]
+      { icon: "/installation.svg", text: "Installation 1-2 dage" },
+    ],
   },
   {
     match: "Ladestander i beton",
@@ -29,8 +29,8 @@ const infoCards = [
     items: [
       { icon: "/layers2.svg", text: "Beton" },
       { icon: "/maaler2.svg", text: "Mål: 60x20x20cm" },
-      { icon: "/installation.svg", text: "Installation 1-2 dage" }
-    ]
+      { icon: "/installation.svg", text: "Installation 1-2 dage" },
+    ],
   },
   {
     match: "Ladestander i stål",
@@ -38,70 +38,27 @@ const infoCards = [
     items: [
       { icon: "/layers2.svg", text: "Stål" },
       { icon: "/maaler2.svg", text: "Mål: 55x22x22cm" },
-      { icon: "/installation.svg", text: "Installation 1-2 dage" }
-    ]
-  }
+      { icon: "/installation.svg", text: "Installation 1-2 dage" },
+    ],
+  },
 ];
 ---
 
 <MainLayout title="Elby-ladestander">
-
   <div id="1_ladestanderhero" class="bg-sec_be-500">
-    <SplitcontentHero
-    title="ELBY Ladestander"
-    text="Med Elby ladestander får du en helt ny måde at tænke ladestander på."
-    dropdownOptions={materiale}
-    dropdownBinding="Ladestander i træ"
-    infoCards={infoCards}
-    buttonText="Få Elby ladestander"
-    buttonLink="../bestil"
-    rightMediaType="video"
-    rightMediaSrc="/fortovskinne.webm"
-  />
+    <SplitcontentHero title="ELBY Ladestander" text="Med Elby ladestander får du en helt ny måde at tænke ladestander på." dropdownOptions={materiale} dropdownBinding="Ladestander i træ" infoCards={infoCards} buttonText="Få Elby ladestander" buttonLink="../bestil" rightMediaType="video" rightMediaSrc="/ladestander.mp4" />
   </div>
 
-  <section id="2_usp_ladestander" class="bg-primary-500 p-xxs lg:px-12">
-    <Uspsection
-      header="Hvorfor vælge Elby ladestander?"
-      text1="1. Nytænkende ladestander, der er nænsom for byen"
-      text2="2. Kort installationstid på typisk mellem 1-2 dage"
-      text3="3. Din private ladestander, der kommer i både træ, beton eller stål"
-      img1="/nytaenkIcon.svg"
-      img2="/installation.svg"
-      img3="/ladestander2.svg"
-      alt1="Installation ikon"
-      alt2="Abonnement ikon"
-      alt3="Overskudsdeling ikon"
-      buttonText="Få Elby ladestander"
-      buttonlink="/bestil"
-      linkVariant="primary"
-    />
+  <section id="2_usp_ladestander" class="bg-primary-500">
+    <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, beton eller stål" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/ladestander2.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby ladestander" buttonlink="/bestil" linkVariant="primary" />
   </section>
 
   <section id="3_branding_ladestander" class="bg-sec_be-500">
-    <Splitcontent
-      img="/elbyskilt.webp"
-      header="Elby – Ladestander med respekt for byen"
-      text1="I Elby tror vi på, at grøn omstilling kun virker, hvis den også giver mening for mennesker. Derfor designer vi ladeinfrastruktur, der ikke bare er effektiv – men også folkelig, smuk og nænsom for byen."
-      text2="Vores ladestandere falder i ét med omgivelserne og bliver en naturlig del af gadebilledet. De er skabt til at patinere, ikke forstyrre – og med løsninger, der både kan være næsten usynlige eller æstetisk integrerede, tager vi hensyn til både fortov, fællesskab og fremtid."
-      alt="Elby ladestander installeret i indreby ved Thorvalsens museum"
-      buttonText="Få Elby ladestander"
-      buttonlink="/bestil"
-      linkVariant="primary"
-    />
+    <Splitcontent img="/elbyskilt.webp" header="Elby – Ladestander med respekt for byen" text1="I Elby tror vi på, at grøn omstilling kun virker, hvis den også giver mening for mennesker. Derfor designer vi ladeinfrastruktur, der ikke bare er effektiv – men også folkelig, smuk og nænsom for byen." text2="Vores ladestandere falder i ét med omgivelserne og bliver en naturlig del af gadebilledet. De er skabt til at patinere, ikke forstyrre – og med løsninger, der både kan være næsten usynlige eller æstetisk integrerede, tager vi hensyn til både fortov, fællesskab og fremtid." alt="Elby ladestander installeret i indreby ved Thorvalsens museum" buttonText="Få Elby ladestander" buttonlink="/bestil" linkVariant="primary" />
   </section>
 
   <section id="4_erhverv_ladestander" class="bg-primary-500">
-    <SplitcontentRight
-      img="/ladestander4.webp"
-      header="Elby ladestander til Erhverv"
-      text1="Uanset om I er en boligforening, offentlig virksomhed eller anden form for erhverv finder vi den rigtige ladeløsning til jer."
-      text2="Vi tilpasser løsningen efter jeres behov – og vi hjælper gerne hele vejen fra installation til ladeboksen er klar til brug."
-      alt="Nærbilled af Elby ladestander med ladekabel"
-      buttonText="Bliv ringet op og hør mere"
-      buttonlink="/kontakt"
-      linkVariant="primary"
-    />
+    <SplitcontentRight img="/ladestander4.webp" header="Elby ladestander til Erhverv" text1="Uanset om I er en boligforening, offentlig virksomhed eller anden form for erhverv finder vi den rigtige ladeløsning til jer." text2="Vi tilpasser løsningen efter jeres behov – og vi hjælper gerne hele vejen fra installation til ladeboksen er klar til brug." alt="Nærbilled af Elby ladestander med ladekabel" buttonText="Bliv ringet op og hør mere" buttonlink="/kontakt" linkVariant="primary" />
   </section>
 
   <div id="5_tbs_løsning_ladestander" class="bg-sec_be-500">
@@ -195,12 +152,7 @@ const infoCards = [
   </div>
 
   <div class="bg-primary-500 lg:py-l">
-    <Prefooter
-      header="SKAF DIG EN ELBY LADESTANDER!"
-      buttonText="Elby ladestander, ja tak!"
-      buttonlink="/bestil"
-      linkVariant="primary"
-    />
+    <Prefooter header="SKAF DIG EN ELBY LADESTANDER!" buttonText="Elby ladestander, ja tak!" buttonlink="/bestil" linkVariant="primary" />
   </div>
 
   <!-- Grafik Section prefooter -->
