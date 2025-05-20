@@ -43,9 +43,11 @@ import Link from "../components/Link.astro";
     }
 
     <!-- Price -->
-    <div class="pt-4 my-6 flex flex-row items-baseline gap-3 w-full">
-    <p class="text-body-lg font-bold py-2 md:text-body-lg-tablet lg:text-body-lg-desktop">{price}</p>
-    <p>{pricetitle}</p></div>
+    <div class="pt-4 my-6 flex flex-row items-baseline md:flex-col lg:flex-row gap-2 w-full">
+      <p class="text-body-lg font-bold py-2 md:text-body-lg-tablet lg:text-body-lg-desktop md:order-2 lg:order-none">{price}</p>
+      <p class="md:order-1 lg:order-none">{pricetitle}</p>
+    </div>
+    
 
     <!-- Link -->
     <Link href={buttonLink} variant={linkVariant} size="full">{buttonText}</Link>
