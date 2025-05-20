@@ -24,9 +24,9 @@
     {
       question: "Hvilken type lejlighed bor du i?",
       options: [
-        { label: "Leje", icon: "/lejeikoner.svg", image: "/leje.jpg" },
-        { label: "Andel", icon: "/andendelikoner.svg", image: "/anddel.jpg" },
-        { label: "Ejer", icon: "/ejerikoner.svg", image: "/ejer.jpg" },
+        { label: "Leje", icon: "../svg/leadflow_leje.svg", image: "../index/leje.webp" },
+        { label: "Andel", icon: "../svg/leadflow_andel.svg", image: "../index/andel.webp" },
+        { label: "Ejer", icon: "../svg/leadflow_ejer.svg", image: "../index/ejer.webp" },
       ],
     },
     {
@@ -50,11 +50,11 @@
   const disqualifyingAnswers = ["Privatparkeringsplads eller p kælder", "Ingen parkeringspladser", "Cykelsti", "3 eller flere fliser"];
   const stepImages = [
     null, // step 0 styres allerede via answers[0].image
-    "/leadflow_parkering.jpg",
-    "/leadflow_cykelsti.jpg",
-    "/leadflow_fortov.jpg",
-    "/leadflow_person.jpg",
-    "/opladning1.webp", // slutskærm (qualified/disqualified)
+    "../index/leadflow_parkering.webp",
+    "../index/leadflow_cykelsti.webp",
+    "../index/leadflow_fortov.webp",
+    "../index/leadflow_person.webp",
+    "../index/leadflow_bestil.webp", // slutskærm (qualified/disqualified)
     "/kontakt.webp", // kontaktformular
   ];
 
@@ -129,7 +129,7 @@
             ${q.options
               .map(
                 (opt) => `
-              <div class="optionSelector cursor-pointer flex flex-col items-center shadow bg-acc_yel-50 p-4 rounded transition border-2 border-transparent hover:border-acc_yel-500" data-answer="${opt.label}">
+              <div class="optionSelector cursor-pointer flex flex-col items-center shadow bg-acc-primary-500 p-4 rounded transition border-2 border-transparent hover:border-acc_yel-500" data-answer="${opt.label}">
                 <img src="${opt.icon}" alt="${opt.label}" class="w-16 h-16 mb-2 object-contain" />
                 <span>${opt.label}</span>
               </div>
@@ -176,7 +176,7 @@
             ${q.options
               .map(
                 (opt) => `
-              <button class="w-full text-left border-black shadow bg-acc_yel-50 hover:bg-acc_yel-500 px-4 py-2 rounded transition" data-answer="${opt}">${opt}</button>
+              <button class="w-full text-left border-black shadow bg-primary-500 hover:bg-acc_yel-500 px-4 py-2 rounded transition" data-answer="${opt}">${opt}</button>
             `
               )
               .join("")}
@@ -228,7 +228,7 @@
       }
 
       container.innerHTML += `
-        <button id="continueBtn" class="w-full font-medium bg-acc_yel-500 text-black py-xs mt-xxs rounded-full transition-colors duration-300 hover:bg-acc_yel-600">Indtast dine kontaktoplysninger</button>
+        <button id="continueBtn" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-full transition-colors duration-300 hover:bg-acc_yel-600">Indtast dine kontaktoplysninger</button>
        <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -258,11 +258,11 @@
       form.innerHTML = `
         <h2 class="text-lg font-body font-semibold mb-4">Indtast dine kontaktoplysninger</h2>
         <form id="contactForm" class="space-y-4">
-          <input type="text" placeholder="Navn" class="w-full border p-2 rounded" required />
-          <input type="email" placeholder="Email" class="w-full border p-2 rounded" required />
-          <input type="tel" placeholder="Telefonnummer" class="w-full border p-2 rounded" />
-          <textarea placeholder="Evt. kommentar" class="w-full border p-2 rounded"></textarea>
-          <button type="submit" class="w-full font-medium bg-acc_yel-500 text-black py-xs mt-xxs rounded-full transition-colors duration-300 hover:bg-acc_yel-600">Indsend</button>
+          <input type="text" placeholder="Navn" class="w-full border p-xxs rounded" required />
+          <input type="email" placeholder="Email" class="w-full border p-xxs rounded" required />
+          <input type="tel" placeholder="Telefonnummer" class="w-full border p-xxs rounded" />
+          <textarea placeholder="Evt. kommentar" class="w-full border p-xxs rounded"></textarea>
+          <button type="submit" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-full transition-colors duration-300 hover:bg-acc_yel-600">Indsend</button>
         </form>
       <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
