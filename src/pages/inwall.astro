@@ -8,16 +8,8 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 ---
 
 <MainLayout title="Titel">
-
   <div id="1_inwallhero" class="bg-sec_be-500 px-4">
-    <SplitcontentHero
-      title="Sådan virker elby"
-      text="Hos Elby har vi løsningen, der passer til forskellige behov. Er du en boligforening eller et ejendomsselskab?"
-      buttonText="Få Elby til din Etageejendom"
-      buttonLink="../bestil"
-      rightMediaType="youtube"
-      rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA"
-    />
+    <SplitcontentHero title="Sådan virker elby" text="Hos Elby har vi løsningen, der passer til forskellige behov. Er du en boligforening eller et ejendomsselskab?" buttonText="Få Elby til din Etageejendom" buttonLink="../bestil" rightMediaType="youtube" rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA" />
   </div>
 
   <section id="2_brugerguide" class="bg-primary-500 px-sm py-xl fade-in-up">
@@ -38,7 +30,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
           <img src="/væglader_m_stik.svg" alt="Forbind til bil" class="w-128 h-128" />
         </div>
-        <p class="mt-4 md:text-basev">Forbind dit kabel fra <br> vægladeren til din bil</p>
+        <p class="mt-4 md:text-basev">Forbind dit kabel fra <br /> vægladeren til din bil</p>
       </div>
 
       <!-- Step 3 -->
@@ -47,7 +39,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
           <img src="/fastgør_kabel.svg" alt="Fastgør kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
-          Fastgør kablet i fortovsskinnen <br> ved hjælp af dit fodtøj
+          Fastgør kablet i fortovsskinnen <br /> ved hjælp af dit fodtøj
         </p>
       </div>
 
@@ -56,7 +48,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
           <img src="/Elby_app.svg" alt="Start ladning" class="w-128 h-128" />
         </div>
-        <p class="mt-4 md:text-base">Download og start <br> ladning med Elby App</p>
+        <p class="mt-4 md:text-base">Download og start <br /> ladning med Elby App</p>
       </div>
     </div>
   </section>
@@ -73,17 +65,8 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
   </section>
 
   <section id="4_elby_app" class="bg-primary-500 fade-in-up">
-    <SplitcontentRight
-  img="/mobil_app1.svg"
-  alt="Mobil med Elby-app"
-  header="Kom i gang med at lade med Elby"
-  text1="Download Elby-app'en og få adgang til Elbys ladere."
-  extraLink1="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723"
-  extraLinkImg1="/appstore.svg"
-  extraLink2="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en"
-  extraLinkImg2="/googleplay.svg"
-/>
-</section>
+    <SplitcontentRight img="/mobil_app1.svg" alt="Mobil med Elby-app" header="Kom i gang med at lade med Elby" text1="Download Elby-app'en og få adgang til Elbys ladere." extraLink1="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723" extraLinkImg1="/appstore.svg" extraLink2="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en" extraLinkImg2="/googleplay.svg" />
+  </section>
 
   <section id="5_support" class="bg-sec_be-500 py-16 px-4 fade-in-up">
     <div class="max-w-6xl mx-auto text-center mb-12">
@@ -95,32 +78,26 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
       <!-- Mail -->
       <div class="flex flex-col items-center gap-5">
         <img src="/iconoir_mail.svg" alt="Mail ikon" />
-        <Link href="mailto:hej@elby.com" variant="primary" size="stanard">
-          hej@elby.com
-        </Link>
+        <Link href="mailto:hej@elby.com" variant="primary" size="stanard"> hej@elby.com </Link>
       </div>
 
       <!-- Telefon -->
       <div class="flex flex-col items-center gap-2">
         <img src="/mobil.svg" alt="Mobil ikon" />
         <a href="tel:+4560552024">
-          <Link href="mailto:hej@elby.com" variant="primary" size="stanard">
-            +45 60 55 20 24
-          </Link>
+          <Link href="mailto:hej@elby.com" variant="primary" size="stanard"> +45 60 55 20 24 </Link>
         </a>
       </div>
 
       <!-- Chat -->
       <div class="flex flex-col items-center gap-5">
         <img src="/token_chat.svg" alt="Besked ikon" />
-        <Button variant="primary" size="standard" type="button">
-          Chat med os
-        </Button>
+        <Button variant="primary" size="standard" type="button"> Chat med os </Button>
       </div>
     </div>
   </section>
 
   <section id="6_bygrafik" class="bg-sec_be-500">
-    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+    <img src="/buildinggrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
   </section>
 </MainLayout>
