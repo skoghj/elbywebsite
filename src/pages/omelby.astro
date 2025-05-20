@@ -82,17 +82,17 @@ import Scrollytest from "../components/Scrollytest.astro";
 
 <section id="3_branding_omelby" class="bg-sec_be-500">
   <SplitcontentRight
-    img="/istockphoto-2180976782-1024x1024.jpg"
-    header="Gratis og nemt - bare si' ja!"
+    img="/par_oplader_bil.webp"
+    header="Gratis, let og nemt - bare si' ja!"
     text1="Elby gør det nemt at bidrage til den grønne omstilling – helt uden omkostninger for dig."
     text2="Vi leverer en gratis ladeløsning til din bygning og tager os af installation, drift og vedligeholdelse."
     alt="To veninder der sidder sammen i baggagerummet i en bil."
   /><!-- find nyt billed og ændre alt -->
 </section>
 
-<section id="4_overskud_omelby" class="bg-primary-500">
+<section id="4_overskud_omelby" class="">
   <Splitcontent
-    img="/mobil_infografik.png"
+    img="/mobil_infografik.svg"
     header="Overskud til både dig og din by", 
     text1 = "Med Elby får du del i overskuddet, når din lader bruges af byens elbilejere.",
     text2 = "Modellen bygger på fællesskab – som bygningsejer kan du få op til 60 % af overskuddet.",
@@ -173,19 +173,17 @@ import Scrollytest from "../components/Scrollytest.astro";
  </section>
 <!-------------- FAQ accordion slut -------------->
 
-<div id="6_prefooter_omelby" class="bg-primary-500">
+<div id="6_prefooter_omelby" class="">
 <div>
   <Prefooter header="Vil du høre mere om ELby og visionen bag?" buttonText="Kontakt os og hør mere" buttonlink="../kontakt" linkVariant="primary" />
 </div>
 
 <!-- Grafik Section prefooter -->
-<div id="7_bygrafik_omelby" class="bg-primary-500">
-  <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+<div id="7_bygrafik_omelby" class="">
+  <img src="./bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 
 </MainLayout>
-
-
 
   <script type="module">
   import { animate, inView } from "https://cdn.skypack.dev/motion";
@@ -215,7 +213,4 @@ import Scrollytest from "../components/Scrollytest.astro";
 		animate( ".mangeelementer10", { x: [2000, 0 ] , y: [50, 0 ] }, { duration: 2 })
    		}
   	})
-
-
- 
 </script>
