@@ -44,32 +44,32 @@ const infoCards = [
 ];
 
 const kommune = [
-  { value: "Københavns Kommune", label: "Københavns Kommune" },
-  { value: "Frederiksberg Kommune", label: "Frederiksberg Kommune" },
-  { value: "Odense Kommune", label: "Odense Kommune" },
-  { value: "Frederikshavn Kommune", label: "Frederikshavn Kommune" },
-  { value: "Gentofte Kommune", label: "Gentofte Kommune" },
-  { value: "Gladsaxe Kommune", label: "Gladsaxe Kommune" },
-  { value: "Helsingør Kommune", label: "Helsingør Kommune" },
-  { value: "Rudersdal Kommune", label: "Rudersdal Kommune" },
-  { value: "Silkeborg Kommune", label: "Silkeborg Kommune" },
-  { value: "Herning Kommune", label: "Herning Kommune" },
-  { value: "Holbæk Kommune", label: "Holbæk Kommune" },
-  { value: "Taarnby Kommune", label: "Taarnby Kommune" },
+  { value: "https://www.kk.dk", label: "Københavns Kommune" },
+  { value: "https://www.frederiksberg.dk", label: "Frederiksberg Kommune" },
+  { value: "https://www.odense.dk", label: "Odense Kommune" },
+  { value: "https://frederikshavn.dk", label: "Frederikshavn Kommune" },
+  { value: "https://gentofte.dk", label: "Gentofte Kommune" },
+  { value: "https://gladsaxe.dk", label: "Gladsaxe Kommune" },
+  { value: "https://helsingor.dk", label: "Helsingør Kommune" },
+  { value: "https://rudersdal.dk", label: "Rudersdal Kommune" },
+  { value: "https://silkeborg.dk", label: "Silkeborg Kommune" },
+  { value: "https://www.herning.dk", label: "Herning Kommune" },
+  { value: "https://holbaek.dk", label: "Holbæk Kommune" },
+  { value: "https://www.taarnby.dk", label: "Taarnby Kommune" },
 ];
 ---
 
 <MainLayout title="Elby-sleeve">
   
  <!-- Hero Section -->
-  <div id="1_sleevehero" class="bg-sec_be-500">
+  <div id="1_sleevehero" class="bg-sec_be-500 px-4">
     <SplitcontentHero
       title="ELBY Fortovsskinne"
       text="Er fortovet i vejen for din drøm om at køre elbil? Elby har løst problemet med en fortovsskinne i et kompakt og funktionelt design."
       dropdownOptions={sleeve}
       dropdownBinding="m/installation og ansøgning"
       infoCards={infoCards}
-      buttonText="Få Elby til din boligforening"
+      buttonText="Få Elby fortovskinne"
       buttonLink="../bestil"
       rightMediaType="video"
       rightMediaSrc="/fortovskinne.webm"
@@ -89,7 +89,7 @@ const kommune = [
       alt1="Installation ikon"
       alt2="Abonnement ikon"
       alt3="Overskudsdeling ikon"
-      buttonText="Få Elby til din boligforening"
+      buttonText="Få Elby fortovskinne"
       buttonlink="/bestil"
       linkVariant="primary"
     />
@@ -97,17 +97,17 @@ const kommune = [
 
   <!-- Produktkort Section -->
   <div id="3_abc_løsning_sleeve" class="bg-sec_be-500">
-    <section class="items-start justify-between max-w-7xl mx-auto lg:p-l p-xs lg:py-8xl gap-8xl">
-      <h3 class="mb-xxxs pb-xxs">Den rigtige løsning for borgere, byer og kommuner.</h3>
-      <p class="mb-6">Vælg mellem følgende:</p>
+    <section class="items-start justify-between max-w-7xl mx-auto p-sm gap-8xl lg:p-14 lg:py-xl ">
+      <h2 class="mb-xxxs pb-xxs">Den rigtige løsning for borgere, byer og kommuner.</h2>
+      <p class="mb-10">Vælg mellem følgende løsninger:</p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card A -->
         <Card
           headerColor="bg-acc_yel-500"
           title="Fortovsskinne"
-          buildingIcon="/sleevA.svg"
-          subtitle="m / installation og ansøgning"
+          buildingIcon="/A.svg"
+          subtitle="m / install. og ansøgning"
           image="/SleevCard.webp"
           pricetitle="Pris inkl. moms"
           price="3.299 kr"
@@ -134,8 +134,8 @@ const kommune = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Fortovsskinne"
-          buildingIcon="/sleevB.svg"
-          subtitle="m / installation"
+          buildingIcon="/B.svg"
+          subtitle="m / install."
           image="/SleevCardB.webp"
           pricetitle="Pris inkl. moms"
           price="2.799 kr"
@@ -162,8 +162,8 @@ const kommune = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Fortovsskinne"
-          buildingIcon="/sleevC.svg"
-          subtitle="u / installation"
+          buildingIcon="/C.svg"
+          subtitle="u / install."
           image="/SleevCardC.webp"
           pricetitle="Pris inkl. moms"
           price="999 kr"
@@ -206,25 +206,25 @@ const kommune = [
 
   <!-- Kommune Section -->
   <div id="5_kommune_sleeve" class="bg-sec_be-500">
-    <section class="grid grid-cols-1 md:grid-cols-2 mx-auto">
+    <section class="grid grid-cols-1 md:grid-cols-2">
       <!-- Tekstdel -->
-      <div class="w-full p-4 md:p-xl">
-        <h3 class="mb-xxxs pb-xxs">Kommuner der tillader fortovsskinner</h3>
-        <p class="mb-6">
+      <div class="w-full px-8 pt-8 md:px-2xl md:py-l">
+        <h3 class="mb-xxxs pb-xxs lg:px-12">Kommuner der tillader fortovsskinner</h3>
+        <p class="mb-6 lg:px-12">
           Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.
         </p>
 
-        <div class="mb-m relative">
-          <Dropdown options={kommune} placeholder="Find din kommune..." />
+        <div class="mb-m relative lg:px-12">
+          <Dropdown options={kommune} placeholder="Vælg kommune..." linkOnSelect={true} />
         </div>
 
-        <div class="mb-m">
+        <div class="mb-m lg:px-12">
           <h4 class="pb-xxs">Få flere kommuner skrevet på</h4>
           <p>
             Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig
             selv og dine naboer til gode, at der er styr på ladekablet.
           </p>
-          <p>Kontaktinformationen finder du typisk på kommunens hjemmeside.</p>
+          <!-- <p>Kontaktinformationen finder du typisk på kommunens hjemmeside.</p> -->
           <a
             href="https://cdn.prod.website-files.com/664744ed799478884900e1b3/67f4d8fc8deffd49b104ab57_Elby_Fortovsskinne%20Myndighedsark%20DK.pdf"
             class="text-acc_gr-700 mt-2 inline-block hover:underline"
@@ -233,7 +233,7 @@ const kommune = [
           </a>
         </div>
 
-        <div class="mb-m">
+        <div class="mb-m lg:px-12">
           <h4 class="pb-xxs">Har du brug for hjælp?</h4>
           <p>
             Vi har stor erfaring med dialogen med kommunerne, og vi hjælper dig gerne med
@@ -241,14 +241,14 @@ const kommune = [
           </p>
         </div>
 
-        <div>
+        <div class="lg:px-12">
           <Link href="/kontakt" variant="primary" size="full">Kontakt os</Link>
         </div>
       </div>
 
       <!-- Kortdel -->
-      <div class="hidden md:block w-full h-full bg-neu_dg-200 relative">
-        <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto p-10 my-auto" />
+      <div class="hidden md:block w-full h-full bg-neu_dg-200 relative p-sm">
+        <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto lg:p-l lg:pr-3xl my-auto" />
       </div>
     </section>
   </div>

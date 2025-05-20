@@ -32,7 +32,7 @@
     @apply text-h6-mobile;
   }
   p {
-    @apply font-body text-body-sm text-sec_bl-950;
+    @apply font-body font-medium text-body-sm text-sec_bl-950;
   }
 }
 

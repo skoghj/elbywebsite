@@ -1,0 +1,127 @@
+<section class="relative h-[600vh] bg-acc_yel-200">
+  <!-- Sticky container -->
+  <div id="scrollytelling-wrapper" class="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+    <div id="slides-container" class="relative w-full h-full">
+
+  <div class="slide slide-center absolute inset-0 opacity-0">
+  <!-- Baggrundsbillede med mørk gradient overlay -->
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('image.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+  </div>
+
+  <!-- Indhold ovenpå baggrunden -->
+  <div class="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
+    <div class="w-full max-w-4xl mb-8">
+      <h2 class="font-bold  text-7xl mb-4 text-white">VELKOMMEN TIL <span class="text-acc_yel-500">ELBY</span></h2>
+      <p class="text-3xl font-light  text-white">
+        Et passioneret team med en fælles mission:
+        at fremme den grønne omstilling. Vi tror på, at elbiler skal være for alle <br> – nemme at bruge og tilgængelige i hverdagen.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide absolute inset-0 opacity-0 flex flex-col md:flex-row items-center justify-center md:text-left px-6">
+  <div class="w-full md:w-1/2 max-w-xl order-2">
+    <h2 class="text-3xl font-bold mb-4"></h2>
+    <p class="text-3xl font-light">
+      <span class="font-bold">Forestil dig</span>, at virksomheder og borgere arbejdede sammen for et bedre klima, et renere miljø, bedre luftkvalitet, mindre støj og en bedre fremtid for vores børn.
+    </p>
+  </div>
+  <div class="w-full md:w-1/2 order-1">
+    <img src="omelby_1.png" class="w-full max-w-xl mx-auto shadow-lg" alt=""> <!-- Updated -->
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide absolute inset-0 opacity-0 flex flex-col md:flex-row items-center justify-center md:text-left px-6">
+  <div class="w-full md:w-1/2 max-w-xl order-1">
+    <h2 class="text-3xl font-bold mb-4"></h2>
+    <p class="text-3xl font-light">
+      <span class="font-bold">Forestil dig</span>, at bilerne kunne være en ressource for byen. Først og fremmest skulle det være let og billigt at lade dem op, så ingen tøvede med at skifte deres benzin- eller dieselbil ud.
+    </p>
+  </div>
+  <div class="w-full md:w-1/2 order-2">
+    <img src="omelby_2.png" class="w-full max-w-xl mx-auto shadow-lg" alt=""> <!-- Updated -->
+  </div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide absolute inset-0 opacity-0 flex flex-col md:flex-row items-center justify-center md:text-left px-6">
+  <div class="w-full md:w-1/2 max-w-xl order-2">
+    <h2 class="text-3xl font-bold mb-4"></h2>
+    <p class="text-3xl font-light">
+      Dernæst kunne bilerne være en indtægtskilde for bygningsejerne, når de lader dem op med etagebygningens delestrøm. Det er godt for bygningens økonomi.
+    </p>
+  </div>
+  <div class="w-full md:w-1/2 order-1">
+    <img src="omelby_3.png" class="w-full max-w-xl mx-auto shadow-lg" alt=""> <!-- Updated -->
+  </div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide absolute inset-0 opacity-0 flex flex-col md:flex-row items-center justify-center md:text-left px-6">
+  <div class="w-full md:w-1/2 order-1 max-w-xl">
+    <h2 class="text-3xl font-bold mb-4"></h2>
+    <p class="text-3xl font-light">
+      På sigt kunne elbilerne styrke elnettet ved at sælge lidt af deres strøm tilbage, når den er dyr. Så blev bilerne et fælles batteri for byen, der blot ladede sig selv op, når strømmen blev billig igen. 
+    </p>
+  </div>
+  <div class="w-full md:w-1/2 order-2">
+    <img src="omelby_4.png" class="w-full max-w-xl mx-auto shadow-lg" alt=""> <!-- Updated -->
+  </div>
+</div>
+
+<!-- Slide 6 -->
+<div class="slide slide-center absolute inset-0 opacity-0 flex flex-col items-center text-center justify-center px-6">
+  <div class="w-full md:w-1/2 order-2 mt-md ">
+    <h2 class="text-4xl font-bold  mb-4">Forestil dig Elby - det gør vi</h2>
+    <p class="text-2xl font-light">Kærlig hilsen alle os i Team Elby</p>
+  </div>
+  <div class="w-full md:w-1/2 order-1 ">
+    <img src="" class="w-full max-w-2xl mx-auto shadow-lg" alt=""> <!-- Updated -->
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Motion One & Scroll Logic -->
+<script type="module">
+  import { animate } from "https://cdn.jsdelivr.net/npm/motion@10.16.4/+esm";
+
+  const slides = document.querySelectorAll(".slide");
+  const totalSlides = slides.length;
+
+  let currentSlide = -1;
+
+  const showSlide = (index) => {
+    if (index === currentSlide) return;
+
+    // Hide current
+    if (currentSlide >= 0) {
+      animate(slides[currentSlide], { opacity: 0, y: -40 }, { duration: 0.5, easing: "ease-out" });
+    }
+
+    // Show new
+    animate(slides[index], { opacity: [0, 1], y: [40, 0] }, { duration: 0.8, easing: "ease-out" });
+
+    currentSlide = index;
+  };
+
+  const onScroll = () => {
+    const section = document.querySelector("section");
+    const top = section.getBoundingClientRect().top;
+    const viewportHeight = window.innerHeight;
+
+    const scrollProgress = Math.min(Math.max(-top / viewportHeight, 0), totalSlides - 0.01);
+    const index = Math.floor(scrollProgress);
+
+    showSlide(index);
+  };
+
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("load", () => showSlide(0));
+</script>

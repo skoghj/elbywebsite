@@ -165,6 +165,7 @@ export default {
       },
       fontWeight: {
         light: "300",
+        medium: "350",
         regular: "400",
         semibold: "600",
         bold: "700",

@@ -9,7 +9,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 
 <MainLayout title="Titel">
 
-  <div id="1_inwallhero" class="bg-sec_be-500">
+  <div id="1_inwallhero" class="bg-sec_be-500 px-4">
     <SplitcontentHero
       title="Sådan virker elby"
       text="Hos Elby har vi løsningen, der passer til forskellige behov. Er du en boligforening eller et ejendomsselskab?"
@@ -22,7 +22,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 
   <section id="2_brugerguide" class="bg-primary-500 px-sm py-xl">
     <h2 class="text-center pb-md">Sådan lader du med Elby</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-sm max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-sm max-w-7xl mx-auto">
       <!-- Step 1 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-5xl h-5xl md:w-7xl md:h-7xl flex items-center justify-center">
@@ -38,7 +38,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
           <img src="/væglader_m_stik.svg" alt="Forbind til bil" class="w-128 h-128" />
         </div>
-        <p class="mt-4 md:text-base">Forbind dit kabel fra lader til din bil</p>
+        <p class="mt-4 md:text-basev">Forbind dit kabel fra <br> vægladeren til din bil</p>
       </div>
 
       <!-- Step 3 -->
@@ -47,7 +47,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
           <img src="/fastgør_kabel.svg" alt="Fastgør kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
-          Fastgør kablet i fortovsskinnen ved hjælp af dit fodtøj
+          Fastgør kablet i fortovsskinnen <br> ved hjælp af dit fodtøj
         </p>
       </div>
 
@@ -56,7 +56,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
           <img src="/Elby_app.svg" alt="Start ladning" class="w-128 h-128" />
         </div>
-        <p class="mt-4 md:text-base">Login og start ladning med din Elby App</p>
+        <p class="mt-4 md:text-base">Download og start <br> ladning med Elby App</p>
       </div>
     </div>
   </section>
@@ -72,22 +72,18 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
     />
   </section>
 
-  <section id="4_elby_app" class="bg-primary-500">
+  <section id="4_elby_app" class="bg-primary-500 ">
     <SplitcontentRight
-      img="/mobil_app1.svg"
-      header="Kom I gang med at lade med Elby"
-      text1="Download Elby-app'en og få adgang til Elbys ladere."
-      alt="Mobil dummy med Elby login app"
-    />
-    <div class="flex flex-col items-center gap-4 lg:flex-row lg:-mt-48 lg:pl-32 lg:pb-[128px] lg:h-[192px]">
-      <a href="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723" target="_blank" rel="noopener">
-        <img src="/appstore.svg" alt="Download Elby-appen fra App Store" class="w-36 cursor-pointer" />
-      </a>
-      <a href="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en" target="_blank" rel="noopener">
-        <img src="/googleplay.svg" alt="Download Elby-appen fra Google play" class="w-36 cursor-pointer" />
-      </a>
-    </div>
-  </section>
+  img="/mobil_app1.svg"
+  alt="Mobil med Elby-app"
+  header="Kom i gang med at lade med Elby"
+  text1="Download Elby-app'en og få adgang til Elbys ladere."
+  extraLink1="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723"
+  extraLinkImg1="/appstore.svg"
+  extraLink2="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en"
+  extraLinkImg2="/googleplay.svg"
+/>
+</section>
 
   <section id="5_support" class="bg-sec_be-500 py-16 px-4">
     <div class="max-w-6xl mx-auto text-center mb-12">

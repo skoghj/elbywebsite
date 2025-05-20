@@ -45,8 +45,19 @@ const infoCards = [
 ---
 
 <MainLayout title="Elby-ladestander">
-  <div id="1_ladestanderhero" class="bg-sec_be-500">
-    <SplitcontentHero title="ELBY Ladestander" text="Med Elby ladestander får du en helt ny måde at tænke ladestander på." dropdownOptions={materiale} dropdownBinding="Ladestander i træ" infoCards={infoCards} buttonText="Få Elby ladestander" buttonLink="../bestil" rightMediaType="video" rightMediaSrc="/ladestander.mp4" />
+  
+  <div id="1_ladestanderhero" class="bg-sec_be-500 px-4">
+    <SplitcontentHero
+      title="ELBY Ladestander"
+      text="Med Elby ladestander får du en helt ny måde at tænke ladestander på."
+      dropdownOptions={materiale}
+      dropdownBinding="Ladestander i træ"
+      infoCards={infoCards}
+      buttonText="Få Elby ladestander"
+      buttonLink="../bestil"
+      rightMediaType="video"
+      rightMediaSrc="/fortovskinne.webm"
+    />
   </div>
 
   <section id="2_usp_ladestander" class="bg-primary-500">
@@ -62,16 +73,16 @@ const infoCards = [
   </section>
 
   <div id="5_tbs_løsning_ladestander" class="bg-sec_be-500">
-    <section class="items-start justify-between max-w-7xl mx-auto lg:p-l p-xs lg:py-8xl gap-8xl">
-      <h3 class="mb-xxxs pb-xxs">Den rigtige løsning for dig og din bopæl.</h3>
-      <p class="mb-6">Vælg mellem følgende:</p>
+    <section class="items-start justify-between max-w-7xl mx-auto p-sm gap-8xl lg:p-14 lg:py-xl ">
+      <h2 class="mb-xxxs pb-xxs">Den rigtige løsning for dig og din bopæl.</h2>
+      <p class="mb-10">Vælg mellem følgende løsninger:</p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card
           headerColor="bg-acc_yel-500"
           title="Ladestander i træ"
           buildingIcon="/ladestander_T.svg"
-          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_wood.webp"
           pricetitle="Pris inkl. moms"
           price="39.999 kr."
@@ -98,7 +109,7 @@ const infoCards = [
           headerColor="bg-acc_yel-500"
           title="Ladestander i beton"
           buildingIcon="/sleevB.svg"
-          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_beton.webp"
           pricetitle="Pris inkl. moms"
           price="43.999 kr."
@@ -125,7 +136,7 @@ const infoCards = [
           headerColor="bg-acc_yel-500"
           title="Ladestander i stål"
           buildingIcon="/ladestander_S.svg"
-          subtitle="Monteret, eksklusiv evt. <br/> gravearbejde og kabelføring"
+          subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_staal.webp"
           pricetitle="Pris inkl. moms"
           price="49.999 kr."
@@ -151,7 +162,7 @@ const infoCards = [
     </section>
   </div>
 
-  <div class="bg-primary-500 lg:py-l">
+  <div class="bg-primary-500">
     <Prefooter header="SKAF DIG EN ELBY LADESTANDER!" buttonText="Elby ladestander, ja tak!" buttonlink="/bestil" linkVariant="primary" />
   </div>
 

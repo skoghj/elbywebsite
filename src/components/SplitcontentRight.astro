@@ -1,14 +1,31 @@
 ---
 import Link from "./Link.astro";
-const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVariant = "primary" } = Astro.props;
+
+const {
+  img,
+  header,
+  text1,
+  text2,
+  text3,
+  alt,
+  buttonText,
+  buttonlink = "#",
+  linkVariant = "primary",
+  extraLink1 = "",
+  extraLinkImg1 = "",
+  extraLink2 = "",
+  extraLinkImg2 = "",
+} = Astro.props;
 ---
 
-<section class="flex flex-col-reverse md:flex-row w-full  bg-primary-500">
+<section class="flex flex-col-reverse md:flex-row w-full bg-primary-500">
   <div class="basis-full md:basis-[50%] flex items-center justify-center p-md">
     <div class="max-w-md">
       <h2 class="mb-4" set:html={header} />
       <p class="mb-4" set:html={text1} />
       <p class="mb-6" set:html={text2} />
+      <p class="mb-6" set:html={text3} />
+
       {
         buttonText && (
           <Link href={buttonlink} variant={linkVariant} size="full">
@@ -16,6 +33,23 @@ const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVarian
           </Link>
         )
       }
+
+      <div class="flex gap-4 mt-4">
+        {
+          extraLink1 && extraLinkImg1 && (
+            <a href={extraLink1} target="_blank" rel="noopener">
+              <img src={extraLinkImg1} alt="App Store" class="w-36 cursor-pointer" />
+            </a>
+          )
+        }
+        {
+          extraLink2 && extraLinkImg2 && (
+            <a href={extraLink2} target="_blank" rel="noopener">
+              <img src={extraLinkImg2} alt="Google Play" class="w-36 cursor-pointer" />
+            </a>
+          )
+        }
+      </div>
     </div>
   </div>
   <div class="basis-full md:basis-[50%]">

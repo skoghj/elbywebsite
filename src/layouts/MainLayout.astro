@@ -38,3 +38,31 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
+
+
+<script type="module">
+  import { animate } from "https://cdn.jsdelivr.net/npm/motion@10.16.4/+esm";
+
+  // Hent alle elementer med fade-in-up
+  const fadeInUpElements = document.querySelectorAll(".fade-in-up");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        animate(el, { opacity: [0, 1], x: [40, 0] }, {
+          duration: 0.8,
+          easing: "ease-out"
+        });
+        observer.unobserve(el); // Kør kun én gang
+      }
+    });
+  }, {
+    threshold: 0.2 // Juster hvis nødvendigt
+  });
+
+  fadeInUpElements.forEach(el => {
+    el.style.opacity = 0; // Skjul indledningsvist
+    observer.observe(el);
+  });
+</script>
