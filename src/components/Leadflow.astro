@@ -1,24 +1,21 @@
-
-<div class="w-full bg-sec_be-500" id="leadflow">
+<div class="w-full bg-primary-500" id="leadflow">
   <div class="grid grid-cols-1 md:grid-cols-2">
-    
     <!-- venstre billede -->
     <div class="hidden md:block h-[600px] md:h-[700px]">
       <img src="../bestil.webp" alt="Elby illustration" id="rightImage" class="w-full h-full object-cover" />
     </div>
-    
+
     <!-- højre leadflow -->
- <div class="my-lg mx-lg  flex flex-col justify-center items-center">
-  <div class="charging-container"></div>
-  <!-- Container med max-width og centreret -->
-  <div class="w-full max-w-[600px]">
-   <h2 class="mb-sm" id="leadflowTitle">Se hvilken løsning fra Elby, der passer til dig</h2>
-    <div id="app" class="w-full"></div>
+    <div class="px-sm py-md md:my-lg md:mx-lg flex flex-col justify-center items-center">
+      <div class="charging-container"></div>
+      <!-- Container med max-width og centreret -->
+      <div class="w-full max-w-[600px]">
+        <h2 class="mb-sm" id="leadflowTitle">Se hvilken løsning fra Elby, der passer til dig</h2>
+        <div id="app" class="w-full"></div>
+      </div>
+    </div>
   </div>
 </div>
-  </div>
-  </div>
-
 
 <script type="module">
   import { animate } from "https://cdn.skypack.dev/motion";
@@ -29,42 +26,37 @@
       options: [
         { label: "Leje", icon: "/boligforening-building.svg", image: "/leje.jpg" },
         { label: "Andel", icon: "/ejendom-building.svg", image: "/anddel.jpg" },
-        { label: "Ejer", icon: "/ejendom-building.svg", image: "/ejer.jpg" }
-      ]
+        { label: "Ejer", icon: "/ejendom-building.svg", image: "/ejer.jpg" },
+      ],
     },
     {
       question: "Hvordan parkerer man ved jeres opgang?",
-      options: ["Parkering på gaden", "Privatparkeringsplads eller p kælder", "Ingen parkeringspladser"]
+      options: ["Parkering på gaden", "Privatparkeringsplads eller p kælder", "Ingen parkeringspladser"],
     },
     {
       question: "Er der cykelsti mellem fortov og gade?",
-      options: ["Ingen cykelsti", "Cykelsti", "Ved ikke"]
+      options: ["Ingen cykelsti", "Cykelsti", "Ved ikke"],
     },
     {
       question: "Hvor mange fortovsfliser er der mellem bygningsmur og parkering?",
-      options: ["1 flise", "2 fliser", "3 eller flere fliser"]
+      options: ["1 flise", "2 fliser", "3 eller flere fliser"],
     },
     {
       question: "Hvad er din rolle i opgangen?",
-      options: ["Beboer", "Bestyrelsesmedlem", "Administrator eller bygningsejer"]
-    }
+      options: ["Beboer", "Bestyrelsesmedlem", "Administrator eller bygningsejer"],
+    },
   ];
 
-  const disqualifyingAnswers = [
-    "Privatparkeringsplads eller p kælder",
-    "Ingen parkeringspladser",
-    "Cykelsti",
-    "3 eller flere fliser"
+  const disqualifyingAnswers = ["Privatparkeringsplads eller p kælder", "Ingen parkeringspladser", "Cykelsti", "3 eller flere fliser"];
+  const stepImages = [
+    null, // step 0 styres allerede via answers[0].image
+    "/leadflow_parkering.jpg",
+    "/leadflow_cykelsti.jpg",
+    "/leadflow_fortov.jpg",
+    "/leadflow_person.jpg",
+    "/opladning1.webp", // slutskærm (qualified/disqualified)
+    "/kontakt.webp", // kontaktformular
   ];
-const stepImages = [
-  null, // step 0 styres allerede via answers[0].image
-  "/leadflow_parkering.jpg",
-  "/leadflow_cykelsti.jpg",
-  "/leadflow_fortov.jpg",
-  "/leadflow_person.jpg",
-  "/opladning1.webp",       // slutskærm (qualified/disqualified)
-  "/kontakt.webp"      // kontaktformular
-];
 
   let step = 0;
   const answers = [];
@@ -98,26 +90,26 @@ const stepImages = [
     animate("#app > *", { opacity: [0, 1], y: [20, 0] }, { duration: 0.4 });
   }
 
-function updateRightImage() {
-  // Sæt lav opacitet og placer billedet lidt til venstre som udgangspunkt
-  rightImg.style.opacity = 0;
-  rightImg.style.transform = "translateX(-40px)";
+  function updateRightImage() {
+    // Sæt lav opacitet og placer billedet lidt til venstre som udgangspunkt
+    rightImg.style.opacity = 0;
+    rightImg.style.transform = "translateX(-40px)";
 
-  // Skift billedkilde med det samme
-  if (step === 0 && answers[0]) {
-    const selected = questions[0].options.find(o => o.label === answers[0]);
-    if (selected) rightImg.src = selected.image;
-  } else if (step > 0 && stepImages[step]) {
-    rightImg.src = stepImages[step];
-  } else {
-    rightImg.src = "../fp1.png"; // fallback
+    // Skift billedkilde med det samme
+    if (step === 0 && answers[0]) {
+      const selected = questions[0].options.find((o) => o.label === answers[0]);
+      if (selected) rightImg.src = selected.image;
+    } else if (step > 0 && stepImages[step]) {
+      rightImg.src = stepImages[step];
+    } else {
+      rightImg.src = "../fp1.png"; // fallback
+    }
+
+    // Vent til billedet er loadet, så vi ikke animerer for tidligt
+    rightImg.onload = () => {
+      animate(rightImg, { opacity: [0, 1], x: [-40, 0] }, { duration: 0.5, easing: "ease-out" });
+    };
   }
-
-  // Vent til billedet er loadet, så vi ikke animerer for tidligt
-  rightImg.onload = () => {
-    animate(rightImg, { opacity: [0, 1], x: [-40, 0] }, { duration: 0.5, easing: "ease-out" });
-  };
-}
 
   function render() {
     app.innerHTML = "";
@@ -134,14 +126,18 @@ function updateRightImage() {
      
           <h2 class="text-lg font-body font-semibold mb-4">${q.question}</h2>
           <div id="optionSelector" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            ${q.options.map(opt => `
+            ${q.options
+              .map(
+                (opt) => `
               <div class="optionSelector cursor-pointer flex flex-col items-center shadow bg-acc_yel-50 p-4 rounded transition border-2 border-transparent hover:border-acc_yel-500" data-answer="${opt.label}">
                 <img src="${opt.icon}" alt="${opt.label}" class="w-16 h-16 mb-2 object-contain" />
                 <span>${opt.label}</span>
               </div>
-            `).join('')}
+            `
+              )
+              .join("")}
           </div>
-    <button id="firstNextBtn" class="w-full bg-acc_yel-500 text-black font-medium py-xs mt-xxs rounded-full transition-colors duration-300 hover:bg-acc_yel-600">
+    <button id="firstNextBtn" class="w-full bg-acc_yel-500 text-sec_bl-950 font-semibold py-xs mt-xxs rounded-full transition-colors duration-300 hover:bg-acc_yel-600">
   Se om du kan få Elby
 </button>
         `;
@@ -150,26 +146,26 @@ function updateRightImage() {
         const nextBtn = container.querySelector("#firstNextBtn");
         nextBtn.classList.remove("hidden");
 
-        container.querySelectorAll(".optionSelector").forEach(el => {
+        container.querySelectorAll(".optionSelector").forEach((el) => {
           el.addEventListener("click", () => {
-            container.querySelectorAll(".optionSelector").forEach(o => o.classList.remove("selected"));
+            container.querySelectorAll(".optionSelector").forEach((o) => o.classList.remove("selected"));
             el.classList.add("selected");
             answers[0] = el.dataset.answer;
             updateRightImage();
           });
         });
 
-       nextBtn.addEventListener("click", () => {
-  if (!answers[0]) {
-    alert("Vælg venligst en mulighed før du fortsætter");
-    return;
-  }
-  // Skjul overskriften
-  document.getElementById("leadflowTitle").style.display = "none";
+        nextBtn.addEventListener("click", () => {
+          if (!answers[0]) {
+            alert("Vælg venligst en mulighed før du fortsætter");
+            return;
+          }
+          // Skjul overskriften
+          document.getElementById("leadflowTitle").style.display = "none";
 
-  step++;
-  render();
-});
+          step++;
+          render();
+        });
 
         // Ingen progressbar på step 0
       } else {
@@ -177,9 +173,13 @@ function updateRightImage() {
         container.innerHTML = `
           <h2 class="text-lg font-body font-semibold mb-4">${q.question}</h2>
           <div class="space-y-2">
-            ${q.options.map(opt => `
+            ${q.options
+              .map(
+                (opt) => `
               <button class="w-full text-left border-black shadow bg-acc_yel-50 hover:bg-acc_yel-500 px-4 py-2 rounded transition" data-answer="${opt}">${opt}</button>
-            `).join('')}
+            `
+              )
+              .join("")}
           </div>
           <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -191,7 +191,7 @@ function updateRightImage() {
 
         app.appendChild(container);
 
-        container.querySelectorAll("[data-answer]").forEach(btn => {
+        container.querySelectorAll("[data-answer]").forEach((btn) => {
           btn.addEventListener("click", () => {
             answers[step] = btn.dataset.answer;
             step++;
@@ -210,7 +210,7 @@ function updateRightImage() {
       }
     } else if (step === questions.length) {
       // Slutskærm med tilbageknap OG progressbar skjult
-      const hasDisqualifying = answers.some(a => disqualifyingAnswers.includes(a));
+      const hasDisqualifying = answers.some((a) => disqualifyingAnswers.includes(a));
       const container = document.createElement("div");
       container.className = "max-w-[600px] mx-auto";
 
@@ -306,4 +306,4 @@ function updateRightImage() {
   }
 
   render();
-  
+</script>
