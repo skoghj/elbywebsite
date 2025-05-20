@@ -18,27 +18,27 @@ const infoCards = [
     match: "m/installation og ansøgning",
     price: "3.299 kr.",
     items: [
-      { icon: "/SleevIcon.svg", text: "2m fortovsskinne inkl. lim" },
-      { icon: "/installation.svg", text: "1-2 dages Installation" },
-      { icon: "/ansogningicon.svg", text: "Ansøgning til kommunen" },
+      { icon: "../svg/sleeve.svg", text: "2m fortovsskinne inkl. lim" },
+      { icon: "../svg/installation.svg", text: "1-2 dages Installation" },
+      { icon: "../svg/ansogning.svg", text: "Ansøgning til kommunen" },
     ],
   },
   {
     match: "m/installation",
     price: "2.799 kr.",
     items: [
-      { icon: "/SleevIcon.svg", text: "2m fortovsskinne inkl. lim" },
-      { icon: "/installation.svg", text: "1-2 dages Installation" },
-      { icon: "/fragtIcon.svg", text: "Fri fragt" },
+      { icon: "../svg/sleeve.svg", text: "2m fortovsskinne inkl. lim" },
+      { icon: "../svg/installation.svg", text: "1-2 dages Installation" },
+      { icon: "../svg/fragt.svg", text: "Fri fragt" },
     ],
   },
   {
     match: "u/installation",
     price: "999 kr.",
     items: [
-      { icon: "/SleevIcon.svg", text: "2m fortovsskinne inkl. lim" },
-      { icon: "/montagevejledning.svg", text: "Montagevejledning" },
-      { icon: "/fragtIcon.svg", text: "Fri fragt" }
+      { icon: "../svg/sleeve.svg", text: "2m fortovsskinne inkl. lim" },
+      { icon: "../svg/montagevejledning.svg", text: "Montagevejledning" },
+      { icon: "../svg/fragt.svg", text: "Fri fragt" }
     ]
   }
 ];
@@ -67,7 +67,7 @@ const kommune = [
 
   <!-- USP Section -->
   <section id="2_usp_sleeve" class="bg-primary-500 fade-in-up">
-    <Uspsection header="Hvorfor få Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="/SleevIcon.svg" img2="/installation.svg" img3="/overskueligIcon.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby fortovskinne" buttonlink="/bestil" linkVariant="primary" />
+    <Uspsection header="Hvorfor få Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="../svg/sleeve.svg" img2="../svg/installation.svg" img3="../svg/overskudsdeling.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby fortovskinne" buttonlink="/bestil" linkVariant="primary" />
   </section>
 
   <!-- Produktkort Section -->
@@ -83,7 +83,7 @@ const kommune = [
           title="Fortovsskinne"
           buildingIcon="/A.svg"
           subtitle="m / install. og ansøgning"
-          image="/sleevcard.webp"
+          image="../sleeve/sleevecard_a.webp"
           pricetitle="Pris inkl. moms"
           price="3.299 kr"
           linkVariant="primary"
@@ -91,15 +91,15 @@ const kommune = [
           buttonLink="/bestil"
           features={[
             {
-              icon: '<img src="/sleevicon.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/sleeve.svg" class="w-12 h-12" alt="icon" />',
               text: "2m fortovsskinne inkl. lim"
             },
             {
-              icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/installation.svg" class="w-12 h-12" alt="icon" />',
               text: "1-2 dages Installation",
             },
             {
-              icon: '<img src="/ansogningicon.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/ansogning.svg" class="w-12 h-12" alt="icon" />',
               text: "Ansøgning til kommunen",
             },
           ]}
@@ -111,7 +111,7 @@ const kommune = [
           title="Fortovsskinne"
           buildingIcon="/B.svg"
           subtitle="m / install."
-          image="/sleevcardb.webp"
+          image="../sleeve/sleevecard_b.webp"
           pricetitle="Pris inkl. moms"
           price="2.799 kr"
           linkVariant="secondary"
@@ -119,15 +119,15 @@ const kommune = [
           buttonLink="/bestil"
           features={[
             {
-              icon: '<img src="/sleevicon.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/sleeve.svg" class="w-12 h-12" alt="icon" />',
               text: "2m fortovsskinne inkl. lim"
             },
             {
-              icon: '<img src="/installation.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/installation.svg" class="w-12 h-12" alt="icon" />',
               text: "1-2 dages Installation",
             },
             {
-              icon: '<img src="/fragtIcon.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/fragt.svg" class="w-12 h-12" alt="icon" />',
               text: "Fri fragt",
             },
           ]}
@@ -139,7 +139,7 @@ const kommune = [
           title="Fortovsskinne"
           buildingIcon="/C.svg"
           subtitle="u / install."
-          image="/sleevcardc.webp"
+          image="../sleeve/sleevecard_c.webp"
           pricetitle="Pris inkl. moms"
           price="999 kr"
           linkVariant="secondary"
@@ -147,15 +147,15 @@ const kommune = [
           buttonLink="/bestil"
           features={[
             {
-              icon: '<img src="/sleevicon.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/sleeve.svg" class="w-12 h-12" alt="icon" />',
               text: "2m fortovsskinne inkl. lim"
             },
             {
-              icon: '<img src="/Montagevejledning.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/montagevejledning.svg" class="w-12 h-12" alt="icon" />',
               text: "Montagevejledning",
             },
             {
-              icon: '<img src="/fragtIcon.svg" class="w-12 h-12" alt="icon" />',
+              icon: '<img src="../svg/fragt.svg" class="w-12 h-12" alt="icon" />',
               text: "Fri fragt",
             },
           ]}
@@ -166,7 +166,7 @@ const kommune = [
 
   <!-- Branding Section -->
   <section id="4_branding_sleeve" class="bg-primary-500 fade-in-up">
-    <Splitcontent img="/fortovskinne2.webp" header="Skabt til byen" text1="Elbys skinne er testet med cykler, rulleskøjter, løbehjul, kørestole, små børn, hunde, sko og høje hæle." text2="Skinnen er så lille at når skinnen er tom, kan man dårligt mærke den, når man går eller kører over den. Det eneste der kan gå i skinnen er stilethæle. Bredden på skinnens synlige rille er nemlig blot omtrent den samme som afstanden mellem almindelige brosten på gaden." text3="Når ladekablet ligger i skinnen, føles den som en naturlig del af fortovet." alt="Elby væglader i murstensvæg" buttonText="Læs mere om Elbys vision" buttonlink="/omelby" linkVariant="secondary" />
+    <Splitcontent img="../sleeve/sleeve_sidewalk.webp" header="Skabt til byen" text1="Elbys skinne er testet med cykler, rulleskøjter, løbehjul, kørestole, små børn, hunde, sko og høje hæle." text2="Skinnen er så lille at når skinnen er tom, kan man dårligt mærke den, når man går eller kører over den. Det eneste der kan gå i skinnen er stilethæle. Bredden på skinnens synlige rille er nemlig blot omtrent den samme som afstanden mellem almindelige brosten på gaden." text3="Når ladekablet ligger i skinnen, føles den som en naturlig del af fortovet." alt="Elby væglader i murstensvæg" buttonText="Læs mere om Elbys vision" buttonlink="/omelby" linkVariant="secondary" />
   </section>
 
   <!-- Kommune Section -->
@@ -200,13 +200,13 @@ const kommune = [
 
       <!-- Kortdel -->
       <div class="hidden md:block w-full h-full bg-neu_dg-200 relative p-sm">
-        <img src="/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto lg:p-l lg:pr-3xl my-auto" />
+        <img src="../svg/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto lg:p-l lg:pr-3xl my-auto" />
       </div>
     </section>
   </div>
 
   <!-- Prefooter grafik -->
   <div id="6_bygrafik_sleeve" class="bg-sec_be-500 pt-xl">
-    <img src="/buildinggrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
+    <img src="/ByGrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
   </div>
 </MainLayout>

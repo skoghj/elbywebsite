@@ -18,27 +18,27 @@ const infoCards = [
     match: "Ladestander i træ",
     price: "39.999 kr.",
     items: [
-      { icon: "/layers2.svg", text: "Egetræ" },
+      { icon: "../svg/layers.svg", text: "Egetræ" },
       { icon: "/maaler2.svg", text: "Mål: 77x22x22cm" },
-      { icon: "/installation.svg", text: "Installation 1-2 dage" },
+      { icon: "../svg/installation.svg", text: "Installation 1-2 dage" },
     ],
   },
   {
     match: "Ladestander i beton",
     price: "43.999 kr.",
     items: [
-      { icon: "/layers2.svg", text: "Beton" },
+      { icon: "../svg/layers.svg", text: "Beton" },
       { icon: "/maaler2.svg", text: "Mål: 60x20x20cm" },
-      { icon: "/installation.svg", text: "Installation 1-2 dage" },
+      { icon: "../svg/installation.svg", text: "Installation 1-2 dage" },
     ],
   },
   {
     match: "Ladestander i stål",
     price: "49.999 kr.",
     items: [
-      { icon: "/layers2.svg", text: "Stål" },
+      { icon: "../svg/layers.svg", text: "Stål" },
       { icon: "/maaler2.svg", text: "Mål: 55x22x22cm" },
-      { icon: "/installation.svg", text: "Installation 1-2 dage" },
+      { icon: "../svg/installation.svg", text: "Installation 1-2 dage" },
     ],
   },
 ];
@@ -60,7 +60,7 @@ const infoCards = [
   </div>
 
   <section id="2_usp_ladestander" class="bg-primary-500 fade-in-up">
-    <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, beton eller stål" img1="/nytaenkIcon.svg" img2="/installation.svg" img3="/ladestander2.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby ladestander" buttonlink="/bestil" linkVariant="primary" />
+    <Uspsection header="Hvorfor vælge Elby ladestander?" text1="1. Nytænkende ladestander, der er nænsom for byen" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Din private ladestander, der kommer i både træ, beton eller stål" img1="/nytaenkIcon.svg" img2="../svg/installation.svg" img3="/ladestander2.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby ladestander" buttonlink="/bestil" linkVariant="primary" />
   </section>
 
   <section id="3_branding_ladestander" class="bg-sec_be-500 fade-in-up">
@@ -80,7 +80,7 @@ const infoCards = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Ladestander i træ"
-          buildingIcon="/t.svg"
+          buildingIcon="/A.svg"
           subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_wood.webp"
           pricetitle="Pris inkl. moms"
@@ -90,7 +90,7 @@ const infoCards = [
           buttonLink="/bestil"
           features={[
             {
-              icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />',
+              icon: '<img src="../svg/layers.svg" class="w-12 h-12" alt="Træ ikon" />',
               text: "Egetræ - ladestander",
             },
             {
@@ -98,7 +98,7 @@ const infoCards = [
               text: "Mål: 77x22x22cm",
             },
             {
-              icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
+              icon: '<img src="../svg/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
               text: "1-2 dages installation",
             },
           ]}
@@ -107,7 +107,7 @@ const infoCards = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Ladestander i beton"
-          buildingIcon="/b.svg"
+          buildingIcon="/B.svg"
           subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_beton.webp"
           pricetitle="Pris inkl. moms"
@@ -117,7 +117,7 @@ const infoCards = [
           buttonLink="/bestil"
           features={[
             {
-              icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />',
+              icon: '<img src="../svg/layers.svg" class="w-12 h-12" alt="Træ ikon" />',
               text: "Beton - ladestander",
             },
             {
@@ -125,7 +125,7 @@ const infoCards = [
               text: "Mål: 60x20x20cm",
             },
             {
-              icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
+              icon: '<img src="../svg/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
               text: "1-2 dages installation",
             },
           ]}
@@ -134,7 +134,7 @@ const infoCards = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Ladestander i stål"
-          buildingIcon="/s.svg"
+          buildingIcon="/C.svg"
           subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_staal.webp"
           pricetitle="Pris inkl. moms"
@@ -144,7 +144,7 @@ const infoCards = [
           buttonLink="/bestil"
           features={[
             {
-              icon: '<img src="/layers2.svg" class="w-12 h-12" alt="Træ ikon" />',
+              icon: '<img src="../svg/layers.svg" class="w-12 h-12" alt="Træ ikon" />',
               text: "Stål - ladestander",
             },
             {
@@ -152,7 +152,7 @@ const infoCards = [
               text: "Mål: 55x22x22cm",
             },
             {
-              icon: '<img src="/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
+              icon: '<img src="../svg/installation.svg" class="w-12 h-12" alt="Installation ikon" />',
               text: "1-2 dages installation",
             },
           ]}
@@ -167,6 +167,6 @@ const infoCards = [
 
   <!-- Grafik Section prefooter -->
   <div class="bg-primary-500">
-    <img src="./bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
+    <img src="./ByGrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 </MainLayout>
