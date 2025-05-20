@@ -46,7 +46,17 @@ const infoCards = [
 
 <MainLayout title="Elby-ladestander">
   <div id="1_ladestanderhero" class="bg-sec_be-500 px-4">
-    <SplitcontentHero title="ELBY Ladestander" text="Med Elby ladestander får du en helt ny måde at tænke ladestander på." dropdownOptions={materiale} dropdownBinding="Ladestander i træ" infoCards={infoCards} buttonText="Få Elby ladestander" buttonLink="../bestil" rightMediaType="video" rightMediaSrc="/fortovskinne.webm" />
+    <SplitcontentHero
+      title="ELBY Ladestander"
+      text="Med Elby ladestander får du en helt ny måde at tænke ladestander på."
+      dropdownOptions={materiale}
+      dropdownBinding="Ladestander i træ"
+      infoCards={infoCards}
+      buttonText="Få Elby ladestander"
+      buttonLink="../bestil"
+      rightMediaType="video"
+      rightMediaSrc="/ladestander.mp4"
+    />
   </div>
 
   <section id="2_usp_ladestander" class="bg-primary-500 fade-in-up">
@@ -70,7 +80,7 @@ const infoCards = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Ladestander i træ"
-          buildingIcon="/ladestander_T.svg"
+          buildingIcon="/t.svg"
           subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_wood.webp"
           pricetitle="Pris inkl. moms"
@@ -97,7 +107,7 @@ const infoCards = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Ladestander i beton"
-          buildingIcon="/sleevB.svg"
+          buildingIcon="/b.svg"
           subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_beton.webp"
           pricetitle="Pris inkl. moms"
@@ -124,7 +134,7 @@ const infoCards = [
         <Card
           headerColor="bg-acc_yel-500"
           title="Ladestander i stål"
-          buildingIcon="/ladestander_S.svg"
+          buildingIcon="/s.svg"
           subtitle="Monteret, ekskl. evt. <br/> gravearbejde og kabelføring"
           image="/ladestander_staal.webp"
           pricetitle="Pris inkl. moms"
@@ -157,6 +167,6 @@ const infoCards = [
 
   <!-- Grafik Section prefooter -->
   <div class="bg-primary-500">
-    <img src="/buildinggrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
+    <img src="./bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 </MainLayout>
