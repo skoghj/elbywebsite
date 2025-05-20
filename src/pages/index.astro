@@ -12,14 +12,14 @@ import Splitcontent from "../components/Splitcontent.astro";
 import Uspsection from "../components/Uspsection.astro";
 import Prefooter from "../components/Prefooter.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
-import TestimonialsSlider from "../components/TestimonialsSlider.astro";
-import TestimonialCard from "../components/TestimonialCard.astro";
+
 ---
 
 <MainLayout title="Titel">
  
   <Hero />
 
+<section class="fade-in-up">
     <Uspsection 
       header="Sådan virker Elby"
       text1="1. Elby installere et ladepunkt i bygningens facade"
@@ -35,9 +35,10 @@ import TestimonialCard from "../components/TestimonialCard.astro";
       buttonlink=""
       linkVariant="primary"
   />
-  
- <section class="flex flex-col-reverse md:flex-row w-full bg-primary-500">
+  </section>
 
+
+ <section class="flex  fade-in-up flex-col-reverse md:flex-row w-full bg-primary-500">
   <div class="basis-full md:basis-[50%] flex items-center justify-center p-md">
     <div class="">
         <h2 class="mb-md">Hvorfor vælge Elby?</h2>
@@ -58,14 +59,16 @@ import TestimonialCard from "../components/TestimonialCard.astro";
         <Button size="full" variant="secondary">Bliv klogere på fordelene ved Elby</Button>
     </div>
   </div>
-
   <div class="basis-full md:basis-[50%]">
     <img src="../opladning1.webp" class="w-full h-full object-cover" />
   </div>
 </section>
 
+<section class="fade-in-up">
 <Leadflow/>
+</section>
 
+<section class="fade-in-up">
    <SplitcontentRight
   img="../grøn.jpg"
   header="Sammen om den grønne omstilling"
@@ -75,8 +78,10 @@ import TestimonialCard from "../components/TestimonialCard.astro";
   buttonText="Læs mere om Elbys vision"
   buttonLink=""
   />
+  </section>
 
 
+<section class="fade-in-up">
 <Splitcontent
   img="../by.webp"
   header="Tilmeld dig vores nyhedsbrev"
@@ -84,7 +89,7 @@ import TestimonialCard from "../components/TestimonialCard.astro";
   buttonText="Tilmeld dig Elby Liv"
   buttonLink=""
 />
-
+</section>
  
   
   <div class="bg-sec_be-500">
@@ -94,3 +99,5 @@ import TestimonialCard from "../components/TestimonialCard.astro";
 
  
 </MainLayout>
+
+
