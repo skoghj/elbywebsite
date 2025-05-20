@@ -10,7 +10,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 <MainLayout title="Sådan virker Elby">
 
   <div id="1_inwallhero" class="bg-sec_be-500 px-4">
-    <SplitcontentHero title="Sådan virker elby" text="Hos Elby har vi løsningen, der passer til forskellige behov. Er du en boligforening eller et ejendomsselskab?" buttonText="Få Elby til din Etageejendom" buttonLink="../bestil" rightMediaType="youtube" rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA" />
+    <SplitcontentHero title="Sådan virker elby" text="Elbys unikke design gør det muligt at installere, hvor traditionelle ladebokse og -standere ikke kan være." rightMediaType="youtube" rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA" />
   </div>
 
   <section id="2_brugerguide" class="bg-primary-500 px-sm py-xl fade-in-up">
@@ -22,7 +22,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
           <img src="/væglader.svg" alt="Brug dit eget kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
-          Brug dit eget kabel<br />(Type 2-stik)
+         <span class="font-bold">1.</span>  Brug dit eget kabel<br />(Type 2-stik)
         </p>
       </div>
 
@@ -31,7 +31,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
           <img src="/væglader_m_stik.svg" alt="Forbind til bil" class="w-128 h-128" />
         </div>
-        <p class="mt-4 md:text-basev">Forbind dit kabel fra <br /> vægladeren til din bil</p>
+        <p class="mt-4 md:text-basev"><span class="font-bold">2.</span> Forbind dit kabel fra <br /> vægladeren til din bil</p>
       </div>
 
       <!-- Step 3 -->
@@ -40,7 +40,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
           <img src="/fastgør_kabel.svg" alt="Fastgør kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
-          Fastgør kablet i fortovsskinnen <br /> ved hjælp af dit fodtøj
+          <span class="font-bold">3.</span> Fastgør kablet i fortovsskinnen <br /> ved hjælp af dit fodtøj
         </p>
       </div>
 
@@ -49,7 +49,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
           <img src="/Elby_app.svg" alt="Start ladning" class="w-128 h-128" />
         </div>
-        <p class="mt-4 md:text-base">Download og start <br /> ladning med Elby App</p>
+        <p class="mt-4 md:text-base"><span class="font-bold">4.</span> Download og start <br /> ladning med Elby App</p>
       </div>
     </div>
   </section>
@@ -59,7 +59,6 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
       img="/indreby2.webp"
       header="Hav af ladere"
       text1="Med Elbys app i lommen behøver du ikke længere gætte dig frem til, hvor du kan lade din elbil. Du får et hurtigt overblik over hele vores netværk af ladepunkter – også dem fra vores samarbejdspartnere."
-      text2="Du kan se, om standerne er ledige, hvor de står, og hvad det koster at lade. Det hele samlet ét sted, så du slipper for besværet og hurtigt kommer videre."
       text3="Skal du bruge en lader et bestemt sted? Søg på byen, vejen eller måske en seværdighed – så finder appen det for dig. Du kan endda gemme dine foretrukne ladepunkter med et stjernemarkering, så du altid har dem lige ved hånden. Appen er lavet til virkeligheden – der hvor opladning skal være lige så naturlig og ukompliceret som at finde vej hjem."
       alt="Genereret kort med ladepunkter"
     />
@@ -69,36 +68,35 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
     <SplitcontentRight img="/mobil_app1.svg" alt="Mobil med Elby-app" header="Kom i gang med at lade med Elby" text1="Download Elby-app'en og få adgang til Elbys ladere." extraLink1="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723" extraLinkImg1="/appstore.svg" extraLink2="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en" extraLinkImg2="/googleplay.svg" />
   </section>
 
-  <section id="5_support" class="bg-sec_be-500 py-16 px-4 fade-in-up">
-    <div class="max-w-6xl mx-auto text-center mb-12">
-      <h2 class="pb-xs">support</h2>
-      <p>Vi glæder os til at høre fra dig!</p>
+  <section id="5_support" class="bg-sec_be-500 pt-lg pb-2xl fade-in-up">
+    <div class="max-w-6xl mx-auto text-center mb-md ">
+      <h2>Brug for hjælp? Kontakt os her!</h2>
+    
     </div>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
       <!-- Mail -->
       <div class="flex flex-col items-center gap-5">
-        <img src="/iconoir_mail.svg" alt="Mail ikon" />
-        <Link href="mailto:hej@elby.com" variant="primary" size="stanard"> hej@elby.com </Link>
+        <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="/iconoir_mail.svg"> hej@elby.com </Link>
       </div>
 
       <!-- Telefon -->
-      <div class="flex flex-col items-center gap-2">
-        <img src="/mobil.svg" alt="Mobil ikon" />
+      <div class="flex flex-col items-center gap-0">
+       
         <a href="tel:+4560552024">
-          <Link href="mailto:hej@elby.com" variant="primary" size="stanard"> +45 60 55 20 24 </Link>
+          <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="/mobil.svg"> +45 60 55 20 24 </Link>
         </a>
       </div>
 
       <!-- Chat -->
       <div class="flex flex-col items-center gap-5">
-        <img src="/token_chat.svg" alt="Besked ikon" />
-        <Button variant="primary" size="standard" type="button"> Chat med os </Button>
+       
+        <Link variant="secondary" size="standard" type="button" icon="/token_chat.svg"> Chat med os </Link>
       </div>
     </div>
   </section>
 
   <section id="6_bygrafik" class="bg-sec_be-500">
-    <img src="/bygrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
+    <img src="/ByGrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
   </section>
 </MainLayout>
