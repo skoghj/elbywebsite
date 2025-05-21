@@ -3,7 +3,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Link from "../components/Link.astro";
-import Button from "../components/Button.astro";
 import SplitcontentHero from "../components/SplitcontentHero.astro";
 ---
 
@@ -19,7 +18,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
       <!-- Step 1 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-5xl h-5xl md:w-7xl md:h-7xl flex items-center justify-center">
-          <img src="/væglader.svg" alt="Brug dit eget kabel" class="w-128 h-128" />
+          <img src="../svg/væglader.svg" alt="Brug dit eget kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
          <span class="font-bold">1.</span>  Brug dit eget kabel<br />(Type 2-stik)
@@ -29,7 +28,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
       <!-- Step 2 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
-          <img src="/væglader_m_stik.svg" alt="Forbind til bil" class="w-128 h-128" />
+          <img src="../svg/væglader_m_stik.svg" alt="Forbind til bil" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-basev"><span class="font-bold">2.</span> Forbind dit kabel fra <br /> vægladeren til din bil</p>
       </div>
@@ -37,7 +36,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
       <!-- Step 3 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
-          <img src="/fastgør_kabel.svg" alt="Fastgør kabel" class="w-128 h-128" />
+          <img src="../svg/fastgør_kabel.svg" alt="Fastgør kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
           <span class="font-bold">3.</span> Fastgør kablet i fortovsskinnen <br /> ved hjælp af dit fodtøj
@@ -47,7 +46,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
       <!-- Step 4 -->
       <div class="flex flex-col items-center text-center">
         <div class="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center">
-          <img src="/Elby_app.svg" alt="Start ladning" class="w-128 h-128" />
+          <img src="../svg/elby_app.svg" alt="Start ladning" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base"><span class="font-bold">4.</span> Download og start <br /> ladning med Elby App</p>
       </div>
@@ -65,7 +64,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
   </section>
 
   <section id="4_elby_app" class="bg-primary-500 fade-in-up">
-    <SplitcontentRight img="/mobil_app1.svg" alt="Mobil med Elby-app" header="Kom i gang med at lade med Elby" text1="Download Elby-app'en og få adgang til Elbys ladere." extraLink1="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723" extraLinkImg1="/appstore.svg" extraLink2="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en" extraLinkImg2="/googleplay.svg" />
+    <SplitcontentRight img="../svg/mobil_app1.svg" alt="Mobil dummy med Elby-app" header="Kom i gang med at lade med Elby" text1="Download Elby-app'en og få adgang til Elbys ladere." extraLink1="https://apps.apple.com/dk/app/elby-the-citys-ev-charger/id6444045723" extraLinkImg1="../svg/appstore.svg" extraLink2="https://play.google.com/store/apps/details?id=com.elby.elby&hl=en" extraLinkImg2="../svg/googleplay.svg" />
   </section>
 
   <section id="5_support" class="bg-sec_be-500 pt-lg pb-2xl fade-in-up">
@@ -77,21 +76,21 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
     <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
       <!-- Mail -->
       <div class="flex flex-col items-center gap-5">
-        <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="/iconoir_mail.svg"> hej@elby.com </Link>
+        <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="../svg/iconoir_mail.svg"> hej@elby.com </Link>
       </div>
 
       <!-- Telefon -->
       <div class="flex flex-col items-center gap-0">
        
         <a href="tel:+4560552024">
-          <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="/mobil.svg"> +45 60 55 20 24 </Link>
+          <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="../svg/mobil.svg"> +45 60 55 20 24 </Link>
         </a>
       </div>
 
       <!-- Chat -->
       <div class="flex flex-col items-center gap-5">
        
-        <Link variant="secondary" size="standard" type="button" icon="/token_chat.svg"> Chat med os </Link>
+        <Link variant="secondary" size="standard" type="button" icon="../svg/token_chat.svg"> Chat med os </Link>
       </div>
     </div>
   </section>
