@@ -6,6 +6,8 @@ import Uspsection from "../components/Uspsection.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import Dropdown from "../components/Dropdown.astro";
 import SplitcontentHero from "../components/SplitcontentHero.astro";
+import Prefooter from "../components/Prefooter.astro";
+import Textlink from "../components/Textlink.astro";
 
 const sleeve = [
   { value: "m/installation og ansøgning", label: "Med installation og ansøgning" },
@@ -67,7 +69,7 @@ const kommune = [
 
   <!-- USP Section -->
   <section id="2_usp_sleeve" class="bg-primary-500 fade-in-up">
-    <Uspsection header="Hvorfor få Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="../svg/sleeve.svg" img2="../svg/installation.svg" img3="../svg/overskudsdeling.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby fortovskinne" buttonlink="/bestil" linkVariant="primary" />
+    <Uspsection header="Hvorfor få Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="../svg/sleeve.svg" img2="../svg/installation.svg" img3="../svg/overskudsdeling.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby fortovskinne" buttonlink="/bestil" linkVariant="secondary" />
   </section>
 
   <!-- Produktkort Section -->
@@ -183,8 +185,8 @@ const kommune = [
         <div class="mb-m lg:px-12">
           <h4 class="pb-xxs">Få flere kommuner skrevet på</h4>
           <p>Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig selv og dine naboer til gode, at der er styr på ladekablet.</p>
-          <!-- <p>Kontaktinformationen finder du typisk på kommunens hjemmeside.</p> -->
-          <a href="https://cdn.prod.website-files.com/664744ed799478884900e1b3/67f4d8fc8deffd49b104ab57_Elby_Fortovsskinne%20Myndighedsark%20DK.pdf" class="text-acc_gr-700 mt-2 inline-block hover:underline"> Download materiale til myndighedsansøgning → </a>
+          <div class="mt-xxs"><Textlink text="Download materiale til myndingshedsansøgning" color="text-acc_gr-700" href="https://cdn.prod.website-files.com/664744ed799478884900e1b3/67f4d8fc8deffd49b104ab57_Elby_Fortovsskinne%20Myndighedsark%20DK.pdf"/></div>
+      
         </div>
 
         <div class="mb-m lg:px-12">
@@ -202,6 +204,10 @@ const kommune = [
         <img src="../svg/danmarkskort.svg" alt="Danmarkskort med kommuner" class="w-full h-auto lg:p-l lg:pr-3xl my-auto" />
       </div>
     </section>
+  </div>
+
+   <div class="bg-primary-500 fade-in-up">
+    <Prefooter header="Vil du vide mere om Elby?" buttonText="Læs om Elbys vision" buttonlink="/omelby" linkVariant="secondary" />
   </div>
 
   <!-- Prefooter grafik -->
