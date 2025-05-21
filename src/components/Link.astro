@@ -1,5 +1,5 @@
 ---
-const { href = "#", target = "_blank", variant = "primary", size = "standard", icon, iconPosition = "right" } = Astro.props;
+const { href = "#", target = "_blank", variant = "primary", size = "standard", icon, hoverIcon, iconPosition = "right" } = Astro.props;
 
 const linkStyling = "inline-flex items-center gap-2 font-knap font-semibold transition focus-visible:ring-2 focus-visible:ring-sec_bl-100";
 
@@ -19,7 +19,22 @@ const sizeClasses = {
 };
 ---
 
-<a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]}`}>
+<a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]} group`}>
   <slot />
-  {icon && iconPosition === "right" && <img src={icon} alt="" class="w-6 h-6" />}<!-- Render kun hvis ikonet er til stede -->
+  {icon && iconPosition === "right" && (
+    <span class="relative w-6 h-6">
+      <img
+        src={icon}
+        alt=""
+        class="absolute inset-0 w-full h-full transition-opacity duration-300 group-hover:opacity-0"
+      />
+      {hoverIcon && (
+        <img
+          src={hoverIcon}
+          alt=""
+          class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        />
+      )}
+    </span>
+  )}
 </a>
