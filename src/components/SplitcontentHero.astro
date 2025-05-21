@@ -27,7 +27,7 @@ const {
     <!-- Venstre kolonne -->
     <div class="lg:w-1/2 w-full max-w-[444px]">
       <div class="space-y-6">
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         <p>{text}</p>
 
         {dropdownOptions &&
@@ -43,7 +43,7 @@ const {
                 <div>
                   <ul class="space-y-2 lg:space-y-0 border-t border-neu_db-400">
                     {card.items.map(item => (
-                      <li class="flex items-center md:gap-6 md:pl-2 border-b border-neu_db-400 py-2">
+                      <li class="flex items-center md:gap-xs md:pl--xxs border-b border-neu_db-400 py-xxs">
                         <img src={item.icon} class="w-10 h-10" alt="icon" />
                         <p>{item.text}</p>
                       </li>
@@ -61,7 +61,7 @@ const {
 
         {buttonText &&
           <div class="">
-            <Link href={buttonLink} variant="primary" size="standard">
+            <Link href={buttonLink} variant="primary" size="full">
               {buttonText}
             </Link>
           </div>
