@@ -1,14 +1,32 @@
 ---
 import Link from "./Link.astro";
-const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVariant = "primary", imgBg = "bg-acc_yel-500" } = Astro.props;
+import Textlink from "./Textlink.astro";
+
+const {
+  img,
+  header,
+  text1,
+  text2,
+  alt,
+  buttonText,
+  buttonlink = "#",
+  linkVariant = "primary",
+  imgBg = "bg-acc_yel-500",
+  linkText,
+  linkType = "text", // "button" eller "text"
+  href = "#",
+} = Astro.props;
 ---
 
 <section class="flex flex-col md:flex-row w-full mh">
+  <!-- Tekstkolonne -->
   <div class="basis-full order-2 md:order-1 md:basis-[50%] flex items-center justify-center p-sm">
     <div class="max-w-md">
       <h3 class="mb-4" set:html={header} />
       <p class="mb-4" set:html={text1} />
       <p class="mb-sm" set:html={text2} />
+
+      <!-- Knap (valgfri) -->
       {
         buttonText && (
           <Link href={buttonlink} variant={linkVariant} size="full">
@@ -16,8 +34,22 @@ const { img, header, text1, text2, alt, buttonText, buttonlink = "#", linkVarian
           </Link>
         )
       }
+
+      <!-- Tekstlink eller knaplink (valgfri) -->
+      {
+        linkText &&
+          (linkType === "button" ? (
+            <Link href={href} variant={linkVariant} size="standard">
+              {linkText}
+            </Link>
+          ) : (
+            <Textlink href={href} linkText={linkText} />
+          ))
+      }
     </div>
   </div>
+
+  <!-- Billedkolonne -->
   <div class={`order-1 md:order-2 w-full p-sm lg:p-xl md:basis-[50%] flex items-center justify-center ${imgBg}`}>
     <img src={img} alt={alt} class="max-w-full h-auto object-contain" />
   </div>
