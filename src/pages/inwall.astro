@@ -6,8 +6,7 @@ import Link from "../components/Link.astro";
 import SplitcontentHero from "../components/SplitcontentHero.astro";
 ---
 
-<MainLayout title="Sådan virker Elby">
-
+<MainLayout title="Elby App" description="Elby App gør elbilopladning nemt og tilgængeligt i byen. Find nærmeste lader, tilslut dit kabel og start opladningen direkte fra mobilen." ogtitle="Oplad elbilen nemt med Elby App" ogdescription="Se hvordan du bruger Elby App til at finde, tilslutte og starte opladning – med få klik. Download appen og kom i gang i dag.">
   <div id="1_inwallhero" class="bg-sec_be-500 px-4">
     <SplitcontentHero title="Sådan virker elby" text="Elbys unikke design gør det muligt at installere, hvor traditionelle ladebokse og -standere ikke kan være. Se videoen for at se hvor let det er at lade med Elby." rightMediaType="youtube" rightMediaSrc="https://www.youtube.com/embed/1Ta-qd4lxZA" />
   </div>
@@ -21,7 +20,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
           <img src="../svg/væglader.svg" alt="Brug dit eget kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
-         1. Brug dit eget kabel<br />(Type 2-stik)
+          1. Brug dit eget kabel<br />(Type 2-stik)
         </p>
       </div>
 
@@ -39,7 +38,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
           <img src="../svg/fastgør_kabel.svg" alt="Fastgør kabel" class="w-128 h-128" />
         </div>
         <p class="mt-4 md:text-base">
-         3. Fastgør kablet i fortovsskinnen <br /> ved hjælp af dit fodtøj
+          3. Fastgør kablet i fortovsskinnen <br /> ved hjælp af dit fodtøj
         </p>
       </div>
 
@@ -54,13 +53,7 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
   </section>
 
   <section id="3_laderkort" class="bg-sec_be-500 fade-in-up">
-    <Splitcontent
-      img="../inwall/indreby2.webp"
-      header="Hav af ladere"
-      text1="Med Elbys app i lommen behøver du ikke længere gætte dig frem til, hvor du kan lade din elbil. Du får et hurtigt overblik over hele vores netværk af ladepunkter – også dem fra vores samarbejdspartnere."
-      text3="Skal du bruge en lader et bestemt sted? Søg på byen, vejen eller måske en seværdighed – så finder appen det for dig. Du kan endda gemme dine foretrukne ladepunkter med et stjernemarkering, så du altid har dem lige ved hånden. Appen er lavet til virkeligheden – der hvor opladning skal være lige så naturlig og ukompliceret som at finde vej hjem."
-      alt="Genereret kort med ladepunkter"
-    />
+    <Splitcontent img="../inwall/indreby2.webp" header="Hav af ladere" text1="Med Elbys app i lommen behøver du ikke længere gætte dig frem til, hvor du kan lade din elbil. Du får et hurtigt overblik over hele vores netværk af ladepunkter – også dem fra vores samarbejdspartnere." text3="Skal du bruge en lader et bestemt sted? Søg på byen, vejen eller måske en seværdighed – så finder appen det for dig. Du kan endda gemme dine foretrukne ladepunkter med et stjernemarkering, så du altid har dem lige ved hånden. Appen er lavet til virkeligheden – der hvor opladning skal være lige så naturlig og ukompliceret som at finde vej hjem." alt="Genereret kort med ladepunkter" />
   </section>
 
   <section id="4_elby_app" class="bg-primary-500 fade-in-up">
@@ -68,9 +61,8 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
   </section>
 
   <section id="5_support" class="bg-sec_be-500 pt-lg pb-2xl fade-in-up">
-    <div class="max-w-6xl mx-auto text-center mb-md ">
+    <div class="max-w-6xl mx-auto text-center mb-md">
       <h3>Brug for hjælp? Kontakt os her!</h3>
-    
     </div>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
@@ -81,7 +73,6 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 
       <!-- Telefon -->
       <div class="flex flex-col items-center gap-0">
-       
         <a href="tel:+4560552024">
           <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="../svg/mobil.svg"> +45 60 55 20 24 </Link>
         </a>
@@ -89,7 +80,6 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 
       <!-- Chat -->
       <div class="flex flex-col items-center gap-5">
-       
         <Link variant="secondary" size="standard" type="button" icon="../svg/token_chat.svg"> Chat med os </Link>
       </div>
     </div>
