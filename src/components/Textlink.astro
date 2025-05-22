@@ -1,21 +1,10 @@
 ---
-const { href, text, color = 'text-accent-500' } = Astro.props;
+const { href, linkText, color = "text-acc_gr-700" } = Astro.props;
 ---
 
-<a
-  href={href}
-  class={`group inline-flex font-bold items-center ${color} hover:translate-x-3 transition-transform duration-200`}
->
-  <span>{text}</span>
-  <!-- Chevron Højre -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="2.5"
-    stroke="currentColor"
-    class="w-4 h-4 ml-2 mt-1 transition-transform duration-200"
-  >
-    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+<a href={href} class={`group inline-flex font-bold items-center ${color} hover:text-acc_gr-800 transition-transform duration-200 hover:translate-x-3`}>
+  <span>{linkText}</span>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 ml-2 mt-[2px] transition-transform duration-200 group-hover:translate-x-1">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
   </svg>
 </a>
