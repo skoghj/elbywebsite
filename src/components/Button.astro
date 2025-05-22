@@ -1,12 +1,22 @@
 ---
-const { type = "button", variant = "primary", size = "medium", ...restProps } = Astro.props;
+const { type = "button", variant = "primary", size = "standard", icon, iconPosition = "right", ...restProps } = Astro.props;
 
-const buttonStyling = "inline-flex items-center justify-center gap-2 rounded-full px-sm sm:px-m py-xs font-knap font-semibold text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop transition focus-visible:ring-2 focus-visible:ring-sec_bl-100";
+const baseButtonWrap = "relative group overflow-hidden";
 
+// fælles text styles
+const buttonStyling = "inline-flex gap-2 font-knap font-semibold transition focus-visible:ring-2 focus-visible:ring-sec_bl-100";
+
+// variant styles
 const variantClasses = {
-  primary: "bg-acc_yel-500 text-sec_bl-950 hover:bg-acc_yel-600",
-  secondary: "bg-transparent border border-sec_bl-950 inline-block text-sec_bl-950 hover:bg-neu_dg-300 hover:border-0",
-  tertiary: "bg-acc_gr-500 text-sec_bl-950 hover:bg-acc_gr-700 hover:text-primary-50",
+  primary: `${baseButtonWrap} bg-acc_yel-500 text-sec_bl-950 rounded-full px-[32px] py-[16px]`,
+  secondary: `${baseButtonWrap} bg-transparent border border-sec_bl-950 text-sec_bl-950 rounded-full px-[32px] py-[16px] hover:text-primary-50`,
+  tertiary: `${baseButtonWrap} bg-acc_gr-500 text-sec_bl-950 rounded-full px-[32px] py-[16px] hover:text-primary-50`,
+};
+
+const variantBackgrounds = {
+  primary: "bg-acc_yel-600",
+  secondary: "bg-neu_db-500",
+  tertiary: "bg-acc_gr-700",
 };
 
 const sizeClasses = {
@@ -15,4 +25,13 @@ const sizeClasses = {
 };
 ---
 
-<button type={type} {...restProps} class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot /></button>
+<button type={type} {...restProps} class={`${buttonStyling} ${variantClasses[variant]} ${sizeClasses[size]}`}>
+  <!-- Swipe hover bg -->
+  <span class={`absolute inset-0 w-0 ${variantBackgrounds[variant] ?? "bg-acc_yel-500"} transition-all duration-300 ease-in-out group-hover:w-full`}></span>
+
+  <!-- indhold -->
+  <span class="relative z-10 flex items-center gap-2">
+    <slot />
+    {icon && iconPosition === "right" && <img src={icon} alt="" class="w-6 h-6" />}
+  </span>
+</button>

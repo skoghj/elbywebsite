@@ -1,23 +1,45 @@
 ---
 import Usp from "./Usp.astro";
 import Link from "./Link.astro";
-const { header, text1, text2, text3, alt1, alt2, alt3, img1, img2, img3, buttonText, buttonlink = "#", linkVariant = "primary" } = Astro.props;
+
+// Props med default værdier
+const {
+  header,
+  text1,
+  text2,
+  text3,
+  alt1,
+  alt2,
+  alt3,
+  img1,
+  img2,
+  img3,
+  buttonText,
+  buttonlink = "#",
+  linkVariant = "primary",
+  showButton = true, // Vis eller skjul knap
+  buttonAlign = "center", // 'center' eller 'full'
+} = Astro.props;
 ---
 
 <section class="py-md md:py-lg">
   <div class="mx-auto max-w-[1280px]">
     <h2 class="text-center pb-sm">{header}</h2>
 
-    <div class="flex flex-col sm:flex-row pb-sm">
+    <div class="flex flex-col sm:flex-row">
       <Usp text={text1} img={img1} alt={alt1} />
-
       <Usp text={text2} img={img2} alt={alt2} />
-
       <Usp text={text3} img={img3} alt={alt3} />
     </div>
 
-    <div class="flex justify-center">
-      <Link href={buttonlink} variant={linkVariant} size="standard">{buttonText}</Link>
-    </div>
+    {
+      showButton && buttonText && (
+        <div class={`flex ${buttonAlign === "center" ? "justify-center" : ""}`}>
+          <Link href={buttonlink} variant={linkVariant} size={buttonAlign === "full" ? "full" : "standard"}>
+            {buttonText}
+          </Link>
+        </div>
+      )
+    }
   </div>
 </section>
