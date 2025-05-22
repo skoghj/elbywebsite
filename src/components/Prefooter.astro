@@ -1,36 +1,43 @@
 ---
 import Link from "./Link.astro";
-const { header, text, buttonText, linkText, buttonlink = "#", buttonlink2 = "#", linkVariant = "primary", linkVariant2 = "textlink", icon } = Astro.props;
+import Textlink from "./Textlink.astro";
 
-//import Textlink from "./Textlink.astro";//
-//const { header, text, href = "#", linkText } = Astro.props;//
+const {
+  header,
+  text,
+  buttonText,
+  buttonlink = "#",
+  linkText,
+  href = "#",
+  linkType = "text", // "text" eller "button"
+  linkVariant = "primary",
+} = Astro.props;
 ---
 
 <section class="pt-xl px-sm">
-  <h2 class="text-center pb-sm" set:html={header} />
-
+  {header && <h2 class="text-center pb-sm" set:html={header} />}
   {text && <p class="text-center mb-s" set:html={text} />}
 
-  <div class="flex justify-center">
-    <Link href={buttonlink} variant={linkVariant} size="standard">
-      {buttonText}
-    </Link>
-  </div>
-  <div class="py-sm">
-    {
-      linkText && (
-        <Link href={buttonlink2} variant={linkVariant2} size="full" icon={icon}>
+  <!-- 💡 Vælg mellem tekstlink og knap -->
+  {
+    linkText &&
+      (linkType === "button" ? (
+        <Link href={href} variant={linkVariant} size="standard">
           {linkText}
         </Link>
-      )
-    }
-  </div>
+      ) : (
+        <div class="flex justify-center">
+          <Textlink href={href} linkText={linkText} />
+        </div>
+      ))
+  }
+  {
+    buttonText && (
+      <div class="flex justify-center">
+        <Link href={buttonlink} variant={linkVariant} size="standard">
+          {buttonText}
+        </Link>
+      </div>
+    )
+  }
 </section>
-<!--<section class="pt-xl px-sm">
-  <h2 class="text-center pb-sm" set:html={header} />
-  {text && <p class="text-center mb-s">{text}</p>}
-  <div class="flex justify-center">
-    <Textlink href={href} linkText={linkText} />
-  </div>
-</section>
--->
