@@ -7,6 +7,27 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
 import Prefooter from "../components/Prefooter.astro";
 import SplitcontentHero from "../components/SplitcontentHero.astro";
 
+const ladestanderSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Elby Ladestander",
+  image: ["https://elbyprojekt4.netlify.app/stander/ladestander4.webp"],
+  description: "Elbys ladestander fås i træ, beton og stål – designet til at falde i ét med byen og installeres hurtigt. Velegnet til boligforeninger og erhverv, og kan øge værdien af ejendommen.",
+  brand: {
+    "@type": "Brand",
+    name: "Elby",
+  },
+  sku: "elby-ladestander",
+  offers: {
+    "@type": "Offer",
+    url: "https://elbyprojekt4.netlify.app/bestil/",
+    priceCurrency: "DKK",
+    price: "39.999",
+    itemCondition: "https://schema.org/NewCondition",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 const materiale = [
   { value: "Ladestander i træ", label: "Elby Ladestander i træ" },
   { value: "Ladestander i beton", label: "Elby Ladestander i beton" },
