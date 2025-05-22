@@ -8,15 +8,16 @@ import Prefooter from "../components/Prefooter.astro";
 import Scrollytest from "../components/Scrollytest.astro";
 ---
 
-<MainLayout title="Om Elby" description="Lær Elby at kende. Vi kombinerer æstetisk design med klimahandling og gør grøn elbilopladning til en naturlig del af bylivet – uden bøvl og uden regning." ogtitle="Mød Elby – Teamet bag byens grønneste opladning" ogdescription="Opdag Elbys mission og menneskene bag. Se hvordan vi sammen med boligforeninger og byer skaber en bæredygtig fremtid for elbilopladning." />
+<MainLayout title="Om Elby" description="Lær Elby at kende. Vi kombinerer æstetisk design med klimahandling og gør grøn elbilopladning til en naturlig del af bylivet – uden bøvl og uden regning." ogtitle="Mød Elby – Teamet bag byens grønneste opladning" ogdescription="Opdag Elbys mission og menneskene bag. Se hvordan vi sammen med boligforeninger og byer skaber en bæredygtig fremtid for elbilopladning.">
 
 <!-- Hero Section -->
 
 <Scrollytest />
 
 <!-- Team Cards Section -->
-<article id="2_cardanimation realtive overflow-x-hidden" class="md:pb-[180px] bg-primary-500">
-  <div class="sticky top-1/4 mangeelementerinview grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 max-w-5xl mx-auto pb-l md:pb-0">
+
+<section class="pb-xl fade-in-up bg-primary-500">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 max-w-5xl mx-auto pb-l md:pb-0">
     <div class="mangeelementer1">
       <InfoCard image="../about/michael_elby.webp" name="Michael" title="CEO" category="Tech & Startup" description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen." />
     </div>
@@ -39,19 +40,21 @@ import Scrollytest from "../components/Scrollytest.astro";
       <InfoCard image="../about/marco_elby.webp" name="Marco" title="CMO" category="Marketing" description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt." />
     </div>
   </div>
-</article>
+</section>
 
-<section id="3_branding_omelby" class="bg-sec_be-500">
+
+
+<section id="3_branding_omelby" class="bg-sec_be-500 fade-in-up">
   <SplitcontentRight img="../about/par_oplader_bil.webp" header="Gratis, let og nemt <br>- bare si' ja!" text1="Elby gør det nemt at bidrage til den grønne omstilling – helt uden omkostninger for dig." text2="Vi leverer en gratis ladeløsning til din bygning og tager os af installation, drift og vedligeholdelse." alt="To veninder der sidder sammen i baggagerummet i en bil." /><!-- find nyt billed og ændre alt -->
 </section>
 
-<section id="4_overskud_omelby" class="">
+<section id="4_overskud_omelby" class="fade-in-up">
   <Splitcontent img="../svg/mobil_infografik.svg" header="Overskud til dig og din nabo" , text1="Med Elby får du del i overskuddet, når din lader bruges af byens elbilejere." , text2="Modellen bygger på fællesskab – som bygningsejer kan du få op til 60 % af overskuddet." , text3="Det skaber værdi for både dig og dit kvarter – også selvom du ikke selv har bil. Skal du være med?" , buttonText="Få Elby til din Etageejendom" buttonlink="/bestil" linkVariant="primary" alt="Mobile dummy med overskud grafik." />
   <!-- Elby, der giver o -->
 </section>
 
 <!-------------- FAQ accordion -------------->
-<section id="5_faq_omelby" class="pt-m md:pt-xl bg-sec_be-500">
+<section id="5_faq_omelby" class="pt-m md:pt-xl fade-in-up bg-sec_be-500">
   <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-3 items-start lg:gap-8 p-xs">
@@ -118,10 +121,9 @@ import Scrollytest from "../components/Scrollytest.astro";
 </section>
 <!-------------- FAQ accordion slut -------------->
 
-<div id="6_prefooter_omelby" class="">
-  <div>
+<div id="6_prefooter_omelby" class="fade-in-up">
     <Prefooter header="Vil du høre mere om ELby og visionen bag?" buttonText="Kontakt os og hør mere" buttonlink="../kontakt" linkVariant="secondary" />
-  </div>
+</div>
 
   <!-- Grafik Section prefooter -->
   <div id="7_bygrafik_omelby" class="">
@@ -129,32 +131,29 @@ import Scrollytest from "../components/Scrollytest.astro";
   </div>
 </div>
 
+
+
 <script type="module">
   import { animate, inView } from "https://cdn.skypack.dev/motion";
 
-  /* Infocards der animerer ind */
-  inView(".mangeelementerinview", () => {
-    animate(".mangeelementer1", { x: [-2000, 0], y: [-50, 0] }, { duration: 1 });
-    animate(".mangeelementer2", { x: [-1500, 0], y: [-100, 0] }, { duration: 3 });
-    animate(".mangeelementer3", { x: [-1000, 0], y: [-150, 0] }, { duration: 3 });
-    animate(".mangeelementer4", { x: [1750, 0] }, { duration: 2 });
-    animate(".mangeelementer5", { x: [-2000, 0], y: [-100, 0] }, { duration: 1 });
-    animate(".mangeelementer6", { x: [2000, 0] }, { duration: 2 });
-    animate(".mangeelementer7", { x: [1500, 0], y: [50, 0] }, { duration: 3 });
-    animate(".mangeelementer8", { x: [1000, 0], y: [150, 0] }, { duration: 2 });
-    animate(".mangeelementer9", { x: [1500, 0], y: [0, 0] }, { duration: 1 });
-    animate(".mangeelementer10", { x: [2000, 0], y: [50, 0] }, { duration: 2 });
-    return () => {
-      animate(".mangeelementer1", { x: [-2000, 0], y: [-50, 0] }, { duration: 1 });
-      animate(".mangeelementer2", { x: [-1500, 0], y: [-100, 0] }, { duration: 3 });
-      animate(".mangeelementer3", { x: [-1000, 0], y: [-150, 0] }, { duration: 3 });
-      animate(".mangeelementer4", { x: [1750, 0] }, { duration: 2 });
-      animate(".mangeelementer5", { x: [-2000, 0], y: [-100, 0] }, { duration: 1 });
-      animate(".mangeelementer6", { x: [2000, 0] }, { duration: 2 });
-      animate(".mangeelementer7", { x: [1500, 0], y: [50, 0] }, { duration: 3 });
-      animate(".mangeelementer8", { x: [1000, 0], y: [150, 0] }, { duration: 2 });
-      animate(".mangeelementer9", { x: [1500, 0], y: [0, 0] }, { duration: 1 });
-      animate(".mangeelementer10", { x: [2000, 0], y: [50, 0] }, { duration: 2 });
-    };
+  const cards = document.querySelectorAll(".mangeelementer1, .mangeelementer2, .mangeelementer3, .mangeelementer4, .mangeelementer5, .mangeelementer6");
+
+  cards.forEach((card, index) => {
+    // Set initial state
+    card.style.opacity = 0;
+    card.style.transform = "translateY(40px)";
+
+    inView(card, () => {
+      animate(
+        card,
+        { opacity: 1, transform: "translateY(0px)" },
+        {
+          duration: 0.8,
+          delay: 0.4 + index * 0.2, // add a global delay + stagger
+          easing: "ease-out",
+          fill: "both",
+        }
+      );
+    }, { once: true });
   });
-</script>
+</script> 
