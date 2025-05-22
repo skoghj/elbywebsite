@@ -9,7 +9,7 @@ const websiteSchema = {
   name: "Elby",
   url: "https://elbyprojekt4.netlify.app",
 };
-const { title, description, ogtitle, ogdescription, schemamarkup } = Astro.props;
+const { title, description, ogtitle, ogdescription, schemamarkup, preloadImage = "" } = Astro.props;
 ---
 
 <html lang="da">
@@ -34,6 +34,7 @@ const { title, description, ogtitle, ogdescription, schemamarkup } = Astro.props
     <meta property="og:type" content="website" />
     <meta property="og:title" content={Astro.props.ogtitle} />
     <meta property="og:description" content={Astro.props.ogdescription} />
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} />}
   </head>
 
   <body class="bg-primary-500 pt-[80px]">

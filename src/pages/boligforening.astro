@@ -28,7 +28,7 @@ const vægladerSchema = {
 };
 ---
 
-<MainLayout title="Elby – Ladeløsning til boligforeninger og ejendomsselskaber" description="Elby tilbyder intelligente elbil-ladeløsninger til boligforeninger og ejendomsselskaber – med gratis installation, ingen abonnement og mulighed for overskudsdeling." ogtitle="Elby – Ladeløsning til bygninger med fællesskab og forretning" ogdescription="Få Elby til din bygning – grøn elbilopladning uden bøvl. Gratis for boligforeninger, med overskudsdeling og professionel installation for ejendomsselskaber.">
+<MainLayout title="Elby – Ladeløsning til boligforeninger og ejendomsselskaber" description="Elby tilbyder intelligente elbil-ladeløsninger til boligforeninger og ejendomsselskaber – med gratis installation, ingen abonnement og mulighed for overskudsdeling." ogtitle="Elby – Ladeløsning til bygninger med fællesskab og forretning" ogdescription="Få Elby til din bygning – grøn elbilopladning uden bøvl. Gratis for boligforeninger, med overskudsdeling og professionel installation for ejendomsselskaber." preloadImage="/bolig/bolighero1.webp">
   <section x-data="{
     selected: 'bolig', // default bolig!
     init() {
@@ -62,9 +62,9 @@ const vægladerSchema = {
         <template x-if="selected === 'bolig'">
           <div class="mb-xs">
             <ul>
-              <li class="flex items-center gap-xs border-b-[1px] border-t-[1px] border-neu_db-400 py-xxxs"><img src="../svg/installation.svg" class="w-12 h-10" /><p>Installation <span class="font-semibold">0 kr.</span></p></li>
-              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="../svg/abonnement.svg" class="w-12 h-10" /><p>Abonnement <span class="font-semibold">0 kr.</span></p></li>
-              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="../svg/overskudsdeling.svg" class="w-12 h-10" /><p>Overskudsdeling <span class="font-semibold">op til 50%</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-t-[1px] border-neu_db-400 py-xxxs"><img src="/svg/installation.svg" width="48" height="40" class="w-12 h-10" alt="Ikon der repræsenterer gratis professionel installation" /><p>Installation <span class="font-semibold">0 kr.</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/svg/abonnement.svg" width="48" height="40" class="w-12 h-10" alt="Ikon der viser 0 kroner i abonnement for Elby ladeløsning" /><p>Abonnement <span class="font-semibold">0 kr.</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/svg/overskudsdeling.svg" width="48" height="40" class="w-12 h-10" alt="Ikon der illustrerer op til 50 % overskudsdeling for boligforeninger" /><p>Overskudsdeling <span class="font-semibold">op til 50%</span></p></li>
             </ul>
             <dl class="my-6 flex flex-col sm:flex-row items-baseline gap-x-3 w-full">
               <dd class="text-3xl font-bold">2,99 kr/kWh</dd>
@@ -77,9 +77,9 @@ const vægladerSchema = {
         <template x-if="selected === 'ejendom'">
           <div class="mb-xs">
             <ul>
-              <li class="flex items-center gap-xs border-b-[1px] border-t-[1px] border-neu_db-400 py-xxxs"><img src="../svg/installation.svg" class="w-12 h-10" /><p>Installation <span class="font-semibold">30.000 kr.</span></p></li>
-              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="../svg/abonnement.svg" class="w-12 h-10" /><p>Abonnement<span class="font-semibold"> 0 kr.</span></p></li>
-              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="../svg/overskudsdeling.svg" class="w-12 h-10" /><p>Overskudsdeling <span class="font-semibold">op til 60%</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-t-[1px] border-neu_db-400 py-xxxs"><img src="/svg/installation.svg" width="48" height="40" class="w-12 h-10" alt="Ikon der repræsenterer installation til ejendomsselskaber mod betaling" /><p>Installation <span class="font-semibold">30.000 kr.</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/svg/abonnement.svg" width="48" height="40" class="w-12 h-10" alt="Ikon der viser 0 kroner i abonnement for Elby ladeløsning" /><p>Abonnement<span class="font-semibold"> 0 kr.</span></p></li>
+              <li class="flex items-center gap-xs border-b-[1px] border-neu_db-400 py-xxxs"><img src="/svg/overskudsdeling.svg" width="48" height="40" class="w-12 h-10" alt="Ikon der illustrerer op til 60 % overskudsdeling for ejendomsselskaber" /><p>Overskudsdeling <span class="font-semibold">op til 60%</span></p></li>
             </ul>
             <dl class="my-6 flex flex-col sm:flex-row items-baseline gap-x-3 w-full">
               <dd class="text-3xl font-bold">2,99 kr/kWh</dd>
@@ -91,10 +91,10 @@ const vægladerSchema = {
       </div>
       <div class="order-1 lg:order-2 lg:w-1/2">
         <!-- bolig image -->
-        <img x-show="selected === 'bolig'" src="../bolig/bolighero1.webp" alt="Elby oplader bolig" width="600" height="900" class="w-full h-auto object-cover" />
+        <img x-show="selected === 'bolig'" src="/bolig/bolighero1.webp" alt="Elby væglader installeret på bygning – opladning til boligforeningens beboere" width="600" height="900" class="w-full h-auto object-cover" fetchpriority="high" loading="eager" />
 
         <!-- ejendom image -->
-        <img x-show="selected === 'ejendom'" src="../bolig/ejendomhero2.webp" alt="Elby oplader ejendom" width="600" height="900" class="w-full h-auto object-cover" />
+        <img x-show="selected === 'ejendom'" src="/bolig/ejendomhero2.webp" alt="Elby væglader til ejendomsselskaber installeret på bygningens facade" width="600" height="900" class="w-full h-auto object-cover" fetchpriority="high" loading="eager" />
       </div>
     </section>
 
@@ -102,26 +102,26 @@ const vægladerSchema = {
     <template x-if="selected === 'bolig'">
       <div>
         <div class="fade-in-up">
-          <Uspsection header="Fordele ved at vælge Elby til din boligforening" text1="1. Gratis lader og fri installation" text2="2. Nemt at komme i gang – vi klarer det hele" text3="3. Overskudsdeling op til 50%" img1="../svg/gratis_lader.svg" img2="../svg/installation.svg" img3="../svg/overskudsdeling.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" showButton="false" />
+          <Uspsection header="Fordele ved at vælge Elby til din boligforening" text1="1. Gratis lader og fri installation" text2="2. Nemt at komme i gang – vi klarer det hele" text3="3. Overskudsdeling op til 50%" img1="/svg/gratis_lader.svg" img2="/svg/installation.svg" img3="/svg/overskudsdeling.svg" alt1="Ikon der viser gratis installation af Elby væglader" alt2="Ikon for 0 kr. abonnement på Elby ladeløsning" alt3="Ikon der illustrerer op til 50 % overskudsdeling for boligforeninger" showButton="false" />
         </div>
         <div class="bg-sec_be-500 fade-in-up">
-          <Splitcontent img="../bolig/bolig_faellesskab.webp" header="Din opgang er det nye ladefællesskab" text1="Med Elby lades bilerne, dér hvor beboerne bor, og byen får flere ladepunkter. Elby er baseret på andelstanken, og Elby-ladepunkter på offentlig vej kan bruges af alle byens borgere. Derfor får du som bygningsejer del i overskuddet, når jeres ladepunkter bruges. Vi kalder det ladefællesskab, og vi glæder os til at få jer med!" alt="fællesskaber picture" linkText="Læs mere om Elbys vision" href="../omelby" />
+          <Splitcontent img="/bolig/bolig_faellesskab.webp" header="Din opgang er det nye ladefællesskab" text1="Med Elby lades bilerne, dér hvor beboerne bor, og byen får flere ladepunkter. Elby er baseret på andelstanken, og Elby-ladepunkter på offentlig vej kan bruges af alle byens borgere. Derfor får du som bygningsejer del i overskuddet, når jeres ladepunkter bruges. Vi kalder det ladefællesskab, og vi glæder os til at få jer med!" alt="Beboere samles ved Elby-ladepunkt foran etageejendom – symbol på ladefællesskab" linkText="Læs mere om Elbys vision" href="../omelby" />
         </div>
 
         <div class="fade-in-up">
           <Infografik
-            img="../svg/infografikBolig.svg"
+            img="/svg/infografikBolig.svg"
             header="Jo mere du lader, jo mere får du tilbage."
             text1="Elby Partner tilbydes til ejer-, andels- og almene boliger ud fra et andelsprincip. Vi sørger for alt det praktiske, samt udlægget for den fulde installation. Når omkostningen er tjent hjem, deler vi op til halvdelen af overskuddet med jer. Uanset hvor meget – eller lidt – der lades i din bygning, skal foreningen aldrig have penge op af lommen.  "
             text2="Vi tager os desuden af alt det administrative med afregning med elselskabet. Og fordi vi også leverer strømmen, skal du ikke heller ikke bøvle med afgiftsrefusion. "
-            alt="boligforening infografik"
+            alt="Infografik der viser stigende overskudsdeling fra 20 % til 50 %, baseret på antal opladninger og ugentligt forbrug med Elby Partner"
             buttonText="Få Elby på generalforsamlingen"
             buttonlink="https://www.elby.dk/guides-artikler/generalforsamling-med-elby"
             linkVariant="secondary"
           />
         </div>
         <div class="bg-sec_be-500 fade-in-up">
-          <Splitcontent img="../bolig/bolig_wall.webp" header="En in-wall løsning til byen" text1="I byen kan det være svært at installere en privat ladeboks, og derfor har vi skabt Elby – en innovativ ladeløsning tilpasset etageejendomme. Laderen installeres inden for bygningens matrikel og kan derfor bruges i de fleste bygninger. En smart kabelskinne til fortovet sikrer, at ladekablet ikke generer fodgængere eller bymiljøet. I modsætning til kantstensladere optager Elby hverken fortovs- eller parkeringsplads og gør det dermed lettere at lade elbiler – uden at ændre byens udtryk." text2="" alt="boligforening picture" linkType="text" linkText="Se hvordan Elby virker" href="../inwall" />
+          <Splitcontent img="/bolig/bolig_wall.webp" header="En in-wall løsning til byen" text1="I byen kan det være svært at installere en privat ladeboks, og derfor har vi skabt Elby – en innovativ ladeløsning tilpasset etageejendomme. Laderen installeres inden for bygningens matrikel og kan derfor bruges i de fleste bygninger. En smart kabelskinne til fortovet sikrer, at ladekablet ikke generer fodgængere eller bymiljøet. I modsætning til kantstensladere optager Elby hverken fortovs- eller parkeringsplads og gør det dermed lettere at lade elbiler – uden at ændre byens udtryk." text2="" alt="væglader med Elby ladeløsning monteret på bygningens facade med skjult kabelføring over fortov" linkType="text" linkText="Se hvordan Elby virker" href="../inwall" />
         </div>
 
         <div class="fade-in-up mb-xl">
@@ -134,17 +134,29 @@ const vægladerSchema = {
     <template x-if="selected === 'ejendom'">
       <div>
         <div class="fade-in-up">
-          <Uspsection header="Fordele ved at vælge Elby til dit ejendomsselskab" text1="1. Intet abonnement" text2="2. Nemt at komme i gang - Vi klarer tilladelser og installation" text3="3. Overskudsdeling op til 60%" img1="../svg/abonnement.svg" img2="../svg/installation.svg" img3="../svg/overskudsdeling.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" />
+          <Uspsection header="Fordele ved at vælge Elby til dit ejendomsselskab" text1="1. Intet abonnement" text2="2. Nemt at komme i gang - Vi klarer tilladelser og installation" text3="3. Overskudsdeling op til 60%" img1="/svg/abonnement.svg" img2="/svg/installation.svg" img3="/svg/overskudsdeling.svg" alt1="Ikon der viser Elby ladeløsning uden abonnement for ejendomsselskaber" alt2="Ikon der repræsenterer professionel installation med Elby for ejendomsselskaber" alt3="Ikon der symboliserer op til 60 procent overskudsdeling med Elby" />
         </div>
         <div class="bg-sec_be-500 fade-in-up">
-          <Splitcontent img="../bolig/bolig_opladning.webp" header="Ladeløsningen, der tjener sig selv ind" text1="At have et ladepunkt i bygningen gør boligen mere attraktiv. Og med overskudsdeling får I kontante fordele, hver gang laderen bruges – uanset om I selv har elbiler eller ej." text2="Få en Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen." alt="vægoplader picture" linkText="Læs mere om Elbys vision" href="../omelby" />
+          <Splitcontent img="/bolig/bolig_opladning.webp" header="Ladeløsningen, der tjener sig selv ind" text1="At have et ladepunkt i bygningen gør boligen mere attraktiv. Og med overskudsdeling får I kontante fordele, hver gang laderen bruges – uanset om I selv har elbiler eller ej." text2="Få en Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen." alt="Elby væglader installeret på bygning, klar til brug – gør ejendommen mere attraktiv og skaber indtjening ved deling af strøm" linkText="Læs mere om Elbys vision" href="../omelby" />
         </div>
 
         <div class="fade-in-up">
-          <Infografik img="../svg/infografikEjendom.svg" linkText="Læs vores FAQ og bliv klogere" , linkType="text" , href="../omelby#5_faq_omelby" header="Jo mere der lades, desto mere af overskuddet får i tilbage" text1="Med en Elby ladeløsning i din bygning, kan dine lejere og brugere lade, hvor de bor eller arbejder. Du tjener op til 60 % af overskuddet, så dine udgifter til laderen er snart tjent hjem. Herefter bliver giver Elby laderen et fast bidrag til din bygnings indtjening." text2="Vi tager os desuden af alt det administrative med afregning med elselskabet. Og fordi vi også leverer strømmen, skal du ikke heller ikke bøvle med afgiftsrefusion." alt="infografik til ejendom" imgBg="bg-acc_gr-500" />
+          <Infografik
+            img="/svg/infografikEjendom.svg"
+            linkText="Læs vores FAQ og bliv klogere"
+            ,
+            linkType="text"
+            ,
+            href="../omelby#5_faq_omelby"
+            header="Jo mere der lades, desto mere af overskuddet får i tilbage"
+            text1="Med en Elby ladeløsning i din bygning, kan dine lejere og brugere lade, hvor de bor eller arbejder. Du tjener op til 60 % af overskuddet, så dine udgifter til laderen er snart tjent hjem. Herefter bliver giver Elby laderen et fast bidrag til din bygnings indtjening."
+            text2="Vi tager os desuden af alt det administrative med afregning med elselskabet. Og fordi vi også leverer strømmen, skal du ikke heller ikke bøvle med afgiftsrefusion."
+            alt="Infografik der viser hvordan ejendomsselskaber kan tjene op til 60 procent af overskuddet ved brug af Elby ladeløsning"
+            imgBg="bg-acc_gr-500"
+          />
         </div>
         <div class="bg-sec_be-500 fade-in-up">
-          <Splitcontent img="../bolig/bolig_opladerbygning.webp" header="En skræddersyet ladeløsning til din bygning" text1="Elbys ladeløsning er et aktiv, der kan øge forrentningen på din bygning og samtidig gøre, at du bidrager til den grønne omstilling - og så tager den kun et par timer at installere." text2="Elbys ladeløsning integreres let ind i din eksisterende bygning, og optager ingen plads. På den måde kan du tilbyde dine brugere af parkeringsområdet at lade, hvor det tidligerer ikke har været muligt" alt="ejendomsselskab picture" buttonText="Få Elby til ejendomsselskaber" buttonlink="../bestil" linkVariant="tertiary" />
+          <Splitcontent img="/bolig/bolig_opladerbygning.webp" header="En skræddersyet ladeløsning til din bygning" text1="Elbys ladeløsning er et aktiv, der kan øge forrentningen på din bygning og samtidig gøre, at du bidrager til den grønne omstilling - og så tager den kun et par timer at installere." text2="Elbys ladeløsning integreres let ind i din eksisterende bygning, og optager ingen plads. På den måde kan du tilbyde dine brugere af parkeringsområdet at lade, hvor det tidligerer ikke har været muligt" alt="Elby væglader integreret i ejendomsbygning – gør det muligt at tilbyde opladning uden at optage plads" buttonText="Få Elby til ejendomsselskaber" buttonlink="../bestil" linkVariant="tertiary" />
         </div>
 
         <div class="fade-in-up mb-md">
@@ -154,7 +166,7 @@ const vægladerSchema = {
     </template>
     <!-- Grafik Section prefooter -->
     <div>
-      <img src="../svg/bygrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
+      <img src="/svg/bygrafik.svg" alt="Kbh building grafik" class="w-full h-auto" loading="lazy" />
     </div>
   </section>
   <style>
