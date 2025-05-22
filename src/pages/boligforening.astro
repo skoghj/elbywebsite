@@ -8,7 +8,7 @@ import Prefooter from "../components/Prefooter.astro";
 import Link from "../components/Link.astro";
 ---
 
-<MainLayout title="Elby-oplader">
+<MainLayout title="Elby – Ladeløsning til boligforeninger og ejendomsselskaber" description="Elby tilbyder intelligente elbil-ladeløsninger til boligforeninger og ejendomsselskaber – med gratis installation, ingen abonnement og mulighed for overskudsdeling." ogtitle="Elby – Ladeløsning til bygninger med fællesskab og forretning" ogdescription="Få Elby til din bygning – grøn elbilopladning uden bøvl. Gratis for boligforeninger, med overskudsdeling og professionel installation for ejendomsselskaber.">
   <section x-data="{
     selected: 'bolig', // default bolig!
     init() {
@@ -128,20 +128,20 @@ import Link from "../components/Link.astro";
         </div>
 
         <div class="fade-in-up">
-          <Prefooter header="Vil du vide mere om Elby?" buttonText="Læs vores FAQ og bliv klogere" text="" buttonlink="../kontakt" linkVariant="secondary" buttonlink2="../omelby#5_faq_omelby">
+          <Prefooter header="Vil du vide mere om Elby?" buttonText="Læs vores FAQ og bliv klogere" text="" buttonlink="../kontakt" linkVariant="secondary" buttonlink2="../omelby#5_faq_omelby" />
         </div>
       </div>
     </template>
+    <!-- Grafik Section prefooter -->
+    <div>
+      <img src="../svg/bygrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
+    </div>
   </section>
-  <!-- Grafik Section prefooter -->
-  <div>
-    <img src="../svg/bygrafik.svg" alt="Kbh building grafik" class="w-full h-auto" />
-  </div>
-</MainLayout>
-<style>
-  @media (min-width: 440px) {
-    .min-440 {
-      max-width: 500px;
+  <style>
+    @media (min-width: 440px) {
+      .min-440 {
+        max-width: 500px;
+      }
     }
-  }
-</style>
+  </style>
+</MainLayout>
