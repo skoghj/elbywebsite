@@ -9,6 +9,27 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 import Prefooter from "../components/Prefooter.astro";
 import Textlink from "../components/Textlink.astro";
 
+const sleeveSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Elby Fortovsskinne",
+  image: ["https://elbyprojekt4.netlify.app/sleeve/sleeve_sidewalk.webp"],
+  description: "Elbys fortovsskinne er en sikker, diskret løsning til at føre ladekabler over fortovet – godkendt af flere kommuner og designet til ikke at forstyrre bymiljøet.",
+  brand: {
+    "@type": "Brand",
+    name: "Elby",
+  },
+  sku: "elby-sleeve",
+  offers: {
+    "@type": "Offer",
+    url: "https://elbyprojekt4.netlify.app/bestil/",
+    priceCurrency: "DKK",
+    price: "3.299",
+    itemCondition: "https://schema.org/NewCondition",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 const sleeve = [
   { value: "m/installation og ansøgning", label: "Med installation og ansøgning" },
   { value: "m/installation", label: "Med installation" },
