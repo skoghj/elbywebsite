@@ -3,8 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Få Elby i din bygning">
-  <div x-data="contactForm()" class="flex flex-col md:flex-row w-full">
+<MainLayout title="Kontakt Elby – Få svar på dine spørgsmål om elbilopladning" description="Har du spørgsmål til Elby eller vores ladeløsninger? Udfyld formularen og få hurtig hjælp – vi vender tilbage så hurtigt som muligt." ogtitle="Kontakt Elby – Vi hjælper dig med elbilopladning" ogdescription="Brug kontaktformularen til at få svar på alt om Elby. Vi står klar til at hjælpe boligforeninger, ejendomsselskaber og beboere.">
+  <div x-data=" contactForm()" class="flex flex-col md:flex-row w-full">
     <!-- Left Image -->
     <div class="hidden md:block md:basis-2/5 w-full h-64 md:h-auto">
       <img src="../kontakt/kontakt.webp" alt="Elby oplader" class="w-full h-full object-cover hidden md:block" />
@@ -18,10 +18,7 @@ import Button from "../components/Button.astro";
           <input type="hidden" name="form-name" value="kontakt" />
 
           <h2 class="pb-xs">Kontakt os</h2>
-          <p class="pb-sm md:pb-md">
-            Har du spørgsmål, så fang os på hej@elby.co eller 
-            udfyld kontaktformularen nedenfor
-          </p>
+          <p class="pb-sm md:pb-md">Har du spørgsmål, så fang os på hej@elby.co eller udfyld kontaktformularen nedenfor</p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
             <div>
@@ -52,7 +49,7 @@ import Button from "../components/Button.astro";
             <label class="block mb-1 font-semibold">Besked (valgfri)</label>
             <textarea name="message" x-model="form.message" placeholder="Skriv kort, hvad du gerne vil vide, så vender vi hurtigt tilbage" rows="5" class="w-full p-xxs rounded-xs border neu_db-300 shadow-sm"></textarea>
           </div>
-          
+
           <div class="flex justify-center mt-sm">
             <Button variant="primary" size="full" type="submit">Indsend</Button>
           </div>

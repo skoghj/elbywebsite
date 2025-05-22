@@ -3,16 +3,28 @@ const { href = "#", target = "_blank", variant = "primary", size = "standard", i
 
 const linkStyling = "inline-flex items-center gap-2 font-knap font-semibold transition focus-visible:ring-2 focus-visible:ring-sec_bl-100";
 
+// En fælles klasse, der kan bruge som basis til knapper med hover-animation
+const baseButtonWrap = "relative group overflow-hidden";
+
+// variant
 const variantClasses = {
-  textlink: "text-acc_gr-700 hover:text-neu_dg-800 text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop",
-  cta: "bg-acc_yel-500 text-sec_bl-950 text-[14px] hover:bg-acc_yel-600 rounded-full px-[28px] py-[14px]",
-  primary: "bg-acc_yel-500 text-sec_bl-950 hover:bg-acc_yel-600 rounded-full px-[32px] py-[16px] text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop",
-  secondary: "bg-transparent border border-sec_bl-950 text-sec_bl-950 hover:bg-neu_dg-800 hover:text-primary-500 hover:border-600 rounded-full px-[30px] py-[16px] text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop",
-  secondaryHero: "bg-transparent border border-primary-50 text-primary-50 hover:bg-primary-50 hover:text-sec_bl-950 rounded-full px-[32px] py-[16px] text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop",
-  tertiary: "bg-acc_gr-500 text-sec_bl-950 hover:bg-acc_gr-700 hover:text-primary-50 rounded-full px-[32px] py-[16px] text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop",
-  icon: "bg-acc_yel-500 text-sec_bl-950 hover:bg-acc_yel-600 hover:text-primary-50 rounded-full p-xxs flex items-center gap-2",
+  cta: `${baseButtonWrap} bg-acc_yel-500 text-sec_bl-950 text-[14px] rounded-full px-[28px] py-[14px]`,
+  primary: `${baseButtonWrap} bg-acc_yel-500 text-sec_bl-950 rounded-full px-[32px] py-[16px] text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop`,
+  secondary: `${baseButtonWrap} bg-transparent border border-sec_bl-950 text-sec_bl-950 hover:text-primary-50 rounded-full px-[32px] py-[16px] text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop`,
+  tertiary: `${baseButtonWrap} bg-acc_gr-500 text-sec_bl-950 rounded-full px-[32px] py-[16px] text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop hover:text-primary-50`,
+  icon: `${baseButtonWrap} bg-acc_yel-500 text-sec_bl-950 rounded-full p-xxs flex items-center gap-2`,
 };
 
+// variants hover-bg
+const variantBackgrounds = {
+  cta: "bg-acc_gr-500",
+  primary: "bg-acc_yel-600",
+  secondary: "bg-neu_db-500",
+  tertiary: "bg-acc_gr-700",
+  icon: "bg-acc_yel-600",
+};
+
+// 크기별 스타일
 const sizeClasses = {
   full: "w-full mx-auto items-center justify-center",
   standard: "w-auto",
@@ -20,6 +32,12 @@ const sizeClasses = {
 ---
 
 <a href={href} target={target} class={`${linkStyling} ${variantClasses[variant]} ${sizeClasses[size]}`}>
-  <slot />
-  {icon && iconPosition === "right" && <img src={icon} alt="" class="w-6 h-6" />}<!-- Render kun hvis ikonet er til stede -->
+  <!-- Swipe hover bg -->
+  <span class={`absolute inset-0 w-0 ${variantBackgrounds[variant] ?? "bg-acc_yel-500"} transition-all duration-300 ease-in-out group-hover:w-full`}></span>
+
+  <!-- indhold -->
+  <span class="relative z-10 flex items-center gap-2">
+    <slot />
+    {icon && iconPosition === "right" && <img src={icon} alt="" class="w-6 h-6" />}
+  </span>
 </a>

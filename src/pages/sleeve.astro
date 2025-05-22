@@ -9,6 +9,27 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
 import Prefooter from "../components/Prefooter.astro";
 import Textlink from "../components/Textlink.astro";
 
+const sleeveSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Elby Fortovsskinne",
+  image: ["https://elbyprojekt4.netlify.app/sleeve/sleeve_sidewalk.webp"],
+  description: "Elbys fortovsskinne er en sikker, diskret løsning til at føre ladekabler over fortovet – godkendt af flere kommuner og designet til ikke at forstyrre bymiljøet.",
+  brand: {
+    "@type": "Brand",
+    name: "Elby",
+  },
+  sku: "elby-sleeve",
+  offers: {
+    "@type": "Offer",
+    url: "https://elbyprojekt4.netlify.app/bestil/",
+    priceCurrency: "DKK",
+    price: "3.299",
+    itemCondition: "https://schema.org/NewCondition",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 const sleeve = [
   { value: "m/installation og ansøgning", label: "Med installation og ansøgning" },
   { value: "m/installation", label: "Med installation" },
@@ -40,9 +61,9 @@ const infoCards = [
     items: [
       { icon: "../svg/sleeve.svg", text: "2m fortovsskinne inkl. lim" },
       { icon: "../svg/montagevejledning.svg", text: "Montagevejledning" },
-      { icon: "../svg/fragt.svg", text: "Fri fragt" }
-    ]
-  }
+      { icon: "../svg/fragt.svg", text: "Fri fragt" },
+    ],
+  },
 ];
 
 const kommune = [
@@ -61,7 +82,7 @@ const kommune = [
 ];
 ---
 
-<MainLayout title="Elby-sleeve">
+<MainLayout title="Elby-sleeve" description="Elby fortovsskinne gør elbilopladning mulig selv på smalle fortove. Vælg mellem modeller med eller uden installation og ansøgning – nem, sikker og diskret løsning." ogtitle="Elby Fortovsskinne – Gør plads til elbilen" ogdescription="Se hvordan Elbys fortovsskinne løser problemet med kabler på offentlige fortove. En elegant løsning, testet i bymiljøet og godkendt i flere kommuner.">
   <!-- Hero Section -->
   <div id="1_sleevehero" class="bg-sec_be-500 px-4">
     <SplitcontentHero title="ELBY Fortovsskinne" text="Er fortovet i vejen for din drøm om at køre elbil? Elby har løst problemet med en fortovsskinne i et kompakt og funktionelt design." dropdownOptions={sleeve} dropdownBinding="m/installation og ansøgning" infoCards={infoCards} buttonText="Få Elby fortovskinne" buttonLink="../bestil" rightMediaType="video" rightMediaSrc="../sleeve/fortovskinne.webm" />
@@ -69,13 +90,13 @@ const kommune = [
 
   <!-- USP Section -->
   <section id="2_usp_sleeve" class="bg-primary-500 fade-in-up">
-    <Uspsection header="Hvorfor få Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="../svg/sleeve.svg" img2="../svg/installation.svg" img3="../svg/overskudsdeling.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" buttonText="Få Elby fortovskinne" buttonlink="/bestil" linkVariant="secondary" />
+    <Uspsection header="Hvorfor få Elby fortovsskinne?" text1="1. Eliminerer snublefare - den er sikker for alle" text2="2. Kort installationstid på typisk mellem 1-2 dage" text3="3. Robust design der øger boligværdien" img1="../svg/sleeve.svg" img2="../svg/installation.svg" img3="../svg/overskudsdeling.svg" alt1="Installation ikon" alt2="Abonnement ikon" alt3="Overskudsdeling ikon" />
   </section>
 
   <!-- Produktkort Section -->
   <div id="3_abc_løsning_sleeve" class="bg-sec_be-500 fade-in-up">
     <section class="items-start justify-between max-w-7xl mx-auto p-sm gap-8xl lg:p-14 lg:py-xl">
-      <h2 class=" text-center mb-md">Den rigtige løsning for borgere, byer og kommuner.</h2>
+      <h2 class="text-center mb-md">Den rigtige løsning for borgere, byer og kommuner.</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card A -->
@@ -93,7 +114,7 @@ const kommune = [
           features={[
             {
               icon: '<img src="../svg/sleeve.svg" class="w-12 h-12" alt="icon" />',
-              text: "2m fortovsskinne inkl. lim"
+              text: "2m fortovsskinne inkl. lim",
             },
             {
               icon: '<img src="../svg/installation.svg" class="w-12 h-12" alt="icon" />',
@@ -121,7 +142,7 @@ const kommune = [
           features={[
             {
               icon: '<img src="../svg/sleeve.svg" class="w-12 h-12" alt="icon" />',
-              text: "2m fortovsskinne inkl. lim"
+              text: "2m fortovsskinne inkl. lim",
             },
             {
               icon: '<img src="../svg/installation.svg" class="w-12 h-12" alt="icon" />',
@@ -149,7 +170,7 @@ const kommune = [
           features={[
             {
               icon: '<img src="../svg/sleeve.svg" class="w-12 h-12" alt="icon" />',
-              text: "2m fortovsskinne inkl. lim"
+              text: "2m fortovsskinne inkl. lim",
             },
             {
               icon: '<img src="../svg/montagevejledning.svg" class="w-12 h-12" alt="icon" />',
@@ -174,7 +195,7 @@ const kommune = [
   <div id="5_kommune_sleeve" class="bg-sec_be-500 fade-in-up">
     <section class="grid grid-cols-1 md:grid-cols-2">
       <!-- Tekstdel -->
-      <div class="w-full px-8 pt-8 md:px-2xl md:py-l">
+      <div class="w-full p-sm md:px-2xl md:py-l">
         <h3 class="mb-xxxs pb-xxs lg:px-12">Kommuner der tillader fortovsskinner</h3>
         <p class="mb-6 lg:px-12">Alle installationer og alt arbejde på offentlige fortove kræver kommunal tilladelse.</p>
 
@@ -185,8 +206,7 @@ const kommune = [
         <div class="mb-m lg:px-12">
           <h4 class="pb-xxs">Få flere kommuner skrevet på</h4>
           <p>Skriv til din kommune og fortæl om dit behov for en fortovsskinne – det kommer både dig selv og dine naboer til gode, at der er styr på ladekablet.</p>
-          <div class="mt-xxs"><Textlink text="Download materiale til myndingshedsansøgning" color="text-acc_gr-700" href="https://cdn.prod.website-files.com/664744ed799478884900e1b3/67f4d8fc8deffd49b104ab57_Elby_Fortovsskinne%20Myndighedsark%20DK.pdf"/></div>
-      
+          <div class="mt-xxs"><Textlink text="Download materiale til myndingshedsansøgning" color="text-acc_gr-700" href="https://cdn.prod.website-files.com/664744ed799478884900e1b3/67f4d8fc8deffd49b104ab57_Elby_Fortovsskinne%20Myndighedsark%20DK.pdf" /></div>
         </div>
 
         <div class="mb-m lg:px-12">
@@ -206,12 +226,12 @@ const kommune = [
     </section>
   </div>
 
-   <div class="bg-primary-500 fade-in-up">
+  <div class="bg-primary-500 fade-in-up">
     <Prefooter header="Vil du vide mere om Elby?" buttonText="Læs om Elbys vision" buttonlink="/omelby" linkVariant="secondary" />
   </div>
 
   <!-- Prefooter grafik -->
-  <div id="6_bygrafik_sleeve" class="bg-sec_be-500 pt-xl">
+  <div id="6_bygrafik_sleeve" class="">
     <img src="../svg/bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
 </MainLayout>

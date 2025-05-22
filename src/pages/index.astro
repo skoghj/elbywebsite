@@ -2,22 +2,45 @@
 import Hero from "../components/Hero.astro";
 import Leadflow from "../components/Leadflow.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
-import Accordion from "../components/Accordion.astro";
 import Splitcontent from "../components/Splitcontent.astro";
 import Uspsection from "../components/Uspsection.astro";
 import Prefooter from "../components/Prefooter.astro";
 import SplitcontentRight from "../components/SplitcontentRight.astro";
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Elby",
+  url: "https://elbyprojekt4.netlify.app",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://elbyprojekt4.netlify.app/search?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Elby",
+  url: "https://elbyprojekt4.netlify.app",
+  logo: "https://elbyprojekt4.netlify.app/svg/elby_logo.svg",
+  description: "Elby tilbyder intelligente, danskdesignede elbil-ladere med gratis installation og fokus på bæredygtighed – ideel til etageejendomme og erhverv.",
+  sameAs: ["https://www.linkedin.com/company/elby-co/", "https://www.facebook.com/profile.php?id=61551046767662", "https://www.instagram.com/elbydotco/", "https://www.youtube.com/@elby_co"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+45 60 55 20 24",
+    contactType: "customer support",
+    areaServed: "DK",
+    availableLanguage: ["Danish", "English"],
+  },
+};
 ---
 
-<MainLayout title="Elby forside">
+<MainLayout title="Elby-forside" description="Elby tilbyder intelligente, danskdesignede elbil-ladere med gratis installation og fokus på bæredygtighed. Perfekt til lejligheder og erhverv." ogtitle="Elby – Grøn og intelligent elbilopladning til bygninger" ogdescription="Få en Elby-lader til jeres bygning – uden abonnement, med overskudsdeling og bidrag til den grønne omstilling. Nem installation, dansk design.">
   <Hero />
 
   <section class="fade-in-up">
-    <Uspsection header="Sådan virker Elby" text1="1. Elby installere et ladepunkt i bygningens facade" text2="2. Beborere og andre elbilister kan lade med eget kabel og Elby app" text3="3. Bygningen tjener penge og biddrager til den grønne omstilling" img1="../svg/ladepunkt.svg" img2="../svg/beboeropladning.svg" img3="../svg/fordele.svg" alt1="Elby ladepunkt" alt2="Elby App" alt3="Elby fordele" buttonText="Bestil Elby til din bygning" buttonlink="" linkVariant="secondary" />
+    <Uspsection header="Sådan virker Elby" text1="1. Elby installere et ladepunkt i bygningens facade" text2="2. Beborere og andre elbilister kan lade med eget kabel og Elby app" text3="3. Bygningen tjener penge og biddrager til den grønne omstilling" img1="../svg/ladepunkt.svg" img2="../svg/beboeropladning.svg" img3="../svg/fordele.svg" alt1="Elby ladepunkt" alt2="Elby App" alt3="Elby fordele" />
   </section>
 
   <section class="flex fade-in-up flex-col-reverse md:flex-row w-full bg-sec_be-500">
@@ -38,7 +61,7 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
             <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Deltag aktivit i den grønne omstilling</p>
           </div>
         </div>
-        <Link href="../omelby" variant="secondary" size="full">Bliv klogere på fordelene ved Elby</Link>
+        <Link href="../omelby" variant="secondary" size="full"> Bliv klogere på fordelene ved Elby </Link>
       </div>
     </div>
     <div class="basis-full md:basis-[50%]">
@@ -60,8 +83,6 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
     </div>
   </section>
 
-
-
   <section class="fade-in-up bg-primary-500">
     <SplitcontentRight img="../about/par_oplader_bil.webp" header="Sammen om den grønne omstilling" text1="Den grønne omstilling har brug for at vi alle tager fat og hjælper hinanden. Bor du i en by, så kan du nu tage handling, sammen med Elby og byens andre borgere. Også selvom du ikke har en elbil." text2="Få en Elby lader til jeres bygning, del jeres strøm, tjen penge på det og deltag aktivt i den grønne omstilling af persontransporten. Det vil også forbedre luftkvaliteten i byerne, gavne os alle og hjælpe fremtidens grønne el-system på vej. Vi kan gøre det sammen." linkVariant="secondary" buttonText="Læs mere om Elbys vision" buttonLink="" />
   </section>
@@ -77,4 +98,4 @@ import SplitcontentRight from "../components/SplitcontentRight.astro";
   <div class="bg-sec_be-500">
     <img src="../svg/bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto pt-md md:pt-xl" />
   </div>
-</MainLayout>
+</MainLayout>; ---
