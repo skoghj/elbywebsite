@@ -17,12 +17,12 @@ import Link from "./Link.astro";
 
     <!-- Logo -->
     <a href="/">
-      <img src="../svg/elby_logo.svg" alt="Logo" class="h-10" />
+      <img src="/svg/elby_logo.svg" alt="Elby logo" class="h-10" />
     </a>
 
     <!-- CTA -->
     <div class="block lg:hidden">
-      <Link href="../bestil" variant="icon" size="standard" icon="../svg/loginikon.svg" />
+      <Link href="../bestil" variant="icon" size="standard" icon="/svg/loginikon.svg" />
     </div>
   </div>
 
@@ -40,7 +40,7 @@ import Link from "./Link.astro";
               </svg>
             </div>
             <!-- Underbar animation line -->
-           <span class="absolute left-0 bottom-[-2px] w-full h-[0.5px] bg-sec_bl-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 hidden md:inline-block"></span>
+            <span class="absolute left-0 bottom-[-2px] w-full h-[0.5px] bg-sec_bl-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 hidden md:inline-block"></span>
           </button>
           <!-- Dropdown content (mobile-friendly) -->
           <div x-show="openDropdown" x-transition class="mt-2 bg-primary-50 text-accent-500 z-20">
@@ -88,7 +88,7 @@ import Link from "./Link.astro";
   <div class="hidden md:flex items-center justify-between px-4 lg:px-8 xl:px-12 py-3 w-full bg-primary-50">
     <!-- Left: Logo -->
     <a href="/" class="shrink-0">
-      <img src="../svg/elby_logo.svg" alt="Logo" class="h-[54px] w-auto" />
+      <img src="/svg/elby_logo.svg" alt="Elby Logo" class="h-[54px] w-auto" />
     </a>
 
     <!-- Center: Menu -->
@@ -97,9 +97,9 @@ import Link from "./Link.astro";
         <li class="relative group">
           <span class="flex items-center font-body">
             Ladeløsninger
-             <svg class="ml-1 mt-1 h-4 w-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-    </svg>
+            <svg class="ml-1 mt-1 h-4 w-4 transition-transform group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+            </svg>
           </span>
           <span class="absolute left-0 bottom-[-2px] w-full h-[0.5px] bg-sec_bl-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
           <!-- Dropdown -->
@@ -108,7 +108,7 @@ import Link from "./Link.astro";
               <li class="hover:bg-acc_yel-500 px-3 py-2 font-body">
                 <a href="/boligforening?tab=bolig" class="block text-neutral-900">Elby til Boligforeninger</a>
               </li>
-              <li class="hover:bg-acc_yel-500 px-3 py-2 ">
+              <li class="hover:bg-acc_yel-500 px-3 py-2">
                 <a href="/boligforening?tab=ejendom" class="block text-neutral-900">Elby til Ejendomsselskaber</a>
               </li>
               <li class="hover:bg-acc_yel-500 px-3 py-2">
@@ -143,11 +143,13 @@ import Link from "./Link.astro";
 
     <!-- Tablet only icon CTA -->
     <div class="shrink-0 hidden md:block lg:hidden">
-      <Link href="../bestil" variant="icon" size="standard" icon="../svg/loginikon.svg" />
+      <Link href="../bestil" variant="icon" size="standard" icon="/svg/loginikon.svg" />
     </div>
     <!-- Desktop : CTA -->
     <div class="shrink-0 hidden lg:block">
-      <Link href="../bestil" variant="cta" size="standard" icon="../svg/loginikon.svg">Få Elby i din bygning</Link>
+      <Link href="../bestil" variant="cta" size="standard" icon="/svg/loginikon.svg">
+        <span>Få Elby i din bygning</span>
+      </Link>
     </div>
   </div>
 </div>
