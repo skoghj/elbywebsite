@@ -31,7 +31,7 @@ const { placeholder = "", options = [], linkOnSelect = false } = Astro.props;
   <button
     type="button"
     @click="open = !open"
-    class="w-full flex justify-between items-center p-xs pr-10 border shadow-sm rounded-xs text-body-sm bg-primary-50 text-sec_bl-950">
+    class="w-full flex justify-between items-center p-xs pr-10 border shadow-sm text-body-sm bg-primary-50 text-sec_bl-950">
     <span
       :class="selected ? 'text-sec_bl-950 font-semibold' : 'text-sec_bl-300'"
       x-text="selected || placeholder"> 
