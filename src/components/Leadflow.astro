@@ -66,7 +66,7 @@
   // Vi opretter progressbar-elementerne her, men indsætter dem dynamisk i render
   const progressBarContainer = document.createElement("div");
   progressBarContainer.id = "progressBarContainer";
-  progressBarContainer.className = "w-full h-2 bg-gray-300 rounded overflow-hidden mt-4";
+  progressBarContainer.className = "w-full h-2 bg-gray-300 rounded- overflow-hidden mt-4";
 
   const progressBar = document.createElement("div");
   progressBar.id = "progressBar";
@@ -177,7 +177,7 @@
             ${q.options
               .map(
                 (opt) => `
-              <button class="w-full text-left border-black shadow bg-primary-500 hover:bg-acc_yel-500 px-4 py-2 rounded transition" data-answer="${opt}">${opt}</button>
+              <button class="w-full text-left border-black shadow bg-primary-500 hover:bg-acc_yel-500 px-4 py-2 rounded-sm transition" data-answer="${opt}">${opt}</button>
             `
               )
               .join("")}
@@ -259,11 +259,11 @@
       form.innerHTML = `
         <h2 class="text-lg font-body font-semibold mb-4">Indtast dine kontaktoplysninger</h2>
         <form id="contactForm" class="space-y-4">
-          <input type="text" placeholder="Navn" class="w-full border p-xxs rounded" required />
-          <input type="email" placeholder="Email" class="w-full border p-xxs rounded" required />
-          <input type="tel" placeholder="Telefonnummer" class="w-full border p-xxs rounded" />
-          <textarea placeholder="Evt. kommentar" class="w-full border p-xxs rounded"></textarea>
-          <button type="submit" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-full  transition-colors hover:shadow-[inset_30rem_0_0_0] hover:shadow-acc_gr-500 duration-[300ms,600ms] transition-[color,box-shadow]">Indsend</button>
+          <input type="text" placeholder="Navn" class="w-full border p-xxs rounded-sm" required />
+          <input type="email" placeholder="Email" class="w-full border p-xxs rounded-sm" required />
+          <input type="tel" placeholder="Telefonnummer" class="w-full border p-xxs rounded-sm" />
+          <textarea placeholder="Evt. kommentar" class="w-full border p-xxs rounded-sm"></textarea>
+          <button type="submit" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-sm transition-colors duration-300 hover:bg-acc_yel-600">Indsend</button>
         </form>
       <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -16,7 +16,7 @@ const {
 import Link from "../components/Link.astro";
 ---
 
-<article class="rounded-md w-full max-w-sm mx-auto overflow-hidden bg-primary-50 shadow-md">
+<article class="rounded-sm w-full max-w-sm mx-auto overflow-hidden bg-primary-50 shadow-md">
   <!-- Header -->
   <div class={`${headerColor} p-4 md:p-6 flex items-center gap-4`}>
     <div class="aspect-square bg-primary-50 rounded-full flex items-center justify-center">
@@ -32,15 +32,15 @@ import Link from "../components/Link.astro";
   <img src={image} alt={title} class="w-full px-6 pt-6 aspect-[4/2] object-cover" />
 
   <!-- Features List -->
-  <div class="p-6">
-    {
-      features.map((feature) => (
-        <div class="flex items-center gap-3 border-b border-sec_bl-200 text-sec_bl-950 text-body-sm md:text-body-sm-tablet py-xxs lg:text-body-sm-desktop">
-          <span class="w-12 h-10 " set:html={feature.icon} />
-          <p set:html={feature.text} />
-        </div>
-      ))
-    }
+  <div class="p-6 space-y-1  ">
+    {features.map((feature, index) => (
+      <div class={`flex items-center gap-3 text-sec_bl-950 text-body-sm md:text-body-sm-tablet py-xxs lg:text-body-sm-desktop border-b border-neu_db-400 ${index === 0 ? 'border-t' : ''}`}>
+  <span class="w-12 h-10 flex items-center translate-y-0.5" set:html={feature.icon} />
+  <p set:html={feature.text} />
+</div>
+
+    ))}
+    
 
     <!-- Price -->
     <div class="py-xxs my-xxs flex flex-row items-baseline md:flex-col lg:flex-row gap-2 w-full">
