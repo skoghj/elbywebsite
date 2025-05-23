@@ -9,130 +9,124 @@ import Scrollytest from "../components/Scrollytest.astro";
 ---
 
 <MainLayout title="Om Elby" description="Lær Elby at kende. Vi kombinerer æstetisk design med klimahandling og gør grøn elbilopladning til en naturlig del af bylivet – uden bøvl og uden regning." ogtitle="Mød Elby – Teamet bag byens grønneste opladning" ogdescription="Opdag Elbys mission og menneskene bag. Se hvordan vi sammen med boligforeninger og byer skaber en bæredygtig fremtid for elbilopladning.">
+  <!-- Hero Section -->
 
-<!-- Hero Section -->
+  <Scrollytest />
 
-<Scrollytest />
+  <!-- Team Cards Section -->
 
-<!-- Team Cards Section -->
+  <section class="pb-xl fade-in-up bg-primary-500">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 max-w-5xl mx-auto pb-l md:pb-0">
+      <div class="mangeelementer1">
+        <InfoCard image="../about/michael_elby.webp" name="Michael" title="CEO" category="Tech & Startup" description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen." />
+      </div>
 
-<section class="pb-xl fade-in-up bg-primary-500">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 max-w-5xl mx-auto pb-l md:pb-0">
-    <div class="mangeelementer1">
-      <InfoCard image="../about/michael_elby.webp" name="Michael" title="CEO" category="Tech & Startup" description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen." />
+      <div class="mangeelementer2">
+        <InfoCard image="../about/lars_elby.webp" name="Lars" title="CINO" category="Built Environment & Regulations" description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne." />
+      </div>
+      <div class="mangeelementer3">
+        <InfoCard image="../about/jacob_elby.webp" name="Jacob" title="COO" category="Operations & Busines Development" description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen." />
+      </div>
+
+      <div class="mangeelementer4">
+        <InfoCard image="../about/kristian_elby.webp" name="Kristian" title="CCO" category="Commercial & Sales" description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet bøfferne med planter for at efterlade en bedre verden til sine tre børn." />
+      </div>
+
+      <div class="mangeelementer5">
+        <InfoCard image="../about/mads_elby.webp" name="Mads" title="CPO" category="Product & Experience" description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'." />
+      </div>
+      <div class="mangeelementer6">
+        <InfoCard image="../about/marco_elby.webp" name="Marco" title="CMO" category="Marketing" description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt." />
+      </div>
     </div>
+  </section>
 
-    <div class="mangeelementer2">
-      <InfoCard image="../about/lars_elby.webp" name="Lars" title="CINO" category="Built Environment & Regulations" description="Lars er idealisten og designeren, der har arbejdet med grøn omstilling i årevis – han elsker Vesterbros beton og buzz, men også sit delesommerhus, hvor naturen får lov at vokse vildt for blomsterne og bierne." />
+  <section id="3_branding_omelby" class="bg-sec_be-500 fade-in-up">
+    <SplitcontentRight img="../about/par_oplader_bil.webp" header="Gratis, let og nemt <br>- bare si' ja!" text1="Elby gør det nemt at bidrage til den grønne omstilling – helt uden omkostninger for dig." text2="Vi leverer en gratis ladeløsning til din bygning og tager os af installation, drift og vedligeholdelse." alt="Et par der nyder at oplade med Elbys løsning" /><!-- find nyt billed og ændre alt -->
+  </section>
+
+  <section id="4_overskud_omelby" class="fade-in-up">
+    <Splitcontent img="/about/mobilinfografik.webp" header="Overskud til dig og din nabo" , text1="Med Elby får du del i overskuddet, når din lader bruges af byens elbilejere." , text2="Modellen bygger på fællesskab – som bygningsejer kan du få op til 60 % af overskuddet." , text3="Det skaber værdi for både dig og dit kvarter – også selvom du ikke selv har bil. Skal du være med?" , buttonText="Få Elby til din Etageejendom" buttonlink="/bestil" linkVariant="primary" alt="Mobile dummy med overskud grafik." />
+    <!-- Elby, der giver o -->
+  </section>
+
+  <!-------------- FAQ accordion -------------->
+  <section id="5_faq_omelby" class="pt-m md:pt-xl fade-in-up bg-sec_be-500">
+    <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 items-start lg:gap-8 p-xs">
+      <!-- Om installation -->
+      <div class="grid col-span-1 pb-m sm:pl-2xl">
+        <h3 class="pl-s md:pl-xs">Om installation</h3>
+
+        <Accordion question="Skal man have tilladelse til at installere Elby?">
+          Det kommer an på, hvilken type vej din bygning ligger ud til. <br /><br />
+          <strong>Privat vej:</strong> Nej, du behøver ikke søge tilladelse. <br /><br />
+          <strong>Offentlig vej eller privat fællesvej:</strong> Ja, det kræver en tilladelse fra kommunen at installere Elbys fortovsskinne på offentlig vej eller privat fællesvej. <br /><br />
+          Uanset hvilken vej din bygning ligger ud til, så står vi klar til at rådgive dig.
+          <div class="text-acc_yel-700">
+            <u><a href="/kontakt">Kontakt os og hør om dine muligheder</a></u>
+          </div>
+        </Accordion>
+
+        <Accordion question="Hvilke krav er der til min bygning?">
+          <div>Elbys design er særligt velegnet til etageejendomme i byerne, dvs:</div>
+          <ul class="list-disc pl-6 mt-2">
+            <li>Lejlighedsbygning, kontor eller villa med <span>gadeparkering ved siden af</span></li>
+            <li>Et smalt fortov eller intet fortov mellem bygning <span>og parkering (max 2–3 københavnerfliser)</span></li>
+            <li>Ingen cykelsti mellem bygning og parkering</li>
+            <li>En kælder eller opgang hvor vi kan trække <span>ledninger fra ladestik til relæ.</span></li>
+          </ul><br />
+          <div class="mt-4">
+            Matcher din bygning ikke ovenstående?<br />
+            <u class="text-acc_yel-700">
+              <a href="/kontakt">Kontakt os for at høre, hvordan vi kan lave en tilpasset løsning til netop jer.</a>
+            </u>
+          </div>
+        </Accordion>
+        <Accordion question="Hvor lang tid tager en installation?" answer="Selve arbejdet tager kun 2-3 timer. Men først er der ">
+          <br />
+          nogle trin, der skal på plads, såsom:
+          <ul class="list-disc pl-6 mt-2">
+            <li>Tilladelse fra kommunen til ændring af fortovet <span>gadeparkering ved siden af</span></li>
+            <li>Dialog med elselskabet om hvilken <span>strømforsyning, der allerede findes.</span></li>
+          </ul>
+          <br />
+          Efter selve installationen skal en aut. elinstallatør slutte laderen til og sætte ny elmåler op mv.
+        </Accordion>
+        <Accordion question="Hvordan kan jeg ændre på parkeringspladsen ud for laderen?" answer="Nej, vi ændrer ikke på den nærmeste parkeringplads eller gældende parkeringsregler." />
+      </div>
+
+      <!-- Pris -->
+      <div class="grid col-span-1 pb-m">
+        <h3 class="pl-s md:pl-xs">Pris</h3>
+        <Accordion question="Hvad koster det at få Elby?" answer="Elby udbydes både til boligforeninger (ejer-, andel- og almene boligforeninger) samt til ejendomsselskaber og andet erhverv. Se prisen for Elby på de respektive sider." />
+        <Accordion question="Hvad koster det at lade med Elby?" answer="Ladeprisen er i øjeblikket en fast pris på 2,99 kr/kWh." />
+        <Accordion question="Kan det virkelig passe, at Elby er gratis for boligforeninger?" answer="Ja, den er god nok. Elbys forretningsmodel er skruet sådan sammen, at vi lægger ud for installationen af laderne. Vores indtjening kommer således ikke fra installation af løsningen, men fra den fee, vi lægger oven på strømprisen, når laderen bruges. Og den fee deler vi endda med dig og din forening." />
+        <Accordion question="Skal man skifte elselskab for at få Elby?" answer="Nej, Elby sætter en bimåler op i din bygning, så ladestrømmen adskilles fra resten af bygningen. Du kan derfor fortsætte med det elselskab du har." />
+      </div>
+
+      <!-- Sikkerhed og praktik -->
+      <div class="grid col-span-1 pb-m">
+        <h3 class="pl-s md:pl-xs">Sikkerhed og praktik</h3>
+        <Accordion question="Hvor meget lader Elby med?" answer="Op til 11 kW tilpasset til bygningen. Vi tager højde for bygningens eget behov og at strømforsyningen varierer fra bygning til bygning." />
+        <Accordion question="Er der strøm nok i min bygning?" answer="Sandsynligvis, hvis altså du taler om en etagebygning. De er nemlig typisk udstyret med en overkapacitet, der sjældent bliver brugt. Især om natten, når beboerne sover, og om dagen, når de er på arbejde, er der ekstra kapacitet til fx at lade elbiler." />
+        <Accordion question="Hvordan undgår I at trække for meget strøm fra min bygning?" answer="Elby er udstyret med en såkalt ‘load-balancer’, der sikrer at vi aldrig trækker mere strøm end der er kapacitet til. Lejlighederne og deres beboere har naturligvis førsteprioritet." />
+        <Accordion question="Er det sikkert at gå ovenpå Elbys skinne?" answer="Vores skinne (Elby Sleeve) er langt smallere end f.eks. regnvandsskinner, som også går på tværs af fortovet. F.eks. kan det næsten ikke mærkes, når man går i en flad sko eller triller en barnevogn henover skinnen. Hvis du går i stiletter, skal du dog være opmærksom." />
+      </div>
     </div>
-    <div class="mangeelementer3">
-      <InfoCard image="../about/jacob_elby.webp" name="Jacob" title="COO" category="Operations & Busines Development" description="Michael, engang kaldt “godfather” af Københavns startup-miljø, har ledet utallige initiativer og co-founded Corti.ai – nu fokuserer han på klimaet, kører elbil og nyder vin i harmoni med naturen." />
-    </div>
+  </section>
+  <!-------------- FAQ accordion slut -------------->
 
-    <div class="mangeelementer4">
-      <InfoCard image="../about/kristian_elby.webp" name="Kristian" title="CCO" category="Commercial & Sales" description="Kristian bruger markedskræfterne til at gøre grøn omstilling attraktiv for ejendomsinvestorer – han har skiftet bøfferne med planter for at efterlade en bedre verden til sine tre børn." />
-    </div>
-
-    <div class="mangeelementer5">
-      <InfoCard image="../about/mads_elby.webp" name="Mads" title="CPO" category="Product & Experience" description="Mads er perfektionisten der sørger for at samle detaljerne op efter resten af teamet. Og så er der ikke en eneste cookie-politik der slipper for hans 'decline all'." />
-    </div>
-    <div class="mangeelementer6">
-      <InfoCard image="../about/marco_elby.webp" name="Marco" title="CMO" category="Marketing" description="Marcoting bor på Vesterbro, kører elbil og drikker naturvin. Han er stereotypen på én der arbejder i marketing. Som tvillingefar har han dog også været nødt til at få struktur i hverdagen. Det er effektivt." />
-    </div>
-  </div>
-</section>
-
-
-
-<section id="3_branding_omelby" class="bg-sec_be-500 fade-in-up">
-  <SplitcontentRight img="../about/par_oplader_bil.webp" header="Gratis, let og nemt <br>- bare si' ja!" text1="Elby gør det nemt at bidrage til den grønne omstilling – helt uden omkostninger for dig." text2="Vi leverer en gratis ladeløsning til din bygning og tager os af installation, drift og vedligeholdelse." alt="Et par der nyder at oplade med Elbys løsning" /><!-- find nyt billed og ændre alt -->
-
-</section>
-
-<section id="4_overskud_omelby" class="fade-in-up">
-  <Splitcontent img="../svg/mobil_infografik.svg" header="Overskud til dig og din nabo" , text1="Med Elby får du del i overskuddet, når din lader bruges af byens elbilejere." , text2="Modellen bygger på fællesskab – som bygningsejer kan du få op til 60 % af overskuddet." , text3="Det skaber værdi for både dig og dit kvarter – også selvom du ikke selv har bil. Skal du være med?" , buttonText="Få Elby til din Etageejendom" buttonlink="/bestil" linkVariant="primary" alt="Mobile dummy med overskud grafik." />
-  <!-- Elby, der giver o -->
-</section>
-
-<!-------------- FAQ accordion -------------->
-<section id="5_faq_omelby" class="pt-m md:pt-xl fade-in-up bg-sec_be-500">
-  <h2 class="text-center pb-8">Ofte stillede spørgsmål</h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 items-start lg:gap-8 p-xs">
-    <!-- Om installation -->
-    <div class="grid col-span-1 pb-m sm:pl-2xl">
-      <h3 class="pl-s md:pl-xs">Om installation</h3>
-
-      <Accordion question="Skal man have tilladelse til at installere Elby?">
-        Det kommer an på, hvilken type vej din bygning ligger ud til. <br /><br />
-        <strong>Privat vej:</strong> Nej, du behøver ikke søge tilladelse. <br /><br />
-        <strong>Offentlig vej eller privat fællesvej:</strong> Ja, det kræver en tilladelse fra kommunen at installere Elbys fortovsskinne på offentlig vej eller privat fællesvej. <br /><br />
-        Uanset hvilken vej din bygning ligger ud til, så står vi klar til at rådgive dig.
-        <div class="text-acc_yel-700">
-          <u><a href="/kontakt">Kontakt os og hør om dine muligheder</a></u>
-        </div>
-      </Accordion>
-
-      <Accordion question="Hvilke krav er der til min bygning?">
-        <div>Elbys design er særligt velegnet til etageejendomme i byerne, dvs:</div>
-        <ul class="list-disc pl-6 mt-2">
-          <li>Lejlighedsbygning, kontor eller villa med <span>gadeparkering ved siden af</span></li>
-          <li>Et smalt fortov eller intet fortov mellem bygning <span>og parkering (max 2–3 københavnerfliser)</span></li>
-          <li>Ingen cykelsti mellem bygning og parkering</li>
-          <li>En kælder eller opgang hvor vi kan trække <span>ledninger fra ladestik til relæ.</span></li>
-        </ul><br />
-        <div class="mt-4">
-          Matcher din bygning ikke ovenstående?<br />
-          <u class="text-acc_yel-700">
-            <a href="/kontakt">Kontakt os for at høre, hvordan vi kan lave en tilpasset løsning til netop jer.</a>
-          </u>
-        </div>
-      </Accordion>
-      <Accordion question="Hvor lang tid tager en installation?" answer="Selve arbejdet tager kun 2-3 timer. Men først er der ">
-        <br />
-        nogle trin, der skal på plads, såsom:
-        <ul class="list-disc pl-6 mt-2">
-          <li>Tilladelse fra kommunen til ændring af fortovet <span>gadeparkering ved siden af</span></li>
-          <li>Dialog med elselskabet om hvilken <span>strømforsyning, der allerede findes.</span></li>
-        </ul>
-        <br />
-        Efter selve installationen skal en aut. elinstallatør slutte laderen til og sætte ny elmåler op mv.
-      </Accordion>
-      <Accordion question="Hvordan kan jeg ændre på parkeringspladsen ud for laderen?" answer="Nej, vi ændrer ikke på den nærmeste parkeringplads eller gældende parkeringsregler." />
-    </div>
-
-    <!-- Pris -->
-    <div class="grid col-span-1 pb-m">
-      <h3 class="pl-s md:pl-xs">Pris</h3>
-      <Accordion question="Hvad koster det at få Elby?" answer="Elby udbydes både til boligforeninger (ejer-, andel- og almene boligforeninger) samt til ejendomsselskaber og andet erhverv. Se prisen for Elby på de respektive sider." />
-      <Accordion question="Hvad koster det at lade med Elby?" answer="Ladeprisen er i øjeblikket en fast pris på 2,99 kr/kWh." />
-      <Accordion question="Kan det virkelig passe, at Elby er gratis for boligforeninger?" answer="Ja, den er god nok. Elbys forretningsmodel er skruet sådan sammen, at vi lægger ud for installationen af laderne. Vores indtjening kommer således ikke fra installation af løsningen, men fra den fee, vi lægger oven på strømprisen, når laderen bruges. Og den fee deler vi endda med dig og din forening." />
-      <Accordion question="Skal man skifte elselskab for at få Elby?" answer="Nej, Elby sætter en bimåler op i din bygning, så ladestrømmen adskilles fra resten af bygningen. Du kan derfor fortsætte med det elselskab du har." />
-    </div>
-
-    <!-- Sikkerhed og praktik -->
-    <div class="grid col-span-1 pb-m">
-      <h3 class="pl-s md:pl-xs">Sikkerhed og praktik</h3>
-      <Accordion question="Hvor meget lader Elby med?" answer="Op til 11 kW tilpasset til bygningen. Vi tager højde for bygningens eget behov og at strømforsyningen varierer fra bygning til bygning." />
-      <Accordion question="Er der strøm nok i min bygning?" answer="Sandsynligvis, hvis altså du taler om en etagebygning. De er nemlig typisk udstyret med en overkapacitet, der sjældent bliver brugt. Især om natten, når beboerne sover, og om dagen, når de er på arbejde, er der ekstra kapacitet til fx at lade elbiler." />
-      <Accordion question="Hvordan undgår I at trække for meget strøm fra min bygning?" answer="Elby er udstyret med en såkalt ‘load-balancer’, der sikrer at vi aldrig trækker mere strøm end der er kapacitet til. Lejlighederne og deres beboere har naturligvis førsteprioritet." />
-      <Accordion question="Er det sikkert at gå ovenpå Elbys skinne?" answer="Vores skinne (Elby Sleeve) er langt smallere end f.eks. regnvandsskinner, som også går på tværs af fortovet. F.eks. kan det næsten ikke mærkes, når man går i en flad sko eller triller en barnevogn henover skinnen. Hvis du går i stiletter, skal du dog være opmærksom." />
-    </div>
-  </div>
-</section>
-<!-------------- FAQ accordion slut -------------->
-
-<div id="6_prefooter_omelby" class="fade-in-up">
+  <div id="6_prefooter_omelby" class="fade-in-up">
     <Prefooter header="Vil du høre mere om ELby og visionen bag?" buttonText="Kontakt os og hør mere" buttonlink="../kontakt" linkVariant="secondary" />
-</div>
+  </div>
 
   <!-- Grafik Section prefooter -->
   <div id="7_bygrafik_omelby" class="">
     <img src="../svg/bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
   </div>
-</div>
-
-
+</MainLayout>
 
 <script type="module">
   import { animate, inView } from "https://cdn.skypack.dev/motion";
@@ -144,17 +138,21 @@ import Scrollytest from "../components/Scrollytest.astro";
     card.style.opacity = 0;
     card.style.transform = "translateY(40px)";
 
-    inView(card, () => {
-      animate(
-        card,
-        { opacity: 1, transform: "translateY(0px)" },
-        {
-          duration: 0.8,
-          delay: 0.1 + index * 0.2, // add a global delay + stagger
-          easing: "ease-out",
-          fill: "both",
-        }
-      );
-    }, { once: true });
+    inView(
+      card,
+      () => {
+        animate(
+          card,
+          { opacity: 1, transform: "translateY(0px)" },
+          {
+            duration: 0.8,
+            delay: 0.1 + index * 0.2, // add a global delay + stagger
+            easing: "ease-out",
+            fill: "both",
+          }
+        );
+      },
+      { once: true }
+    );
   });
-</script> 
+</script>
