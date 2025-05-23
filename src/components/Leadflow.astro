@@ -55,7 +55,7 @@
     "../index/leadflow_fortov.webp",
     "../index/leadflow_person.webp",
     "../index/leadflow_bestil.webp", // slutskærm (qualified/disqualified)
-    "/kontakt.webp", // kontaktformular
+    "../kontakt/kontakt.webp", // kontaktformular
   ];
 
   let step = 0;
@@ -137,7 +137,7 @@
               )
               .join("")}
           </div>
-    <button id="firstNextBtn" class="w-full bg-acc_yel-500 text-sec_bl-950 font-semibold py-xs mt-xxs rounded-full transition-colors hover:shadow-[inset_30rem_0_0_0] hover:shadow-acc_gr-500 duration-[300ms,600ms] transition-[color,box-shadow]">
+    <button id="firstNextBtn" class="w-full bg-acc_yel-500 text-sec_bl-950 font-semibold py-xs mt-xxs rounded-full hover:shadow-[inset_30rem_0_0_0] hover:shadow-acc_gr-500 duration-[200ms,500ms] transition-[color,box-shadow]">
   Se om du kan få Elby 
 </button>
 
@@ -229,7 +229,7 @@
       }
 
       container.innerHTML += `
-        <button id="continueBtn" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-full  transition-colors hover:shadow-[inset_30rem_0_0_0] hover:shadow-acc_gr-500 duration-[300ms,600ms] transition-[color,box-shadow]">Indtast dine kontaktoplysninger</button>
+        <button id="continueBtn" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-full  hover:shadow-[inset_30rem_0_0_0] hover:shadow-acc_gr-500 duration-[200ms,500ms] transition-[color,box-shadow]">Indtast dine kontaktoplysninger</button>
        <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -263,7 +263,7 @@
           <input type="email" placeholder="Email" class="w-full border p-xxs rounded-sm" required />
           <input type="tel" placeholder="Telefonnummer" class="w-full border p-xxs rounded-sm" />
           <textarea placeholder="Evt. kommentar" class="w-full border p-xxs rounded-sm"></textarea>
-          <button type="submit" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-sm transition-colors duration-300 hover:bg-acc_yel-600">Indsend</button>
+          <button type="submit" class="w-full font-semibold bg-acc_yel-500 text-black py-xs mt-xxs rounded-full hover:shadow-[inset_30rem_0_0_0] hover:shadow-acc_gr-500 duration-[200ms,500ms] transition-[color,box-shadow]"">Indsend</button>
         </form>
       <button id="backBtn" class="mt-xs text-sec_bl-300 flex items-center gap-1">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
