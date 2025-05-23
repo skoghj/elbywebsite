@@ -64,24 +64,44 @@ import SplitcontentHero from "../components/SplitcontentHero.astro";
     <div class="max-w-6xl mx-auto text-center mb-md">
       <h3>Brug for hjælp? Kontakt os her!</h3>
     </div>
-
+  
     <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+      
       <!-- Mail -->
       <div class="flex flex-col items-center gap-5">
-        <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="../svg/mail.svg" hoverIcon="../svg/mail_hover.svg"> hej@elby.com </Link>
+        <Link href="mailto:hej@elby.com" variant="secondary" size="standard" class="group flex flex-col items-center gap-2">
+          <span class="relative w-6 h-6">
+            <img src="../svg/mail.svg" alt="Mail ikon" class="block group-hover:hidden absolute inset-0" />
+            <img src="../svg/mail_hover.svg" alt="Mail ikon hover" class="hidden group-hover:block absolute inset-0" />
+          </span>
+          hej@elby.com
+        </Link>
       </div>
-
+  
       <!-- Telefon -->
-      <div class="flex flex-col items-center gap-0">
-          <Link href="mailto:hej@elby.com" variant="secondary" size="standard" icon="../svg/phone.svg" hoverIcon="../svg/phone_hover.svg"> +45 60 55 20 24 </Link>
+      <div class="flex flex-col items-center gap-5">
+        <Link href="tel:+4560552024" variant="secondary" size="standard" class="group flex flex-col items-center gap-2">
+          <span class="relative w-6 h-6">
+            <img src="../svg/phone_hover.svg" alt="Telefon ikon hover" class="hidden group-hover:block absolute inset-0" />
+            <img src="../svg/phone.svg" alt="Telefon ikon" class="block group-hover:hidden absolute inset-0" />
+          </span>
+          +45 60 55 20 24
+        </Link>
       </div>
-
+  
       <!-- Chat -->
       <div class="flex flex-col items-center gap-5">
-        <Link variant="secondary" size="standard" type="button" icon="../svg/chat.svg" hoverIcon="../svg/chat_hover.svg"> Chat med os </Link>
-      </div>
+        <Link variant="secondary" size="standard" type="button" class="group flex flex-col items-center gap-2">
+          <span class="relative w-6 h-6">
+            <img src="../svg/chat.svg" alt="Chat ikon" class="block group-hover:hidden absolute inset-0" />
+            <img src="../svg/chat_hover.svg" alt="Chat ikon hover" class="hidden group-hover:block absolute inset-0" />
+          </span>
+          Chat med os
+        </Link>
+      </div> 
     </div>
   </section>
+  
 
   <section id="6_bygrafik" class="bg-sec_be-500">
     <img src="../svg/bygrafik.svg" alt="Kbh skyline grafik" class="w-full h-auto" />
