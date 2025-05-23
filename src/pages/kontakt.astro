@@ -11,7 +11,7 @@ import Button from "../components/Button.astro";
     </div>
 
     <!-- Right Form -->
-    <div class="md:basis-3/5 w-full flex items-center justify-center p-sm">
+    <div class="md:basis-3/5 w-full flex items-center justify-center p-sm mt-l md:mt-0">
       <!-- Step 1: Form -->
       <template x-if="step === 1">
         <form name="kontakt" method="POST" data-netlify="true" netlify @submit.prevent="handleSubmit" target="netlifyFrame" class="w-full max-w-2xl">
