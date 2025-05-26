@@ -5,7 +5,7 @@ const { question, answer, href="#", target="_self"} = Astro.props;
 <!-- Accordion Container -->
 <div class="max-w-md lg:max-w-lg mx-auto overflow-hidden">
   <!-- Accordion Header -->
-  <div class="accordion-header flex items-center justify-between px-5 py-4 cursor-pointer">
+  <div class="accordion-header flex items-center justify-between md:px-5 py-4 cursor-pointer">
 
     <!-- Question -->
     <span class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop text-sec_be-950 font-semibold max-w-sm">{question}</span>
@@ -21,7 +21,7 @@ const { question, answer, href="#", target="_self"} = Astro.props;
 
   <!-- Accordion Content -->
   <div class="accordion-content overflow-hidden max-h-0 transition-[max-height] duration-700 ease-in-out font-body bg-sec_be-500 p-xxxs">
-    <div class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop text-sec_bl_950 font-light space-y-xs px-4 max-w-xl pr-lg lg:pr-lg">
+    <div class="font-body text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop text-sec_bl_950 font-light space-y-xs px-4 max-w-xl md:pr-lg">
       {answer} <a href={href} target={target}><slot /></a>
     </div>
   </div>

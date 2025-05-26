@@ -56,8 +56,8 @@ import Scrollytest from "../components/Scrollytest.astro";
 
     <div class="grid grid-cols-1 md:grid-cols-3 items-start lg:gap-8 p-sm md:p-md">
       <!-- Om installation -->
-      <div class="">
-        <h3 class="pl-s md:pl-xs">Om installation</h3>
+      <div class="grid col-span-1 pb-m">
+        <h3 class="md:pl-xs">Om installation</h3>
 
         <Accordion question="Skal man have tilladelse til at installere Elby?">
           Det kommer an på, hvilken type vej din bygning ligger ud til. <br /><br />
@@ -99,7 +99,7 @@ import Scrollytest from "../components/Scrollytest.astro";
 
       <!-- Pris -->
       <div class="grid col-span-1 pb-m">
-        <h3 class="pl-s md:pl-xs">Pris</h3>
+        <h3 class="md:pl-xs">Pris</h3>
         <Accordion question="Hvad koster det at få Elby?" answer="Elby udbydes både til boligforeninger (ejer-, andel- og almene boligforeninger) samt til ejendomsselskaber og andet erhverv. Se prisen for Elby på de respektive sider." />
         <Accordion question="Hvad koster det at lade med Elby?" answer="Ladeprisen er i øjeblikket en fast pris på 2,99 kr/kWh." />
         <Accordion question="Kan det virkelig passe, at Elby er gratis for boligforeninger?" answer="Ja, den er god nok. Elbys forretningsmodel er skruet sådan sammen, at vi lægger ud for installationen af laderne. Vores indtjening kommer således ikke fra installation af løsningen, men fra den fee, vi lægger oven på strømprisen, når laderen bruges. Og den fee deler vi endda med dig og din forening." />
@@ -108,7 +108,7 @@ import Scrollytest from "../components/Scrollytest.astro";
 
       <!-- Sikkerhed og praktik -->
       <div class="grid col-span-1 pb-m">
-        <h3 class="pl-s md:pl-xs">Sikkerhed og praktik</h3>
+        <h3 class="md:pl-xs">Sikkerhed og praktik</h3>
         <Accordion question="Hvor meget lader Elby med?" answer="Op til 11 kW tilpasset til bygningen. Vi tager højde for bygningens eget behov og at strømforsyningen varierer fra bygning til bygning." />
         <Accordion question="Er der strøm nok i min bygning?" answer="Sandsynligvis, hvis altså du taler om en etagebygning. De er nemlig typisk udstyret med en overkapacitet, der sjældent bliver brugt. Især om natten, når beboerne sover, og om dagen, når de er på arbejde, er der ekstra kapacitet til fx at lade elbiler." />
         <Accordion question="Hvordan undgår I at trække for meget strøm fra min bygning?" answer="Elby er udstyret med en såkalt ‘load-balancer’, der sikrer at vi aldrig trækker mere strøm end der er kapacitet til. Lejlighederne og deres beboere har naturligvis førsteprioritet." />
