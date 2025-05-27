@@ -7,7 +7,7 @@ import Button from "../components/Button.astro";
   <div x-data=" contactForm()" class="flex flex-col md:flex-row w-full">
     <!-- Left Image -->
     <div class="hidden md:block md:basis-2/5 w-full h-64 md:h-auto">
-      <img src="../kontakt/kontakt.webp" alt="Elby hovedkontor" class="w-full h-full object-cover hidden md:block" />
+      <img src="../kontakt/produkter.webp" alt="Elby hovedkontor" class="w-full h-full object-cover hidden md:block" />
     </div>
 
     <!-- Right Form -->
@@ -44,21 +44,25 @@ import Button from "../components/Button.astro";
               <input type="tel" name="phone" x-model="form.phone" placeholder="+45 12 34 56 78" class="w-full p-xxs rounded-xs border-neu_db-300 shadow-sm" />
             </div>
           </div>
-           <div class="flex items-center mb-4 pt-6">
-            <input checked id="default-radio-2" type="radio" value="" name="default-radio"
-              class="w-5 h-5 accent-acc_yel-700  focus:ring-2 focus:ring-acc_yel-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-violet-600">
-            <label for="default-radio-2"
-              class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 pl-2">Fortovsskinne</label>
+
+          <!--Radio button -->
+          <div class="flex items-center mb-4 pt-sm">
+            <input type="radio" name="role" id="radio-1" checked class="peer hidden" />
+            <label for="radio-1" class="w-5 h-5 inline-block rounded-full border-2 border-gray-300 relative cursor-pointer
+           after:content-[''] after:w-3 after:h-3 after:bg-acc_yel-700 after:rounded-full
+           after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2
+           peer-checked:after:block after:hidden transition"></label>
+            <span class="ml-xxs font-body text-sec_bl-950">Fortovsskinne</span>
           </div>
 
-          <div class="flex items-center mb-4">
-            <input id="default-radio-1" type="radio" value="" name="default-radio"
-              class="w-5 h-5 accent-acc_yel-700 focus:ring-2 focus:ring-acc_yel-700 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-violet-600">
-            <label for="default-radio-1"
-              class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 pl-2">Ladestander</label>
+          <div class="flex items-center mb-4 pt-xxs">
+            <input type="radio" name="role" id="radio-2" class="peer hidden" />
+            <label for="radio-2" class="w-5 h-5 inline-block rounded-full border-2 border-gray-300 relative cursor-pointer
+           after:content-[''] after:w-3 after:h-3 after:bg-acc_yel-700 after:rounded-full
+           after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2
+           peer-checked:after:block after:hidden transition"></label>
+            <span class="ml-xxs font-body text-sec_bl-950">Ladestander</span>
           </div>
-          
-         
 
           <div class="mt-sm">
             <label class="block mb-1 font-semibold">Besked (valgfri)</label>
